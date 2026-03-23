@@ -1,5 +1,9 @@
 lang: de
 
+crossref:
+    exr-title: "Aufgabe"
+    exr-prefix: "Aufgabe"
+
 author:
   - Matthias Baitsch
 date: today
