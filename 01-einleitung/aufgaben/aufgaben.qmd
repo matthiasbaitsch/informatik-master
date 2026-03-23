@@ -1,0 +1,30 @@
+# Installation
+
+Wir verwenden in dieser Veranstaltung die frei verfügbare Entwicklungsumgebung Visual Studio Code von Microsoft. Sie ist ein vernünftiger Kompromiss zwischen Funktionsumfang und einfacher Benutzung.
+
+Hier die notwendigen Schritte:
+
+1. Visual Studio Code von Microsoft [herunterladen](https://code.visualstudio.com/download) und installieren
+
+    Windows
+    : Wählen Sie den `User Installer` für Ihren Prozessor (meistens x64)
+
+    Apple
+    : Wählen Sie `.dmg` für Ihren Prozessor ()
+    
+    Linux
+    : Sie wissen wahrscheinlich selber, wie das geht 😉
+
+1. Visual Studio Code starten und sofort das Chat-Fenster (rechts) schließen
+
+1. Erweiterung für C# installieren
+
+  - Umgebung für Extensions auswählen (Symbol mit den Quadraten links)
+
+  - `C#` in das Suchfeld eingeben und das `C# Dev Kit` installieren, `Welcome`-Fenster schließen
+
+  - `Jupyter` in das Suchfeld eingeben und `Jupyter` installieren, `Welcome`-Fenster schließen
+
+
+
+

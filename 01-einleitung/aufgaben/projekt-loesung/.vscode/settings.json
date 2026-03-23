@@ -1,0 +1,10 @@
+{
+    "dotnet.codeLens.enableReferencesCodeLens": false,
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        ".vscode": true,
+        ".editorconfig": true,
+        "**/bin": true,
+        "**/obj": true,
+    }
+}

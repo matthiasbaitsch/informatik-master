@@ -1,0 +1,14 @@
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/bin/Debug/net10.0/projekt
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/bin/Debug/net10.0/projekt.deps.json
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/bin/Debug/net10.0/projekt.runtimeconfig.json
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/bin/Debug/net10.0/projekt.dll
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/bin/Debug/net10.0/projekt.pdb
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/projekt.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/projekt.AssemblyInfoInputs.cache
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/projekt.AssemblyInfo.cs
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/projekt.csproj.CoreCompileInputs.cache
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/projekt.dll
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/refint/projekt.dll
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/projekt.pdb
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/projekt.genruntimeconfig.cache
+/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/01-einleitung/aufgaben/projekt-loesung/1.1-beispielprogramm/obj/Debug/net10.0/ref/projekt.dll

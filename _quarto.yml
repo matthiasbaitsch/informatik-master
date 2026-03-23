@@ -1,0 +1,23 @@
+lang: de
+
+author:
+  - Matthias Baitsch
+date: today
+
+toc-depth: 1
+number-depth: 1
+number-sections: true
+format-links: false
+
+format: 
+  revealjs:
+    overview: true
+    slide-number: "c/t"
+    code-line-numbers: false
+    theme: 
+      - style-slides.scss
+      - style-titlepage.scss
+  html: default
+
+project:
+  output-dir: __output

@@ -1,0 +1,21 @@
+---
+title: Modul Informatik im Master Bauingenieurwesen
+subtitle: Einführung
+---
+
+## Warum Informatik im Master?
+
+Gute Frage
+
+# Kontext
+
+## Entwicklung Hardware
+
+## Entwicklung Anwendungsprogramme
+
+## Entwicklung Programmiersprachen
+
+## Wichtige Programmiersprachen heute
+
+## 
+
