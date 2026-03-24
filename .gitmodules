@@ -1,0 +1,3 @@
+[submodule "bereitstellen/bcd-bausteine-montieren"]
+	path = bereitstellen/bcd-bausteine-montieren
+	url = git@github.com:bausteine-der-datenanalyse/bcd-bausteine-montieren.git
