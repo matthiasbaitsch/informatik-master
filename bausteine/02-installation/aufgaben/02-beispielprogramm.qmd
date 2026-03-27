@@ -1,6 +1,0 @@
-::: {#exr-beispielprogramm}
-
-## Beispielprogramm
-
-- Laden Sie die Zip-Date ${slug}.zip herunter und entpacken Sie die Datei in den Ordner 'projekte'
-- Öffnen Sie das Projekt in VS Code mit einem Doppelklick auf die Datei `installation.code-workspace`

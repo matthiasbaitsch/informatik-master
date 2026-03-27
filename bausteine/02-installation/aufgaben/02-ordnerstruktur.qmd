@@ -1,0 +1,16 @@
+::: {#exr-ordnerstruktur}
+
+## Ordnerstruktur
+
+Legen Sie für das Modul 'Informatik' eine geeignete Ordnerstruktur an. Es bietet sich folgende Organisation an:
+
+```
+informatik/
+├── folien/
+├── aufgaben/
+├── projekte/
+└── weitere-unterlagen/
+```
+
+:::
+
