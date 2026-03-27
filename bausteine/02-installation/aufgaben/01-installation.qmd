@@ -22,6 +22,12 @@ Hier die notwendigen Schritte:
 1. Erweiterung für C# installieren
    - Umgebung für Extensions auswählen (Symbol mit den Quadraten links)
    - `C#` in das Suchfeld eingeben und das `C# Dev Kit` installieren
-   - .NET installieren TODO
+
+1. .NET installieren
+   - Im Menu `View -> Command Palette` auswählen
+   - Auf der Tastatur `.NET` eingeben
+   - `•NET Install Tool: Install the .NET SDK System-Wide.` auswählen
+   - Versionsnummer mit Enter bestätigen
+
 :::
 
