@@ -1,7 +1,9 @@
 format: 
   html:
-    title-block-banner: "#888888"
-    number-sections: true
-    number-depth: 2
-  typst: default
+    format-links:
+      - text: "PDF"
+        format: typst
+        icon: file-pdf    
+  typst:
+    mainfont: "Arial"
 
