@@ -1,13 +1,9 @@
 crossref:
   chapters: false
+
+number-sections: true
   
 format: 
-  html:
-    format-links:
-      - text: "PDF"
-        format: typst
-        icon: file-pdf    
+  html: default
   typst:
     mainfont: "Arial"
-    format-links: false
-

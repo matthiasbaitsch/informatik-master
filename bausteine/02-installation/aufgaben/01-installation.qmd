@@ -6,10 +6,10 @@ Wir verwenden in dieser Veranstaltung die frei verfügbare Entwicklungsumgebung 
 
 Hier die notwendigen Schritte:
 
-1. Visual Studio Code von Microsoft [herunterladen](https://code.visualstudio.com/download) und installieren
+1. Visual Studio Code von Microsoft [herunterladen](https://code.visualstudio.com/download) und installieren.
 
    Windows
-   : Wählen Sie den `User Installer` für Ihren Prozessortyp (meistens x64)
+   : Wählen Sie den `System Installer` für Ihren Prozessortyp (meistens x64)
 
    Apple
    : Wählen Sie `.dmg` für Ihren Prozessortyp ('Intel chip' für ältere Laptops, 'Apple silicon' seit ca. 2020)
@@ -17,17 +17,28 @@ Hier die notwendigen Schritte:
    Linux
    : Sie wissen wahrscheinlich selber, wie das geht 😉
 
+   Die Voreinstellungen können Sie übernehmen
+
 1. Visual Studio Code starten und sofort das Chat-Fenster (rechts) schließen
 
 1. Erweiterung für C# installieren
    - Umgebung für Extensions auswählen (Symbol mit den Quadraten links)
    - `C#` in das Suchfeld eingeben und das `C# Dev Kit` installieren
 
-1. .NET installieren
+1. .NET Entwicklungswerkzeuge installieren (Methode 1 - empfohlen)
+   - Im Fenster "Get Started with C# Dev Kit" den Eintrag "Set up your Environment" anklicken
+   - Den Button "Install .NET SDK" klicken
+   - Im Bereich rechts den Button mit "Install" klicken
+   - Administratorkennwort eingeben, falls notwendig
+   - Geduld haben!
+
+1. .NET Entwicklungswerkzeuge installieren (Methode 2)
    - Im Menu `View -> Command Palette` auswählen
    - Auf der Tastatur `.NET` eingeben
    - `•NET Install Tool: Install the .NET SDK System-Wide.` auswählen
    - Versionsnummer mit Enter bestätigen
+   - Administratorkennwort eingeben, falls notwendig
+   - Geduld haben!
 
 :::
 
