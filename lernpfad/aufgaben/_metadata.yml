@@ -1,3 +1,6 @@
+crossref:
+  chapters: false
+  
 format: 
   html:
     format-links:
