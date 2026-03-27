@@ -6,4 +6,5 @@ format:
         icon: file-pdf    
   typst:
     mainfont: "Arial"
+    format-links: false
 
