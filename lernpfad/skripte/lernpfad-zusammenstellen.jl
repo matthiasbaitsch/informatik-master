@@ -1,4 +1,6 @@
 using YAML
+using ZipArchives
+
 
 # -------------------------------------------------------------------------------------------------
 # Building block
@@ -56,6 +58,20 @@ function do_copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_
     write(to_file, text)
 end
 
+
+function zip_folder(folder_path, output_zip_path)
+    ZipWriter(output_zip_path) do w
+        for (root, _, files) in walkdir(folder_path)
+            for file in files
+                file_path = joinpath(root, file)
+                zip_path = relpath(file_path, folder_path)
+                zip_newfile(w, zip_path; compress=true)
+                write(w, read(file_path))
+            end
+        end
+    end
+end
+
 # -------------------------------------------------------------------------------------------------
 # Make stuff
 # -------------------------------------------------------------------------------------------------
@@ -77,6 +93,11 @@ function make_assignments(bb::BuildingBlock, path_input, path_output)
     ---
     """
     do_copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
+
+    p = joinpath(path_input, "projekt")
+    if isdir(p)
+        zip_folder(p, joinpath(path_output, slug(bb) * ".zip"))
+    end
 end
 
 # -------------------------------------------------------------------------------------------------
