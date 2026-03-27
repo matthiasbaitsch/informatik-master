@@ -34,4 +34,4 @@ jobs:
         run: |
           julia --project -e 'using Pkg; Pkg.instantiate()'
           julia --project lernpfad-zusammenstellen.jl
-        working-directory: lernpfad/bin
+        working-directory: lernpfad/skripte
