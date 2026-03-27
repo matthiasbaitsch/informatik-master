@@ -1,3 +1,0 @@
-## Weitere Informationen
-
-- [Alle Elemente](https://docs.avaloniaui.net/docs/reference/controls)

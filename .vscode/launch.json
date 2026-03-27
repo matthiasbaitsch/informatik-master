@@ -11,7 +11,7 @@
             "request": "launch",
             "debugMode": "file",
             "workingDirectory": "${workspaceFolder}/bereitstellen/aufgaben",
-            "file": "${file}"
+            "file": "${workspaceFolder}/bereitstellen/bcd-bausteine-montieren/collect-content.R"
         }
     ]
 }

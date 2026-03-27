@@ -1,0 +1,37 @@
+name: Render and publish
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write      
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+          version: 1.9.10
+
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v2
+
+      - name: "xxx"
+        run: |
+          julia --project -e 'using Pkg; Pkg.instantiate()'
+          julia --project lernpfad-zusammenstellen.jl
+        working-directory: lernpfad/bin

@@ -1,0 +1,35 @@
+## Dynamisch und statisch typisierte Programmiersprachen
+
+::: {.columns}
+::: {.column}
+**Python** – dynamisch typisiert
+
+```python
+# Kein Typ nötig
+laenge = 5.0
+breite = 3
+flaeche = laenge * breite
+print(flaeche)        # 15.0
+
+# Typ kann sich ändern
+laenge = "fünf Meter"  # erlaubt!
+```
+:::
+::: {.column}
+**C#** – statisch typisiert
+
+```csharp
+// Typ muss angegeben werden
+double laenge = 5.0;
+int    breite = 3;
+double flaeche = laenge * breite;
+Console.WriteLine(flaeche);  // 15
+
+// Typ ist festgelegt
+laenge = "fünf Meter";  // Fehler!
+```
+:::
+:::
+
+> Tippfehler und falsche Typen werden in C# bereits **vor dem Programmstart** vom Compiler erkannt.
+

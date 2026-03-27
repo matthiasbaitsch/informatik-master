@@ -1,8 +1,3 @@
----
-title: "Aufgabenblatt 1"
-subtitle: "Installation und erste Schritte in Visual Studio Code"
----
-
 ::: {#exr-installation}
 
 ## Installation
@@ -14,10 +9,10 @@ Hier die notwendigen Schritte:
 1. Visual Studio Code von Microsoft [herunterladen](https://code.visualstudio.com/download) und installieren
 
    Windows
-   : Wählen Sie den `User Installer` für Ihren Prozessor (meistens x64)
+   : Wählen Sie den `User Installer` für Ihren Prozessortyp (meistens x64)
 
    Apple
-   : Wählen Sie `.dmg` für Ihren Prozessor ()
+   : Wählen Sie `.dmg` für Ihren Prozessortyp ('Intel chip' für ältere Laptops, 'Apple silicon' seit ca. 2020)
     
    Linux
    : Sie wissen wahrscheinlich selber, wie das geht 😉
@@ -26,14 +21,7 @@ Hier die notwendigen Schritte:
 
 1. Erweiterung für C# installieren
    - Umgebung für Extensions auswählen (Symbol mit den Quadraten links)
-   - `C#` in das Suchfeld eingeben und das `C# Dev Kit` installieren, `Welcome`-Fenster schließen
-   - `Jupyter` in das Suchfeld eingeben und `Jupyter` installieren, `Welcome`-Fenster schließen
+   - `C#` in das Suchfeld eingeben und das `C# Dev Kit` installieren
+   - .NET installieren TODO
 :::
-
-
-::: {#exr-beispielprogramm}
-
-## Beispielprogramm
-
-XXXX
 

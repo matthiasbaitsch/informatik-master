@@ -4,3 +4,8 @@
 /__output
 /.quarto/
 **/*.quarto_ipynb
+c
+obj
+bin
+*.old
+*Attic
