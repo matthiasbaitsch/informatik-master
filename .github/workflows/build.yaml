@@ -30,8 +30,34 @@ jobs:
       - name: Set up Julia
         uses: julia-actions/setup-julia@v2
 
-      - name: "xxx"
+      - name: Set up Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: "Prepare render"
         run: |
           julia --project -e 'using Pkg; Pkg.instantiate()'
           julia --project lernpfad-zusammenstellen.jl
         working-directory: lernpfad/skripte
+
+      - name: "Render"
+        run: |
+          quarto render lernpfad/folien
+          quarto render lernpfad/aufgaben
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '__output'
+
+  deploy:
+    needs: render
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:    
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
