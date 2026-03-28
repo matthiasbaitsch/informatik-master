@@ -6,6 +6,17 @@ Wir verwenden in dieser Veranstaltung die frei verfügbare Entwicklungsumgebung 
 
 Hier die notwendigen Schritte:
 
+1. Werkzeuge zur Programmierung mit C# und .NET [herunterladen](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) und installieren
+
+   Windows
+   : In der Regel 'x64'
+
+   macOS
+   : Wählen Sie 'Arm64' für neuere Laptops (seit ca. 2020) und 'x64' für ältere Geräte
+    
+   Linux
+   : Folgen Sie den Anweisungen
+
 1. Visual Studio Code von Microsoft [herunterladen](https://code.visualstudio.com/download) und installieren.
 
    Windows
@@ -24,21 +35,6 @@ Hier die notwendigen Schritte:
 1. Erweiterung für C# installieren
    - Umgebung für Extensions auswählen (Symbol mit den Quadraten links)
    - `C#` in das Suchfeld eingeben und das `C# Dev Kit` installieren
-
-1. .NET Entwicklungswerkzeuge installieren (Methode 1 - empfohlen)
-   - Im Fenster "Get Started with C# Dev Kit" den Eintrag "Set up your Environment" anklicken
-   - Den Button "Install .NET SDK" klicken
-   - Im Bereich rechts den Button mit "Install" klicken
-   - Administratorkennwort eingeben, falls notwendig
-   - Geduld haben!
-
-1. .NET Entwicklungswerkzeuge installieren (Methode 2)
-   - Im Menu `View -> Command Palette` auswählen
-   - Auf der Tastatur `.NET` eingeben
-   - `•NET Install Tool: Install the .NET SDK System-Wide.` auswählen
-   - Versionsnummer mit Enter bestätigen
-   - Administratorkennwort eingeben, falls notwendig
-   - Geduld haben!
 
 :::
 
