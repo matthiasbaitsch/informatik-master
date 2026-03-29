@@ -6,52 +6,52 @@ class Tetris
     static bool gameOver = false;
 
     // Tetrominoes: [piece][rotation][block] = (row, col)
-    static int[][][][] pieces = new int[][][][]
-    {
+    static int[][][][] pieces =
+    [
         // I
-        new int[][][] {
-            new int[][] { new[]{0,0},new[]{0,1},new[]{0,2},new[]{0,3} },
-            new int[][] { new[]{0,0},new[]{1,0},new[]{2,0},new[]{3,0} }
-        },
+        [
+            [[0,0],[0,1],[0,2],[0,3]],
+            [[0,0],[1,0],[2,0],[3,0]]
+        ],
         // O
-        new int[][][] {
-            new int[][] { new[]{0,0},new[]{0,1},new[]{1,0},new[]{1,1} }
-        },
+        [
+            [[0,0],[0,1],[1,0],[1,1]]
+        ],
         // T
-        new int[][][] {
-            new int[][] { new[]{0,1},new[]{1,0},new[]{1,1},new[]{1,2} },
-            new int[][] { new[]{0,0},new[]{1,0},new[]{1,1},new[]{2,0} },
-            new int[][] { new[]{0,0},new[]{0,1},new[]{0,2},new[]{1,1} },
-            new int[][] { new[]{0,1},new[]{1,0},new[]{1,1},new[]{2,1} }
-        },
+        [
+            [[0,1],[1,0],[1,1],[1,2]],
+            [[0,0],[1,0],[1,1],[2,0]],
+            [[0,0],[0,1],[0,2],[1,1]],
+            [[0,1],[1,0],[1,1],[2,1]]
+        ],
         // S
-        new int[][][] {
-            new int[][] { new[]{0,1},new[]{0,2},new[]{1,0},new[]{1,1} },
-            new int[][] { new[]{0,0},new[]{1,0},new[]{1,1},new[]{2,1} }
-        },
+        [
+            [[0,1],[0,2],[1,0],[1,1]],
+            [[0,0],[1,0],[1,1],[2,1]]
+        ],
         // Z
-        new int[][][] {
-            new int[][] { new[]{0,0},new[]{0,1},new[]{1,1},new[]{1,2} },
-            new int[][] { new[]{0,1},new[]{1,0},new[]{1,1},new[]{2,0} }
-        },
+        [
+            [[0,0],[0,1],[1,1],[1,2]],
+            [[0,1],[1,0],[1,1],[2,0]]
+        ],
         // J
-        new int[][][] {
-            new int[][] { new[]{0,0},new[]{1,0},new[]{1,1},new[]{1,2} },
-            new int[][] { new[]{0,0},new[]{0,1},new[]{1,0},new[]{2,0} },
-            new int[][] { new[]{0,0},new[]{0,1},new[]{0,2},new[]{1,2} },
-            new int[][] { new[]{0,1},new[]{1,1},new[]{2,0},new[]{2,1} }
-        },
+        [
+            [[0,0],[1,0],[1,1],[1,2]],
+            [[0,0],[0,1],[1,0],[2,0]],
+            [[0,0],[0,1],[0,2],[1,2]],
+            [[0,1],[1,1],[2,0],[2,1]]
+        ],
         // L
-        new int[][][] {
-            new int[][] { new[]{0,2},new[]{1,0},new[]{1,1},new[]{1,2} },
-            new int[][] { new[]{0,0},new[]{1,0},new[]{2,0},new[]{2,1} },
-            new int[][] { new[]{0,0},new[]{0,1},new[]{0,2},new[]{1,0} },
-            new int[][] { new[]{0,0},new[]{0,1},new[]{1,1},new[]{2,1} }
-        }
-    };
+        [
+            [[0,2],[1,0],[1,1],[1,2]],
+            [[0,0],[1,0],[2,0],[2,1]],
+            [[0,0],[0,1],[0,2],[1,0]],
+            [[0,0],[0,1],[1,1],[2,1]]
+        ]
+    ];
 
     // Colors per piece (1-indexed on board)
-    static ConsoleColor[] colors = {
+    static ConsoleColor[] colors = [
         ConsoleColor.Cyan,    // I
         ConsoleColor.Yellow,  // O
         ConsoleColor.Magenta, // T
@@ -59,7 +59,7 @@ class Tetris
         ConsoleColor.Red,     // Z
         ConsoleColor.Blue,    // J
         ConsoleColor.DarkYellow // L
-    };
+    ];
 
     static int curPiece, curRot, curRow, curCol;
     static int nextPiece;
@@ -122,7 +122,7 @@ class Tetris
         int rotIdx = curRot % pieces[curPiece].Length;
         var ghost = GetGhost();
 
-        // Top border
+        // Top borderq
         Console.ForegroundColor = ConsoleColor.DarkGray;
         Console.Write("┌");
         for (int c = 0; c < W; c++) Console.Write("──");
@@ -159,7 +159,7 @@ class Tetris
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.Write("· ");
+                    Console.Write("  ");
                 }
             }
             Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -219,7 +219,7 @@ class Tetris
         var result = new List<int[]>();
         if (ghostRow != curRow)
             foreach (var b in pieces[curPiece][rotIdx])
-                result.Add(new[] { ghostRow + b[0], curCol + b[1] });
+                result.Add([ghostRow + b[0], curCol + b[1]]);
         return result;
     }
 

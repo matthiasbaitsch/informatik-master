@@ -1,16 +1,54 @@
-## Warum Informatik im Master?
+# Über das Modul Bauinformatik
 
-Gute Frage
+## Was Sie lernen sollen
+
+Grafik zur illustration
+
+- Entwicklung von Applikationen mit C#
+- Objektorientierte Softwareentwicklung
+  - Modellierung, Design und Implementation
+- Gestaltung ansprechender grafischer Oberflächen
+
+## Warum Sie das lernen sollen
+
+[]{.down60}
+
+### Einfache Antwort
+
+Weil es im Modulhandbuch steht
+
+## Warum Sie das lernen sollen
+
+[]{.down60}
+
+### Ausführlichere Antwort
+
+Sie können
+
+- komplexe Aufgaben in Teilprobleme zerlegen und nacheinander lösen
+- strukturiert vorgehen und sorgfältig nachdenken
+- mit Support und Softwareentwicklern kommunizieren
+- existierende Programme erweitern
+- Abschlussarbeiten mit Programmieranteil bearbeiten
 
 # Kontext
 
-## Entwicklung Hardware
+## Programmierprachen
 
-## Entwicklung Anwendungsprogramme
+### Geschichte
 
-## Entwicklung Programmiersprachen
+- Maschinencode, Assembler (seit es Computer gibt)
+- Prozedural: Fortran (1957), BASIC (1964), Pascal (1970), C (1972)
+- Objektorientiert: Smalltalk (1972), C++ (1980), Objective-C (1986), Python (1991), Java (1995), C# (2001), Swift (2010)
+- Spezielle Sprachen z.B. für Datenbanken
 
-## Wichtige Programmiersprachen heute
+### Heute
 
-## 
+- Fortran, C: Numerische Simulationen (FEM, Wetter, \dots)
+- Objektorientierung in fast allen Bereichen
 
+## Warum objektorientiertes Programmieren?
+
+## Warum C#
+
+- Alles was Sie in C# lernen ist auf andere Programmiersprachen übertragbar
