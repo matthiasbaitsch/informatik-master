@@ -2,4 +2,6 @@
   <Folder Name="/01-beispielprogramm/">
     <Project Path="01-beispielprogramm/projekt.csproj" />
   </Folder>
+  <Project Path="OOTetris.Tests/OOTetris.Tests.csproj" />
+  <Project Path="OOTetris/OOTetris.csproj" />
 </Solution>

@@ -23,44 +23,14 @@ $body-color: $jet !default;
 $link-color: $accent !default;
 $selection-bg: #26351c !default;
 
-
-
-.reveal .framed {
-    border: 1px solid black;
-    border-radius: 4px;
-    padding: 5px;
-}
-
-.reveal .raw {
-    border: 1px solid black;
-    border-radius: 4px;
-    padding: 5px;
-}
-
-.reveal div.columns div.sourceCode {
-  margin-top: 0px !important;
-}
-
-.reveal div.columns ul li {
-  margin-top: 0em;
-  margin-bottom: 0.2em;
-}
-
+/*-- scss:rules --*/
 .reveal a {
-  line-height: 1.25em;
+  line-height: 1.5em;
 }
 
 .reveal p {
   font-weight: lighter;
-  margin-top: 1em;
-}
-
-.reveal .quarto-layout-cell p {
-  margin-top: 0em;
-}
-
-.reveal .quarto-layout-cell img {
-  margin-top: 0em;
+  margin-top: 1.25em;
 }
 
 #title-slide {
@@ -127,6 +97,10 @@ $selection-bg: #26351c !default;
   color: $accent2;
   font-weight: lighter;
   font-size: 1em;
+}
+
+.reveal p {
+  margin-top: 1em;
 }
 
 .alert {
