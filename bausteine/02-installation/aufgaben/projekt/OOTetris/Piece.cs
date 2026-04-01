@@ -63,7 +63,7 @@ public class Piece
         throw new Exception();
     }
 
-    public static Piece MakeRandomPiece()
+    public static Piece RandomPiece()
     {
         var values = Enum.GetValues<Type>();
         return MakePiece(values[Random.Shared.Next(values.Length)]);

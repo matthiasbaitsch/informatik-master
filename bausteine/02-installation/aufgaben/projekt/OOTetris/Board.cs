@@ -5,7 +5,7 @@ public class Board
     public const int W = 10;
     public const int H = 20;
     private List<ConsoleColor?[]> colors = [];
-    public Piece Piece = Piece.MakeRandomPiece();
+    public Piece Piece = Piece.RandomPiece();
 
     public Board()
     {
@@ -73,7 +73,8 @@ public class Board
 
     public void Draw()
     {
-        CConsole.Clear();
+        // CConsole.Clear();
+        Console.SetCursorPosition(0, 0);
         CConsole.WriteLine("┌" + new string('─', 2 * W) + "┐   ");
 
         for (int r = 0; r < H; r++)
