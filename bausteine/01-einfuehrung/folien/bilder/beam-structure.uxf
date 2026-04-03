@@ -1,0 +1,15 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>70</x><y>240</y><w>230</w><h>110</h></coordinates><panel_attributes>BeamStructure
+--
+- length: double
+- supportA: string
+- supportB: string
+- load: double
+--
++ DesignStress(): double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>390</y><w>230</w><h>80</h></coordinates><panel_attributes>CrossSection
+{abstract}
+-
+-
++ Iy(): double {abstract}
++ Heigth(): double {abstract}
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>500</y><w>130</w><h>30</h></coordinates><panel_attributes>RectangularSection</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>540</y><w>130</w><h>30</h></coordinates><panel_attributes>ISection</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>580</y><w>130</w><h>30</h></coordinates><panel_attributes>CircularSection</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>460</y><w>90</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;70;90</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>460</y><w>90</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;70;50</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>460</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;130;70;130</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>340</y><w>30</w><h>70</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element></diagram>

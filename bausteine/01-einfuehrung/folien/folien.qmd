@@ -2,10 +2,12 @@
 
 ## Was Sie lernen sollen
 
-TODO Grafik zur illustration
+[]{.down30}
+
+![](bilder/beispiel.png)
 
 - Entwicklung von Applikationen mit C#
-- Objektorientierte Softwareentwicklung
+- Objektorientierte Programmierung
   - Modellierung, Design und Implementation
 - Gestaltung ansprechender grafischer Oberflächen
 
@@ -53,8 +55,9 @@ $\rightarrow$ In vielen Bereichen nützlich, auch wenn Sie nicht selber programm
 
 ### Heute
 
-- Fortran, C: Numerische Simulationen (FEM, Wetter, \dots)
-- Objektorientierung in fast allen Bereichen
+- Fortran: Numerische Simulationen (FEM, Wettervorhersage)
+- C: Betriebssysteme (Linux, Android)
+- Objektorientierung in fast allen anderen Bereichen
 
 ## Warum objektorientiertes Programmieren?
 
@@ -64,7 +67,7 @@ $\rightarrow$ In vielen Bereichen nützlich, auch wenn Sie nicht selber programm
 
 []{.down80}
 
-Weil es gut funktioniert
+Weil es funktioniert
 
 ## Warum objektorientiertes Programmieren?
 
@@ -87,8 +90,8 @@ $\rightarrow$ OOP hilft, komplexe Softwaresysteme handhabbar zu halten
 
 ### Prinzipiell in Frage kommen
 
-- Python: Toll für kleine Programme, für größere Softwareprojekte wegen dynamischer Typisierung schwierig
-- Java: Gute Sprache für den Einstieg in OOP, so gut wie keine Anwendungen im Bauingenieurwesen
+- Python: Toll für kleine Programme, aber für größere Softwareprojekte u.A. wegen dynamischer Typisierung schwierig
+- Java: Gute Sprache für den Einstieg in OOP, aber so gut wie keine Anwendungen im Bauingenieurwesen
 - Swift: Moderne und klar strukturierte Sprache, aber vor allem für Apple
 - C#: Weit verbreitet in Microsoft Welt und Anbindung an Programme wie Revit (BIM), Rhino (3D-Modellierung) und Unity (Virtual Reality), etwas komplexer
 
@@ -120,14 +123,14 @@ Anwendungsmöglichkeiten im Bauingenieurwesen sprechen für C#. Kenntnisse sind 
 
 ## Inverted Classroom
 
-TODO: Grafik
+![Quelle: Ruhr-Universität Bochum](bilder/e-learning-inverted-classroom-vergleich.svg)
 
-- In den online-Vorlesungen werden Sie vor allem selber programmieren
-- Erläuterung zur Theorie in Videos
-- Exploratorischer Ansatz:
-  1. Neue Konzepte anhand von Schritt-für-Schritt Anleitungen kennenlernen
-  1. Ausführliche Erklärung im Video anschauen
-  1. Fragen diskutieren und eigenständig auf eine Aufgabe anwenden
+- Online-Vorlesungen: Selber programmieren
+- Erläuterung zu notwendigen Grundlagen in Videos
+- Exploratorischer Ansatz
+  1. Neues anhand von Schritt-für-Schritt Anleitungen kennenlernen
+  1. Erklärung im Video anschauen
+  1. Eigenständige Anwendung auf neue Aufgabe
 
 ## Inhalte
 
