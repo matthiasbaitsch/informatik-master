@@ -2,6 +2,11 @@ namespace OOTetris;
 
 public static class CConsole
 {
+    public static string Repeat(this string text, int n)
+    {
+        return string.Concat(Enumerable.Repeat(text, n));
+    }
+
     public static void WriteLine(string text)
     {
         Console.ResetColor();
