@@ -1,3 +1,4 @@
 using OOTetris;
 
-new Game().Play();
+Game game = new Game();
+game.Play();
