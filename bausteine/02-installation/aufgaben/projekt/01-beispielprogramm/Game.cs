@@ -7,7 +7,6 @@ public class Game
     private int lines = 0;
     private int score = 0;
     private int cleared = 0;
-    private int lastCleared = 0;
     private int dropInterval = 500;
     private bool gameOver = false;
     private Board board = new Board();
@@ -36,14 +35,14 @@ public class Game
             this.TryDropPiece();
             this.TryPlacePiece();
             this.TryPutNextPiece();
-            this.UpdateScore();
+            this.CheckGameOver();
             this.Draw();
             Thread.Sleep(16);
         }
 
         // Game over
-        CConsole.WriteLine(23, 0, ConsoleColor.Red, "Game Over");
-        CConsole.WriteLine(24, 0, "Drücke Enter...");
+        CConsole.WriteLine(Board.Height + 3, 0, ConsoleColor.Red, "Game Over");
+        CConsole.WriteLine("Drücke Enter...");
         Console.ReadLine();
     }
 
@@ -56,6 +55,10 @@ public class Game
             if (key == ConsoleKey.Q)
             {
                 this.gameOver = true;
+            }
+            else if (key == ConsoleKey.C)
+            {
+                this.board.ClearLastLine();
             }
             else if (key == ConsoleKey.LeftArrow)
             {
@@ -98,7 +101,10 @@ public class Game
         if (this.DropIntervalPassed() && this.board.HasPiece() && !this.board.CanMovePiece(1, 0))
         {
             this.board.Place();
-            this.lastCleared = this.cleared = this.board.ClearRows();
+            this.cleared = this.board.ClearRows();
+            this.lines += this.cleared;
+            this.score += this.Level * Game.ScoresForRows[this.cleared];
+            this.dropInterval = Math.Max(80, 500 - (this.Level - 1) * 20);
             this.lastDropTime = DateTime.Now;
         }
     }
@@ -113,13 +119,8 @@ public class Game
         }
     }
 
-    private void UpdateScore()
+    private void CheckGameOver()
     {
-        this.lines += this.cleared;
-        this.score += this.Level * Game.ScoresForRows[this.cleared];
-        this.dropInterval = Math.Max(80, 500 - (this.Level - 1) * 40);
-        this.cleared = 0;
-
         if (!this.board.HasPiece())
         {
             this.gameOver = true;
@@ -135,11 +136,9 @@ public class Game
         int col = 2 * Board.Width + 5;
 
         // Clear area and draw next piece
-        for (int r = 0; r < 4; r++)
-        {
-            CConsole.Write(1 + r, col, "        ");
-        }
-        foreach (var b in this.nextPiece.Bricks)
+        CConsole.Write(1, col, " ".Repeat(8));
+        CConsole.Write(2, col, " ".Repeat(8));
+        foreach (int[] b in this.nextPiece.Bricks)
         {
             CConsole.Write(1 + b[0], col + 2 * b[1], this.nextPiece.Color, "██");
         }
@@ -148,7 +147,8 @@ public class Game
         CConsole.Write(6, col, "Lines: " + this.lines);
         CConsole.Write(7, col, "Level: " + this.Level);
         CConsole.Write(8, col, "Score: " + this.score);
-        CConsole.Write(9, col, "💥".Repeat(this.lastCleared) + " ".Repeat(4 - this.lastCleared));
+        CConsole.Write(9, col, "  ".Repeat(4));
+        CConsole.Write(9, col, "💥".Repeat(this.cleared));
 
         // Hints
         CConsole.Write(16, col, "  ← →  Bewegen");

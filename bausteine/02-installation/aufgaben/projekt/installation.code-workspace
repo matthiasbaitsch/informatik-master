@@ -3,5 +3,17 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"dotnet.codeLens.enableReferencesCodeLens": false,
+		"editor.formatOnSave": true,
+		"files.exclude": {
+			".editorconfig": true,
+			"*.slnx": true,
+			"*.code-workspace": true,
+			"**/*.csproj": true,
+			"**/bin": true,
+			"**/obj": true,
+		},
+	}
 }
