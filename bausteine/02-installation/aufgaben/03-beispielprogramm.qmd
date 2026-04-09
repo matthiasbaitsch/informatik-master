@@ -2,10 +2,11 @@
 
 ## Beispielprogramm
 
-- Die [Zip-Datei](${slug}.zip) herunterladen und in den Ordner 'projekte' entpacken
-- Mit einem Doppelklick auf die Datei `installation.code-workspace` die Entwicklungsumgebung starten
-- Öffnen Sie in Visual Studio Code die Datei `01-beispielprogramm/Program.cs`
-- Starten Sie das Programm mit einem Klick auf das Symbol &#9655; im Editorfenster oben rechts
+- Die [Zip-Datei](${slug}.zip) herunterladen und in den Ordner 'projekte' entpacken.
+- Starten Sie mit einem Doppelklick auf die Datei `installation.code-workspace` die Entwicklungsumgebung Visual Studio Code.
+- Öffnen Sie in Visual Studio Code die Datei `01-beispielprogramm/Program.cs`.
+- Starten Sie das Programm mit einem Klick auf das Symbol &#9655; im Editorfenster oben rechts.
 - Viel Spaß!
+- Es gibt eine Taste, mit der Sie die unterste Reihe löschen können. Werfen Sie einen Blick in `Game.cs` und finden Sie heraus, welche!
 
 :::
