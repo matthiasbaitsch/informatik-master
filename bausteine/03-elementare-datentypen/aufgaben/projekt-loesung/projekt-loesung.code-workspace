@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"dotnet.codeLens.enableReferencesCodeLens": false,
+		"editor.formatOnSave": true,
+		"files.exclude": {
+			".editorconfig": true,
+			"*.code-workspace": true,
+			"**/bin": true,
+			"**/obj": true,
+		},
+	}
+}

@@ -2,14 +2,14 @@
 
 ## Ordnerstruktur
 
-Legen Sie für das Modul 'Informatik' eine geeignete Ordnerstruktur an. Es bietet sich folgende Organisation an:
+Legen Sie für das Modul 'Informatik' eine geeignete Ordnerstruktur an. Eine sinnvolle Aufteilung ist zum Beispiel
 
-```
-informatik/
-├── folien/
-├── aufgaben/
-├── projekte/
-└── weitere-unterlagen/
+```{raw}
+    informatik/
+    ├── folien/
+    ├── aufgaben/
+    ├── projekte/
+    └── weitere-unterlagen/
 ```
 
 :::
