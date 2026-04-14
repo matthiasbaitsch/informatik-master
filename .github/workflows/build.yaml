@@ -37,6 +37,11 @@ jobs:
         run: julia --project -e 'using Pkg; Pkg.instantiate()'
         working-directory: lernpfad/skripte
 
+      - name: Install Liberation Sans
+        run: |
+          sudo apt-get install -y fonts-liberation
+          sudo fc-cache -f -v
+
       - name: "Prepare render"
         run: julia --project lernpfad-zusammenstellen.jl
         working-directory: lernpfad/skripte
