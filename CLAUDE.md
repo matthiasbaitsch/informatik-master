@@ -9,6 +9,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 ## Lernziele
 
 - Studierende sollen die vermittelten Konzepte **selbständig anwenden** können – Verständnis und Transfer stehen im Vordergrund, nicht das Auswendiglernen von Syntax
+- Das Modul legt eine **solide konzeptuelle Basis**; Sprachdetails können Studierende bei Bedarf später selbständig erarbeiten
 - Der behandelte Sprachumfang beschränkt sich auf die **wesentlichen OOP-Konzepte**: Klassen, Objekte, Kapselung, Vererbung, Polymorphismus
 - Komplexe oder randständige C#-Features werden bewusst weggelassen
 
@@ -28,5 +29,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 
 - Alle Texte auf **Deutsch** (Siezen: „Sie")
 - C#-Code soll klar und lesbar sein – keine cleveren Shortcuts, keine fortgeschrittenen Features ohne expliziten Grund
+- **Bezeichner** (Variablen, Methoden, Klassen) auf **Englisch**, **Kommentare** auf **Deutsch**
+- Ordner- und Dateinamen in C#-Projekten pragmatisch: Einführungspakete (wo Namen Lernkonzepte bezeichnen) auf Deutsch, ab OOP-Paketen englisch
 - Aufgaben sollen schrittweise aufgebaut sein und auf ingenieurwissenschaftliche Anwendungsfälle eingehen, wo sinnvoll
 - Musterlösungen in `projekt-loesung/` sollen dem Kenntnisstand der Studierenden entsprechen

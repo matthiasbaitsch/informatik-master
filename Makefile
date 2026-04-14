@@ -6,6 +6,13 @@ render: prepare-render
 	quarto render lernpfad/aufgaben -t html
 	quarto render lernpfad/aufgaben -t typst
 
+copy-templates:
+	for f in bausteine/*/aufgaben/projekt*; do \
+		package=`echo $$f | cut -d'/' -f2 | sed 's/^[0-9]*-//'`; \
+		cp bausteine/00-templates/.editorconfig $$f; \
+		cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \
+	done
+
 clean:
 	rm -rf lernpfad/*/c
 	rm -rf __output

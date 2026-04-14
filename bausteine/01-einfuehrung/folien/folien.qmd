@@ -93,7 +93,7 @@ $\rightarrow$ OOP hilft, komplexe Softwaresysteme handhabbar zu halten
 - Python: Toll für kleine Programme, aber für größere Softwareprojekte u.A. wegen dynamischer Typisierung schwierig
 - Java: Gute Sprache für den Einstieg in OOP, aber so gut wie keine Anwendungen im Bauingenieurwesen
 - Swift: Moderne und klar strukturierte Sprache, aber vor allem für Apple
-- C#: Weit verbreitet in Microsoft Welt und Anbindung an Programme wie Revit (BIM), Rhino (3D-Modellierung) und Unity (Virtual Reality), etwas komplexer
+- C#: Weit verbreitet in Microsoft-Welt und Anbindung an Programme wie Sofistik/RFEM/Tekla (FEM), Revit (BIM), Rhino (3D-Modellierung) und Unity (Virtual Reality), etwas komplexer
 
 Anwendungsmöglichkeiten im Bauingenieurwesen sprechen für C#. Kenntnisse sind auf andere Programmiersprachen übertragbar.
 

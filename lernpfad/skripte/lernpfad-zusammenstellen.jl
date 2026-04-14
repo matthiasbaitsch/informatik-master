@@ -52,7 +52,7 @@ function do_copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_
     text *= "\n"
     for f = filter(f -> endswith(f, ".qmd"), readdir(from_folder, join=true))
         text *= read(f, String)
-        text *= "\n"
+        text *= "\n\n"
     end
     text = substitute_text(text, make_dict(bb))
     write(to_file, text)
@@ -112,7 +112,12 @@ components = [
     (make_assignments, "aufgaben")
 ]
 
-paths = collect(readdir(bausteine_folder, join=true))
+# paths = collect(readdir(bausteine_folder, join=true))
+paths = filter(
+    d -> !occursin(r"\.DS_Store|00-templates", d),
+    readdir(bausteine_folder, join=true)
+)
+
 for path = paths
     bb = BuildingBlock(path)
     for (func, folder) = components

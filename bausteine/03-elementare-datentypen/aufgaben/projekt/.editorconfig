@@ -11,15 +11,28 @@ dotnet_diagnostic.IDE0003.severity = none
 dotnet_diagnostic.IDE0009.severity = warning
 dotnet_diagnostic.IDE0017.severity = none
 dotnet_diagnostic.IDE0044.severity = none
+dotnet_diagnostic.IDE0059.severity = none
 dotnet_diagnostic.IDE0066.severity = none
 dotnet_diagnostic.IDE0090.severity = none
 dotnet_diagnostic.IDE0130.severity = none
 dotnet_diagnostic.IDE0290.severity = none
 
-# Use this.
+# Use this in classes
 dotnet_style_qualification_for_field = true
 dotnet_style_qualification_for_method = true
 dotnet_style_qualification_for_property = true
+
+# Variables: cameCase
+dotnet_naming_rule.variables_are_camel_case.severity = warning
+dotnet_naming_rule.variables_are_camel_case.symbols = local_symbol
+dotnet_naming_rule.variables_are_camel_case.style = camel_case_style
+dotnet_naming_symbols.local_symbol.applicable_kinds = local
+
+# Parameters: camelCase
+dotnet_naming_rule.parameters_are_camel_case.severity = warning
+dotnet_naming_rule.parameters_are_camel_case.symbols = parameter_symbol
+dotnet_naming_rule.parameters_are_camel_case.style = camel_case_style
+dotnet_naming_symbols.parameter_symbol.applicable_kinds = parameter
 
 # Private static readonly fields: PascalCase (more specific rule must come first)
 dotnet_naming_rule.private_static_readonly_pascal_case.severity = warning
@@ -35,18 +48,6 @@ dotnet_naming_rule.private_fields_camel_case.symbols = private_fields
 dotnet_naming_rule.private_fields_camel_case.style = camel_case_style
 dotnet_naming_symbols.private_fields.applicable_kinds = field
 dotnet_naming_symbols.private_fields.applicable_accessibilities = private
-
-# For variables
-dotnet_naming_rule.variables_are_camel_case.severity = warning
-dotnet_naming_symbols.local_symbol.applicable_kinds = local
-dotnet_naming_rule.variables_are_camel_case.symbols = local_symbol
-dotnet_naming_rule.variables_are_camel_case.style = camel_case_style
-
-# For parameters
-dotnet_naming_rule.parameters_are_camel_case.severity = warning
-dotnet_naming_symbols.parameter_symbol.applicable_kinds = parameter
-dotnet_naming_rule.parameters_are_camel_case.symbols = parameter_symbol
-dotnet_naming_rule.parameters_are_camel_case.style = camel_case_style
 
 # General
 dotnet_naming_style.pascal_case_style.capitalization = pascal_case

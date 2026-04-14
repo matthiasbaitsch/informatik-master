@@ -1,6 +1,0 @@
-::: {#exr-beispielprogramm}
-
-## Beispielprogramm
-
-XXXX
-:::

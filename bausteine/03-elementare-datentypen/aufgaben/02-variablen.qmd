@@ -1,0 +1,77 @@
+::: {#exr-variablen}
+
+## Variablen verwenden
+
+Öffnen Sie die Datei `01-variablen/Variablen.cs` im Projekt und arbeiten Sie die folgenden Schritte der Reihe nach ab.
+
+1. Text ausgeben: Fügen Sie die folgende Zeile ein.
+
+    ```csharp
+    Console.WriteLine("Good morning Bochum!");
+    ```
+
+    Starten Sie das Programm und prüfen Sie, dass es ohne Fehler läuft.
+
+1. Ausgabebereich löschen: Fügen Sie ganz am Anfang der Datei folgende Anweisung ein.
+
+    ```csharp
+    Console.Clear();
+    ```
+
+    Was ändert sich?
+
+1. Variablen deklarieren: Deklarieren Sie drei Variablen unterschiedlicher Datentypen. Die erste wird zunächst nur deklariert, die anderen beiden werden direkt mit einem Wert belegt:
+
+    ```csharp
+    // Variablen deklarieren
+    int count;
+    double baseLength = 1.5;
+    string greetingToTheWorld = "Hello, World!";
+    ```
+
+    Was denken Sie, wofür eignen sich `int`, `double` und `string`?
+
+1. Variablen ändern: Weisen Sie den Variablen neue Werte zu.
+
+    ```csharp
+    // Werte zuweisen
+    count = 2;
+    count = 3;
+    baseLength = 0.33;
+    ```
+
+    Was passiert mit dem alten Wert, wenn Sie einer Variablen einen neuen Wert zuweisen? Welche Anweisung könnte man weglassen?
+
+1. Variablen ausgeben: Geben Sie den aktuellen Wert von `count` aus:
+
+    ```csharp
+    // Variablen ausgeben
+    Console.WriteLine(count);
+    ```
+
+1. Variablen mit Text ausgeben: Ausgaben sind lesbarer, wenn man Text und Variablenwerte kombiniert. Stellen Sie dazu dem Anführungszeichen ein `$` voran und schließen Sie die Variable in `{}` ein:
+
+    ```csharp
+    Console.WriteLine($"             count: {count}");
+    Console.WriteLine($"        baseLength: {baseLength}");
+    Console.WriteLine($"greetingToTheWorld: {greetingToTheWorld}");
+    ```
+
+    Starten Sie das Programm. Welche Werte werden ausgegeben? Stimmt das mit Ihren Erwartungen überein?
+
+1. Zuweisungen ausprobieren: Nicht alle Zuweisungen sind möglich. Fügen Sie folgende Zeilen ein und kommentieren Sie anschließend jene aus, die einen Fehler erzeugen:
+
+    ```csharp
+    // Zuweisungen ausprobieren
+    baseLength = count;
+    baseLength = "0.66";
+    count = 177;
+    count = 0.33;
+    greeting = 1999;
+    ```
+
+    Wo liegt jeweils das Problem?
+
+1. Variablen umbenennen: Benennen Sie die Variable `count` um in `number`. Setzen Sie dazu den Cursor in die Variable (wo ist egal) und drücken Sie die Taste `F2`.
+
+:::
