@@ -90,6 +90,7 @@ function make_assignments(bb::BuildingBlock, path_input, path_output)
     h = """
     ---
     title: Aufgaben zum Paket \"\${title}\"
+    engine: markdown
     ---
     """
     do_copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
