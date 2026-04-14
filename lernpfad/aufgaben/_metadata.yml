@@ -6,4 +6,4 @@ number-sections: true
 format: 
   html: default
   typst:
-    mainfont: "Arial"
+    mainfont: "sans-serif"
