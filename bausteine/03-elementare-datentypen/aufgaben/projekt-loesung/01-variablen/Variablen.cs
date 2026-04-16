@@ -2,7 +2,7 @@
 Console.Clear();
 
 // So wird Text ausgegeben
-Console.WriteLine("Guten Morgen Bochum!");
+Console.WriteLine("Guten Morgen, Bochum!");
 
 // Variablen werden mit dem Datentyp deklariert und bei Bedarf 
 // gleich mit einem Wert belegt
@@ -24,8 +24,8 @@ count = 177;
 // greeting = 1999;
 
 // Variablen kann man ausgeben
-Console.WriteLine(count);
+Console.WriteLine(greetingToTheWorld);
 
 // Schöner ist es mit etwas Text
-Console.WriteLine($"m: {count}");
-Console.WriteLine($"x: {baseLength} und s: {greetingToTheWorld}");
+Console.WriteLine($"count: {count}");
+Console.WriteLine($"baseLength: {baseLength}");

@@ -1,4 +1,0 @@
-Bevor Sie mit den Aufgaben loslegen:
-
-- Die [Zip-Datei](${slug}.zip) herunterladen und in den Ordner 'projekte' entpacken.
-- Starten Sie mit einem Doppelklick auf die Datei `installation.code-workspace` die Entwicklungsumgebung Visual Studio Code.

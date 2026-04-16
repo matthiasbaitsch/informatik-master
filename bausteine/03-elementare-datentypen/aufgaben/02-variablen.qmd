@@ -7,7 +7,7 @@
 1. Text ausgeben: Fügen Sie die folgende Zeile ein.
 
     ```csharp
-    Console.WriteLine("Good morning Bochum!");
+    Console.WriteLine("Guten Morgen, Bochum!");
     ```
 
     Starten Sie das Programm und prüfen Sie, dass es ohne Fehler läuft.
@@ -42,19 +42,18 @@
 
     Was passiert mit dem alten Wert, wenn Sie einer Variablen einen neuen Wert zuweisen? Welche Anweisung könnte man weglassen?
 
-1. Variablen ausgeben: Geben Sie den aktuellen Wert von `count` aus:
+1. Variablen ausgeben: Geben Sie den aktuellen Wert von `greetingToTheWorld` aus:
 
     ```csharp
     // Variablen ausgeben
-    Console.WriteLine(count);
+    Console.WriteLine(greetingToTheWorld);
     ```
 
 1. Variablen mit Text ausgeben: Ausgaben sind lesbarer, wenn man Text und Variablenwerte kombiniert. Stellen Sie dazu dem Anführungszeichen ein `$` voran und schließen Sie die Variable in `{}` ein:
 
     ```csharp
-    Console.WriteLine($"             count: {count}");
-    Console.WriteLine($"        baseLength: {baseLength}");
-    Console.WriteLine($"greetingToTheWorld: {greetingToTheWorld}");
+    Console.WriteLine($"count: {count}");
+    Console.WriteLine($"baseLength: {baseLength}");
     ```
 
     Starten Sie das Programm. Welche Werte werden ausgegeben? Stimmt das mit Ihren Erwartungen überein?
