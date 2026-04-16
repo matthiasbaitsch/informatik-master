@@ -1,4 +1,11 @@
 <Solution>
-  <Project Path="01-variablen/01-variablen.csproj" />
-  <Project Path="02-datentypen/02-datentypen.csproj" />
+  <Folder Name="/01-datentypen/">
+    <Project Path="01-datentypen/datentypen.csproj" />
+  </Folder>
+  <Folder Name="/02-rechnen/">
+    <Project Path="02-rechnen/rechnen.csproj" />
+  </Folder>
+  <Folder Name="/03-ausgabe/">
+    <Project Path="03-ausgabe/ausgabe.csproj" />
+  </Folder>
 </Solution>

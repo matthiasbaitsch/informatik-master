@@ -1,8 +1,8 @@
-## Programmiersprachen
+## Arten von Programmiersprachen
 
 :::: columns
 ::: column
-Dynamisch typisiert – Python
+### Dynamisch typisiert – Python
 
 ``` python
 # Kein Typ nötig
@@ -16,7 +16,7 @@ length = "Fünf Meter"     # Erlaubt!
 ```
 :::
 ::: column
-Statisch typisiert – C#
+### Statisch typisiert – C\#
 
 ``` csharp
 // Typ muss angegeben werden
@@ -31,7 +31,13 @@ length = "Fünf Meter";    // Fehler!
 :::
 ::::
 
-Viele Fehler werden in C# bereits **vor dem Programmstart** erkannt
+### Vorteile statisch typisierter Sprachen
+
+- Viele Fehler können vor dem Programmstart erkannt werden
+- Bessere Unterstützung beim Programmieren in Entwicklungsumgebung
+  - Auto-Vervollständigung
+  - Umbenennen von Variablen und Methoden mit F2
+- Wichtig vor allem bei größeren Projekten (nicht für 50 Zeilen Python)
 
 ## Beispielprogramm
 
@@ -44,27 +50,31 @@ count = 2;
 count = 3;
 baseLength = 0.33;
 
-baseLength = count;    // OK     - double = int geht (kein Informationsverlust)
-baseLength = "0.66cm"; // Fehler - Zeichenkette ist keine Zahl
+baseLength = count;           // OK     - double = int geht (kein Informationsverlust)
+💥 baseLength = "0.66cm";     // Fehler - Zeichenkette ist keine Zahl
 count = 177;
-count = 0.33;          // Fehler - int = double geht nicht (Nachkommastellen)
-greeting = 1999;       // Fehler - Zahl ist keine Zeichenkette
+💥 count = 0.33;              // Fehler - int = double geht nicht (Nachkommastellen)
+💥 greetingToTheWorld = 1999; // Fehler - Zahl ist keine Zeichenkette
 
 Console.WriteLine(greetingToTheWorld);
 Console.WriteLine($"count: {count}");
 Console.WriteLine($"baseLength: {baseLength}");
 ```
 
-## Grundsätzlich
+### Grundsätzlich
+
+[]{.up40}
 
 - Anweisungen mit Semikolon abschließen
-- Programm wird Anweisung für Anweisung von oben nach unten abgearbeitet
+- Ausführung Anweisung für Anweisung von oben nach unten
+
+# Variablen und Datentypen
 
 ## Variablen 1/2
 
 []{.down20}
 
-### Vorstellung
+### Anschauliche Sicht
 
 ![](bilder/variablen-schachteln.svg)
 
@@ -80,26 +90,44 @@ Console.WriteLine($"baseLength: {baseLength}");
 
 ## Variablen 2/2
 
-- Deklaration Variable mit Datentyp
+Deklaration Variable mit Datentyp
 
-  ``` csharp
-  datentyp name;
-  ```
+``` csharp
+datentyp name;
+```
 
-- Zuweisung ändert Wert (Datentypen müssen passen)
+Zuweisung ändert Wert (Datentypen müssen passen)
 
-  ``` csharp
-  name = wert1;
-  name = wert2;
-  ```
+``` csharp
+name = wert1;
+name = wert2;
+```
 
-- Deklaration und Zuweisung in einem Schritt
+Deklaration und Zuweisung in einem Schritt
 
-  ``` csharp
-  datentyp name = wert;
-  ```
+``` csharp
+datentyp name = wert;
+```
+
+### Beachten Sie
+
+- Variablen müssen vor der ersten Verwendung deklariert werden
+- Deklaration darf nur einmal erfolgen
+
+## Namen von Variablen
+
+![https://martinfowler.com/bliki/TwoHardThings.html](bilder/variablen-namen.png){width="100%"}
+
+- Erlaubte Zeichen: 'A-Z' 'a-z' '0-9' '\_'
+- Erster Buchstabe klein, Großbuchstaben bei neuem Wort (camelCase)
+  - 'Date of birth' wird zu `dateOfBirth`
+  - 'Page title' wird zu `pageTitle`
+- Ziel: Name soll Bedeutung der Variablen deutlich machen
+- Visual Studio Code: Variablen umbenennen mit `F2`
 
 ## Datentypen (Auswahl)
+
+[]{.down20}
 
 | Typ | Beschreibung | Größe | Wertemenge | Beispiel |
 |---------------|---------------|---------------|---------------|---------------|
@@ -113,23 +141,18 @@ Console.WriteLine($"baseLength: {baseLength}");
 
 : {tbl-colwidths="[10, 20, 15, 30, 25]"}
 
-Anmerkungen
+[]{.down20}
 
-- Typ `string` ist ein Sonderfall (für uns unwichtig)
+### Der Vollständigkeit halber
+
+- Datentyp `string` ist ein Sonderfall (später)
 - Eigentlich reicht 1 Bit für `bool`, aber Byte kleinste adressierbare Einheit
 
-## Namen von Variablen
-
-![https://martinfowler.com/bliki/TwoHardThings.html](bilder/variablen-namen.png){width="100%"}
-
-- Erlaubte Zeichen: 'A-Z' 'a-z' '0-9' '\_'
-- Erster Buchstabe klein, Großbuchstaben bei neuem Wort (camelCase)
-  - 'Date of birth' wird zu `dateOfBirth`
-  - 'Page title' wird zu `pageTitle`
-- Ziel: Name soll Bedeutung der Variablen deutlich machen
-- VS Code: Namen einfach später umbenennen mit `F2`
+# Operatoren und mathematische Funktionen
 
 ## Operatoren `+, -, *, /, %`
+
+[]{.up30}
 
 :::: columns
 ::: column
@@ -139,15 +162,18 @@ double b = 0.2;
 double c = a + b;
 Console.WriteLine($"c: {c}");
 ```
+[]{.up20}
 ``` raw
 c: 0,30000000000000004
 ```
+[]{.up20}
 ``` csharp
-  int a = 9;
-  int b = 4;
-  int c = a / b;
+int a = 9;
+int b = 4;
+int c = a / b;
 Console.WriteLine($"c: {c}");
 ```
+[]{.up20}
 ``` raw
 c: 2
 ```
@@ -159,28 +185,32 @@ int b = 5;
 int c = a % b;
 Console.WriteLine($"c: {c}");
 ```
+[]{.up20}
 ``` raw
 c: 4
 ```
+[]{.up20}
 ``` csharp
 string a = "Bochum";
 string b = "ich komm' aus dir";
 string c = a + ", " + b + " - " + 4630;
 Console.WriteLine($"c: {c}");
 ```
+[]{.up20}
 ``` raw
 c: Bochum, ich komm' aus dir - 4630
 ```
 :::
 ::::
 
-[]{.down20}
+[]{.down10}
+[]{.up10}
 
-### Was ein Operator bewirkt, hängt von Datentypen ab
+### Wirkung von Operator abhängig von Datentyp
 
-- Übliche Bedeutung für `double`, aber `double` ist nicht $\mathbb{R}$
-- Integer-Division für `int / int` (Nochkommastellen fallen weg)
-- Modulo-Operator `%`: Rest bei ganzzahliger Division
+- Übliche Bedeutung für `double` (aber `double` ist nicht $\mathbb{R}$)
+- Integer-Division für `int / int` (Nachkommastellen fallen weg)
+- Rest bei ganzzahliger Division mit Modulo-Operator `%`
 - Zeichenketten verbinden mit `+`
 
 ## Gleitkommazahlen (IEEE 754 - Standard) 1/2
@@ -204,10 +234,8 @@ c: Bochum, ich komm' aus dir - 4630
   - Vorzeichen (1 Bit)
   - Die Position des Dezimalpunkts (11 Bit, Exponent)
   - Rund 15 Stellen (52 Bit, Mantisse)
-- Zahlen werden mit Basis zwei gespeichert (Binärformat)
-- Konsequenzen
+- Es gibt nur $2^{64}$ verschiedene Zahlen und nicht unendlich viele
   - Reelle Zahlen wie $1 / 3$ oder $\pi$ werden nur approximiert
-  - Auch Dezimalzahlen wie $0.3$ haben keine exakte Darstellung
   - Rundungsfehler
 
 ## Gleitkommazahlen (IEEE 754 - Standard) 2/2
@@ -229,12 +257,36 @@ c: Bochum, ich komm' aus dir - 4630
 
 - Gleitkommazahl (Floating Point Number): Dezimalpunkt wandert
 - IEEE 754 ist de-Facto-Standard in (fast) allen Programmiersprachen
-  - Also ergibt `0.1 + 0.2` auch in Python `0,30000000000000004`
+  - Auch in Python ergibt `0.1 + 0.2` den Wert `0,30000000000000004`
 - Operationen direkt im Prozessor implementiert und sehr schnell
 - Sonderfall: Systeme für symbolische Mathematik wie Mathematica
 
+## Mathematische Funktionen
 
-## Ausgabe
+[]{.down20}
+
+``` csharp
+using static System.Math;
+
+double a = Sqrt(2.0);          // Wurzel:            1,4142135623730951
+double b = Pow(2.0, 10.0);     // Potenz:            1024
+double c = Abs(-3.7);          // Betrag:            3,7
+double d = Sin(PI / 6);        // Sinus:             0,5
+double e = Cos(0.0);           // Kosinus:           1
+double f = Tan(PI / 4);        // Tangens:           1
+double g = Log(E);             // Nat. Logarithmus:  1
+double h = Log10(100.0);       // Log. Basis 10:     2
+double i = Round(3.567, 2);    // Runden:            3,57
+double j = Min(3.0, 7.0);      // Minimum:           3
+double k = Max(3.0, 7.0);      // Maximum:           7
+```
+
+- Konstanten: `PI` = 3,14159…, `E` = 2,71828…
+- Vollständige Liste bei [Microsoft](https://learn.microsoft.com/de-de/dotnet/api/system.math)
+
+# Ausgabe
+
+## Dinge auf der Konsole ausgeben
 
 Nur Text
 
@@ -267,21 +319,40 @@ Ein drittel ist etwa 0,3333333333333333
 
 ## Interpolation von Zeichenketten
 
+### Allgemein
+
+:::: {.columns}
+::: {.column}
+| Möglichkeiten |
+|-|
+| `{var}` |
+| `{var,breite}` |
+| `{var:formatString}` |
+| `{var,breite:formatString}` |
+
+:::
+::: {.column}
+| Weitere Informationen |
+|-|
+| [Interpolation](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) |
+| [Format-Strings](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings) |
+:::
+::::
+
+### Beispiele
+
 | Format | Bedeutung | Beispiel |
 |-|-|-|
 | `{var}` | Standardausgabe | `12345,6789` |
+| `{var,15}` | Breite 15, rechtsbündig | `·····12345,6789` |
+| `{var,-15}` | Breite 15, linksbündig | `12345,6789·····` |
 | `{var:0.00}` | 2 Nachkommastellen | `12345,68` |
-| `{var,15}` | Feldbreite 15, rechtsbündig | `·····12345,6789` |
-| `{var,-15}` | Feldbreite 15, linksbündig | `12345,6789·····` |
-| `{var,15:0.0}` | Feldbreite 12, 1 Nachkommastellen | `········12345,7` |
-| `{var:plus #;minus #}` | Positiv/negativ Standard | `plus 12345,6789` |
-| `{var:+0.00;-0.00}` | Positiv/negativ mit 2 Stellen | `+12345,68` |
+| `{var:+0.00;-0.00}` | Positiv/negativ mit zwei Stellen | `+12345,68` |
+| `{var,15:0.0}` | Breite 15, eine Nachkommastelle | `········12345,7` |
 
 : {tbl-colwidths="[35,45,20]"}
 
-Nur das Nötigste, ausführliche Erklärung z.B. bei [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-
-## Ausgabe – Beispiele
+## Interpolation von Zeichenketten – Beispiele
 
 ``` csharp
 double force = 12345.6789;

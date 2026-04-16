@@ -1,5 +1,6 @@
 ﻿Console.Clear();
 
+// Dinge auf der Konsole ausgeben
 
 Console.WriteLine("Bochum, ich komm' aus dir");
 
@@ -13,7 +14,16 @@ Console.WriteLine("Bochum, ich komm' aus dir");
     Console.WriteLine($"Ein drittel ist etwa {x}");
 }
 
+// Interpolation von Zeichenketten
+{
+    double x = 12345.6789;
+
+    Console.WriteLine($"|x: { x,15:plus 0.0;minus 0.0}|");
+    Console.WriteLine($"|x: {-x,15:plus 0.0;minus 0.0}|");
+}
+
 // Beispiele Format
+
 Console.WriteLine();
 
 double force = 12345.6789;
