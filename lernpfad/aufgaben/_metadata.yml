@@ -1,8 +1,9 @@
 crossref:
   chapters: false
 
+format-links: true
 number-sections: true
-  
+
 format: 
   html: default
   typst:
