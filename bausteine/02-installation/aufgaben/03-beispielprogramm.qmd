@@ -3,7 +3,7 @@
 ## Beispielprogramm
 
 - Die [Zip-Datei](${slug}.zip) herunterladen und in den Ordner 'projekte' entpacken.
-- Starten Sie mit einem Doppelklick auf die Datei `installation.code-workspace` die Entwicklungsumgebung Visual Studio Code.
+- Starten Sie mit einem Doppelklick auf die Datei `${slug-nn}.code-workspace` die Entwicklungsumgebung Visual Studio Code.
 - Öffnen Sie in Visual Studio Code die Datei `01-beispielprogramm/Program.cs`.
 - Starten Sie das Programm mit einem Klick auf das Symbol &#9655; im Editorfenster oben rechts.
 - Viel Spaß!

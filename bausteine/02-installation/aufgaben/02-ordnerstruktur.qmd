@@ -2,9 +2,9 @@
 
 ## Ordnerstruktur
 
-Legen Sie für das Modul 'Informatik' eine geeignete Ordnerstruktur an. Eine sinnvolle Aufteilung ist zum Beispiel
+Legen Sie für das Modul 'Informatik' eine geeignete Ordnerstruktur an. Eine mögliche Aufteilung ist zum Beispiel
 
-```{raw}
+```
     informatik/
     ├── folien/
     ├── aufgaben/
