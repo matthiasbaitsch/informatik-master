@@ -258,6 +258,14 @@ $selection-bg: #26351c !default;
 }
 
 
+/* math font - maba */
+
+math {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 250;
+}
+
 /* code - maba */
 
 .reveal section img {

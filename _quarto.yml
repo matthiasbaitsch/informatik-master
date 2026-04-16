@@ -17,7 +17,8 @@ format:
     overview: true
     slide-number: "c/t"
     code-line-numbers: false
-    theme: 
+    html-math-method: mathml
+    theme:
       - style-slides.scss
       - style-titlepage.scss
   html:
