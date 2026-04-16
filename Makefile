@@ -3,8 +3,7 @@ prepare-render:
 
 render: prepare-render
 	quarto render lernpfad/folien -t revealjs
-	quarto render lernpfad/aufgaben -t html
-	quarto render lernpfad/aufgaben -t typst
+	quarto render lernpfad/aufgaben
 
 copy-templates:
 	for f in bausteine/*/aufgaben/projekt*; do \
