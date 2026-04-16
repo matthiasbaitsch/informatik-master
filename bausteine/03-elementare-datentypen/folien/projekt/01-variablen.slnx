@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="01-variablen/01-variablen.csproj" />
+  <Project Path="02-datentypen/02-datentypen.csproj" />
+</Solution>

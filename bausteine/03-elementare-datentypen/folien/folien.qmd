@@ -1,35 +1,303 @@
-## Dynamisch und statisch typisierte Programmiersprachen
+## Programmiersprachen
 
-::: {.columns}
-::: {.column}
-**Python** – dynamisch typisiert
+:::: columns
+::: column
+Dynamisch typisiert – Python
 
-```python
+``` python
 # Kein Typ nötig
-laenge = 5.0
-breite = 3
-flaeche = laenge * breite
-print(flaeche)        # 15.0
+length = 5.0
+width = 3
+area = length * width
+print(area)               # 15.0
 
 # Typ kann sich ändern
-laenge = "fünf Meter"  # erlaubt!
+length = "Fünf Meter"     # Erlaubt!
 ```
 :::
-::: {.column}
-**C#** – statisch typisiert
+::: column
+Statisch typisiert – C#
 
-```csharp
+``` csharp
 // Typ muss angegeben werden
-double laenge = 5.0;
-int    breite = 3;
-double flaeche = laenge * breite;
-Console.WriteLine(flaeche);  // 15
+double length = 5.0;
+int width = 3;
+double area = length * width;
+Console.WriteLine(area);  // 15
 
 // Typ ist festgelegt
-laenge = "fünf Meter";  // Fehler!
+length = "Fünf Meter";    // Fehler!
 ```
 :::
+::::
+
+Viele Fehler werden in C# bereits **vor dem Programmstart** erkannt
+
+## Beispielprogramm
+
+``` csharp
+int count;
+double baseLength = 1.5;
+string greetingToTheWorld = "Hallo Welt!";
+
+count = 2;
+count = 3;
+baseLength = 0.33;
+
+baseLength = count;    // OK     - double = int geht (kein Informationsverlust)
+baseLength = "0.66cm"; // Fehler - Zeichenkette ist keine Zahl
+count = 177;
+count = 0.33;          // Fehler - int = double geht nicht (Nachkommastellen)
+greeting = 1999;       // Fehler - Zahl ist keine Zeichenkette
+
+Console.WriteLine(greetingToTheWorld);
+Console.WriteLine($"count: {count}");
+Console.WriteLine($"baseLength: {baseLength}");
+```
+
+## Grundsätzlich
+
+- Anweisungen mit Semikolon abschließen
+- Programm wird Anweisung für Anweisung von oben nach unten abgearbeitet
+
+## Variablen 1/2
+
+[]{.down20}
+
+### Vorstellung
+
+![](bilder/variablen-schachteln.svg)
+
+- Variable: Schachtel für Wert mit Beschriftung (Name der Variablen)
+- Art der Schachtel je nach Inhalt (Datentyp)
+- Inhalt beliebig ändern
+
+### Technische Sicht
+
+![](bilder/variablen-speicher.svg)
+
+- Variable ist Name für einen Bereich im Speicher
+
+## Variablen 2/2
+
+- Deklaration Variable mit Datentyp
+
+  ``` csharp
+  datentyp name;
+  ```
+
+- Zuweisung ändert Wert (Datentypen müssen passen)
+
+  ``` csharp
+  name = wert1;
+  name = wert2;
+  ```
+
+- Deklaration und Zuweisung in einem Schritt
+
+  ``` csharp
+  datentyp name = wert;
+  ```
+
+## Datentypen (Auswahl)
+
+| Typ | Beschreibung | Größe | Wertemenge | Beispiel |
+|---------------|---------------|---------------|---------------|---------------|
+| `bool` | Wahrheitswert | 8 Bit | `true` oder `false` | `true` |
+| `int` | Ganze Zahl | 32 Bit | $-2^{31}$ bis $2^{31}-1$ | `4711` |
+| `long` | Ganze Zahl | 64 Bit | $-2^{63}$ bis $2^{63}-1$ | `2147483648` |
+| `float` | Gleitkommazahl | 32 Bit | ± (\~$10^{-45}$ bis \~$10^{38}$) | `3.1415927` |
+| `double` | Gleitkommazahl | 64 Bit | ± (\~$10^{-324}$ bis \~$10^{308}$) | `2.718281828459045` |
+| `char` | Zeichen | 16 Bit | Unicode-Zeichen | `'A'` oder `'✌️'` |
+| `string` | Zeichenkette | variabel | unbegrenzt | `"Hallo ✌️"` |
+
+: {tbl-colwidths="[10, 20, 15, 30, 25]"}
+
+Anmerkungen
+
+- Typ `string` ist ein Sonderfall (für uns unwichtig)
+- Eigentlich reicht 1 Bit für `bool`, aber Byte kleinste adressierbare Einheit
+
+## Namen von Variablen
+
+![https://martinfowler.com/bliki/TwoHardThings.html](bilder/variablen-namen.png){width="100%"}
+
+- Erlaubte Zeichen: 'A-Z' 'a-z' '0-9' '\_'
+- Erster Buchstabe klein, Großbuchstaben bei neuem Wort (camelCase)
+  - 'Date of birth' wird zu `dateOfBirth`
+  - 'Page title' wird zu `pageTitle`
+- Ziel: Name soll Bedeutung der Variablen deutlich machen
+- VS Code: Namen einfach später umbenennen mit `F2`
+
+## Operatoren `+, -, *, /, %`
+
+:::: columns
+::: column
+``` csharp
+double a = 0.1;
+double b = 0.2;
+double c = a + b;
+Console.WriteLine($"c: {c}");
+```
+``` raw
+c: 0,30000000000000004
+```
+``` csharp
+  int a = 9;
+  int b = 4;
+  int c = a / b;
+Console.WriteLine($"c: {c}");
+```
+``` raw
+c: 2
+```
 :::
+::: column
+``` csharp
+int a = 9;
+int b = 5;
+int c = a % b;
+Console.WriteLine($"c: {c}");
+```
+``` raw
+c: 4
+```
+``` csharp
+string a = "Bochum";
+string b = "ich komm' aus dir";
+string c = a + ", " + b + " - " + 4630;
+Console.WriteLine($"c: {c}");
+```
+``` raw
+c: Bochum, ich komm' aus dir - 4630
+```
+:::
+::::
 
-> Tippfehler und falsche Typen werden in C# bereits **vor dem Programmstart** vom Compiler erkannt.
+[]{.down20}
 
+### Was ein Operator bewirkt, hängt von Datentypen ab
+
+- Übliche Bedeutung für `double`, aber `double` ist nicht $\mathbb{R}$
+- Integer-Division für `int / int` (Nochkommastellen fallen weg)
+- Modulo-Operator `%`: Rest bei ganzzahliger Division
+- Zeichenketten verbinden mit `+`
+
+## Gleitkommazahlen (IEEE 754 - Standard) 1/2
+
+[]{.down10}
+
+``` raw
+      Dezimal: 15
+        Binär: 0 10000000010 1110000000000000000000000000000000000000000000000000
+
+      Dezimal: 3,141592653589793
+        Binär: 0 10000000000 1001001000011111101101010100010001000010110100011000        
+
+      Dezimal: 0.3
+        Binär: 0 01111111101 0011001100110011001100110011001100110011001100110011
+```
+
+[]{.down10}
+
+- Ein `double` belegt 64 Bit im Speicher, darin
+  - Vorzeichen (1 Bit)
+  - Die Position des Dezimalpunkts (11 Bit, Exponent)
+  - Rund 15 Stellen (52 Bit, Mantisse)
+- Zahlen werden mit Basis zwei gespeichert (Binärformat)
+- Konsequenzen
+  - Reelle Zahlen wie $1 / 3$ oder $\pi$ werden nur approximiert
+  - Auch Dezimalzahlen wie $0.3$ haben keine exakte Darstellung
+  - Rundungsfehler
+
+## Gleitkommazahlen (IEEE 754 - Standard) 2/2
+
+[]{.down10}
+
+``` raw
+      Dezimal: 15
+        Binär: 0 10000000010 1110000000000000000000000000000000000000000000000000
+
+      Dezimal: 3,141592653589793
+        Binär: 0 10000000000 1001001000011111101101010100010001000010110100011000        
+
+      Dezimal: 0.3
+        Binär: 0 01111111101 0011001100110011001100110011001100110011001100110011
+```
+
+[]{.down10}
+
+- Gleitkommazahl (Floating Point Number): Dezimalpunkt wandert
+- IEEE 754 ist de-Facto-Standard in (fast) allen Programmiersprachen
+  - Also ergibt `0.1 + 0.2` auch in Python `0,30000000000000004`
+- Operationen direkt im Prozessor implementiert und sehr schnell
+- Sonderfall: Systeme für symbolische Mathematik wie Mathematica
+
+
+## Ausgabe
+
+Nur Text
+
+``` csharp
+Console.WriteLine("Bochum, ich komm' aus dir");
+```
+``` raw
+Bochum, ich komm' aus dir
+```
+
+Nur Variable
+
+``` csharp
+double x = 1.0 / 3.0;
+Console.WriteLine(x);
+```
+``` raw
+0,3333333333333333
+```
+
+Mit interpolierten Zeichenketten (vorangestelltes $ und Variable in {})
+
+``` csharp
+double x = 1.0 / 3.0;
+Console.WriteLine($"Ein drittel ist etwa {x}");
+```
+``` raw
+Ein drittel ist etwa 0,3333333333333333
+```
+
+## Interpolation von Zeichenketten
+
+| Format | Bedeutung | Beispiel |
+|-|-|-|
+| `{var}` | Standardausgabe | `12345,6789` |
+| `{var:0.00}` | 2 Nachkommastellen | `12345,68` |
+| `{var,15}` | Feldbreite 15, rechtsbündig | `·····12345,6789` |
+| `{var,-15}` | Feldbreite 15, linksbündig | `12345,6789·····` |
+| `{var,15:0.0}` | Feldbreite 12, 1 Nachkommastellen | `········12345,7` |
+| `{var:plus #;minus #}` | Positiv/negativ Standard | `plus 12345,6789` |
+| `{var:+0.00;-0.00}` | Positiv/negativ mit 2 Stellen | `+12345,68` |
+
+: {tbl-colwidths="[35,45,20]"}
+
+Nur das Nötigste, ausführliche Erklärung z.B. bei [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+
+## Ausgabe – Beispiele
+
+``` csharp
+double force = 12345.6789;
+Console.WriteLine($"| Kraft: {force} N        |");
+Console.WriteLine($"| Kraft: {force:0.00} N          |");
+Console.WriteLine($"| Kraft: {force,19:0.000} |");
+Console.WriteLine($"| Kraft: {force,-19:0.0000} |");
+Console.WriteLine($"| Kraft: {-force:0.000 N (Zug)  ;0.000 N (Druck)} |");
+Console.WriteLine($"| Kraft: { force:0.000 N (Zug)  ;0.000 N (Druck)} |");
+```
+
+``` raw
+| Kraft: 12345,6789 N        |
+| Kraft: 12345,68 N          |
+| Kraft:           12345,679 |
+| Kraft: 12345,6789          |
+| Kraft: 12345,679 N (Druck) |
+| Kraft: 12345,679 N (Zug)   |
+```
