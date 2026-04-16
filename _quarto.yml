@@ -20,3 +20,6 @@ format:
     theme: 
       - style-slides.scss
       - style-titlepage.scss
+  html:
+    theme:
+      - style-assignments.scss
