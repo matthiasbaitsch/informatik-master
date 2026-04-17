@@ -97,6 +97,7 @@ function make_slides(bb::BuildingBlock, path_input, path_output)
     ---
     """
     do_copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * ".qmd"))
+    do_copy_images_folder(path_input, path_output)
 end
 
 function make_assignments(bb::BuildingBlock, path_input, path_output)
