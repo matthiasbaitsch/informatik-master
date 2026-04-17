@@ -41,7 +41,7 @@ jobs:
       - name: "Render"
         run: |
           quarto render lernpfad/folien -t revealjs
-          quarto render lernpfad/aufgaben
+          quarto render lernpfad/aufgaben -t html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,74 @@
+::: {#exr-quadratische-gleichung}
+
+## Quadratische Gleichung lösen
+
+Öffnen Sie die Datei `03-quadratische-gleichung/QuadratischeGleichung.cs` im Projekt. Das Programm soll quadratische Gleichungen der Form
+
+$$
+  ax^2 + bx + c = 0
+$$
+
+mithilfe der pq-Formel lösen. Die Koeffizienten `a`, `b` und `c` sind bereits als Variablen vorgegeben.
+
+Gehen Sie schrittweise vor, nach jedem Schritt sollten Sie testen, ob das Programm funktioniert.
+
+1. Gleichung ausgeben: Geben Sie die quadratische Gleichung mit den aktuellen Koeffizienten aus, zum Beispiel
+
+    ```
+    Quadratische Gleichung
+      4x² + (-4)x + (-24) = 0
+    ```
+
+    *Tipp:* Verwenden Sie `Console.WriteLine` mit einer interpolierten Zeichenkette (`$"..."`).
+
+1. Normalform berechnen und ausgeben: Berechnen Sie die Koeffizienten der Normalform
+
+    $$
+      x^2 + px + q = 0 \quad \text{mit} \quad p = \frac{b}{a}, \quad q = \frac{c}{a}
+    $$
+
+    und geben Sie die normalisierte Gleichung aus, zum Beispiel
+
+    ```
+    Normalisierte Gleichung
+      x² + (-1)x + (-6) = 0
+    ```
+
+1. Lösungen berechnen und ausgeben: Berechnen Sie mit der pq-Formel die Diskriminante und die beiden Lösungen
+
+    $$
+      D = \left(\frac{p}{2}\right)^2 - q, \quad x_{1,2} = -\frac{p}{2} \pm \sqrt{D}
+    $$
+
+    und geben Sie sie aus, zum Beispiel
+
+    ```
+    Diskriminante
+      D  = 7
+    Lösungen
+      x₁ = 3
+      x₂ = -2
+    ```
+
+    *Tipp:* Die Funktion `Sqrt` steht durch `using static System.Math;` am Dateianfang zur Verfügung.
+
+1. Verschiedene Fälle ausprobieren: Probieren Sie folgende Koeffizienten aus und beobachten Sie jeweils die Ausgabe:
+
+    - `a=1`, `b=-3`, `c=2`
+    - `a=1`, `b=-2`, `c=1`
+    - `a=1`, `b=0`, `c=1`
+    - `a=0`, `b=2`, `c=-4`
+
+    Wie passt die Ausgabe zu den jeweiligen mathematischen Situationen?
+
+1. Zusatz – hübsche Ausgabe: Die Ausgabe mit Klammern ist korrekt, aber ungewohnt. Schöner wäre es, das Vorzeichen direkt vor den Term zu schreiben:
+
+    ```
+    Quadratische Gleichung
+      4x² - 4x - 24 = 0
+    Normalisierte Gleichung
+      x² - 1x - 6 = 0
+    ```
+
+    Wie das geht, finden Sie in den Folien.
+:::

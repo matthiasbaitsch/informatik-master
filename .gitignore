@@ -1,11 +1,12 @@
-/.DS_Store
-/.quarto
-/99-avalonia-ui
 /__output
 /.quarto/
+/.DS_Store
+
 **/*.quarto_ipynb
+
 c
 obj
 bin
-*.old
+*old
 *Attic
+*_files

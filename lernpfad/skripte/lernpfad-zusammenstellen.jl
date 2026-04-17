@@ -59,6 +59,18 @@ function do_copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_
     write(to_file, text)
 end
 
+function do_copy_images_folder(from_folder::String, to_folder::String)
+    f1 = joinpath(from_folder, "bilder")
+    f2 = joinpath(to_folder, "bilder")
+    if isdir(f1)
+        if !isdir(f2)
+            mkdir(f2)
+        end
+        for f = readdir(f1)
+            cp(joinpath(f1, f), joinpath(f2, f))
+        end
+    end
+end
 
 function zip_folder(folder_path, output_zip_path)
     ZipWriter(output_zip_path) do w
@@ -88,12 +100,13 @@ function make_slides(bb::BuildingBlock, path_input, path_output)
 end
 
 function make_assignments(bb::BuildingBlock, path_input, path_output)
-    h = """
+    header = """
     ---
     title: Aufgaben zum Paket \"\${title}\"
     ---
     """
-    do_copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
+    do_copy_qmd(header, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
+    do_copy_images_folder(path_input, path_output)
 
     p = joinpath(path_input, "projekt")
     if isdir(p)

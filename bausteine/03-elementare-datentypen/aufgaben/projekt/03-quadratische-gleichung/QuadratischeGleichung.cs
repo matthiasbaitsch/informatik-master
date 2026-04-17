@@ -5,24 +5,12 @@ double a = 4;
 double b = -4;
 double c = -24;
 
-Console.Clear();
-Console.WriteLine("Quadratische Gleichung");
-Console.WriteLine($"  {a}x²{b: + #; - #}x{c: + #; - #} = 0");
+// TODO: Quadratische Gleichung ausgeben
 
 // Normalform
-double p = b / a;
-double q = c / a;
 
-Console.WriteLine("Normalisierte Gleichung");
-Console.WriteLine($"  x²{p: + #; - #}x{q: + #; - #} = 0");
+// TODO: Parameter p und q für Normalform berechnen und Gleichung ausgeben
 
 // Lösung
-double d = Pow(p / 2, 2) - q;
-double x1 = -p / 2 + Sqrt(d);
-double x2 = -p / 2 - Sqrt(d);
 
-Console.WriteLine("Diskriminante");
-Console.WriteLine($"  D  = {d}");
-Console.WriteLine("Lösungen");
-Console.WriteLine($"  x₁ = {x1}");
-Console.WriteLine($"  x₂ = {x2}");
+// TODO: Diskriminante berechnen und quadratische Gleichung lösen und Lösung ausgeben

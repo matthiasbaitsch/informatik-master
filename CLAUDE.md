@@ -18,12 +18,17 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 - **Format:** Quarto (`.qmd`), Deutsch
 - **Ausgabeformate:** Reveal.js-Folien und HTML-Seiten (konfiguriert in `_quarto.yml`)
 - **Struktur pro Themenpaket:** Verzeichnis `XX-thema/` mit
-  - `inhalt.qmd` – Lernziele und Übersicht des Pakets
+  - `about.yml` – Lernziele und Übersicht des Pakets
   - `folien/folien.qmd` – Vorlesungsfolien
-  - `aufgaben/aufgaben.qmd` – Aufgaben und Projektaufgaben
+  - `aufgaben/*.qmd` – Aufgaben und Projektaufgaben
   - `aufgaben/projekt/` – Aufgaben-Startcode
   - `aufgaben/projekt-loesung/` – Musterlösung
-- **Entwicklungsumgebung der Studierenden:** Visual Studio Code mit C# Dev Kit und Jupyter-Erweiterung
+- **Entwicklungsumgebung der Studierenden:** Visual Studio Code mit C# Dev Kit
+
+## Arbeitshinweise für Claude
+
+- Linter-Hinweise in `.qmd`-Dateien ignorieren – das macht der Nutzer selbst
+- Reihenfolge Beispiel vor Erklärung nicht als Problem werten – didaktisch bewusst so
 
 ## Inhaltliche Richtlinien
 
