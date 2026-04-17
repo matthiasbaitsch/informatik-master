@@ -10,7 +10,6 @@
 		"files.exclude": {
 			".editorconfig": true,
 			"*.code-workspace": true,
-			"**/*.csproj": true,
 			"**/bin": true,
 			"**/obj": true
 		},
