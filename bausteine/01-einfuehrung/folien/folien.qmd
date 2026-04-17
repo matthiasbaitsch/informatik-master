@@ -38,7 +38,7 @@ Anwendungsmöglichkeiten
 - Existierende Programme erweitern
 - Abschlussarbeiten mit Programmieranteil bearbeiten
 
-$\rightarrow$ In vielen Bereichen nützlich, auch wenn Sie nicht selber programmieren
+⟶ In vielen Bereichen nützlich, auch wenn Sie nicht selber programmieren
 
 # Kontext
 
@@ -82,7 +82,7 @@ Weil objektorientierte Programmierung (OOP) viele Vorteile hat. OOP
 - vereinfacht es zuverlässige Softwaresysteme zu entwickeln
 - erleichtert es Softwaresysteme im Team zu entwickeln
 
-$\rightarrow$ OOP hilft, komplexe Softwaresysteme handhabbar zu halten
+⟶ OOP hilft, komplexe Softwaresysteme handhabbar zu halten
 
 ## Programmiersprache für das Modul
 
