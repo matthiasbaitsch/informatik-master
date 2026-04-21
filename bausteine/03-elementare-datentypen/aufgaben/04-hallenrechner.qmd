@@ -2,7 +2,7 @@
 
 ## Rechner für Hallen in Stahlbauweise
 
-Für einfache Hallen aus Stahl stellt das Bauforum Stahl mit @bauforumstahl2016 eine Typenstatik zur Verfügung. Im Rahmen der Aufgabe soll auf dieser Grundlage für eine Stahlhalle mit vorgegebenen Kenngrößen und Querschnitten die Grundfläche und den Materialbedarf berechnet werden. Typische Querschnitte zeigt @fig-hallen.
+Für einfache Hallen aus Stahl stellt das Bauforum Stahl mit @bauforumstahl2016 eine Typenstatik zur Verfügung. Im Rahmen der Aufgabe soll auf dieser Grundlage für eine Stahlhalle mit vorgegebenen Kenngrößen und Querschnitten die Grundfläche und den Materialbedarf berechnet werden. Typische Hallenquerschnitte zeigt @fig-hallen.
 
 ![Abmessungen von Hallenquerschnitten (aus @bauforumstahl2016)](bilder/hallen.png){#fig-hallen width="70%"}
 
