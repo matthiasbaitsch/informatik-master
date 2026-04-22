@@ -172,15 +172,15 @@ paths = readdir(bausteine_folder, join=true) |>
 for path = paths
     bb = BuildingBlock(path)
     for (make_function, folder) = components
+        wiped = false
         path_input = joinpath(path, folder)
         if isdir(path_input)
             output_folder = joinpath(lernpfad_folder, folder, "c")
-
-            # Remove and create output folder
-            rm(output_folder, force=true, recursive=true)
-            mkpath(output_folder)
-
-            # Do stuff
+            if !wiped
+                rm(output_folder, force=true, recursive=true)
+                mkpath(output_folder)
+                wiped = true
+            end
             copy_files(bausteine_folder, output_folder, true)
             make_function(bb, path_input, output_folder)
         end
