@@ -1,5 +1,6 @@
 /*-- scss:defaults --*/
 
-pre, code {
-  font-family: "Cascadia Code", "Fira Code", "DejaVu Sans Mono", monospace;
+pre:not(.sourceCode) {
+    background-color: #f0f0f0;
+    padding: 0.5em;
 }

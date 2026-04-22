@@ -54,10 +54,10 @@ Gehen Sie schrittweise vor, nach jedem Schritt sollten Sie testen, ob das Progra
 
 1. Verschiedene Fälle ausprobieren: Probieren Sie folgende Koeffizienten aus und beobachten Sie jeweils die Ausgabe:
 
-    - `a=1`, `b=-3`, `c=2`
-    - `a=1`, `b=-2`, `c=1`
-    - `a=1`, `b=0`, `c=1`
-    - `a=0`, `b=2`, `c=-4`
+    - `a = 1, b = -3, c =  2`
+    - `a = 1, b = -2, c =  1`
+    - `a = 1, b =  0  c =  1`
+    - `a = 0, b =  2  c = -4`
 
     Wie passt die Ausgabe zu den jeweiligen mathematischen Situationen?
 
