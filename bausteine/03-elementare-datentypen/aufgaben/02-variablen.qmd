@@ -23,7 +23,6 @@
 1. Variablen deklarieren: Deklarieren Sie drei Variablen unterschiedlicher Datentypen. Die erste wird zunächst nur deklariert, die anderen beiden werden direkt mit einem Wert belegt:
 
     ```csharp
-    // Variablen deklarieren
     int count;
     double baseLength = 1.5;
     string greetingToTheWorld = "Hello, World!";
@@ -45,7 +44,6 @@
 1. Variablen ausgeben: Geben Sie den aktuellen Wert von `greetingToTheWorld` aus:
 
     ```csharp
-    // Variablen ausgeben
     Console.WriteLine(greetingToTheWorld);
     ```
 
@@ -61,7 +59,6 @@
 1. Zuweisungen ausprobieren: Nicht alle Zuweisungen sind möglich. Fügen Sie folgende Zeilen ein und kommentieren Sie anschließend jene aus, die einen Fehler erzeugen:
 
     ```csharp
-    // Zuweisungen ausprobieren
     baseLength = count;
     baseLength = "0.66";
     count = 177;

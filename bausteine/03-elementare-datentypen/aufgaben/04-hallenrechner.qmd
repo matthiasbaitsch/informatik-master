@@ -8,7 +8,7 @@ Für einfache Hallen aus Stahl stellt das Bauforum Stahl mit @bauforumstahl2016 
 
 Gehen Sie in den folgenden Schritten vor, in jedem Zwischenschritt sollen die jeweiligen Werte ausgegeben werden.
 
-1. Start: Öffnen Sie die Datei `04-hallenrechner/Hallenrechner.cs` im Projekt. Sie sehen dort, wie mithilfe der [ISection-Bibliothek](https://www.nuget.org/packages/ISections#readme-body-tab) Querschnittswerte von I-Profilen verwendet werden können.
+1. Start: Öffnen Sie die Datei `04-hallenrechner/Hallenrechner.cs` im Projekt. Sie sehen dort, wie mithilfe der [ISections-Bibliothek](https://www.nuget.org/packages/ISections#readme-body-tab) Querschnittswerte von I-Profilen verwendet werden können.
 
 1. Eingabewerte: Die Berechnung soll auf folgenden Eingabewerten basieren.
 

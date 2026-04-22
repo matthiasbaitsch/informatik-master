@@ -1,10 +1,12 @@
 crossref:
-  chapters: false
+  chapters: true
 
 format-links: true
-number-sections: true
 
 format: 
   html: default
   typst:
     mainfont: "Liberation Sans"
+
+bibliography: c/bibliographie.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/style.csl

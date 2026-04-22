@@ -1,12 +1,16 @@
 prepare-render:
 	cd lernpfad/skripte && julia --project lernpfad-zusammenstellen.jl
 
-render: prepare-render
+render-assignments: prepare-render
+	quarto render lernpfad/aufgaben
+
+render-slides: prepare-render
 	quarto render lernpfad/folien -t revealjs
-	quarto render lernpfad/aufgaben -t html
+
+render: render-slides render-assignments
 
 copy-templates:
-	for f in bausteine/*/aufgaben/projekt*; do \
+	for f in bausteine/*/*/projekt*; do \
 		package=`echo $$f | cut -d'/' -f2 | sed 's/^[0-9]*-//'`; \
 		cp bausteine/00-templates/.editorconfig $$f; \
 		cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \

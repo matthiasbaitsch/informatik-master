@@ -1,3 +1,4 @@
+using Mmap
 using YAML
 using ZipArchives
 
@@ -37,6 +38,7 @@ function make_dict(bb::BuildingBlock)
     )
 end
 
+
 # -------------------------------------------------------------------------------------------------
 # Helpers
 # -------------------------------------------------------------------------------------------------
@@ -48,7 +50,7 @@ function substitute_text(text::String, dict::Dict)
     return text
 end
 
-function do_copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_file::String)
+function copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_file::String)
     text = header
     text *= "\n"
     for f = filter(f -> endswith(f, ".qmd"), readdir(from_folder, join=true))
@@ -59,17 +61,31 @@ function do_copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_
     write(to_file, text)
 end
 
-function do_copy_images_folder(from_folder::String, to_folder::String)
-    f1 = joinpath(from_folder, "bilder")
-    f2 = joinpath(to_folder, "bilder")
-    if isdir(f1)
-        if !isdir(f2)
-            mkdir(f2)
-        end
-        for f = readdir(f1)
-            cp(joinpath(f1, f), joinpath(f2, f))
+function copy_files(from_folder::String, to_folder::String, allow_duplicates::Bool=false)
+    if isdir(from_folder)
+        !isdir(to_folder) && mkpath(to_folder)
+        for f = readdir(from_folder)
+            source_path = joinpath(from_folder, f)
+            target_path = joinpath(to_folder, f)
+            if isfile(source_path) && f != ".DS_Store"
+                if !isfile(target_path)
+                    cp(source_path, target_path)
+                else
+                    if allow_duplicates
+                        if mmap(open(source_path)) != mmap(open(target_path))
+                            error("Files not identical: ", source_path, " != ", target_path)
+                        end
+                    else
+                        error("Target file exists: ", target_path)
+                    end
+                end
+            end
         end
     end
+end
+
+function copy_images_folder(from_folder::String, to_folder::String)
+    copy_files(joinpath(from_folder, "bilder"), joinpath(to_folder, "bilder"))
 end
 
 function zip_folder(folder_path, output_zip_path)
@@ -85,6 +101,7 @@ function zip_folder(folder_path, output_zip_path)
     end
 end
 
+
 # -------------------------------------------------------------------------------------------------
 # Make stuff
 # -------------------------------------------------------------------------------------------------
@@ -96,24 +113,36 @@ function make_slides(bb::BuildingBlock, path_input, path_output)
     subtitle: Modul Informatik im Master Bauingenieurwesen
     ---
     """
-    do_copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * ".qmd"))
-    do_copy_images_folder(path_input, path_output)
+    copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * ".qmd"))
+    copy_images_folder(path_input, path_output)
 end
 
 function make_assignments(bb::BuildingBlock, path_input, path_output)
+
+    # Header for qmd file
     header = """
     ---
-    title: Aufgaben zum Paket \"\${title}\"
+    number-offset: $(bb.number - 1)
+    format:
+        typst:
+            include-in-header:
+                text: |
+                    #counter(heading).update($(bb.number - 1))
     ---
+    # $(bb.title) (Aufgaben)
     """
-    do_copy_qmd(header, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
-    do_copy_images_folder(path_input, path_output)
 
+    # Copy
+    copy_qmd(header, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
+    copy_images_folder(path_input, path_output)
+
+    # Zip project folder
     p = joinpath(path_input, "projekt")
     if isdir(p)
         zip_folder(p, joinpath(path_output, slug(bb) * ".zip"))
     end
 end
+
 
 # -------------------------------------------------------------------------------------------------
 # Main
@@ -127,20 +156,23 @@ components = [
     (make_assignments, "aufgaben")
 ]
 
-# paths = collect(readdir(bausteine_folder, join=true))
-paths = filter(
-    d -> !occursin(r"\.DS_Store|00-templates", d),
-    readdir(bausteine_folder, join=true)
-)
+paths = readdir(bausteine_folder, join=true) |>
+        filter(d -> isdir(d) && !occursin(r"\.DS_Store|00-templates", d))
 
 for path = paths
     bb = BuildingBlock(path)
-    for (func, folder) = components
+    for (make_function, folder) = components
         path_input = joinpath(path, folder)
         if isdir(path_input)
-            path_output = joinpath(lernpfad_folder, folder, "c")
-            !isdir(path_output) && mkpath(path_output)
-            func(bb, path_input, path_output)
+            output_folder = joinpath(lernpfad_folder, folder, "c")
+
+            # Remove and create output folder
+            rm(output_folder, force=true, recursive=true)
+            mkpath(output_folder)
+
+            # Do stuff
+            copy_files(bausteine_folder, output_folder, true)
+            make_function(bb, path_input, output_folder)
         end
     end
 end
