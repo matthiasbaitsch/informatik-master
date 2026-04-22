@@ -146,9 +146,9 @@ function make_assignments(bb::BuildingBlock, path_input, path_output)
         joinpath(path_output, slug(bb) * ".zip")
     )
     try_zip_folder(
-        joinpath(path_input, "projekt-loesung"),
-        slug(bb) * "-loesung",
-        joinpath(path_output, slug(bb) * "-loesung-$(join(rand('a':'z', 5))).zip")
+        joinpath(path_input, "projekt-musterloesung"),
+        slug(bb) * "-musterloesung",
+        joinpath(path_output, slug(bb) * "-musterloesung-$(join(rand('a':'z', 5))).zip")
     )
 end
 

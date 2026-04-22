@@ -22,7 +22,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
   - `folien/folien.qmd` – Vorlesungsfolien
   - `aufgaben/*.qmd` – Aufgaben und Projektaufgaben
   - `aufgaben/projekt/` – Aufgaben-Startcode
-  - `aufgaben/projekt-loesung/` – Musterlösung
+  - `aufgaben/projekt-musterloesung/` – Musterlösung
 - **Entwicklungsumgebung der Studierenden:** Visual Studio Code mit C# Dev Kit
 
 ## Arbeitshinweise für Claude
@@ -37,4 +37,4 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 - **Bezeichner** (Variablen, Methoden, Klassen) auf **Englisch**, **Kommentare** auf **Deutsch**
 - Ordner- und Dateinamen in C#-Projekten pragmatisch: Einführungspakete (wo Namen Lernkonzepte bezeichnen) auf Deutsch, ab OOP-Paketen englisch
 - Aufgaben sollen schrittweise aufgebaut sein und auf ingenieurwissenschaftliche Anwendungsfälle eingehen, wo sinnvoll
-- Musterlösungen in `projekt-loesung/` sollen dem Kenntnisstand der Studierenden entsprechen
+- Musterlösungen in `projekt-musterloesung/` sollen dem Kenntnisstand der Studierenden entsprechen
