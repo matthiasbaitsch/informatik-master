@@ -3,10 +3,10 @@ crossref:
 
 format-links: true
 
+resources: 
+  - "*.zip"
+
 format: 
   html: default
   typst:
     mainfont: "Liberation Sans"
-
-bibliography: c/bibliographie.bib
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/style.csl

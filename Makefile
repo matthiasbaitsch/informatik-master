@@ -12,6 +12,9 @@ render: render-slides render-assignments
 copy-templates:
 	for f in bausteine/*/*/projekt*; do \
 		package=`echo $$f | cut -d'/' -f2 | sed 's/^[0-9]*-//'`; \
+		if [[ "$$f" == *-loesung ]]; then \
+			package=$$package-loesung; \
+		fi; \
 		cp bausteine/00-templates/.editorconfig $$f; \
 		cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \
 	done

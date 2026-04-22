@@ -1,7 +1,7 @@
 using Mmap
 using YAML
+using Random
 using ZipArchives
-
 
 # -------------------------------------------------------------------------------------------------
 # Building block
@@ -88,14 +88,17 @@ function copy_images_folder(from_folder::String, to_folder::String)
     copy_files(joinpath(from_folder, "bilder"), joinpath(to_folder, "bilder"))
 end
 
-function zip_folder(folder_path, output_zip_path)
-    ZipWriter(output_zip_path) do w
-        for (root, _, files) in walkdir(folder_path)
+function try_zip_folder(folder, folder_in_zipfile, zipfile)
+    !isdir(folder) && return
+    ZipWriter(zipfile) do w
+        for (root, _, files) in walkdir(folder)
             for file in files
-                file_path = joinpath(root, file)
-                zip_path = relpath(file_path, folder_path)
-                zip_newfile(w, zip_path; compress=true)
-                write(w, read(file_path))
+                if !occursin(r"/obj\b|/bin\b", root) && file != ".DS_Store"
+                    file_path = joinpath(root, file)
+                    zip_path = joinpath(folder_in_zipfile, relpath(file_path, folder))
+                    zip_newfile(w, zip_path; compress=true)
+                    write(w, read(file_path))
+                end
             end
         end
     end
@@ -137,10 +140,16 @@ function make_assignments(bb::BuildingBlock, path_input, path_output)
     copy_images_folder(path_input, path_output)
 
     # Zip project folder
-    p = joinpath(path_input, "projekt")
-    if isdir(p)
-        zip_folder(p, joinpath(path_output, slug(bb) * ".zip"))
-    end
+    try_zip_folder(
+        joinpath(path_input, "projekt"),
+        slug(bb),
+        joinpath(path_output, slug(bb) * ".zip")
+    )
+    try_zip_folder(
+        joinpath(path_input, "projekt-loesung"),
+        slug(bb) * "-loesung",
+        joinpath(path_output, slug(bb) * "-loesung-$(join(rand('a':'z', 5))).zip")
+    )
 end
 
 
@@ -148,6 +157,7 @@ end
 # Main
 # -------------------------------------------------------------------------------------------------
 
+Random.seed!(87362)
 bausteine_folder = realpath(joinpath(@__DIR__, "../../bausteine"))
 lernpfad_folder = realpath(joinpath(@__DIR__, ".."))
 
