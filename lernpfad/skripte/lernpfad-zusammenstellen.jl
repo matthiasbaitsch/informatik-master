@@ -169,18 +169,23 @@ components = [
 paths = readdir(bausteine_folder, join=true) |>
         filter(d -> isdir(d) && !occursin(r"\.DS_Store|00-templates", d))
 
+# Clean
+for path = paths
+    bb = BuildingBlock(path)
+    for (_, folder) = components
+        output_folder = joinpath(lernpfad_folder, folder, "c")
+        rm(output_folder, force=true, recursive=true)
+        mkpath(output_folder)
+    end
+end
+
+# Make
 for path = paths
     bb = BuildingBlock(path)
     for (make_function, folder) = components
-        wiped = false
         path_input = joinpath(path, folder)
         if isdir(path_input)
             output_folder = joinpath(lernpfad_folder, folder, "c")
-            if !wiped
-                rm(output_folder, force=true, recursive=true)
-                mkpath(output_folder)
-                wiped = true
-            end
             copy_files(bausteine_folder, output_folder, true)
             make_function(bb, path_input, output_folder)
         end
