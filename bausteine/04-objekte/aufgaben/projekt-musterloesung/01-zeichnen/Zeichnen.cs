@@ -25,7 +25,7 @@ s1.Move(-20, image.Height + 20);
 s1.LineThickness = 1;
 s1.FillColor = Colors.SpringGreen;
 
-Polygon s2 = (Polygon)s1.Copy(image.Width + 40, 0);
+Polygon s2 = s1.Copy(image.Width + 40, 0);
 s2.FillColor = Colors.Orange;
 
 BoDrawApp app = new BoDrawApp();
