@@ -40,8 +40,8 @@
 
     ```csharp
     Polygon s2 = s1;
-    s2.Move(..., ...);
-    s2.FillColor = Colors.Orange;
+    s2.Move(...);
+    s2.FillColor = ...;
     ...
     app.Add(text, rectangle, image, s1, s2);
     ```
@@ -50,7 +50,7 @@
 
     Probieren Sie stattdessen 
     ```csharp
-    Polygon s2 = s1.Copy(..., ...);
+    Polygon s2 = s1.Copy(...);
     ...
     ```
 
