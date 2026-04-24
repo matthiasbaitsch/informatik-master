@@ -1,0 +1,63 @@
+::: {#exr-zeichnen}
+
+## Mit C# Zeichnen
+
+Öffnen Sie die Datei `01-zeichnen/Zeichnen.cs` im Projekt und arbeiten Sie die folgenden Schritte der Reihe nach ab.
+
+1. Programm ausführen: Führen Sie `Zeichnen.cs` aus und versuchen Sie zu verstehen, was in dem Programm passiert.
+
+1. Bild anzeigen: In dem Programm wird ein Bild erzeugt, das jedoch nicht zu sehen ist. Lesen Sie die [Dokumentation](https://matthiasbaitsch.github.io/BoDraw/api/BoDraw.IBoDraw.html#BoDraw_IBoDraw_Add_BoDraw_Shape___) zur `Add`-Methode und passen Sie den Code so an, dass das Bild vor dem grauen Hintergrund zu sehen ist.
+
+1. Darstellung anpassen: Passen Sie die Grafik so an, wie in der Abbildung dargestellt, Informationen zu den Farben finden Sie [hier](https://matthiasbaitsch.github.io/BoDraw/docs/colors.html).
+
+    ![](bilder/schritt-1.svg)
+
+1. Verzierung anbringen: Verzieren Sie den Rahmen mit einem kleinen Stern.
+
+    ![](bilder/schritt-2.svg)
+
+    Sie können den Stern mit
+
+    ```csharp
+    Polygon s1 = new Polygon();
+    s1.AddPoint(6, 0);
+    s1.AddPoint(1, 1);
+    s1.AddPoint(1, 5);
+    s1.AddPoint(-1, 1);
+    s1.AddPoint(-4, 1);
+    s1.AddPoint(-1, -1);
+    s1.AddPoint(-1, -6);
+    s1.AddPoint(1, -1);
+    ```
+
+    erzeugen. Verwenden Sie `s1.Move(dx, dy)` und `s1.Scale(a)` um Position und Größe anzupassen. Vergessen Sie nicht, den Stern der Grafik hinzuzufügen.
+
+1. Noch eine Verzierung: Bringen Sie eine weitere Verzierung an.
+
+    ![](bilder/schritt-3.svg)
+
+    Liefert der naheliegende Ansatz
+
+    ```csharp
+    Polygon s2 = s1;
+    s1.Move(..., ...);
+    s1.FillColor = Colors.Orange;
+    ...
+    app.Add(text, rectangle, image, s1, s2);
+    ```
+
+    das gewünschte Ergebnis? Können Sie sich erklären, was Sie sehen?
+
+    Probieren Sie stattdessen 
+    ```csharp
+    Polygon s2 = s1.Copy(..., ...);
+    ...
+    ```
+
+1. Lieblingsphoto: Fügen Sie statt dem Logo der Hochschule Bochum ihr Lieblingsfoto ein und passen Sie die Beschriftung an.
+
+    ![](bilder/schritt-4.svg)    
+
+    Sie müssen ihr Photo dazu an in den `assets`-Ordner ihres Projekts kopieren.
+
+:::

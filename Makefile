@@ -15,6 +15,9 @@ copy-templates:
 		if [[ "$$f" == *-musterloesung ]]; then \
 			package=$$package-musterloesung; \
 		fi; \
+		if [[ "$$f" == *-schritte ]]; then \
+			package=$$package-schritte; \
+		fi; \
 		cp bausteine/00-templates/.editorconfig $$f; \
 		cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \
 	done

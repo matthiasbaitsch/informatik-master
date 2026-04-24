@@ -1,0 +1,10 @@
+Sie verwenden in diesem Abschnitt (und im weiteren Verlauf der Vorlesung) das Paket `BoDraw` mit dem Sie aus C# heraus Zeichnungen erstellen können. Hierzu:
+
+- Das Paket wird eigens für das Modul Informatik entwickelt
+- Es steckt noch in den Kinderschuhen
+- [Dokumentation](https://matthiasbaitsch.github.io/BoDraw/docs/index.html)
+
+Bevor Sie mit den Aufgaben loslegen:
+
+- Die [Zip-Datei](${slug}.zip) herunterladen und in den Ordner 'projekte' entpacken.
+- Starten Sie mit einem Doppelklick auf die Datei `${slug-nn}.code-workspace` die Entwicklungsumgebung Visual Studio Code.

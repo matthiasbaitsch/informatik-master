@@ -1,0 +1,7 @@
+::: {#exr-referenzvariablen}
+
+## Beispiel zu Referenzvariablen
+
+TODO
+
+:::

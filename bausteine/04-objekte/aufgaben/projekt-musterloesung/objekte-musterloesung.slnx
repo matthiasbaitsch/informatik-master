@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/01-zeichnen/">
+    <Project Path="01-zeichnen/zeichnen.csproj" />
+  </Folder>
+</Solution>

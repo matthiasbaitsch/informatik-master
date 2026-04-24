@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/01-zeichnen/">
+    <Project Path="01-zeichnen/zeichnen.csproj" />
+  </Folder>
+  <Folder Name="/02-referenzvariablen/">
+    <Project Path="02-referenzvariablen/referenzvariablen.csproj" />
+  </Folder>
+  <Folder Name="/03-hallenrechner-2/">
+    <Project Path="03-hallenrechner-2/hallenrechner-2.csproj" />
+  </Folder>
+</Solution>

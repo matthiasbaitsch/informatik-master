@@ -80,7 +80,7 @@ Console.WriteLine($"baseLength: {baseLength}");
 
 - Variable: Schachtel für Wert mit Beschriftung (Name der Variablen)
 - Art der Schachtel je nach Inhalt (Datentyp)
-- Inhalt beliebig ändern
+- Inhalt kann man beliebig ändern
 
 ### Technische Sicht
 
