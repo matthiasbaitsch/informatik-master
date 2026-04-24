@@ -40,8 +40,8 @@
 
     ```csharp
     Polygon s2 = s1;
-    s1.Move(..., ...);
-    s1.FillColor = Colors.Orange;
+    s2.Move(..., ...);
+    s2.FillColor = Colors.Orange;
     ...
     app.Add(text, rectangle, image, s1, s2);
     ```
