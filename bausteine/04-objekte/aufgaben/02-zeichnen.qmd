@@ -49,6 +49,7 @@
     das gewünschte Ergebnis? Können Sie sich erklären, was Sie sehen?
 
     Probieren Sie stattdessen 
+    
     ```csharp
     Polygon s2 = s1.Copy(...);
     ...
