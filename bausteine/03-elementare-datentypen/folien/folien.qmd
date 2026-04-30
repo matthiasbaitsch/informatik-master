@@ -4,7 +4,7 @@
 ::: column
 ### Dynamisch typisiert – Python
 
-``` python
+```python
 # Kein Typ nötig
 length = 5.0
 width = 3
@@ -18,7 +18,7 @@ length = "Fünf Meter"     # Erlaubt!
 ::: column
 ### Statisch typisiert – C\#
 
-``` csharp
+```csharp
 // Typ muss angegeben werden
 double length = 5.0;
 int width = 3;
@@ -41,7 +41,7 @@ length = "Fünf Meter";    // Fehler!
 
 ## Beispielprogramm
 
-``` csharp
+```csharp
 int count;
 double baseLength = 1.5;
 string greetingToTheWorld = "Hallo Welt!";
@@ -92,20 +92,20 @@ Console.WriteLine($"baseLength: {baseLength}");
 
 Deklaration Variable mit Datentyp
 
-``` csharp
+```csharp
 datentyp name;
 ```
 
 Zuweisung ändert Wert (Datentypen müssen passen)
 
-``` csharp
+```csharp
 name = wert1;
 name = wert2;
 ```
 
 Deklaration und Zuweisung in einem Schritt
 
-``` csharp
+```csharp
 datentyp name = wert;
 ```
 
@@ -156,48 +156,48 @@ datentyp name = wert;
 
 :::: columns
 ::: column
-``` csharp
+```csharp
 double a = 0.1;
 double b = 0.2;
 double c = a + b;
 Console.WriteLine($"c: {c}");
 ```
 []{.up20}
-``` raw
+```raw
 c: 0,30000000000000004
 ```
 []{.up20}
-``` csharp
+```csharp
 int a = 9;
 int b = 4;
 int c = a / b;
 Console.WriteLine($"c: {c}");
 ```
 []{.up20}
-``` raw
+```raw
 c: 2
 ```
 :::
 ::: column
-``` csharp
+```csharp
 int a = 9;
 int b = 5;
 int c = a % b;
 Console.WriteLine($"c: {c}");
 ```
 []{.up20}
-``` raw
+```raw
 c: 4
 ```
 []{.up20}
-``` csharp
+```csharp
 string a = "Bochum";
 string b = "ich komm' aus dir";
 string c = a + ", " + b + " - " + 4630;
 Console.WriteLine($"c: {c}");
 ```
 []{.up20}
-``` raw
+```raw
 c: Bochum, ich komm' aus dir - 4630
 ```
 :::
@@ -217,7 +217,7 @@ c: Bochum, ich komm' aus dir - 4630
 
 []{.down10}
 
-``` raw
+```raw
       Dezimal: 15
         Binär: 0 10000000010 1110000000000000000000000000000000000000000000000000
 
@@ -242,7 +242,7 @@ c: Bochum, ich komm' aus dir - 4630
 
 []{.down10}
 
-``` raw
+```raw
       Dezimal: 15
         Binär: 0 10000000010 1110000000000000000000000000000000000000000000000000
 
@@ -265,7 +265,7 @@ c: Bochum, ich komm' aus dir - 4630
 
 []{.down20}
 
-``` csharp
+```csharp
 using static System.Math;
 
 double a = Sqrt(2.0);          // Wurzel:            1,4142135623730951
@@ -290,30 +290,30 @@ double k = Max(3.0, 7.0);      // Maximum:           7
 
 Nur Text
 
-``` csharp
+```csharp
 Console.WriteLine("Bochum, ich komm' aus dir");
 ```
-``` raw
+```raw
 Bochum, ich komm' aus dir
 ```
 
 Nur Variable
 
-``` csharp
+```csharp
 double x = 1.0 / 3.0;
 Console.WriteLine(x);
 ```
-``` raw
+```raw
 0,3333333333333333
 ```
 
 Mit interpolierten Zeichenketten (vorangestelltes $ und Variable in {})
 
-``` csharp
+```csharp
 double x = 1.0 / 3.0;
 Console.WriteLine($"Ein drittel ist etwa {x}");
 ```
-``` raw
+```raw
 Ein drittel ist etwa 0,3333333333333333
 ```
 
@@ -354,7 +354,7 @@ Ein drittel ist etwa 0,3333333333333333
 
 ## Interpolation von Zeichenketten – Beispiele
 
-``` csharp
+```csharp
 double force = 12345.6789;
 Console.WriteLine($"| Kraft: {force} N        |");
 Console.WriteLine($"| Kraft: {force:0.00} N          |");
@@ -364,7 +364,7 @@ Console.WriteLine($"| Kraft: {-force:0.000 N (Zug)  ;0.000 N (Druck)} |");
 Console.WriteLine($"| Kraft: { force:0.000 N (Zug)  ;0.000 N (Druck)} |");
 ```
 
-``` raw
+```raw
 | Kraft: 12345,6789 N        |
 | Kraft: 12345,68 N          |
 | Kraft:           12345,679 |
