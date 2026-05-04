@@ -316,12 +316,18 @@ app.Add(c, r1, r2);
 app.Show();
 {b}
 :::
-::: {{.column width="41%"}}
-### Zustand des Programms
+::: {{.column width="2%"}}
+:::
+::: {{.column width="38%"}}
+### Objekte und Variablen
+::: {{.border}}
 ![](bilder/referenzvariablen-zeiger-{i}.png)
+:::
 
-### Grafik
+### Grafische Darstellung
+::: {{.border}}
 ![](bilder/referenzvariablen-zeiger-bild-{i}.png)
+:::
 :::
 :::
 \n\n\n

@@ -147,6 +147,7 @@ math {
 .reveal h1+p,
 .reveal h2+p,
 .reveal h3+p,
+.reveal h3+div,
 .reveal pre+p,
 .reveal .code-copy-outer-scaffold+p{
   margin-top: 0.6em !important;
@@ -251,6 +252,11 @@ math {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.reveal div.border {
+  border: 1px solid lightblue;
+  border-radius: 4px;
 }
 
 // UI-Komponenten

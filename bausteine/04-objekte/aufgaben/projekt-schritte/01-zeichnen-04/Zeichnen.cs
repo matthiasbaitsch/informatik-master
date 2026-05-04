@@ -22,7 +22,6 @@ s1.AddPoint(-1, -6);
 s1.AddPoint(1, -1);
 s1.Scale(3);
 s1.Move(-20, image.Height + 20);
-s1.LineThickness = 1;
 s1.FillColor = Colors.SpringGreen;
 
 Polygon s2 = s1.Copy(image.Width + 40, 0);

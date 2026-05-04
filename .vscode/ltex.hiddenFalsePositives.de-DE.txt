@@ -1,0 +1,8 @@
+{"rule":"KOMMA_ZWISCHEN_HAUPT_UND_NEBENSATZ","sentence":"^\\QNeues Objekt vom Typ \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q mit \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q erzeugen\nParameter in den runden Klammern legen Eigenschaften fest\nVariable \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q verweist auf das Objekt\nDatentyp ist die Klasse \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (aus \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q-Bibliothek)\\E$"}
+{"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q→ Eigenschaften wie normale Variablen verwenden :::\\E$"}
+{"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q::: {.fragment} → Das schauen wir uns jetzt im Detail an :::\\E$"}
+{"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q→ Wichtig sind die runden Klammern :::\\E$"}
+{"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q→ Idee: Eigenschaften wie normale Variablen verwenden :::\\E$"}
+{"rule":"DE_CASE","sentence":"^\\Q::: {.fragment}\nAllgemeines Schema\\E$"}
+{"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q→ Runde Klammern = Methode :::\\E$"}
+{"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q→ Unterschied zu Eigenschaft: Runde Klammern :::\\E$"}
