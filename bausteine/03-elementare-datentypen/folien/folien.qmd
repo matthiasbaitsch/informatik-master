@@ -63,8 +63,6 @@ Console.WriteLine($"baseLength: {baseLength}");
 
 ### Grundsätzlich
 
-[]{.up40}
-
 - Anweisungen mit Semikolon abschließen
 - Ausführung Anweisung für Anweisung von oben nach unten
 
@@ -93,20 +91,20 @@ Console.WriteLine($"baseLength: {baseLength}");
 Deklaration Variable mit Datentyp
 
 ```csharp
-datentyp name;
+datentyp variablenname;
 ```
 
 Zuweisung ändert Wert (Datentypen müssen passen)
 
 ```csharp
-name = wert1;
-name = wert2;
+variablenname = wert1;
+variablenname = wert2;
 ```
 
 Deklaration und Zuweisung in einem Schritt
 
 ```csharp
-datentyp name = wert;
+datentyp variablenname = wert;
 ```
 
 ### Beachten Sie
@@ -152,8 +150,6 @@ datentyp name = wert;
 
 ## Operatoren `+, -, *, /, %`
 
-[]{.up30}
-
 :::: columns
 ::: column
 ```csharp
@@ -162,19 +158,16 @@ double b = 0.2;
 double c = a + b;
 Console.WriteLine($"c: {c}");
 ```
-[]{.up20}
-```raw
+```output
 c: 0,30000000000000004
 ```
-[]{.up20}
 ```csharp
 int a = 9;
 int b = 4;
 int c = a / b;
 Console.WriteLine($"c: {c}");
 ```
-[]{.up20}
-```raw
+```output
 c: 2
 ```
 :::
@@ -185,26 +178,20 @@ int b = 5;
 int c = a % b;
 Console.WriteLine($"c: {c}");
 ```
-[]{.up20}
-```raw
+```output
 c: 4
 ```
-[]{.up20}
 ```csharp
 string a = "Bochum";
 string b = "ich komm' aus dir";
 string c = a + ", " + b + " - " + 4630;
 Console.WriteLine($"c: {c}");
 ```
-[]{.up20}
-```raw
+```output
 c: Bochum, ich komm' aus dir - 4630
 ```
 :::
 ::::
-
-[]{.down10}
-[]{.up10}
 
 ### Wirkung von Operator abhängig von Datentyp
 
@@ -263,8 +250,6 @@ c: Bochum, ich komm' aus dir - 4630
 
 ## Mathematische Funktionen
 
-[]{.down20}
-
 ```csharp
 using static System.Math;
 
@@ -293,7 +278,7 @@ Nur Text
 ```csharp
 Console.WriteLine("Bochum, ich komm' aus dir");
 ```
-```raw
+```output
 Bochum, ich komm' aus dir
 ```
 
@@ -303,7 +288,7 @@ Nur Variable
 double x = 1.0 / 3.0;
 Console.WriteLine(x);
 ```
-```raw
+```output
 0,3333333333333333
 ```
 
@@ -313,7 +298,7 @@ Mit interpolierten Zeichenketten (vorangestelltes $ und Variable in {})
 double x = 1.0 / 3.0;
 Console.WriteLine($"Ein drittel ist etwa {x}");
 ```
-```raw
+```output
 Ein drittel ist etwa 0,3333333333333333
 ```
 
@@ -364,7 +349,7 @@ Console.WriteLine($"| Kraft: {-force:0.000 N (Zug)  ;0.000 N (Druck)} |");
 Console.WriteLine($"| Kraft: { force:0.000 N (Zug)  ;0.000 N (Druck)} |");
 ```
 
-```raw
+```output
 | Kraft: 12345,6789 N        |
 | Kraft: 12345,68 N          |
 | Kraft:           12345,679 |

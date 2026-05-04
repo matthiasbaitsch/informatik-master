@@ -17,30 +17,23 @@ $presentation-heading-font: "Roboto", sans-serif !default;
 
 $presentation-heading-color: $jet !default;
 $presentation-heading-font-weight: lighter;
-$presentation-font-size-root: 32px;
+$presentation-font-size-root: 30px;
 
 $body-color: $jet !default;
 $link-color: $accent !default;
 $selection-bg: #26351c !default;
 
 /*-- scss:rules --*/
-.reveal a {
-  line-height: 1.5em;
-}
 
-.reveal p {
-  font-weight: lighter;
-  margin-top: 1.25em;
-}
+// Titelfolie
 
 #title-slide {
-
   text-align: left;
 
   .title {
     color: $body-color;
-    font-size: 1.4em;
-    font-weight: lighter;
+    font-size: 2em;
+    font-weight: normal;
   }
 
   .subtitle {
@@ -73,56 +66,110 @@ $selection-bg: #26351c !default;
   }
 }
 
-#title-slide .title {
-  font-size: 2em;
-  font-weight: normal;
-}
-
 .reveal[data-navigation-mode="linear"] .title-slide h1 {
   font-size: 2em;
 }
 
+// Typografie
+
+.neuerbegriff {
+  color: $accent2;
+  font-weight: 400;
+}
+
+.reveal {
+  font-weight: lighter;
+}
+
 .reveal h2 {
-  font-weight: light;
   font-size: 1.4em;
 }
 
 .reveal h3 {
   color: $accent;
-  font-weight: lighter;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
-.reveal h4 {
-  color: $accent2;
-  font-weight: lighter;
+math {
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
+  font-weight: 250;
 }
+
+.reveal pre {
+  font-weight: lighter !important;
+  font-size: 0.825em !important;
+}
+
+.reveal code {
+  font-weight: lighter !important;
+  font-size: 0.825em !important;
+}
+
+.reveal div.sourceCode pre code {
+  margin-left: 0.5em !important;
+}
+
+.reveal pre.output {
+  border-left: 1px solid $accent;
+}
+
+.reveal pre.output code {
+  margin-left: 0.5em !important;
+}
+
+
+// Vertikale Abstände
 
 .reveal p {
-  margin-top: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.alert {
-  color: $accent2;
+.reveal h2 {
+  margin-bottom: 0;
 }
 
-.fg {
-  color: var(--col, $jet);
+.reveal h3 {
+  margin-top: 0.6em;
+  margin-bottom: 0;
 }
 
-.bg {
-  background-color: var(--col, #fff);
-  padding: 0.1em;
-  border-radius: 5px;
-  display: inline-block;
+.reveal pre.raw,
+.reveal pre.output,
+.reveal div.columns,
+.reveal div.sourceCode {
+  margin-top: 0.6em !important;
+  margin-bottom: 0 !important;
 }
 
-// lists
+.reveal p+p,
+.reveal h1+p,
+.reveal h2+p,
+.reveal h3+p,
+.reveal pre+p,
+.reveal .code-copy-outer-scaffold+p{
+  margin-top: 0.6em !important;
+}
+
+.reveal ul+p,
+.reveal ol+p,
+.reveal ul+.fragment,
+.reveal ol+.fragment,
+.reveal .code-copy-outer-scaffold+ul,
+.reveal .code-copy-outer-scaffold+ol {
+  margin-top: 0.2em;
+}
+
+.reveal ul,
+.reveal ol {
+  margin-bottom: 0 !important;
+}
+
+// Listen
 
 .reveal ul {
-  font-weight: lighter;
-  padding-left: 16px;
+  padding-left: 2px;
 
   li::marker {
     color: mix($accent, white, 70%);
@@ -142,78 +189,20 @@ $selection-bg: #26351c !default;
   }
 }
 
-// Ordered lists
-
 .reveal ol {
-  font-weight: lighter;
-  padding-left: 16px;
+  padding-left: 8px;
 
   li::marker {
     color: $accent;
   }
 }
 
-.reveal .slide-menu-button {
-  position: fixed;
-  top: 6px;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  pointer-events: none;
-}
-
-.reveal .slide-menu-button > * {
-  pointer-events: auto;
-}
-
-
-.reveal .slide-chalkboard-buttons {
-  position: fixed;
-  top: 12px;
-  right: 24px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  pointer-events: none;
-}
-
-.reveal .slide-chalkboard-buttons > * {
-  pointer-events: auto;
-}
-
-.button {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  background-color: $accent;
-  border: 1px solid $accent;
-  color: #fff !important;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out;
-}
-
-.button:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
-
-.button::before {
-  content: "▶";
-  margin-right: 5px;
-}
+// Tabellen
 
 .reveal table {
   width: 100%;
   margin: auto;
+  margin-bottom: 1em !important;
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 0.8em;
@@ -223,7 +212,6 @@ $selection-bg: #26351c !default;
 .reveal table td {
   border: none;
   text-align: left;
-  font-weight: lighter;
 }
 
 .reveal table thead th,
@@ -257,16 +245,7 @@ $selection-bg: #26351c !default;
   object-fit: contain;
 }
 
-
-/* math font - maba */
-
-math {
-  font-family: "Roboto", sans-serif;
-  font-size: 1em;
-  font-weight: 250;
-}
-
-/* code - maba */
+// Bilder
 
 .reveal section img {
   display: block;
@@ -274,111 +253,90 @@ math {
   margin-right: auto;
 }
 
-.reveal div.sourceCode pre code {
-  margin-left: 0.75em !important;
+// UI-Komponenten
+
+.reveal .slide-menu-button {
+  position: fixed;
+  top: 6px;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
 }
 
-.reveal pre {
-  font-weight: lighter !important;
-  font-size: 0.65em !important;
+.reveal .slide-menu-button>* {
+  pointer-events: auto;
 }
 
-.reveal code {
-  font-weight: lighter !important;
-  font-size: 0.9em !important;
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
 }
 
-.reveal div.sourceCode  {
-  margin-top: 0.75em !important;
-  margin-bottom: 0.75em !important;
+.reveal .slide-chalkboard-buttons>* {
+  pointer-events: auto;
 }
 
-.reveal table {
-  margin-bottom: 1em !important;
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $accent;
+  border: 1px solid $accent;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
 }
 
-
-.up10 {
-  display: block;
-  margin-top: -10px;
+.button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
-.up20 {
-  display: block;
-  margin-top: -20px;
+.button::before {
+  content: "▶";
+  margin-right: 5px;
 }
 
-.up30 {
-  display: block;
-  margin-top: -30px;
+// Utilities
+
+.alert {
+  color: $accent2;
 }
 
-.up40 {
-  display: block;
-  margin-top: -40px;
+.fg {
+  color: var(--col, $jet);
 }
 
-.up50 {
-  display: block;
-  margin-top: -50px;
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
 }
 
-.up60 {
-  display: block;
-  margin-top: -60px;
-}
+@each $n in 10, 20, 30, 40, 50, 60, 80, 100, 120, 140 {
+  .up#{$n} {
+    display: block;
+    margin-top: -#{$n}px;
+  }
 
-.up80 {
-  display: block;
-  margin-top: -80px;
-}
-
-.down10 {
-  display: block;
-  margin-top: 10px;
-}
-
-.down20 {
-  display: block;
-  margin-top: 20px;
-}
-
-.down30 {
-  display: block;
-  margin-top: 30px;
-}
-
-.down40 {
-  display: block;
-  margin-top: 40px;
-}
-
-.down50 {
-  display: block;
-  margin-top: 50px;
-}
-
-.down60 {
-  display: block;
-  margin-top: 60px;
-}
-
-.down80 {
-  display: block;
-  margin-top: 80px;
-}
-
-.down100 {
-  display: block;
-  margin-top: 100px;
-}
-
-.down120 {
-  display: block;
-  margin-top: 120px;
-}
-
-.down140 {
-  display: block;
-  margin-top: 140px;
+  .down#{$n} {
+    display: block;
+    margin-top: #{$n}px;
+  }
 }
