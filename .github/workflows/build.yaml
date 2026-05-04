@@ -26,7 +26,7 @@ jobs:
         uses: r-lib/actions/setup-r@v2
 
       - name: Install rquiz
-        run: Rscript -e 'install.packages("rquiz")'
+        run: Rscript -e 'install.packages(c("rquiz", "glue"))'
 
       - name: Set up Typst
         uses: typst-community/setup-typst@v4
