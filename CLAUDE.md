@@ -25,10 +25,15 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
   - `aufgaben/projekt-musterloesung/` – Musterlösung
 - **Entwicklungsumgebung der Studierenden:** Visual Studio Code mit C# Dev Kit
 
+## Hinweise zur Zusammenarbeit
+
+- Notizen und Erinnerungen gehören in diese Datei (`CLAUDE.md`), nicht in das memory-Verzeichnis
+
 ## Arbeitshinweise für Claude
 
 - Linter-Hinweise in `.qmd`-Dateien ignorieren – das macht der Nutzer selbst
 - Reihenfolge Beispiel vor Erklärung nicht als Problem werten – didaktisch bewusst so
+- CSS-Abstände in `style-slides.scss` immer über `margin-top` des nachfolgenden Elements steuern, nie über `margin-bottom` – Reveal.js nutzt Flexbox, dort kollabieren Margins nicht und addieren sich sonst unkontrolliert
 
 ## Inhaltliche Richtlinien
 
