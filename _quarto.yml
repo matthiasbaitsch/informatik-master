@@ -15,6 +15,7 @@ format-links: false
 format: 
   revealjs:
     overview: true
+    chalkboard: true
     slide-number: "c/t"
     code-line-numbers: false
     html-math-method: mathml

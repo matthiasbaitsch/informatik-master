@@ -215,7 +215,7 @@ singleQuestion(
 
 Richtig ist Antwort A: Eine Variable kann man sich als Schachtel vorstellen, die Zuweisung ändert den Inhalt der Schachtel
 
-## Variablen für Objekte
+## Variablen für Objekte heißen Referenzvariablen
 
 ::: {.columns}
 ::: {.column width="60%"}
@@ -434,7 +434,7 @@ app.Show();
 ```
 
 - Methode `Copy` erstellt eine Kopie
-- Wir hätten auch mit `new` ein neues Rechteck erzeugen können
+- Oder mit `new` neues Rechteck erzeugen
 
 :::
 ::: {.column width="2.5%"}
@@ -509,7 +509,7 @@ app.Show();
 ![](bilder/code-completion.png)
 :::
 
-# Zusammenfassung und Englische Begriffe
+# Zusammenfassung
 
 ## Zusammenfassung
 
@@ -519,32 +519,32 @@ app.Show();
 - **Klassen** sind Baupläne – aus einer Klasse lassen sich beliebig viele Exemplare erzeugen
 - Variablen für Objekte sind **Referenzvariablen**: sie enthalten nicht das Objekt selbst, sondern einen Zeiger auf das Objekt im Speicher
 
-## Englische Begriffe
-
-[]{.down60}
+### Die wichtigsten Begriffe mit Übersetzung
 
 ::: {.columns}
-::: {.column}
+
+::: {.column width="28%"}
 Objekt
 : *Object*
 
 Eigenschaft
 : *Property*
+:::
 
+::: {.column width="38%"}
 Methode
 : *Method*
 
-Klasse
-: *Class*
+Klasse und Exemplar
+: *Class* und *Instance*
 :::
-::: {.column}
-Exemplar
-: *Instance*
 
-Normale Variable
+::: {.column width="33%"}
+"Normale" Variable
 : *Value Type*
 
 Referenzvariable
 : *Reference Type*
 :::
+
 :::
