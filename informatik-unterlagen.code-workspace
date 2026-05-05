@@ -5,6 +5,10 @@
 		}
 	],
 	"settings": {
-		"julia.environmentPath": "/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/lernpfad/skripte"
+		"julia.environmentPath": "/Users/maba/sciebo/lehrveranstaltungen/informatik-master-2.0/unterlagen/lernpfad/skripte",
+		"ltex.markdown.nodes": {
+			"FencedDiv": "ignore",
+			"AttributesNode": "ignore"
+		}
 	}
 }

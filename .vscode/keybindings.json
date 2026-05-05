@@ -1,0 +1,5 @@
+{
+  "key": "ctrl+shift+r",
+  "command": "workbench.action.terminal.sendSequence",
+  "args": { "text": "\u001b[A\u000D" }
+}

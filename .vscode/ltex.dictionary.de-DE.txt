@@ -1,2 +1,8 @@
 Statikprogramme
 Referenzvariablen
+.down
+.fragment
+.neuerbegriff
+.columns
+.column
+width

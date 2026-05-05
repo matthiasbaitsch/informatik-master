@@ -270,7 +270,6 @@ singleQuestion(
 
 Richtig ist Antwort B: Variablen für Objekte enthalten nicht das Objekt!
 
-
 ## Referenzvariablen - Inhalt ist Speicheradresse
 
 []{.down60}
@@ -290,12 +289,12 @@ Richtig ist Antwort B: Variablen für Objekte enthalten nicht das Objekt!
 ```{r}
 #| output: asis
 b <- "```"
-lines <- c("1", "1-4", "1-6", "1-7", "1-9")
-for(i in seq(1, 5)) {
+lines <- c("1", "1-4", "1-7", "1-9", "1-10", "1-11")
+for(i in seq_along(lines)) {
     cat(
         glue::glue(
 '
-## Referenzvariable - Inhalt ist Zeiger auf Objekt
+## Referenzvariablen - Inhalt ist Zeiger auf Objekt
 
 ::: {{.columns}}
 ::: {{.column width="57%"}}
@@ -305,10 +304,12 @@ using BoDraw;
 
 Circle c = new Circle(0.0, 0.0, 1.0);
 c.FillColor = Colors.LightGoldenrodYellow;
+
 Rectangle r1 = new Rectangle(1.1,-1.0,3.1,1.0);
 r1.FillColor = Colors.HotPink;
+
 Rectangle r2 = r1;
-r1.Move(2.2, 0.0);
+r2.Move(2.2, 0.0);
 r2.FillColor = Colors.SteelBlue;
 
 BoDrawApp app = new BoDrawApp();
@@ -316,9 +317,9 @@ app.Add(c, r1, r2);
 app.Show();
 {b}
 :::
-::: {{.column width="2%"}}
+::: {{.column width="2.5%"}}
 :::
-::: {{.column width="38%"}}
+::: {{.column width="37.5%"}}
 ### Objekte und Variablen
 ::: {{.border}}
 ![](bilder/referenzvariablen-zeiger-{i}.png)
@@ -337,10 +338,72 @@ app.Show();
 }
 ```
 
+## Referenzvariablen - Eigenschaften und Methoden
+
+```csharp
+using BoDraw;
+
+Circle c = new Circle(0.0, 0.0, 1.0);
+c.FillColor = Colors.LightGoldenrodYellow;
+
+Rectangle r1 = new Rectangle(1.1,-1,3.1,1);
+r1.FillColor = Colors.HotPink; // <1>
+
+Rectangle r2 = r1;
+r2.Move(2.2, 0.0); // <2>
+r2.FillColor = Colors.SteelBlue; // <3>
+
+BoDrawApp app = new BoDrawApp();
+app.Add(c, r1, r2);
+app.Show();
+```
+
+1. Farbe für Objekt ändern, auf das `r1` zeigt
+1. Objekt verschieben, auf das `r2` zeigt
+1. Farbe für Objekt ändern, auf das `r2` zeigt
+
+. . .
+
+[]{.down20}
+
+→ Gemeint ist immer das Objekt, auf das die Variable verweist
+
+. . .
+
+→ Wegen `r2 = r1` verweisen beide Variablen auf dasselbe Objekt
+
+## Mögliche Sichten auf Referenzvariablen
+
+[]{.down50}
+
+::: {.columns}
+::: {.column width="48%"}
+[]{.down50}
+![](bilder/referenzvariablen-schachteln.svg)
+
+[]{.down80}
+![](bilder/referenzvariablen-zeiger-6.png){width="60%"}
+:::
+::: {.column width="2%"}
+:::
+::: {.column width="50%"}
+### Referenzvariable = Speicheradresse
+
+- Technisch korrekt
+- Passt zu 'normalen' Variablen
+
+[]{.down100}
+
+### Referenzvariable = Zeiger auf Objekt
+
+- Anschaulicher
+- Diese Sicht werden wir verwenden
+:::
+:::
 
 ##
 
-[]{.down120}
+[]{.down200}
 
 Referenzvariable
 
@@ -348,21 +411,140 @@ Referenzvariable
 Ich weiß, wo dein Objekt wohnt...
 :::
 
+## Das Beispiel mit zwei Rechtecken
+
+::: {.columns}
+::: {.column width="57%"}
+### Programmcode
+```{.csharp code-line-numbers="1-15" style="font-size: 0.9em;"}
+using BoDraw;
+
+Circle c = new Circle(0, 0, 1);
+c.FillColor = Colors.LightGoldenrodYellow;
+
+Rectangle r1 = new Rectangle(1.1, -1, 3.1, 1);
+r1.FillColor = Colors.HotPink;
+
+Rectangle r2 = r1.Copy(2.2, 0);
+r2.FillColor = Colors.SteelBlue;
+
+BoDrawApp app = new BoDrawApp();
+app.Add(c, r1, r2);
+app.Show();
+```
+
+- Methode `Copy` erstellt eine Kopie
+- Wir hätten auch mit `new` ein neues Rechteck erzeugen können
+
+:::
+::: {.column width="2.5%"}
+:::
+::: {.column width="37.5%"}
+### Objekte und Variablen
+::: {.border}
+![](bilder/referenzvariablen-zeiger-kopie.png)
+:::
+
+### Grafische Darstellung
+::: {.border}
+![](bilder/referenzvariablen-zeiger-kopie-bild.png)
+:::
+:::
+:::
+
 # Klassen
 
 ## Klasse und Objekt
 
-**Klasse** = Bauplan &nbsp;&nbsp;&nbsp; **Objekt** = konkretes Exemplar nach diesem Bauplan
+### Grundidee
 
-. . .
+- **Klasse**: Bauplan, definiert Eigenschaften und Methoden
+- **Objekt**: Konkretes Exemplar nach diesem Bauplan
 
-Von einem Bauplan lassen sich viele Exemplare erstellen:
+::: {.fragment}
+### Damit lassen sich beliebig viele Exemplare erstellen
 
-```{.csharp}
-Polygon s1 = new Polygon(); // <1>
-Polygon s2 = s1.Copy(...);  // <2>
+::: {.columns}
+::: {.column width="58%"}
+```csharp
+using BoDraw;
+
+Rectangle r1 = new Rectangle(0, 0, 1, 1);
+r1.FillColor = Colors.HotPink;
+Rectangle r2 = new Rectangle(1, 0, 2, 1);
+r2.FillColor = Colors.Orange;
+Rectangle r3 = new Rectangle(0, 1, 1, 2);
+r3.FillColor = Colors.PaleVioletRed;
+Rectangle r4 = new Rectangle(1, 1, 2, 2);
+r4.FillColor = Colors.DarkRed;
+
+BoDrawApp app = new BoDrawApp();
+app.Add(r1, r2, r3, r4);
+app.Show();
 ```
+:::
+::: {.column width="2%"}
+:::
+::: {.column width="40%"}
+[]{.down5}
+![](bilder/exemplare.png)
+:::
+:::
+:::
 
-1. Erstes Polygon-Objekt
-1. Zweites Polygon-Objekt – gleicher Bauplan, eigene Daten
+## Andere häufig verwendete Analogie
 
+![Quelle: https://snakebear.science](bilder/cookie_cutter.jpg)
+
+## Wo finde ich Eigenschaften/Methoden für ein Objekt?
+
+### Dokumentation
+
+- [Dokumentation zu BoDraw](https://matthiasbaitsch.github.io/BoDraw/docs/)
+- Hängt vom jeweils verwendeten Paket ab
+
+### Code Completion
+
+::: {.border}
+![](bilder/code-completion.png)
+:::
+
+# Zusammenfassung und Englische Begriffe
+
+## Zusammenfassung
+
+- **Objekte** sind die zentralen Bausteine der objektorientierten Programmierung
+- Objekte haben **Eigenschaften** (Merkmale) und **Methoden** (Aktionen)
+- Objekte werden mit `new Klassenname(...)` erzeugt
+- **Klassen** sind Baupläne – aus einer Klasse lassen sich beliebig viele Exemplare erzeugen
+- Variablen für Objekte sind **Referenzvariablen**: sie enthalten nicht das Objekt selbst, sondern einen Zeiger auf das Objekt im Speicher
+
+## Englische Begriffe
+
+[]{.down60}
+
+::: {.columns}
+::: {.column}
+Objekt
+: *Object*
+
+Eigenschaft
+: *Property*
+
+Methode
+: *Method*
+
+Klasse
+: *Class*
+:::
+::: {.column}
+Exemplar
+: *Instance*
+
+Normale Variable
+: *Value Type*
+
+Referenzvariable
+: *Reference Type*
+:::
+:::
