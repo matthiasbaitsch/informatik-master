@@ -151,15 +151,11 @@ math {
   margin-bottom: 0 !important;
 }
 
-.reveal .slides section div.columns {
-  margin-top: 0.6em !important;
-  margin-bottom: 0 !important;
-}
-
 .reveal p+p,
 .reveal h1+p,
 .reveal h2+p,
 .reveal h3+p,
+.reveal h3+div,
 .reveal pre+p,
 .reveal .code-copy-outer-scaffold+p {
   margin-top: 0.6em !important;

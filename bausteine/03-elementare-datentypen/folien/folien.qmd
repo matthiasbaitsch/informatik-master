@@ -1,3 +1,7 @@
+# Einführung
+
+[🎥](https://youtu.be/bPBGY6GrSKc){target="_blank"} Erklärvideo auf YouTube
+
 ## Arten von Programmiersprachen
 
 :::: columns
@@ -36,8 +40,11 @@ length = "Fünf Meter";    // Fehler!
 - Viele Fehler können vor dem Programmstart erkannt werden
 - Bessere Unterstützung beim Programmieren in Entwicklungsumgebung
   - Auto-Vervollständigung
-  - Umbenennen von Variablen und Methoden mit F2
-- Wichtig vor allem bei größeren Projekten (nicht für 50 Zeilen Python)
+  - Umbenennen von Variablen und Methoden
+
+::: {.fragment}
+→ Wichtig vor allem bei größeren Projekten (nicht für 50 Zeilen Python)
+:::
 
 ## Beispielprogramm
 
@@ -50,7 +57,7 @@ count = 2;
 count = 3;
 baseLength = 0.33;
 
-baseLength = count;           // OK     - double = int geht (kein Informationsverlust)
+baseLength = count;           // OK     - double = int geht
 💥 baseLength = "0.66cm";     // Fehler - Zeichenkette ist keine Zahl
 count = 177;
 💥 count = 0.33;              // Fehler - int = double geht nicht (Nachkommastellen)
@@ -67,6 +74,8 @@ Console.WriteLine($"baseLength: {baseLength}");
 - Ausführung Anweisung für Anweisung von oben nach unten
 
 # Variablen und Datentypen
+
+[🎥](https://youtu.be/TijkVI7W7GE){target="_blank"} Erklärvideo auf YouTube
 
 ## Variablen 1/2
 
@@ -147,6 +156,8 @@ datentyp variablenname = wert;
 - Eigentlich reicht 1 Bit für `bool`, aber Byte kleinste adressierbare Einheit
 
 # Operatoren und mathematische Funktionen
+
+[🎥](https://youtu.be/Pz6wYnTLObU){target="_blank"} Erklärvideo auf YouTube
 
 ## Operatoren `+, -, *, /, %`
 
@@ -270,6 +281,8 @@ double k = Max(3.0, 7.0);      // Maximum:           7
 - Vollständige Liste bei [Microsoft](https://learn.microsoft.com/de-de/dotnet/api/system.math)
 
 # Ausgabe
+
+[🎥](https://youtu.be/03i74iXDWTQ){target="_blank"} Erklärvideo auf YouTube
 
 ## Dinge auf der Konsole ausgeben
 

@@ -1,4 +1,6 @@
-# Beispielprogramm
+# Beispielprogramm zur Einführung
+
+[🎥](https://youtu.be/9coHStAVEXo){target="_blank"} Erklärvideo auf YouTube
 
 ##
 
@@ -52,6 +54,8 @@ app.Show();
 :::
 
 # Objekte
+
+[🎥](https://youtu.be/Nwea_uoZbQc){target="_blank"} Erklärvideo auf YouTube
 
 ## Grundbegriffe
 
@@ -158,6 +162,8 @@ Typ v2 = variablenname.Methodenname(Parameter...);    // Ergebnis in Variable v2
 :::
 
 # Referenzvariablen
+
+[🎥](https://youtu.be/Iwj8UM9yGEY){target="_blank"} Erklärvideo auf YouTube
 
 ## Zur Erinnerung: "Normale" Variablen
 
@@ -454,6 +460,8 @@ app.Show();
 
 # Klassen
 
+[🎥](https://youtu.be/wP1DGi7HiIk){target="_blank"} Erklärvideo auf YouTube
+
 ## Klasse und Objekt
 
 ### Grundidee
@@ -511,6 +519,8 @@ app.Show();
 
 # Zusammenfassung
 
+[🎥](https://youtu.be/K87hWSFSPd8){target="_blank"} Erklärvideo auf YouTube
+
 ## Zusammenfassung
 
 - **Objekte** sind die zentralen Bausteine der objektorientierten Programmierung
@@ -520,6 +530,8 @@ app.Show();
 - Variablen für Objekte sind **Referenzvariablen**: sie enthalten nicht das Objekt selbst, sondern einen Zeiger auf das Objekt im Speicher
 
 ### Die wichtigsten Begriffe mit Übersetzung
+
+[]{.down20}
 
 ::: {.columns}
 
@@ -540,10 +552,10 @@ Klasse und Exemplar
 :::
 
 ::: {.column width="33%"}
-"Normale" Variable
-: *Value Type*
+Elementare Datentypen
+: *Simple Types*
 
-Referenzvariable
+Typ einer Referenzvariable
 : *Reference Type*
 :::
 
