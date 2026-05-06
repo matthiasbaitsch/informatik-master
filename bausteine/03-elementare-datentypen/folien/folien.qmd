@@ -278,6 +278,7 @@ double k = Max(3.0, 7.0);      // Maximum:           7
 ```
 
 - Konstanten: `PI` = 3,14159…, `E` = 2,71828…
+- Winkelfunktionen verwenden Bogenmaß
 - Vollständige Liste bei [Microsoft](https://learn.microsoft.com/de-de/dotnet/api/system.math)
 
 # Ausgabe
