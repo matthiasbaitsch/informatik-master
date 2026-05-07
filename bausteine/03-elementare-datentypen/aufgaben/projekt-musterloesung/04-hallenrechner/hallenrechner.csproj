@@ -6,6 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ISections" Version="1.0.9" />
+    <PackageReference Include="ISections" Version="1.*" />
   </ItemGroup>
 </Project>
