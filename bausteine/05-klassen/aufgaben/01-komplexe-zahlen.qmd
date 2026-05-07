@@ -1,0 +1,143 @@
+::: {#exr-komplexe-zahlen}
+
+## Klasse für komplexe Zahlen 
+
+In dieser Aufgabe entwickeln Sie eine Klasse `Complex` für komplexe Zahlen. Ein Verständnis der komplexen Zahlen ist dabei hilfreich, aber nicht notwendig.
+
+### Grundlagen
+
+Eine komplexe Zahl $z = x + iy$ besteht aus Realteil $x$ und Imaginärteil $y$. Die folgende Tabelle fasst für $z = x + iy$ und $w = u + iv$ die wichtigsten Operationen zusammen.
+
+| Operation | Formel |
+|---|---|
+| Addition | $z + w = (x+u) + (y+v)\,i$ |
+| Subtraktion | $z - w = (x-u) + (y-v)\,i$ |
+| Multiplikation | $z \cdot w = (xu - yv) + (xv + yu)\,i$ |
+| Division | $\dfrac{z}{w} = \dfrac{xu + yv}{u^2+v^2} + \dfrac{yu - xv}{u^2+v^2}\,i$ |
+| Konjugierte | $\bar{z} = x - iy$ |
+| Betrag | $|z| = \sqrt{z \cdot \bar{z}} =  \sqrt{x^2 + y^2}$ |
+| Winkel (Argument) | $\varphi = \arctan \frac{y}{x}$ |
+| Potenz | $z^n = r^n (\cos(n\varphi) + i \, \sin(n\varphi)) \quad$ mit $r = |z|$ und $n \in \mathbb{R}$ |
+: {tbl-colwidths="[25,75]"}
+
+### Aufgaben
+
+Bearbeiten Sie nun folgende Schritte:
+
+1. Legen Sie im Verzeichnis `01-complex` die beiden Dateien `Complex.cs` und `ComplexDemo.cs` an. In die Datei `Complex.cs` kommt die Klasse `Complex` und in `ComplexDemo.cs` der Programmcode, mit dem Sie demonstrieren und testen, wie sich die `Complex`-Klasse verhält.
+
+1. Eigenschaften, Konstruktor und Methode zum Ausgeben. Geben Sie den folgenden Code in `Complex.cs` ein:
+
+   ```csharp
+   public class Complex
+   {
+       public double Re;
+       public double Im;
+
+       public Complex(double re, double im)
+       {
+           this.Re = re;
+           this.Im = im;
+       }
+
+       public void Print(string l)
+       {
+           Console.WriteLine($"{l} = {this.Re} + ({this.Im})i");
+       }
+   }
+   ```
+
+   In die Datei `ComplexDemo.cs` schreiben Sie
+
+   ```csharp
+    Complex z1 = new Complex(3, 4);
+    Complex z2 = new Complex(4, 2);
+
+    Console.Clear();
+    z1.Print("z1");
+    z2.Print("z2");
+   ```
+
+   Führen Sie die Demo-Datei aus und denken Sie darüber nach, wie das funktionieren könnte.
+
+1. Addition und Subtraktion. Ergänzen Sie die Methode `Add`:
+
+   ```csharp
+   public Complex Add(Complex w)
+   {
+       double re = this.Re + w.Re;
+       double im = this.Im + w.Im;
+       return new Complex(re, im);
+   }
+   ```
+
+   Schreiben Sie danach die Methode `Subtract` selbständig. Sie hat denselben Aufbau wie `Add`.
+
+   Berechnen Sie in ihrem Demoprogramm die komplexen Zahlen $z_3 = z_1 + z_2$ und $z_4 = z_1 - z_2$. Geben Sie die Zahlen aus und kontrollieren Sie das Ergebnis.
+
+1. Multiplikation und Division. Ergänzen Sie beide Methoden:
+
+   ```csharp
+   public Complex Multiply(Complex w)
+   {
+       double re = this.Re * w.Re - this.Im * w.Im;
+       double im = this.Re * w.Im + this.Im * w.Re;
+       return new Complex(re, im);
+   }
+
+   public Complex Divide(Complex w)
+   {
+       double denom = w.Re * w.Re + w.Im * w.Im;
+       double re = (this.Re * w.Re + this.Im * w.Im) / denom;
+       double im = (this.Im * w.Re - this.Re * w.Im) / denom;
+       return new Complex(re, im);
+   }
+   ```
+
+1. Konjugiert komplexe Zahl. Mit der Methode
+
+    ```csharp
+   public Complex Conjugate()
+   {
+       return new Complex(this.Re, -this.Im);
+   }
+   ```
+
+    lässt sich eine komplexe Zahl konjugieren. Fügen Sie in das Demo-Programm den Code
+
+    ```
+    z1q = z1.Conjugate();
+    z6 = z1.multiply(z1q);
+    ```
+
+    ein und geben Sie $z_6$ aus. Falls Sie komplexe Zahlen kennen: Ist es Zufall, dass der Imaginärteil von $z_6$ null?
+    
+
+1. Betrag, Argument und Konjugierte. Fügen Sie am Anfang der Datei `using static System.Math;` ein, damit Funktionen wie `Sqrt` und `Atan2` ohne den Präfix `Math.` verwendet werden können. Ergänzen Sie dann die drei Methoden:
+
+   ```csharp
+   public double Abs()
+   {
+       return Sqrt(this.Re * this.Re + this.Im * this.Im);
+   }
+
+   public double Arg()
+   {
+       return Atan2(this.Im, this.Re);
+   }
+   ```
+
+1. Potenz. Ergänzen Sie die Methode `Power`:
+
+   ```csharp
+   public Complex Power(double n)
+   {
+       double rn = Pow(this.Abs(), n);
+       double phi = this.Arg();
+       double re = rn * Cos(n * phi);
+       double im = rn * Sin(n * phi);
+       return new Complex(re, im);
+   }
+   ```
+
+:::
