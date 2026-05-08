@@ -278,7 +278,7 @@ double k = Max(3.0, 7.0);      // Maximum:           7
 ```
 
 - Konstanten: `PI` = 3,14159…, `E` = 2,71828…
-- Winkelfunktionen verwenden Bogenmaß
+- Alle Winkelfunktionen im Bogenmaß
 - Vollständige Liste bei [Microsoft](https://learn.microsoft.com/de-de/dotnet/api/system.math)
 
 # Ausgabe
@@ -318,19 +318,18 @@ Ein drittel ist etwa 0,3333333333333333
 
 ## Interpolation von Zeichenketten
 
-### Allgemein
+[]{.down10}
 
 :::: {.columns}
-::: {.column}
-| Möglichkeiten |
+::: {.column width="60%"}
+| Allgemeine Möglichkeiten |
 |-|
 | `{var}` |
 | `{var,breite}` |
 | `{var:formatString}` |
 | `{var,breite:formatString}` |
-
 :::
-::: {.column}
+::: {.column width="40%"}
 | Weitere Informationen |
 |-|
 | [Interpolation](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) |
@@ -338,18 +337,18 @@ Ein drittel ist etwa 0,3333333333333333
 :::
 ::::
 
-### Beispiele
-
-| Format | Bedeutung | Beispiel |
-|-|-|-|
-| `{var}` | Standardausgabe | `12345,6789` |
-| `{var,15}` | Breite 15, rechtsbündig | `·····12345,6789` |
-| `{var,-15}` | Breite 15, linksbündig | `12345,6789·····` |
-| `{var:0.00}` | 2 Nachkommastellen | `12345,68` |
-| `{var:+0.00;-0.00}` | Positiv/negativ mit zwei Stellen | `+12345,68` |
-| `{var,15:0.0}` | Breite 15, eine Nachkommastelle | `········12345,7` |
-
-: {tbl-colwidths="[35,45,20]"}
+| Beispiel Format | Bedeutung | `var` | Beispiel |
+|-|-|-|-|
+| `{var}` | Standardausgabe | `Math.PI` | `3,141592653589793` |
+| `{var,17}` | Breite 17, rechtsbündig | `12345.6789` | `·······12345,6789` |
+| `{var,-17}` | Breite 17, linksbündig | `12345.6789` | `12345,6789·······` |
+| `{var:0.00000}` | Immer 5 Nachkommastellen | `Math.PI` | `3,14159` |
+| | | `12345.6789` | `12345,67890` |
+| `{var:0.#####}` | Maximal 5 Nachkommastellen | `Math.PI` | `3,14159` |
+| | | `12345.6789` | `12345,6789` |
+| `{var:+0.##;-0.##}` | Positiv/negativ mit zwei Stellen | `12345.6789` | `+12345,68` |
+| `{var,17:0.#}` | Breite 15, eine Nachkommastelle | `12345.6789` | `··········12345,7` |
+: {tbl-colwidths="[25,35,15,25]"}
 
 ## Interpolation von Zeichenketten – Beispiele
 
