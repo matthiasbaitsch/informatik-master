@@ -2,7 +2,7 @@ prepare-render:
 	cd lernpfad/skripte && julia --project lernpfad-zusammenstellen.jl
 
 render-assignments: prepare-render
-	quarto render lernpfad/aufgaben
+	quarto render lernpfad/aufgaben -t html
 
 render-slides: prepare-render
 	quarto render lernpfad/folien -t revealjs
