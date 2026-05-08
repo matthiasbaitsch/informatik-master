@@ -11,19 +11,9 @@ public class Complex
         this.Im = im;
     }
 
-    public double Abs()
+    public void Print(string l)
     {
-        return Sqrt(this.Re * this.Re + this.Im * this.Im);
-    }
-
-    public double Arg()
-    {
-        return Atan2(this.Im, this.Re);
-    }
-
-    public Complex Conjugate()
-    {
-        return new Complex(this.Re, -this.Im);
+        Console.WriteLine($"{l} = {this.Re:0.####} + ({this.Im:0.####})i");
     }
 
     public Complex Add(Complex w)
@@ -55,6 +45,22 @@ public class Complex
         return new Complex(re, im);
     }
 
+    public Complex Conjugate()
+    {
+        return new Complex(this.Re, -this.Im);
+    }
+
+    public double Abs()
+    {
+        Complex w = this.Multiply(this.Conjugate());
+        return Sqrt(w.Re);
+    }
+
+    public double Arg()
+    {
+        return Atan2(this.Im, this.Re);
+    }
+
     public Complex Power(double n)
     {
         double r = Pow(this.Abs(), n);
@@ -64,8 +70,4 @@ public class Complex
         return new Complex(re, im);
     }
 
-    public void Print(string l)
-    {
-        Console.WriteLine($"{l} = {this.Re:0.####} + ({this.Im:0.####})i");
-    }
 }
