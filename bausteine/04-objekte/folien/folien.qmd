@@ -543,7 +543,7 @@ Eigenschaft
 : *Property*
 :::
 
-::: {.column width="38%"}
+::: {.column width="35%"}
 Methode
 : *Method*
 
@@ -551,7 +551,7 @@ Klasse und Exemplar
 : *Class* und *Instance*
 :::
 
-::: {.column width="33%"}
+::: {.column width="35%"}
 Elementare Datentypen
 : *Simple Types*
 
