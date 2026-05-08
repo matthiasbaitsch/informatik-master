@@ -32,7 +32,7 @@ Bevor Sie loslegen muss dummerweise eine Projektdatei angepasst werden. Öffnen 
 
 Öffnen Sie die Datei `03-hallenrechner-2/Hallenrechner.cs` im Projekt und arbeiten Sie die folgenden Schritte der Reihe nach ab.
 
-1. Startcode vorbereiten. Kopieren Sie den vollständigen Hallenrechner-Code aus dem vorherigen Aufgabenblatt in die Datei und ergänzen sie folgenden Code.
+1. Startcode vorbereiten. Kopieren Sie den vollständigen Hallenrechner-Code aus dem vorherigen Aufgabenblatt in die Datei `Hallenrechner.cs` und ergänzen sie die folgenden Zeilen (wo angegeben).
 
    ```csharp
    using BoDraw;                     // Steht ganz oben
