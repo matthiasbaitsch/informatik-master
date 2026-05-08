@@ -36,7 +36,6 @@ Schritt 1: Was werden Sie sehen, wenn Sie das Programm ausführen? Das sollen Si
 ![Nach Zeile 15](bilder/referenzvariablen-zeiger.png )
 :::
 
-::: {.content-visible when-format="html"}
 Schritt 2: Haben Sie gut nachgedacht? Hier können Sie Ihr Ergebnis überprüfen.
 
 ```{r}
@@ -57,7 +56,6 @@ x = list(
 showSolutionButton = FALSE
 )
 ```
-:::
 
 Schritt 3: Kopieren Sie den Programmcode in `02-referenzvariablen/Referenzvariablen.cs` und führen Sie das Programm aus. Entspricht das Ergebnis den Erwartungen?
 :::
