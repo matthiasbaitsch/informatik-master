@@ -1,0 +1,208 @@
+::: {#exr-komplexe-zahlen}
+
+## Klasse für komplexe Zahlen 
+
+In dieser Aufgabe entwickeln Sie eine Klasse `Complex` für komplexe Zahlen. Ein Verständnis der komplexen Zahlen ist dabei hilfreich, aber nicht notwendig.
+
+### Grundlagen
+
+Eine komplexe Zahl $z = x + iy$ besteht aus Realteil $x$ und Imaginärteil $y$. Die folgende Tabelle fasst für $z = x + iy$ und $w = u + iv$ die wichtigsten Operationen zusammen.
+
+| Operation | Formel |
+|---|---|
+| Addition | $z + w = (x+u) + (y+v)\,i$ |
+| Subtraktion | $z - w = (x-u) + (y-v)\,i$ |
+| Multiplikation | $z \cdot w = (xu - yv) + (xv + yu)\,i$ |
+| Division | $\dfrac{z}{w} = \dfrac{xu + yv}{u^2+v^2} + \dfrac{yu - xv}{u^2+v^2}\,i$ |
+| Konjugierte | $\bar{z} = x - iy$ |
+| Betrag | $|z| = \sqrt{z \cdot \bar{z}} =  \sqrt{x^2 + y^2}$ |
+| Argument (Winkel) | $\arg(z) = \begin{cases} \phantom{-}\arccos\dfrac{x}{r} & y \geq 0 \\[1ex] -\arccos\dfrac{x}{r} & y < 0 \end{cases} \quad$ mit $r = |z|$ |
+| Potenz | $z^n =  r^n \cos(n\varphi) + r^n \sin(n\varphi) \, i \quad$ mit $r = |z|$ und $n \in \mathbb{R}$ |
+: {tbl-colwidths="[25,75]"}
+
+Hinweis: Der Winkel lässt sich in C# besser mit der Funktion `Atan2(y, x)` berechnen, da hier die Fallunterscheidung für den Quadranten bereits eingebaut ist.
+
+### Aufgaben
+
+Bearbeiten Sie nun folgende Schritte:
+
+1. Legen Sie im Verzeichnis `01-complex` die beiden Dateien `Complex.cs` und `ComplexDemo.cs` an. In die Datei `Complex.cs` kommt die Klasse `Complex` und in `ComplexDemo.cs` der Programmcode, mit dem Sie ausprobieren und testen, wie sich die `Complex`-Klasse verhält.
+
+1. Eigenschaften und Konstruktor. Geben Sie den folgenden Code in `Complex.cs` ein:
+
+    ```csharp
+    public class Complex
+    {
+
+        public double Re;
+        public double Im;
+
+        public Complex(double re, double im)
+        {
+            this.Re = re;
+            this.Im = im;
+        }
+    }
+    ```
+
+    In die Datei `ComplexDemo.cs` schreiben Sie
+
+    ```csharp
+    Complex z1 = new Complex(3, 4);
+    Complex z2 = new Complex(4, 2);
+
+    Console.Clear();
+    Console.WriteLine("Direkter Zugriff auf Eigenschaften");
+    Console.WriteLine($"Re(z1) = {z1.Re}, Im(z1) = {z1.Im}");
+    Console.WriteLine($"Re(z2) = {z2.Re}, Im(z2) = {z2.Im}");
+    ```
+
+    Führen Sie die Demo-Datei aus und versuchen Sie, soweit möglich, zu verstehen, was das passiert.
+
+1. Methode zum Ausgeben. Es ist recht umständlich, jedes Mal Real- und Imaginärteil einzeln auszugeben. Ergänzen Sie daher in der Complex-Klasse die Methode
+
+    ```csharp
+    public void Print(string label)
+    {
+        Console.WriteLine($"{label} = {this.Re} + ({this.Im})i");
+    }
+    ```
+
+    und fügen Sie im Demo-Programm die Anweisungen
+
+    ```csharp
+    Console.WriteLine("\nAusgabe mit Print-Methode");   
+    z1.Print("z1");
+    z2.Print("z2");
+    ```
+
+    ein und überprüfen Sie, ob der Code funktioniert. 
+    
+    Anmerkung: Das Newline-Zeichen `\n` bewirkt, dass vor der Ausgabe eine Leerzeile eingefügt wird.
+
+1. Addition und Subtraktion. Ergänzen Sie die Methode `Add`
+
+    ```csharp
+    public Complex Add(Complex w)
+    {
+        double re = this.Re + w.Re;
+        double im = this.Im + w.Im;
+        return new Complex(re, im);
+    }
+    ```
+
+    und berechnen Sie im Demo-Programm mit
+   
+    ```csharp
+    Complex z3 = z1.Add(z2);
+    ```
+   
+    die komplexe Zahl $z_3 = z_1 + z_2$. Geben Sie das Ergebnis aus. Erstellen Sie nun selbständig die Methode `Subtract` und berechnen Sie $z_4 = z_1 - z_2$. Kontrollieren Sie das Ergebnis.
+
+1. Multiplikation und Division. Implementieren Sie die beiden Methoden
+
+    ```csharp
+    public Complex Multiply(Complex w)
+    {
+        double re = this.Re * w.Re - this.Im * w.Im;
+        double im = this.Re * w.Im + this.Im * w.Re;
+        return new Complex(re, im);
+    }
+
+    public Complex Divide(Complex w)
+    {
+        double denom = w.Re * w.Re + w.Im * w.Im;
+        double re = (this.Re * w.Re + this.Im * w.Im) / denom;
+        double im = (this.Im * w.Re - this.Re * w.Im) / denom;
+        return new Complex(re, im);
+    }
+    ```
+
+    und berechnen Sie damit $z_5 = z_1 \cdot z_2$ sowie $z_6 = z_1 / z_2$.
+
+1. Konjugiert komplexe Zahl. Mit der Methode
+
+    ```csharp
+    public Complex Conjugate()
+    {
+        return new Complex(this.Re, -this.Im);
+    }
+    ```
+
+    lässt sich eine komplexe Zahl konjugieren. Berechnen Sie damit $z_7 = \bar{z}_1$ und $z_8 = z_1 \cdot z_7$. Geben (wie immer) das Ergebnis aus. Falls Sie komplexe Zahlen kennen: Ist es Zufall, dass der Imaginärteil von $z_8$ null ist?
+
+1. Betrag und Argument. Fügen Sie am Anfang der Datei `using static System.Math;` ein. Ergänzen Sie dann die beiden Methoden
+
+    ```csharp
+    public double Abs()
+    {
+        Complex w = this.Multiply(this.Conjugate());
+        return Sqrt(w.Re);
+    }
+
+    public double Arg()
+    {
+        return Atan2(this.Im, this.Re);
+    }
+    ```
+
+    Überprüfen Sie im Demo-Programm die Funktionsweise mit
+
+    ```csharp
+    Console.WriteLine("\nPolarkoordinaten");
+    double a = z1.Abs();
+    double b = z1.Arg();
+    Console.WriteLine($"|z1| = {a}");
+    Console.WriteLine($"arg(z1) = {b}");
+    ```
+
+1. Potenz. Ergänzen Sie die Methode `Power`
+
+    ```csharp
+    public Complex Power(double n)
+    {
+        double rn = Pow(this.Abs(), n);
+        double phin = n * this.Arg();
+        double re = rn * Cos(phin);
+        double im = rn * Sin(phin);
+        return new Complex(re, im);
+    }
+    ```
+
+    und berechnen Sie damit $z_8 = z_1^{1/3}$ und $z_9 = z_8^3$.
+
+1. Schönere Ausgabe (Zusatzaufgabe). Passen Sie die Methode `Print` so an, dass die Klammer nicht mehr notwendig ist und maximal vier Nachkommastellen ausgegeben werden.
+
+1. Kontrolle. Am Ende könnte die Ausgabe Ihres Programms folgendermaßen aussehen.
+
+    ```
+    Direkter Zugriff auf Eigenschaften
+    Re(z1) = 3, Im(z1) = 4
+    Re(z2) = 4, Im(z2) = 2
+
+    Ausgabe mit Print-Methode
+    z1 = 3 + 4i
+    z2 = 4 + 2i
+
+    Addition und Subtraktion
+    z3 = 7 + 6i
+    z4 = -1 + 2i
+
+    Multiplikation und Division
+    z5 = 4 + 22i
+    z6 = 1 + 0,5i
+
+    Konjugiert-komplexe Zahl
+    z7 = 3 - 4i
+    z8 = 25 + 0i
+
+    Polarkoordinaten
+    |z1| = 5
+    arg(z1) = 0,9272952180016122
+
+    Potenz
+    z9 = 1,6289 + 0,5202i
+    z10 = 3 + 4i
+    ```
+:::
+

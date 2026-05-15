@@ -211,6 +211,28 @@ c: Bochum, ich komm' aus dir - 4630
 - Rest bei ganzzahliger Division mit Modulo-Operator `%`
 - Zeichenketten verbinden mit `+`
 
+## Kurzschreibweisen `+=, -=, *=, /=`
+
+```csharp
+int n = 10;
+
+// Ausgeschrieben
+n = n + 3;    // n: 13
+n = n * 2;    // n: 26
+n = n - 6;    // n: 20
+n = n / 4;    // n: 5
+
+// Kurzschreibweise
+n += 3;       // n: 13
+n *= 2;       // n: 26
+n -= 6;       // n: 20
+n /= 4;       // n: 5
+```
+
+### Diese Schreibweisen begegnen Ihnen häufig
+
+- `op=` ist Kurzform für `variable = variable op wert`
+
 ## Gleitkommazahlen (IEEE 754 - Standard) 1/2
 
 []{.down10}

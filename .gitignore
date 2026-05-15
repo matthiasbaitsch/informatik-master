@@ -10,4 +10,5 @@ bin
 *old
 *Attic
 *_files
+*.lscache
 bausteine/04-objekte/aufgaben/projekt-musterloesung/03-hallenrechner-2/test.png

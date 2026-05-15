@@ -9,6 +9,9 @@
 		"ltex.markdown.nodes": {
 			"FencedDiv": "ignore",
 			"AttributesNode": "ignore"
-		}
+		},
+		"editor.formatOnSave": true,
+		"chat.disableAIFeatures": true,
+		"dotnet.codeLens.enableReferencesCodeLens": false
 	}
 }
