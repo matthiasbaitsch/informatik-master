@@ -13,6 +13,10 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 - Der behandelte Sprachumfang beschränkt sich auf die **wesentlichen OOP-Konzepte**: Klassen, Objekte, Kapselung, Vererbung, Polymorphismus
 - Komplexe oder randständige C#-Features werden bewusst weggelassen
 
+## Projektstruktur
+
+- `lernpfad/` ist automatisch generiert – nie manuell bearbeiten. Alle Änderungen gehen in `bausteine/`.
+
 ## Technischer Aufbau
 
 - **Format:** Quarto (`.qmd`), Deutsch
@@ -27,7 +31,8 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 
 ## Hinweise zur Zusammenarbeit
 
-- Notizen und Erinnerungen gehören in diese Datei (`CLAUDE.md`), nicht in das memory-Verzeichnis
+- Notizen und Erinnerungen gehören in diese Datei (`CLAUDE.md`)
+- Kein Memory-Verzeichnis anlegen – weder im Projekt noch anderswo. Das eingebaute auto-memory-System nicht verwenden.
 
 ## Arbeitshinweise für Claude
 
