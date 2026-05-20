@@ -1,0 +1,15 @@
+<diagram program="umletino" version="15.1"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>264</w><h>264</h></coordinates><panel_attributes>Complex
+--
++ Re: double
++ Im: double
+--
++ Complex(re: double, im: double)
++ Print(label: string): void
++ Add(w: Complex): Complex
++ Subtract(w: Complex): Complex
++ Multiply(w: Complex): Complex
++ Divide(w: Complex): Complex
++ Conjugate(): Complex
++ Abs(): double
++ Arg(): double
++ Power(n: double): Complex</panel_attributes><additional_attributes></additional_attributes></element></diagram>

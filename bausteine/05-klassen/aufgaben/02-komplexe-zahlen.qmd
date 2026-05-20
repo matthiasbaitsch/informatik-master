@@ -8,6 +8,8 @@ In dieser Aufgabe entwickeln Sie eine Klasse `Complex` für komplexe Zahlen. Ein
 
 Eine komplexe Zahl $z = x + iy$ besteht aus Realteil $x$ und Imaginärteil $y$. Die folgende Tabelle fasst für $z = x + iy$ und $w = u + iv$ die wichtigsten Operationen zusammen.
 
+[]{.down20}
+
 | Operation | Formel |
 |---|---|
 | Addition | $z + w = (x+u) + (y+v)\,i$ |
