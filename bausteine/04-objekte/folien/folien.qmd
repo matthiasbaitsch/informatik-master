@@ -294,19 +294,10 @@ Richtig ist Antwort B: Variablen für Objekte enthalten nicht das Objekt!
 
 ```{r}
 #| output: asis
-b <- "```"
-lines <- c("1", "1-4", "1-7", "1-9", "1-10", "1-11")
-for(i in seq_along(lines)) {
-    cat(
-        glue::glue(
-'
-## Referenzvariablen - Inhalt ist Zeiger auf Objekt
+source("../../00-templates/bausteine.R")
 
-::: {{.columns}}
-::: {{.column width="57%"}}
-### Programmcode
-{b}{{.csharp code-line-numbers="{lines[i]}" style="font-size: 0.9em;"}}
-using BoDraw;
+code <-
+'using BoDraw;
 
 Circle c = new Circle(0.0, 0.0, 1.0);
 c.FillColor = Colors.LightGoldenrodYellow;
@@ -321,27 +312,40 @@ r2.FillColor = Colors.SteelBlue;
 BoDrawApp app = new BoDrawApp();
 app.Add(c, r1, r2);
 app.Show();
-{b}
-:::
-::: {{.column width="2.5%"}}
-:::
-::: {{.column width="37.5%"}}
+'
+
+lc <- function(i, ll) {
+  glue::glue(
+'
+### Programmcode
+{ca_include_code(code, ll)}
+'
+  )
+}
+
+rc <- function(i, ll) {
+  glue::glue(
+'
 ### Objekte und Variablen
+
 ::: {{.border}}
 ![](bilder/referenzvariablen-zeiger-{i}.png)
 :::
 
 ### Grafische Darstellung
+
 ::: {{.border}}
 ![](bilder/referenzvariablen-zeiger-bild-{i}.png)
 :::
-:::
-:::
-\n\n\n
 '
-        )
-    )
+  )
 }
+
+ca_make_animation(
+  'Referenzvariablen - Inhalt ist Zeiger auf Objekt', 
+  lc, rc, 
+  c("1", "1-4", "1-7", "1-9", "1-10", "1-11")
+)
 ```
 
 ## Referenzvariablen - Eigenschaften und Methoden
