@@ -754,7 +754,7 @@ public class Klassenname
 
 []{.down40}
 
-- Schritte bei der Erstellung von Klassen: Analye → Design → Implementation
+- Schritte bei der Erstellung von Klassen: Analyse → Design → Implementation
 - **Analyse**: Klären, welche Eigenschaften und Operationen benötigt werden
 - **Design**: UML-Klassendiagramm erstellen (*Was*, nicht *Wie*)
 - **Implementation**: Klasse in C# programmieren
