@@ -127,6 +127,11 @@ math {
   background-color: #ef808044;
 }
 
+.reveal div.objective {
+  background-color: #f4c2a3;
+  border-radius: 4px;
+  padding: 5pt;
+}
 
 // Vertikale Abstände
 
@@ -144,6 +149,10 @@ math {
   margin-bottom: 0;
 }
 
+.reveal div.code-with-filename div {
+  margin-top: 0em !important;
+}
+
 .reveal pre.raw,
 .reveal pre.output,
 .reveal div.sourceCode {
@@ -154,6 +163,7 @@ math {
 .reveal p+p,
 .reveal h1+p,
 .reveal h2+p,
+.reveal h2+div,
 .reveal h3+p,
 .reveal h3+div,
 .reveal pre+p,
