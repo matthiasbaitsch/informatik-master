@@ -294,7 +294,7 @@ Richtig ist Antwort B: Variablen für Objekte enthalten nicht das Objekt!
 
 ```{r}
 #| output: asis
-source("../../00-templates/bausteine.R")
+source(here::here("bausteine/00-templates/bausteine.R"))
 
 code <-
 'using BoDraw;
