@@ -73,7 +73,7 @@ Bearbeiten Sie nun folgende Schritte:
 
 Anmerkungen und Tipps:
 
-- Eine Fehlerabfrage ist nicht notwendig (im Moment sollen Sie nicht überprüfen, ob der Nenner null ist)
+- Eine Fehlerabfrage ist nicht notwendig (Sie sollen nicht überprüfen, ob der Nenner null ist)
 
 - Gehen Sie Schritt für Schritt vor
 :::
