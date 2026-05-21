@@ -29,6 +29,10 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
   - `aufgaben/projekt-musterloesung/` – Musterlösung
 - **Entwicklungsumgebung der Studierenden:** Visual Studio Code mit C# Dev Kit
 
+## Zusammenarbeit mit dem Nutzer
+
+- Den Nutzer duzen
+
 ## Hinweise zur Zusammenarbeit
 
 - Notizen und Erinnerungen gehören in diese Datei (`CLAUDE.md`)
@@ -40,6 +44,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 - Reihenfolge Beispiel vor Erklärung nicht als Problem werten – didaktisch bewusst so
 - CSS-Abstände in `style-slides.scss` immer über `margin-top` des nachfolgenden Elements steuern, nie über `margin-bottom` – Reveal.js nutzt Flexbox, dort kollabieren Margins nicht und addieren sich sonst unkontrolliert
 - In nummerierten Aufgabenlisten keine Fettschrift für Schrittbezeichnungen – also `1. Titel. Text`, nicht `1. **Titel.** Text`
+- Als Dezimaltrennzeichen wird durchgehend der Punkt verwendet (also `0.75`, nicht `0,75` – auch in Fließtext und Matheumgebungen)
 
 ## Inhaltliche Richtlinien
 
