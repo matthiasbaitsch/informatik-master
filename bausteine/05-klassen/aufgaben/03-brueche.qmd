@@ -43,7 +43,7 @@ Bearbeiten Sie nun folgende Schritte:
 
 1. Analyse: Legen Sie Namen für die Klasse, die Attribute sowie die Methoden fest.
 
-1. Design: Erstellen Sie mithilfe des UMLet-Plugins in Visual Studio Code ([kurzes Erklärvideo](TODO)) ein UML-Klassendiagramm für Brüche. Das Diagramm soll die Attribute, einen Konstruktor sowie Methoden für alle der oben aufgeführten Operationen beinhalten.
+1. Design: Erstellen Sie mithilfe des UMLet-Plugins in Visual Studio Code ([kurzes Erklärvideo](https://youtu.be/YJTbVGTvZS8)) ein UML-Klassendiagramm für Brüche. Das Diagramm soll die Attribute, einen Konstruktor sowie Methoden für alle der oben aufgeführten Operationen beinhalten.
 
 1. Implementation: Setzen Sie die Klasse in `Fraction.cs` um und testen Sie den Code in `FractionDemo.cs`. Das Demo-Programm soll folgende Ausgabe liefern:
 
