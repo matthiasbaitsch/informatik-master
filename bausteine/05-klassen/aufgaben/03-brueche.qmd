@@ -1,0 +1,79 @@
+::: {#exr-brueche}
+## Eine Klasse für Brüche
+
+Ein Bruch $p$ ist das Verhältnis zweier ganzer Zahlen $a, b$ in der Form
+
+$$
+p = \frac{a}{b},
+$$
+
+wobei $b \neq 0$ gelten muss. Für ein Objekt vom Typ Bruch soll es möglich sein,
+
+- den Bruch auf der Konsole auszugeben
+
+- den Kehrwert
+  $$
+  p^{-1} = \left(\frac{a}{b}\right)^{-1} = \frac{b}{a},
+  $$
+  zu bilden
+
+- den Dezimalwert zu ermitteln, zum Beispiel ist $3 / 4 = 0.75$
+
+Mit einem zweiten Bruch
+$$
+q = \frac{c}{d}
+$$
+kann man unter anderem
+
+- addieren bzw. subtrahieren
+  $$
+  p \pm q = \frac{a}{b} \pm \frac{c}{d} = \frac{ad\pm bc}{bd},
+  $$
+
+- multiplizieren und dividieren
+  $$
+  p \cdot q = \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}
+  \quad \text{und} \quad
+  p / q = p \cdot q^{-1} = \frac{ad}{bc}
+  $$
+
+### Aufgaben
+
+Bearbeiten Sie nun folgende Schritte:
+
+1. Analyse: Legen Sie Namen für die Klasse, die Attribute sowie die Methoden fest.
+
+1. Design: Erstellen Sie mithilfe des UMLet-Plugins in Visual Studio Code ([kurzes Erklärvideo](TODO)) ein UML-Klassendiagramm für Brüche. Das Diagramm soll die Attribute, einen Konstruktor sowie Methoden für alle der oben aufgeführten Operationen beinhalten.
+
+1. Implementation: Setzen Sie die Klasse in `Fraction.cs` um und testen Sie den Code in `FractionDemo.cs`. Das Demo-Programm soll folgende Ausgabe liefern:
+
+    ```
+    1. Direkter Zugriff auf Felder
+    q1: Zähler = 22, Nenner = 7
+    q2: Zähler = -3, Nenner = 2
+
+    2. Ausgabe mit Print-Methode
+    q1 = 22 / 7
+    q2 = -3 / 2
+
+    3. Kehrwert
+    q3 = 1 / q1 = 7 / 22
+
+    4. Umwandlung in Dezimalzahl
+    q1 ≈ 3,142857142857143
+
+    5. Addition und Subtraktion
+    q4 = q1 + q2 = 23 / 14
+    q5 = q1 - q2 = 65 / 14
+
+    6. Multiplikation und Division
+    q6 = q1 * q2 = -66 / 14
+    q7 = q1 / q2 = 44 / -21
+    ```
+
+Anmerkungen und Tipps:
+
+- Eine Fehlerabfrage ist nicht notwendig (im Moment sollen Sie nicht überprüfen, ob der Nenner null ist)
+
+- Gehen Sie Schritt für Schritt vor
+:::

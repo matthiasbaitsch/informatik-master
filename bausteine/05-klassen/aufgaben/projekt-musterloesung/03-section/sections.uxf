@@ -1,0 +1,21 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>50</x><y>120</y><w>340</w><h>160</h></coordinates><panel_attributes>RectangularSection
+--
++ W: double
++ H: double
+
+
+--
++ RectangularSection(w: double, h: double)
++ A(): double
++ Iy(): double
++ Iz(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>120</y><w>340</w><h>160</h></coordinates><panel_attributes>ISection
+--
++ W: double
++ H: double
++ Tw: double
++ Th: double
+--
++ ISection(w: double, h: double, tw: double, tf: double)
++ A(): double
++ Iy(): double
++ Iz(): double</panel_attributes><additional_attributes></additional_attributes></element></diagram>

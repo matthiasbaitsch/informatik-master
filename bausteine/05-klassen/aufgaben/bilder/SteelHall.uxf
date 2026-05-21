@@ -1,0 +1,20 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>200</x><y>80</y><w>200</w><h>275</h></coordinates><panel_attributes>SteelHall
+--
++ Project: string
++ NumberOfFrames: int
++ Span: double
++ Height: double
++ FrameSpacing: double
++ RoofPitch: double
++ ProfileColumns: ISection
++ ProfileBeams: ISection
+--
++ SteelHall(project: string)
++ RoofPitchRad(): double
++ Length(): double
++ GroundArea(): double
++ LengthColumns(): double
++ LengthBeams(): double
++ SteelWeight(): double
++ Draw(app: BoDrawApp): void
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
