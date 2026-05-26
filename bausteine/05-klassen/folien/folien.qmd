@@ -275,7 +275,7 @@ Grobe Festlegung einer Klasse mit Attributen und Methoden
     - Mehrere Klassen bei realen Programmen (später)
     - Attribute/Methoden in umfangreichen Diagrammen ggf. weglassen
 
-## Ergebnis Design - Im Beispiel
+## Ergebnis Design - Im Beispiel [🎥](https://youtu.be/JfhidC3_jgc){target="_blank"}
 
 []{.down60}
 
@@ -458,7 +458,7 @@ ca_make_animation(
 
 ```
 
-## Print-Methode: Programmierung
+## Print-Methode: Programmierung [🎥](https://youtu.be/XapELKCNcYI){target="_blank"}
 
 []{.down40}
 
