@@ -15,6 +15,7 @@ dotnet_diagnostic.IDE0059.severity = none
 dotnet_diagnostic.IDE0066.severity = none
 dotnet_diagnostic.IDE0090.severity = none
 dotnet_diagnostic.IDE0130.severity = none
+dotnet_diagnostic.IDE0180.severity = none
 dotnet_diagnostic.IDE0290.severity = none
 
 # Use this in classes
