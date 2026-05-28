@@ -1,0 +1,156 @@
+::: {#exr-brueche-weiter}
+## Erweiterung der Klasse für Brüche
+
+In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüche verfeinert und erweitert. Dabei wird davon ausgegangen, dass die Klasse `Fraction` heißt und die Attribute `A` und `B` Zähler und Nenner des Bruchs repräsentieren. Passen Sie ihren Code entsprechend den von Ihnen gewählten Namen an.
+
+1. Kopieren Sie Ihre Datei `Fraction.cs` aus dem letzten Abschnitt in den Ordner `01-fraction-2`.
+
+1. Konstruktor: Jetzt soll der Konstruktor so angepasst werden, dass bei einer negativen rationalen Zahl stets nur der Zähler negativ ist, ist die Zahl positiv, dann sollen Zähler und Nenner positiv sein. Für das Codefragment
+
+    ```csharp
+    Fraction q1 = new Fraction(-22, -7);
+    Fraction q2 = new Fraction(3, -2);
+    Fraction q3 = new Fraction(44, 14);
+
+    Console.WriteLine("Konstruktor");
+    ```
+
+    soll die Ausgabe also
+
+    ```
+    Konstruktor
+    q1 = 22 / 7
+    q2 = -3 / 2
+    q3 = 44 / 14
+    ```
+
+    lauten. Hierzu wird im Konstruktor überprüft, ob das Produkt von Zähler und Nenner positiv ist. Dementsprechend wird der Bruch entweder als $|a|/|b|$ oder als $-|a|/|b|$ gespeichert. Ändern Sie Ihren Konstruktor entsprechend zu
+
+    ```csharp
+    public Fraction(int a, int b)
+    {
+        if (a * b >= 0)
+        {
+            this.A = Abs(a);
+            this.B = Abs(b);
+        }
+        else
+        {
+            this.A = -Abs(a);
+            this.B = Abs(b);
+        }
+    }
+    ```
+
+    ab. Die Methode `Abs` stammt dabei aus der `System.Math` Klasse, denken Sie daher an die entsprechende Importanweisung.
+
+1. Vergleichen: Die Menge der rationalen Zahlen ist geordnet, d.h. für zwei Brüche $p = a/b$ und $q = c/d$ lässt sich stets angeben, ob $p > q, p = q$ oder $p < q$ ist. Um den Vergleich durchzuführen, werden beide Zahlen auf einen Nenner gebracht und dann die entsprechenden Zähler verglichen. Es gilt nämlich
+
+    $$
+    p < q \iff ad < cb,
+    \quad
+    p = q \iff ad = cb
+    \quad \text{und} \quad
+    p > q \iff ad > cb,
+    $$
+
+    wobei die oben genannten Bezeichnungen gelten sollen.
+
+    Dementsprechend wird der Vergleich zweier Brüche mit der Methode
+
+    ```csharp
+    public int CompareTo(Fraction q)
+    {
+        int z1 = this.A * q.B;
+        int z2 = this.B * q.A;
+
+        if (z1 < z2)
+        {
+            return -1;
+        }
+        else if (z1 == z2)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+    }    
+    ```
+
+    durchgeführt. Fügen Sie die Methode ihrer Klasse hinzu und testen Sie den Code mit
+
+    ```csharp
+    Console.WriteLine("\nVergleich");
+    int c1 = q1.CompareTo(q2);
+    int c2 = q2.CompareTo(q1);
+    int c3 = q1.CompareTo(q3);
+    Console.WriteLine($"q1 and q2: {c1}");
+    Console.WriteLine($"q2 and q1: {c2}");
+    Console.WriteLine($"q1 and q3: {c3}");
+    ```
+
+1. Vereinfachen: Um einen Bruch gegebenenfalls zu vereinfachen, werden Zähler und Nenner durch den größten gemeinsamen Teiler der beiden Zahlen geteilt. In der Methode
+
+    ```csharp
+    public Fraction Simplify()
+    {
+        int p = Abs(this.A);
+        int q = Abs(this.B);
+        if (q > p)
+        {
+            int tmp = p;
+            p = q;
+            q = tmp;
+        }
+        int r = p % q;
+        while (r != 0)
+        {
+            p = q;
+            q = r;
+            r = p % q;
+        }
+        return new Fraction(this.A / q, this.A / q);
+    }
+    ```
+
+    geschieht dies mithilfe des Algorithmus von Euklid. Implementieren und testen Sie die Methode mithilfe von
+
+    ```csharp
+    Console.WriteLine("\nVereinfachen");
+    Fraction q4 = new Fraction(462, 1071);
+    Fraction q5 = q4.Simplify();
+    q4.Print("q4");
+    q5.Print("q5");
+    ```
+
+    Stimmt das Ergebnis? Überprüfen Sie gegebenenfalls den Code in `Simplify`.
+
+1. Approximation der eulerschen Zahl: Die eulersche Zahl $e$ besitzt die Reihendarstellung
+
+    $$
+        e 
+        = 
+        1 + \frac{1}{1}  + \frac{1}{1 \cdot 2} + \frac{1}{1 \cdot 2  \cdot 3} + \frac{1}{1 \cdot 2  \cdot 3  \cdot 4} + \cdots 
+        = 
+        \sum_{k=0}^{\infty}{\frac{1}{k!}} 
+    $$
+
+    Mit dem folgenden Codefragment werden die ersten acht Reihenglieder aufsummiert und das Ergebnis ausgegeben:
+
+    ```csharp
+    Console.WriteLine("\nEulersche Zahl");
+    int kf = 1;
+    Fraction e = new Fraction(1, 1);
+    for (int i = 1; i < 8; i++)
+    {
+        kf *= i;
+        e = e.Add(new Fraction(1, kf)).Simplify();
+    }
+    Console.WriteLine("e ≈ " + e.ToDouble());
+    ```
+
+    Fügen Sie die Anweisungen zu `FractionDemo.cs` hinzu, versuchen Sie den Code zu verstehen und überprüfen Sie das Ergebnis. Warum erhalten Sie ein falsches Ergebnis, wenn die ersten zehn Glieder der Reihe summiert werden?
+:::
+
