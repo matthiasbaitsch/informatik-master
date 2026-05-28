@@ -83,10 +83,26 @@ public class Fraction
         }
     }
 
+    public bool Equals(Fraction q)
+    {
+        return this.A == q.A && this.B == q.B;
+    }
+
+    public bool IsEquivalent(Fraction q)
+    {
+        return this.A * q.B == q.A * this.B;
+    }
+
     public Fraction Simplify()
     {
         int p = Abs(this.A);
         int q = Abs(this.B);
+
+        if (this.A == 0)
+        {
+            return new Fraction(0, 1);
+        }
+
         if (q > p)
         {
             int tmp = p;

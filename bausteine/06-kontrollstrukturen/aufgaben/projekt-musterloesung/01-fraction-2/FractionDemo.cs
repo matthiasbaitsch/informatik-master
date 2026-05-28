@@ -15,6 +15,12 @@ Console.WriteLine($"q1 and q2: {c1}");
 Console.WriteLine($"q2 and q1: {c2}");
 Console.WriteLine($"q1 and q3: {c3}");
 
+Console.WriteLine("\nGleichheit und Äquivalenz");
+bool b1 = q1.Equals(q3);
+bool b2 = q1.IsEquivalent(q3);
+Console.WriteLine($"q1 ==  q3: {b1}");
+Console.WriteLine($"q1 ~   q3: {b2}");
+
 Console.WriteLine("\nVereinfachen");
 Fraction q4 = new Fraction(462, 1071);
 Fraction q5 = q4.Simplify();

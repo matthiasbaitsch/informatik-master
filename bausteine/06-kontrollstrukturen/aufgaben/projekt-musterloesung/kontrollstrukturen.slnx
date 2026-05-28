@@ -2,4 +2,7 @@
   <Folder Name="/01-fraction-2/">
     <Project Path="01-fraction-2/fraction-2.csproj" />
   </Folder>
+  <Folder Name="/02-ford-kreise/">
+    <Project Path="02-ford-kreise/ford-kreise.csproj" />
+  </Folder>
 </Solution>

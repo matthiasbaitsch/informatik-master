@@ -13,6 +13,9 @@ In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüc
     Fraction q3 = new Fraction(44, 14);
 
     Console.WriteLine("Konstruktor");
+    q1.Print("q1");
+    q2.Print("q2");
+    q3.Print("q3");
     ```
 
     soll die Ausgabe also
@@ -91,13 +94,43 @@ In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüc
     Console.WriteLine($"q1 and q3: {c3}");
     ```
 
-1. Vereinfachen: Um einen Bruch gegebenenfalls zu vereinfachen, werden Zähler und Nenner durch den größten gemeinsamen Teiler der beiden Zahlen geteilt. In der Methode
+1. Gleichheit und Äquivalenz: Zwei Brüche sind gleich, wenn Zähler und Nenner gleich sind und Äquivalent, wenn sie dieselbe Stelle auf dem Zahlenstrahl einnehmen. Fügen Sie die Methoden
+
+    ```csharp
+    public bool Equals(Fraction q)
+    {
+        return this.A == q.A && this.B == q.B;
+    }
+
+    public bool IsEquivalent(Fraction q)
+    {
+        return this.A * q.B == q.A * this.B;
+    }
+    ```
+
+    ein und überprüfen Sie die Funktionsweise mit
+
+    ```csharp
+    Console.WriteLine("\nGleichheit und Äquivalenz");
+    bool b1 = q1.Equals(q3);
+    bool b2 = q1.IsEquivalent(q3);
+    Console.WriteLine($"q1 ==  q3: {b1}");
+    Console.WriteLine($"q1 ~   q3: {b2}");
+    ```
+
+1. Vereinfachen: Um einen Bruch gegebenenfalls zu vereinfachen, werden Zähler und Nenner durch den größten gemeinsamen Teiler der beiden Zahlen geteilt. Alle Brüche $0/b$ sollen darüber hinaus zu $0/1$ vereinfacht werden. In der Methode
 
     ```csharp
     public Fraction Simplify()
     {
         int p = Abs(this.A);
         int q = Abs(this.B);
+
+        if (this.A == 0)
+        {
+            return new Fraction(0, 1);
+        }
+
         if (q > p)
         {
             int tmp = p;
@@ -148,7 +181,7 @@ In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüc
         kf *= i;
         e = e.Add(new Fraction(1, kf)).Simplify();
     }
-    Console.WriteLine("e ≈ " + e.ToDouble());
+    Console.WriteLine($"e ≈ {e.ToDouble()}");
     ```
 
     Fügen Sie die Anweisungen zu `FractionDemo.cs` hinzu, versuchen Sie den Code zu verstehen und überprüfen Sie das Ergebnis. Warum erhalten Sie ein falsches Ergebnis, wenn die ersten zehn Glieder der Reihe summiert werden?

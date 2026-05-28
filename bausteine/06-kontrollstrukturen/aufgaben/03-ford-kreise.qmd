@@ -1,0 +1,58 @@
+::: {#exr-ford-kreise}
+## Ein Ausflug in die Zahlentheorie
+
+Eine wunderschöne Verbindung zwischen Zahlentheorie und Geometrie sind die so genannten Ford-Kreise. Für jeden vollständig gekürzten Bruch $p/q$ mit $0 \leq p/q \leq 1$ wird dabei ein Kreis gezeichnet, der die $x$-Achse im Punkt $p/q$ berührt und den Radius
+
+$$
+r = \frac{1}{2q^2}
+$$
+
+besitzt.
+
+1. Kopieren Sie den Code unten in `02-ford-kreise/Program.cs` und führen Sie den Code aus. Setzen Sie anschließend `n` auf den Wert 20.
+
+    ```csharp
+    using BoDraw;
+    using static System.Math;
+
+    int n = 5;
+    Group group = new Group();
+    ColorMap colormap = ColorMap.Jet.WithRange(Log(1.0 / (2 * n * n)), Log(0.5));
+
+    for (int a = 0; a <= n; a++)
+    {
+        for (int b = a; b <= n; b++)
+        {
+            Fraction q = new Fraction(a, b);
+            if (q.Equals(q.Simplify()))
+            {
+                double r = 1.0 / (2 * q.B * q.B);
+                Circle c = new Circle(q.ToDouble(), r, r);
+                c.FillColor = colormap.Map(Log(r));
+                group.Add(c);
+
+                if (b <= 6)
+                {
+                    Text t = new Text($"{q.A}/{q.B}", q.ToDouble(), 0, 0.016);
+                    t.HJust = 0.5;
+                    t.VJust = 1.1;
+                    group.Add(t);
+                }
+            }
+        }
+    }
+
+    BoDrawApp app = new BoDrawApp();
+    app.Add(new Clip(group, new Rectangle(-0.02, -0.03, 1.02, 0.6)));
+    app.Show();
+    ```
+
+2. Beschreiben Sie stichpunktartig, was der Code macht. Erarbeiten Sie das selbst, ohne KI. Gehen Sie dabei auf folgende Punkte ein:
+
+    - Welche Brüche werden gezeichnet und welche nicht? Was bewirkt die Bedingung `q.Equals(q.Simplify())`?
+    - Wie hängt der Radius des Kreises mit dem Nenner des Bruchs zusammen?
+    - Wofür steht `q.B` im Ausdruck `1.0 / (2 * q.B * q.B)`?
+    - Was macht das `ColorMap`-Objekt?
+
+:::
+
