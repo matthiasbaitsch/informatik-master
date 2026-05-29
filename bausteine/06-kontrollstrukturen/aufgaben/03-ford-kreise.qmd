@@ -1,21 +1,21 @@
 ::: {#exr-ford-kreise}
 ## Ein Ausflug in die Zahlentheorie
 
-Eine wunderschöne Verbindung zwischen Zahlentheorie und Geometrie sind die so genannten Ford-Kreise. Für jeden vollständig gekürzten Bruch $p/q$ mit $0 \leq p/q \leq 1$ wird dabei ein Kreis gezeichnet, der die $x$-Achse im Punkt $p/q$ berührt und den Radius
+Eine schöne Verbindung zwischen Zahlentheorie und Geometrie sind die so genannten Ford-Kreise. Für jeden vollständig gekürzten Bruch $a/b$ mit $0 \leq a/b \leq 1$ wird dabei ein Kreis gezeichnet, der die $x$-Achse im Punkt $a/b$ berührt und den Radius
 
 $$
-r = \frac{1}{2q^2}
+r = \frac{1}{2b^2}
 $$
 
 besitzt.
 
-1. Kopieren Sie den Code unten in `02-ford-kreise/Program.cs` und führen Sie den Code aus. Setzen Sie anschließend `n` auf den Wert 20.
+1. Kopieren Sie den Code unten in `02-ford-kreise/Program.cs` und führen Sie den Code aus.
 
     ```csharp
     using BoDraw;
     using static System.Math;
 
-    int n = 5;
+    int n = 20;
     Group group = new Group();
     ColorMap colormap = ColorMap.Jet.WithRange(Log(1.0 / (2 * n * n)), Log(0.5));
 
@@ -47,12 +47,11 @@ besitzt.
     app.Show();
     ```
 
-2. Beschreiben Sie stichpunktartig, was der Code macht. Erarbeiten Sie das selbst, ohne KI. Gehen Sie dabei auf folgende Punkte ein:
+2. Beschreiben Sie stichpunktartig, ohne KI-Nutzung, was der Code macht. Gehen Sie dabei auch auf folgende Punkte ein:
 
-    - Welche Brüche werden gezeichnet und welche nicht? Was bewirkt die Bedingung `q.Equals(q.Simplify())`?
-    - Wie hängt der Radius des Kreises mit dem Nenner des Bruchs zusammen?
-    - Wofür steht `q.B` im Ausdruck `1.0 / (2 * q.B * q.B)`?
-    - Was macht das `ColorMap`-Objekt?
+    - Wie wird sichergestellt, dass alle Brüche kleiner gleich eins sind?
+    - Was bewirkt die Bedingung `q.Equals(q.Simplify())`?
+    - Wofür ist das `ColorMap`-Objekt zuständig?
 
 :::
 
