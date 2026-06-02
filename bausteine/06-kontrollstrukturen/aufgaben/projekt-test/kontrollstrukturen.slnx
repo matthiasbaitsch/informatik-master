@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="01-fraction/fraction.csproj" />
+  <Project Path="01-fraction-test/fraction-test.csproj" />
+</Solution>
