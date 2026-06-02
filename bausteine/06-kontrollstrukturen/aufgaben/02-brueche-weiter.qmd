@@ -3,7 +3,7 @@
 
 In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüche verfeinert und erweitert. Dabei wird davon ausgegangen, dass die Klasse `Fraction` heißt und die Attribute `A` und `B` Zähler und Nenner des Bruchs repräsentieren. Passen Sie ihren Code entsprechend den von Ihnen gewählten Namen an.
 
-1. Kopieren Sie Ihre Datei `Fraction.cs` aus dem letzten Abschnitt in den Ordner `01-fraction-2`.
+1. Kopieren Sie Ihre Datei `Fraction.cs` aus dem letzten Abschnitt in den Ordner `01-fraction`.
 
 1. Konstruktor: Jetzt soll der Konstruktor so angepasst werden, dass bei einer negativen rationalen Zahl stets nur der Zähler negativ ist, ist die Zahl positiv, dann sollen Zähler und Nenner positiv sein. Für das Codefragment
 
@@ -118,33 +118,22 @@ In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüc
     Console.WriteLine($"q1 ~   q3: {b2}");
     ```
 
-1. Vereinfachen: Um einen Bruch gegebenenfalls zu vereinfachen, werden Zähler und Nenner durch den größten gemeinsamen Teiler der beiden Zahlen geteilt. Alle Brüche $0/b$ sollen darüber hinaus zu $0/1$ vereinfacht werden. In der Methode
+1. Vereinfachen: Um einen Bruch gegebenenfalls zu vereinfachen, werden Zähler und Nenner durch den größten gemeinsamen Teiler der beiden Zahlen geteilt. In der Methode
 
     ```csharp
     public Fraction Simplify()
     {
         int p = Abs(this.A);
         int q = Abs(this.B);
-
-        if (this.A == 0)
-        {
-            return new Fraction(0, 1);
-        }
-
-        if (q > p)
-        {
-            int tmp = p;
-            p = q;
-            q = tmp;
-        }
         int r = p % q;
+
         while (r != 0)
         {
             p = q;
             q = r;
             r = p % q;
         }
-        return new Fraction(this.A / q, this.A / q);
+        return new Fraction(this.A / q, this.B / q);
     }
     ```
 

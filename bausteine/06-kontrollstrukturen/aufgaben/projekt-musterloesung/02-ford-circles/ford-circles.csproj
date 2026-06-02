@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../01-fraction-2/fraction-2.csproj" />
+    <ProjectReference Include="../01-fraction/fraction.csproj" />
   </ItemGroup>
 
 </Project>

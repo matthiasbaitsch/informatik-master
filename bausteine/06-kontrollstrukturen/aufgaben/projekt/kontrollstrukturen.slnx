@@ -1,8 +1,8 @@
 <Solution>
-  <Folder Name="/01-fraction-2/">
-    <Project Path="01-fraction-2/fraction-2.csproj" />
+  <Folder Name="/01-fraction/">
+    <Project Path="01-fraction/fraction.csproj" />
   </Folder>
-  <Folder Name="/02-ford-kreise/">
-    <Project Path="02-ford-kreise/ford-kreise.csproj" />
+  <Folder Name="/02-ford-circles/">
+    <Project Path="02-ford-circles/ford-circles.csproj" />
   </Folder>
 </Solution>

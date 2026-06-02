@@ -9,7 +9,7 @@ $$
 
 besitzt.
 
-1. Kopieren Sie den Code unten in `02-ford-kreise/Program.cs` und führen Sie den Code aus.
+1. Kopieren Sie den Code unten in `02-ford-circles/Program.cs` und führen Sie den Code aus.
 
     ```csharp
     using BoDraw;
@@ -23,20 +23,23 @@ besitzt.
     {
         for (int b = a; b <= n; b++)
         {
-            Fraction q = new Fraction(a, b);
-            if (q.Equals(q.Simplify()))
+            if (b != 0)
             {
-                double r = 1.0 / (2 * q.B * q.B);
-                Circle c = new Circle(q.ToDouble(), r, r);
-                c.FillColor = colormap.Map(Log(r));
-                group.Add(c);
-
-                if (b <= 6)
+                Fraction q = new Fraction(a, b);
+                if (q.Equals(q.Simplify()))
                 {
-                    Text t = new Text($"{q.A}/{q.B}", q.ToDouble(), 0, 0.016);
-                    t.HJust = 0.5;
-                    t.VJust = 1.1;
-                    group.Add(t);
+                    double r = 1.0 / (2 * q.B * q.B);
+                    Circle c = new Circle(q.ToDouble(), r, r);
+                    c.FillColor = colormap.Map(Log(r));
+                    group.Add(c);
+
+                    if (b <= 6)
+                    {
+                        Text t = new Text($"{q.A}/{q.B}", q.ToDouble(), 0, 0.016);
+                        t.HJust = 0.5;
+                        t.VJust = 1.1;
+                        group.Add(t);
+                    }
                 }
             }
         }

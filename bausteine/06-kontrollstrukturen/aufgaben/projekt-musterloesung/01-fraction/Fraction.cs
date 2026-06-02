@@ -97,19 +97,8 @@ public class Fraction
     {
         int p = Abs(this.A);
         int q = Abs(this.B);
-
-        if (this.A == 0)
-        {
-            return new Fraction(0, 1);
-        }
-
-        if (q > p)
-        {
-            int tmp = p;
-            p = q;
-            q = tmp;
-        }
         int r = p % q;
+
         while (r != 0)
         {
             p = q;
