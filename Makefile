@@ -19,6 +19,7 @@ copy-templates:
 			package=$$package-schritte; \
 		fi; \
 		cp bausteine/00-templates/.editorconfig $$f; \
+		cp -r bausteine/00-templates/.vscode $$f; \
 		cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \
 	done
 

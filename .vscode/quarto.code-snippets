@@ -4,5 +4,11 @@
 		"prefix": "arr",
 		"body": "→",
 		"description": "Pfeil nach rechts"
+	},
+	"Pfeil links": {
+		"scope": "quarto,markdown",
+		"prefix": "larr",
+		"body": "←",
+		"description": "Pfeil nach links"
 	}
 }
