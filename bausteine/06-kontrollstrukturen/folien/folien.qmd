@@ -1,0 +1,314 @@
+---
+engine: knitr
+---
+
+# Algorithmen
+
+## Beispiel 1: Größter gemeinsamer Teiler von a und b
+
+::: {.columns}
+::: {.column width="70%"}
+
+### Rezept zur Bestimmung
+
+```{.pseudocode}
+ Solange b ≠ 0
+     h ← Rest a geteilt durch b
+     a ← b
+     b ← h
+```
+Danach
+```{.pseudocode}
+ a ist die gesuchte Zahl
+```
+
+### Beispiel für a = 48 und b = 18
+
+[]{.up10}
+
+$$
+\begin{array}{rcllclll}
+48 & = & 2 \cdot 18 & + & 12 & \rightarrow & \text{h} = 12 & \text{a} = 18 & \text{b} = 12 \\
+18 & = & 1 \cdot 12 & + & 6  & \rightarrow & \text{h} = 6 & \text{a} = 12 & \text{b} = 6 \\
+12 & = & 2 \cdot 6  & + & 0  & \rightarrow & \text{h} = 0 & \text{a} = 6 & \text{b} = 0 \\
+\end{array}
+$$
+
+[]{.up30}
+6 ist die gesuchte Zahl
+
+:::
+::: {.column width="30%"}
+[]{.down30}
+![](bilder/euklid.jpg)
+:::
+:::
+
+. . .
+
+[]{.down20}
+→ Algorithmus von Euklid
+
+## Beispiel 2: Kürzester Weg von Ort S nach Ort Z
+
+::: {.columns}
+::: {.column width="70%"}
+### Rezept zur Bestimmung
+```{.pseudocode}
+ strecke[S] ← 0
+ strecke[o] ← ∞ für alle anderen Orte o
+ Lege alle Orte in eine Schachtel
+ Solange die Schachtel nicht leer ist
+     Entnimm Ort o mit der kleinsten strecke[o]
+     Für jeden Nachbarn n von o
+         Falls strecke[o] + Entfernung(o, n) < strecke[n]
+             strecke[n] ← strecke[o] + Entfernung(o, n)
+             vorgänger[n] ← o
+```
+Danach
+```{.pseudocode}
+   strecke[o]: Kürzeste Strecke von S zu Ort o
+ vorgänger[o]: Vorgänger von o auf der kürzesten Strecke
+```
+:::
+::: {.column width="30%"}
+[]{.down30}
+![](bilder/routenplaner.svg)
+:::
+:::
+
+. . .
+
+→ Algorithmus von Edsger W. Dijkstra (1959)
+
+## Beispiel (Entfernungen in km)
+
+[]{.down100}
+
+::: {.columns}
+::: {.column}
+```{mermaid}
+graph LR
+    S -->|6| A
+    S -->|2| B
+    B -->|3| A
+    B -->|5| Z
+    A -->|1| Z
+```
+:::
+::: {.column}
+| Knoten    | S | A | B | Z |
+|:-|:-:|:-:|:-:|:-:|
+| Strecke   | 0 | 5 | 2 | 6 |
+| Vorgänger |   | B | S | A |
+:::
+:::
+
+[]{.down60}
+
+Kürzeste Strecke: S → B → A → Z  mit d = 2 + 3 + 1 = **6 km**
+
+## Was ist ein Algorithmus
+
+::: {.columns}
+::: {.column width="70%"}
+### Allgemein
+
+- Algorithmus: Verfahren als Abfolge von Anweisungen, die eine bestimmte Aufgabe lösen
+- Aufgabe: Eingabe → Ausgabe
+- Namensgeber: Abu Dschaʿfar Muhammad ibn Musa al-Chwārizmī, Mathematiker und Universalgelehrter, ca. 780 bis 840 meist in Bagdad
+:::
+::: {.column width=30%}
+![](bilder/1983_CPA_5426_(1).png)
+:::
+:::
+
+[]{.up60}
+
+. . .
+
+### Formale Anforderungen
+
+1. Das Verfahren muss in einem endlichen Text eindeutig beschreibbar sein
+1. Jeder Schritt des Verfahrens muss tatsächlich ausführbar sein
+1. Das Verfahren darf nur endlich viele Schritte/Speicherplatz benötigen
+1. Das Verfahren muss bei gleichen Voraussetzungen dasselbe Ergebnis liefern
+1. Die nächste anzuwendende Regel im Verfahren ist immer eindeutig definiert
+
+## Bausteine von Algorithmen
+
+### Einfache Anweisungen
+
+- Deklaration einer Variablen
+- Zuweisung `Variable = Wert`
+- Aufruf einer Methode
+
+### Verzweigungen
+
+- Anweisungen werden ausgeführt, falls eine Bedingung erfüllt erfüllt ist
+
+### Wiederholungen
+
+- Anweisungen werden in einer Schleife wiederholt ausgeführt
+    - Solange eine Bedingung erfüllt ist
+    - Eine Vorgegebene Anzahl von Durchläufen
+
+[]{.down20}
+
+::: {.fragment}
+→ Jeder Algorithmus lässt sich aus diesen drei Bausteinen zusammensetzen
+:::
+
+# Abgrenzungen
+
+## Abgrenzung 1: Große Sprachmodelle
+
+![](bilder/algorithmus-vs-llm.png)
+
+- Basieren auf künstlichen neuronalen Netzen, trainiert auf riesigen Textmengen
+- Verfügen nicht über einen expliziten Lösungsweg, das 'Wissen' steckt in den Gewichten des künstlichen neuronalen Netzes
+- Gleiche Eingabe kann unterschiedliche Ausgaben erzeugen
+- Keine Garantie auf korrekte Ergebnisse
+
+::: {.fragment}
+Vereinfacht gesagt: Große Sprachmodelle haben keinen nachvollziehbaren Lösungsweg — sie raten sehr gut
+:::
+
+## Abgrenzung 2: Algorithmische Medien
+
+„Der Algorithmus" bei TikTok, Instagram oder YouTube entscheidet, welche Inhalte Nutzer sehen
+
+### Was ist damit gemeint?
+
+- Kein einzelner, explizit formulierter Algorithmus
+- Ein komplexes System aus vielen Algorithmen und trainierten Modellen
+- Optimiert auf Engagement (Verweildauer, Klicks) — nicht auf Qualität oder Korrektheit
+- Proprietär und von außen nicht einsehbar
+
+::: {.fragment}
+„Algorithmus" wird hier umgangssprachlich für ein undurchsichtiges System verwendet — nicht im Sinne eines klar definierten, nachvollziehbaren Verfahrens
+:::
+
+# Verzweigungen
+
+## Grundprinzip 1/2
+
+[]{.down60}
+
+### Bedingte Anweisung
+
+::: {.columns}
+::: {.column}
+```csharp
+if(Bedingung)
+{
+    Anweisungen...
+}
+```
+:::
+::: {.column}
+[]{.down10}
+Anweisungen in geschweiften Klammern werden nur ausgeführt, wenn die Bedingung erfüllt ist
+:::
+:::
+
+[]{.down40}
+
+### Alternative
+
+::: {.columns}
+::: {.column}
+```csharp
+if(Bedingung)
+{
+    Anweisungen A...
+} 
+else
+{
+    Anweisungen B...
+}
+```
+:::
+::: {.column}
+[]{.down10}
+Wenn die Bedingung erfüllt ist wird A ausgeführt, andernfalls B
+:::
+:::
+
+## Grundprinzip 2/2
+
+[]{.down100}
+
+### Mehrfachverzweigung
+
+::: {.columns}
+::: {.column}
+```csharp
+if(Bedingung A)
+{
+    Anweisungen A...
+} 
+else if(Bedingung B)
+{
+    Anweisungen B...
+} 
+else
+{
+    Anweisungen C...
+}
+```
+:::
+::: {.column}
+[]{.down10}
+Wenn Bedingung A erfüllt ist wird A ausgeführt, andernfalls, falls Bedingung B erfüllt ist wird B ausgeführt, andernfalls C
+:::
+:::
+
+## Anwendungsbeispiel: Einteilung in Energieeffizienzklasse
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width="50%"}
+| Energieeffizienzklasse | Heizwärmebedarf $q_h$ |
+|-|-|
+| A+ | < 30 |
+| A | 30 – 50 |
+| B oder schlechter | ≥ 50 |
+:::
+::: {.column width="3%"}
+:::
+::: {.column width="47%"}
+Energiebedarf verschiedener Gebäudestandards für die energetische Bewertung mit $q_h$ in kWh/(m²·a)
+:::
+:::
+
+```csharp
+double qh = 49.9;
+
+if (qh < 30)
+{
+    Console.WriteLine("A+");
+}
+else if (qh < 50)
+{
+    Console.WriteLine("A");
+}
+else
+{
+    Console.WriteLine("B oder schlechter");
+}
+```
+
+# Wiederholungen
+
+# Logische Operatoren
+
+# Zusammenfassung
+
+## Was wir nicht behandelt haben
+
+- Das Schlüsselwort `break` um eine Schleife zu beenden
+- Mehrfachverzweigungen mit `switch`
+- Do-while-Schleifen
+→ Nicht zwingend notwendig, führt oft zu schlecht verständlichem Code

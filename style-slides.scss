@@ -115,6 +115,16 @@ math {
   margin-left: 0.5em !important;
 }
 
+.reveal pre.pseudocode {
+  font-family: inherit;
+}
+
+.reveal pre.pseudocode code {
+  font-size: 1.1em !important;
+  line-height: 1.6;
+  background-color: #f1d8c8;
+}
+
 .reveal pre.output {
   border-left: 1px solid $accent;
 }
@@ -164,8 +174,10 @@ math {
 .reveal h1+p,
 .reveal h2+p,
 .reveal h2+div,
+.reveal h2+pre,
 .reveal h3+p,
 .reveal h3+div,
+.reveal h3+pre,
 .reveal pre+p,
 .reveal .code-copy-outer-scaffold+p {
   margin-top: 0.6em !important;

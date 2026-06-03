@@ -104,17 +104,17 @@ public class Fraction
 
     public Fraction Simplify()
     {
-        int p = Abs(this.A);
-        int q = Abs(this.B);
-        int r = p % q;
+        int a = Abs(this.A);
+        int b = Abs(this.B);
 
-        while (r != 0)
+        while (b != 0)
         {
-            p = q;
-            q = r;
-            r = p % q;
+            int h = a % b;
+            a = b;
+            b = h;
         }
-        return new Fraction(this.A / q, this.B / q);
+
+        return new Fraction(this.A / a, this.B / a);
     }
 
     public override int GetHashCode()

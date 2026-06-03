@@ -5,8 +5,7 @@
 		}
 	],
 	"settings": {
-		"dotnet.defaultSolution": "kontrollstrukturen.slnx",
-		"dotnet.codeLens.enableReferencesCodeLens": false,
+"dotnet.codeLens.enableReferencesCodeLens": false,
 		"editor.formatOnSave": true,
 		"chat.disableAIFeatures": true,
 		"files.exclude": {

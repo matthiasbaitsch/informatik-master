@@ -1,8 +1,10 @@
-titel: Kontrollstrukturen
+titel: Kontrollstrukturen und Algorithmen
 
 inhalt:
-  - Logische Operatoren
+  - Begriff Algorithmus
+  - Bausteine von Algorithmen
   - Verzweigungen
-  - Schleifen
+  - Wiederholungen
+  - Logische Operatoren
 
 dauer: 3
