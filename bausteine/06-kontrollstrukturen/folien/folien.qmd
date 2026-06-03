@@ -348,7 +348,7 @@ Danach
  a ist eine Näherung für Wurzel x
 ```
 
-### Beispiel für $x = 3$
+### Beispiel für $x = 4$
 
 ![](bilder/heron.png)
 :::
