@@ -1,8 +1,5 @@
 lang: de
 
-filters:
-   - include-code-files
-   
 crossref:
     exr-title: "Aufgabe"
     exr-prefix: "Aufgabe"
