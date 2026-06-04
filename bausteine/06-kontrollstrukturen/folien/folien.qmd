@@ -1,6 +1,6 @@
 # Algorithmen
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/Y6Gbi2MnyqA){target="_blank"} Erklärvideo auf YouTube
 
 ## Beispiel 1: Größter gemeinsamer Teiler von a und b
 
@@ -191,7 +191,7 @@ Vereinfacht gesagt: Große Sprachmodelle haben keinen nachvollziehbaren Lösungs
 
 # Etwas tun oder nicht tun: Verzweigungen
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/o7ke0naaOEs){target="_blank"} Erklärvideo auf YouTube
 
 ## Grundprinzip 1/2
 
@@ -304,7 +304,7 @@ else
 
 # Etwas immer wieder tun: Schleifen
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/m6MRTFmcua0){target="_blank"} Erklärvideo auf YouTube
 
 ## Arten von Schleifen
 
@@ -585,7 +585,7 @@ while (i < 10)
 
 # Logische Ausdrücke
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/XygJVyBNJfA){target="_blank"} Erklärvideo auf YouTube
 
 ## Bedingungen sind logische Ausdrücke
 
@@ -695,7 +695,7 @@ Schaltjahre von 1800 bis 2026
 
 # Zusammenfassung und Auslassungen
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/gECxRs-Rvmc){target="_blank"} Erklärvideo auf YouTube
 
 ## Zusammenfassung
 

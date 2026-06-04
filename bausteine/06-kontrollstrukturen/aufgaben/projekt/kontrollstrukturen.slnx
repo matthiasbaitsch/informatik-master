@@ -5,4 +5,10 @@
   <Folder Name="/02-ford-circles/">
     <Project Path="02-ford-circles/ford-circles.csproj" />
   </Folder>
+  <Folder Name="/03-treppenbemessung/">
+    <Project Path="03-treppenbemessung/treppenbemessung.csproj" />
+  </Folder>
+  <Folder Name="/04-paint/">
+    <Project Path="04-paint/paint.csproj" />
+  </Folder>
 </Solution>

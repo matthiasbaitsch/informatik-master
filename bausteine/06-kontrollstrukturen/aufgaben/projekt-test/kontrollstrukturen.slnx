@@ -5,4 +5,5 @@
   <Folder Name="/01-fraction/">
     <Project Path="01-fraction/fraction.csproj" />
   </Folder>
+  <Project Path="02-demo/02-demo.csproj" />
 </Solution>
