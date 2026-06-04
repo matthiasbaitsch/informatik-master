@@ -5,11 +5,13 @@ double a = 0;
 double b = PI;
 
 double h = (b - a) / n;
-double integral = 0;
+double sum = 0;
 
 for (int i = 0; i < n; i++)
 {
     double xi = a + (i + 0.5) * h;
-    integral += h * Sin(xi);
+    double yi = Sin(xi);
+
+    sum += h * yi;
 }
-Console.WriteLine($"Integral I ≈ {integral}");
+Console.WriteLine($"Integral I ≈ {sum}");

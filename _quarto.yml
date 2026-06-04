@@ -19,11 +19,13 @@ format:
     transition: fade
     transition-speed: slow
     code-line-numbers: false
-    html-math-method: mathml
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"
     theme:
       - style-slides.scss
       - style-titlepage.scss
   html:
-    html-math-method: mathml
     theme:
       - style-assignments.scss
+

@@ -7,7 +7,7 @@
 ::: {.columns}
 ::: {.column width="70%"}
 
-### Rezept zur Bestimmung
+### Rezept zur Berechnung
 
 ```{.pseudocode}
  Solange b ≠ 0
@@ -51,7 +51,7 @@ $$
 
 ::: {.columns}
 ::: {.column width="70%"}
-### Rezept zur Bestimmung
+### Rezept zur Ermittlung
 ```{.pseudocode}
  strecke[S] ← 0
  strecke[o] ← ∞ für alle anderen Orte o
@@ -104,7 +104,7 @@ graph LR
 
 []{.down60}
 
-Kürzeste Strecke: S → B → A → Z  mit d = 2 + 3 + 1 = **6 km**
+Kürzeste Strecke: S → B → A → Z mit d = 2 + 3 + 1 = **6 km**
 
 ## Was ist ein Algorithmus
 
@@ -260,7 +260,7 @@ else
 :::
 ::: {.column}
 []{.down10}
-Wenn Bedingung A erfüllt ist wird A ausgeführt, andernfalls, falls Bedingung B erfüllt ist wird B ausgeführt, andernfalls C
+Wenn Bedingung A erfüllt ist, wird A ausgeführt, andernfalls, falls Bedingung B erfüllt ist, wird B ausgeführt, andernfalls C
 :::
 :::
 
@@ -304,6 +304,14 @@ else
 
 [🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
 
+## Arten von Schleifen
+
+[]{.down200}
+
+- `while` - Schleife: Etwas wiederholen, solange eine Bedingung erfüllt ist
+- `for` - Schleife: Etwas eine vorgegebene Anzahl von Malen wiederholen
+- `foreach` - Schleife: Alle Elemente einer Liste verarbeiten (später)
+
 ## Grundprinzip `while`-Schleife
 
 []{.down40}
@@ -335,11 +343,11 @@ while(Fortsetzungsbedingung)
 ::: {.columns}
 ::: {.column width="70%"}
 
-### Rezept zur Bestimmung
+### Rezept für $a = \sqrt{x} \iff a^2 = x$
 
 ```{.pseudocode}
- a ← 1.5  // Beliebiger Startwert
- Solange |a*a - x| > 0.0000000001
+ a ← 1.5
+ Solange wie |a² - x| > 10⁻¹⁰
      b ← x / a
      a ← 0.5 * (a + b)
 ```
@@ -347,14 +355,16 @@ Danach
 ```{.pseudocode}
  a ist eine Näherung für Wurzel x
 ```
-
+      
 ### Beispiel für $x = 4$
 
 ![](bilder/heron.png)
 :::
-
-::: {.column width="30%"}
-![](bilder/Hero_of_Alexandria.png)
+::: {.column width="5%"}
+:::
+::: {.column width="25%"}
+### &nbsp;
+![](bilder/babylon-heron.svg)
 :::
 :::
 
@@ -422,43 +432,50 @@ for (Initialisierung; Fortsetzungsbedingung; Update)
 - Fast immer mit Laufvariable
 
     ```csharp 
-    for(int i = 0; i < 10; i++) {}
+    for (int i = 0; i < 10; i++) 
+    {
+        Anweisungen...
+    }
     ```
 
-- Übliche Laufvariablen `i, j, k, l`
+- `i++` ist Kurzform für `i += 1`
+- Üblich für Laufvariablen `i, j, k, l`
 
 :::
 :::
 
 ## Summierte Mittelpunktsregel 1/2
 
-[]{.down40}
-
 ### Numerische Integration
 
-[]{.down40}
-
 $$
-    I = \int_a^b f(x) dx \approx \sum_{i=0}^{n-1} h \cdot f(x_i) \quad \text{mit} \quad h = \frac{b - a}{n}, \qquad x_i = a + (i + 1/2) \cdot h
+    \small
+    I 
+    = 
+    \int_a^b \!\!\! f(x) \; \mathrm{d}x 
+    \approx 
+    \sum_{i=0}^{n-1} h \cdot f(x_i) 
+    \quad \text{mit} \quad 
+    h = \frac{b - a}{n}
+    \quad \text{und} \quad 
+    x_i = a + (i + 1/2) \cdot h
 $$
-
-[]{.down40}
 
 ::: {.columns}
 ::: {.column width="70%"}
 
-### Rezept zur Bestimmung
+### Rezept zur Berechnung
 
 ```{.pseudocode}
- integral ← 0
+ sum ← 0
  h ← (b - a) / n
  für alle i von 0 bis n - 1
      xi ← a + (i + 0.5) * h
-     integral ← integral + h * f(xi)
+     sum ← sum + h * f(xi)
 ```
 Danach
 ```{.pseudocode}
- integral ist eine Näherung für das gesuchte Integral
+ sum ist eine Näherung für das gesuchte Integral
 ```
 :::
 ::: {.column width="30%"}
@@ -484,15 +501,16 @@ double a = 0;
 double b = PI;
 
 double h = (b - a) / n;
-double integral = 0;
+double sum = 0;
 
 for (int i = 0; i < n; i++)
 {
     double xi = a + (i + 0.5) * h;
-    integral += h * Sin(xi);
-}
+    double yi = Sin(xi);
 
-Console.WriteLine($"Integral I ≈ {integral}");
+    sum += h * yi;
+}
+Console.WriteLine($"Integral I ≈ {sum}");
 ```
 
 []{.down40}
@@ -508,7 +526,8 @@ Integral I ≈ 2,0020576482854167
 Approximation von
 
 $$
-    I = \int_0^\pi \sin x dx = 2
+    \small
+    I = \int_0^\pi \!\!\! \sin x \; \mathrm{d}x = 2
 $$
 
 
@@ -516,6 +535,43 @@ $$
 ![](bilder/integration-2.png)
 :::
 :::
+
+## Vergleich `for`-Schleife und `while`-Schleife
+
+### Streng genommen ist die `for`-Schleife unnötig
+
+::: {.columns}
+::: {.column}
+```csharp
+ 
+for (int i = 0; i < 10; i++)
+{
+    Anweisungen...
+}
+ 
+```
+:::
+::: {.column}
+```csharp
+int i = 0;
+while (i < 10)
+{
+    Anweisungen...
+    i += 1;
+}
+```
+:::
+:::
+
+→ Beide Versionen verhalten sich identisch
+
+### Regel für Wahl der Schleifenart
+
+- `for`-Schleife, falls Anzahl der Schleifendurchläufe von vorneherein feststeht
+    - Summation von Werten
+    - Verarbeitung von Listen (später)
+- `while`-Schleife für kompliziertere Fortsetzungsbedingung
+    - Näherungsverfahren
 
 # Logische Ausdrücke
 
@@ -531,7 +587,7 @@ Die Bedingung in `if` und `while` ist ein *logischer Ausdruck* vom Typ `bool`, d
 
 ```csharp
 double qh = 49.9;
-bool hatGuteBewertung = qh < 30;  // false
+bool isAPlus = qh < 30;  // false
 ```
 
 []{.down10}

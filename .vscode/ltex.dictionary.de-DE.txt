@@ -6,3 +6,4 @@ Referenzvariablen
 .columns
 .column
 width
+Mittelpunktsregel

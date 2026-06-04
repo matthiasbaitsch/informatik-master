@@ -6,3 +6,6 @@
 {"rule":"DE_CASE","sentence":"^\\Q::: {.fragment}\nAllgemeines Schema\\E$"}
 {"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q→ Runde Klammern = Methode :::\\E$"}
 {"rule":"LEERZEICHEN_VOR_AUSRUFEZEICHEN_ETC","sentence":"^\\Q→ Unterschied zu Eigenschaft: Runde Klammern :::\\E$"}
+{"rule":"SENT_START_SIN_PLU","sentence":"^\\QFortsetzungsbedingung auswerten\nBedingung ist wahr\nAnweisungen ausführen\nWeiter bei Punkt 1\nBedingung ist falsch\nWeiter nach Schleife\\E$"}
+{"rule":"SENT_START_SIN_PLU","sentence":"^\\QInitialisierung ausführen\nFortsetzungsbedingung auswerten\nBedingung ist wahr\nAnweisungen ausführen\nUpdate ausführen\nWeiter bei Punkt 2\nBedingung ist falsch\nWeiter nach der Schleife ::: ::: {.column}\\E$"}
+{"rule":"GERMAN_SPELLER_RULE","sentence":"^\\QInitialisierung ausführen\nFortsetzungsbedingung auswerten\nBedingung ist wahr\nAnweisungen ausführen\nUpdate ausführen\nWeiter bei Punkt 2\nBedingung ist falsch\nWeiter nach der Schleife ::: ::: {.column}\\E$"}
