@@ -25,6 +25,7 @@ Danach
 []{.up10}
 
 $$
+\footnotesize
 \begin{array}{rcllclll}
 48 & = & 2 \cdot 18 & + & 12 & \rightarrow & \text{h} = 12 & \text{a} = 18 & \text{b} = 12 \\
 18 & = & 1 \cdot 12 & + & 6  & \rightarrow & \text{h} = 6 & \text{a} = 12 & \text{b} = 6 \\
@@ -32,7 +33,8 @@ $$
 \end{array}
 $$
 
-[]{.up30}
+[]{.up20}
+
 6 ist die gesuchte Zahl
 
 :::
@@ -349,7 +351,7 @@ while(Fortsetzungsbedingung)
  a ← 1.5
  Solange wie |a² - x| > 10⁻¹⁰
      b ← x / a
-     a ← 0.5 * (a + b)
+     a ← 0.5 ⋅ (a + b)
 ```
 Danach
 ```{.pseudocode}
@@ -449,7 +451,7 @@ for (Initialisierung; Fortsetzungsbedingung; Update)
 ### Numerische Integration
 
 $$
-    \small
+    \footnotesize
     I 
     = 
     \int_a^b \!\!\! f(x) \; \mathrm{d}x 
@@ -470,8 +472,8 @@ $$
  sum ← 0
  h ← (b - a) / n
  für alle i von 0 bis n - 1
-     xi ← a + (i + 0.5) * h
-     sum ← sum + h * f(xi)
+     xi ← a + (i + 0.5) ⋅ h
+     sum ← sum + h ⋅ f(xi)
 ```
 Danach
 ```{.pseudocode}
@@ -526,7 +528,7 @@ Integral I ≈ 2,0020576482854167
 Approximation von
 
 $$
-    \small
+    \footnotesize
     I = \int_0^\pi \!\!\! \sin x \; \mathrm{d}x = 2
 $$
 
@@ -537,6 +539,8 @@ $$
 :::
 
 ## Vergleich `for`-Schleife und `while`-Schleife
+
+[]{.down40}
 
 ### Streng genommen ist die `for`-Schleife unnötig
 
@@ -563,8 +567,13 @@ while (i < 10)
 :::
 :::
 
+[]{.down20}
+
 → Beide Versionen verhalten sich identisch
 
+[]{.down40}
+
+::: {.fragment}
 ### Regel für Wahl der Schleifenart
 
 - `for`-Schleife, falls Anzahl der Schleifendurchläufe von vorneherein feststeht
@@ -572,6 +581,7 @@ while (i < 10)
     - Verarbeitung von Listen (später)
 - `while`-Schleife für kompliziertere Fortsetzungsbedingung
     - Näherungsverfahren
+:::
 
 # Logische Ausdrücke
 
@@ -626,9 +636,11 @@ Verknüpfung logischer Ausdrücke
 
 ## Operatoren
 
-[]{.down40}
+[]{.down30}
 
 ### Vergleichsoperatoren
+
+[]{.down10}
 
 | Operator | Bezeichnung | Bedeutung |
 |:-:|:-|:-|
@@ -639,9 +651,11 @@ Verknüpfung logischer Ausdrücke
 | `>` | Größer | `a > b` wahr, falls a größer b |
 | `>=` | Größer gleich | `a >= b` wahr, falls a größer gleich b |
 
-[]{.down40}
+[]{.down30}
 
 ### Verknüpfungsoperatoren
+
+[]{.down10}
 
 | Operator | Bezeichnung | Bedeutung |
 |:-:|:-|:-|
@@ -658,22 +672,25 @@ Regeln, wann ein Jahr ein Schaltjahr ist:
 1. Ausnahme zur Ausnahme: Ist das Jahr durch 400 teilbar, ist es ein Schaltjahr
 
 ```csharp
+Console.WriteLine("Schaltjahre von 1800 bis 2026");
+
 for (int year = 1800; year <= 2026; year++)
 {
     if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
     {
-        Console.Write(year);
+        Console.Write($"{year} ");
     }
 }
 ```
 
+[]{.down20}
+
 ```{.output}
 Schaltjahre von 1800 bis 2026
-1804 1808 1812 1816 1820 1824 1828 1832 1836 1840 1844 1848 1852 
-1856 1860 1864 1868 1872 1876 1880 1884 1888 1892 1896 1904 1908 
-1912 1916 1920 1924 1928 1932 1936 1940 1944 1948 1952 1956 1960 
-1964 1968 1972 1976 1980 1984 1988 1992 1996 2000 2004 2008 2012 
-2016 2020 2024 
+1804 1808 1812 1816 1820 1824 1828 1832 1836 1840 1844 1848 1852 1856 1860 1864 
+1868 1872 1876 1880 1884 1888 1892 1896 1904 1908 1912 1916 1920 1924 1928 1932 
+1936 1940 1944 1948 1952 1956 1960 1964 1968 1972 1976 1980 1984 1988 1992 1996 
+2000 2004 2008 2012 2016 2020 2024 
 ```
 
 # Zusammenfassung und Auslassungen
@@ -689,7 +706,7 @@ Schaltjahre von 1800 bis 2026
 
 ### Verzweigungen
 
-- `if`, `if-else`, `if-else if`: Anweisungen abhängig von Bedingung ausführen
+- `if` und `else`: Anweisungen abhängig von Bedingung ausführen
 
 ### Schleifen
 
@@ -704,10 +721,22 @@ Schaltjahre von 1800 bis 2026
 
 ## Was wir nicht behandelt haben
 
+[]{.down100}
+
 - Das Schlüsselwort `break` um eine Schleife zu beenden
 - Mehrfachverzweigungen mit `switch`
-- Do-while-Schleifen
+- `do-while` Schleifen
 
 . . .
 
-→ Nicht zwingend notwendig, führt oft zu schlecht verständlichem Code
+[]{.down40}
+
+→ Geht immer auch anders und führt oft zu schlecht verständlichem Code
+
+## Was wir nicht verwenden wollen
+
+[]{.down100}
+
+::: {.r-fit-text}
+Die Wortkombination if-Schleife 🤯
+:::

@@ -21,6 +21,7 @@ for (int i = 0; i < n; i++)
     sum += h * yi;
 
     Rectangle r = new Rectangle(xi - h / 2, 0, xi + h / 2, yi);
+    r.LineThickness = 2;
     r.FillColor = Colors.BlanchedAlmond;
     app.Add(r);
 }
@@ -38,11 +39,10 @@ for (int i = 1; i <= n; i++)
 
     p.AddPoint(xi, yi);
 }
-p.Thickness = 2;
+p.Thickness = 4;
 p.Color = Colors.Red;
 app.Add(p);
 
 // Results
-Console.WriteLine($"Integral I ≈ {sum}");
 app.SaveImage("integration-2.png");
-app.Show();
+Console.WriteLine($"Integral I ≈ {sum}");
