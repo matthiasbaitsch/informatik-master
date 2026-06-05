@@ -1,15 +1,16 @@
-::: {#exr-malen}
+::::::: {#exr-malen}
 ## Eine Grafik Pixel für Pixel erstellen
 
 Öffnen Sie die Datei `04-paint/Paint.cs` und führen Sie das Programm aus. Sie sehen in der Mitte des Bildes ein einzelnes grünes Pixel. Ändern Sie die Datei so, dass die dargestellte Grafik erzeugt wird.
 
-
-::: {.columns}
+:::::: columns
 ::: {.column width="40%"}
 ![](bilder/paint.svg)
 :::
+
 ::: {.column width="5%"}
 :::
+
 ::: {.column width="55%"}
 ### Prinzip:
 
@@ -23,6 +24,9 @@
 - Sie benötigen zwei geschachtelte Schleifen
 - Welche Farbe ein Pixel bekommt hängt von den Pixelkoordinaten ab
 - Für ein hübsches Bild müssen Sie die Auflösung erhöhen
+- Ein [Erklärvideo](https://youtu.be/JP1gRGQYBT0){target="_blank"} zum Einstieg
 :::
-:::
-:::
+::::::
+:::::::
+
+
