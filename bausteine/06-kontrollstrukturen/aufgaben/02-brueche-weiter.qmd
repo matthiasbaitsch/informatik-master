@@ -1,7 +1,7 @@
 ::: {#exr-brueche-weiter}
 ## Erweiterung der Klasse für Brüche
 
-In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüche verfeinert und erweitert. Dabei wird davon ausgegangen, dass die Klasse `Fraction` heißt und die Attribute `A` und `B` Zähler und Nenner des Bruchs repräsentieren. Passen Sie ihren Code entsprechend den von Ihnen gewählten Namen an.
+In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüche verfeinert und erweitert. Dabei wird davon ausgegangen, dass die Klasse `Fraction` heißt und die Attribute `A` und `B` Zähler und Nenner des Bruchs repräsentieren. Passen Sie Ihren Code entsprechend den von Ihnen gewählten Namen an.
 
 1. Kopieren Sie Ihre Datei `Fraction.cs` aus dem letzten Abschnitt in den Ordner `01-fraction`.
 
@@ -45,7 +45,7 @@ In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüc
     }
     ```
 
-    ab. Die Methode `Abs` stammt dabei aus der `System.Math` Klasse, denken Sie daher an die entsprechende Importanweisung.
+    ab. Die Methode `Abs` stammt dabei aus der `System.Math`-Klasse, denken Sie daher an die entsprechende Importanweisung.
 
 1. Vergleichen: Die Menge der rationalen Zahlen ist geordnet, d.h. für zwei Brüche $p = a/b$ und $q = c/d$ lässt sich stets angeben, ob $p > q, p = q$ oder $p < q$ ist. Um den Vergleich durchzuführen, werden beide Zahlen auf einen Nenner gebracht und dann die entsprechenden Zähler verglichen. Es gilt nämlich
 
@@ -82,7 +82,7 @@ In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüc
     }    
     ```
 
-    durchgeführt. Fügen Sie die Methode ihrer Klasse hinzu und testen Sie den Code mit
+    durchgeführt. Fügen Sie die Methode Ihrer Klasse hinzu und testen Sie den Code mit
 
     ```csharp
     Console.WriteLine("\nVergleich");
@@ -94,7 +94,7 @@ In dieser Aufgabe wird die im vorherigen Abschnitt entwickelte Klasse für Brüc
     Console.WriteLine($"q1 and q3: {c3}");
     ```
 
-1. Gleichheit und Äquivalenz: Zwei Brüche sind gleich, wenn Zähler und Nenner gleich sind und Äquivalent, wenn sie dieselbe Stelle auf dem Zahlenstrahl einnehmen. Fügen Sie die Methoden
+1. Gleichheit und Äquivalenz: Zwei Brüche sind gleich, wenn Zähler und Nenner gleich sind und äquivalent, wenn sie dieselbe Stelle auf dem Zahlenstrahl einnehmen. Fügen Sie die Methoden
 
     ```csharp
     public bool Equals(Fraction q)

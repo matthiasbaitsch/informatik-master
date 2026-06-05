@@ -1,7 +1,7 @@
 ::: {#exr-malen}
 ## Eine Grafik Pixel für Pixel erstellen
 
-Öffnen Sie die Datei `04-paint/Paint.cs` und führen Sie das Programm aus. Sie sehen in der Mitte des Bildes ein einzelnes grünes Pixel. Ändern Sie die Datei so, dass die dargestellte Graphik erzeugt wird.
+Öffnen Sie die Datei `04-paint/Paint.cs` und führen Sie das Programm aus. Sie sehen in der Mitte des Bildes ein einzelnes grünes Pixel. Ändern Sie die Datei so, dass die dargestellte Grafik erzeugt wird.
 
 
 ::: {.columns}

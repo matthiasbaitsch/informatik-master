@@ -14,7 +14,7 @@ Die Auslegung von Treppen regelt die DIN 18065. In dieser Aufgabe sollen für ei
 - Steigung <br/>
     $140\,\text{mm} \leq s \leq 210\,\text{mm}$
 - Auftritt <br/>
-    $230\,\text{mm} \leq s \leq 370\,\text{mm}$
+    $230\,\text{mm} \leq a \leq 370\,\text{mm}$
 - Schrittmaßregel
     $590\,\text{mm} \leq 2s + a \leq 650\,\text{mm}$
 :::
@@ -103,7 +103,7 @@ Die Auslegung von Treppen regelt die DIN 18065. In dieser Aufgabe sollen für ei
 
     Tipps:
     
-    - Sie benötigen das Ergebnis der Überprüfung an mehreren Stellen. Hier bieten sich boolsche Variablen an. Im Prinzip funktioniert das so:
+    - Sie benötigen das Ergebnis der Überprüfung an mehreren Stellen. Hier bieten sich boolesche Variablen an. Im Prinzip funktioniert das so:
 
         ```csharp
         bool testOK = x < 30 || x > 100;

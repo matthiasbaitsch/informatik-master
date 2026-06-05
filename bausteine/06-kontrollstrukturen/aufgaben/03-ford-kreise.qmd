@@ -1,7 +1,7 @@
 ::: {#exr-ford-kreise}
 ## Ein Ausflug in die Zahlentheorie
 
-Eine schöne Verbindung zwischen Zahlentheorie und Geometrie sind die so genannten Ford-Kreise. Für jeden vollständig gekürzten Bruch $a/b$ mit $0 \leq a/b \leq 1$ wird dabei ein Kreis gezeichnet, der die $x$-Achse im Punkt $a/b$ berührt und den Radius
+Eine schöne Verbindung zwischen Zahlentheorie und Geometrie sind die sogenannten Ford-Kreise. Für jeden vollständig gekürzten Bruch $a/b$ mit $0 \leq a/b \leq 1$ wird dabei ein Kreis gezeichnet, der die $x$-Achse im Punkt $a/b$ berührt und den Radius
 
 $$
 r = \frac{1}{2b^2}
