@@ -1,0 +1,45 @@
+::: {#exr-fixpunktiteration}
+## Fixpunktiteration
+
+Die [Fixpunktiteration](https://de.wikipedia.org/wiki/Fixpunktiteration) ist ein Verfahren aus der numerischen Mathematik, mit dem Gleichungen der Form
+
+$$
+    f(x) = x
+$$
+
+gelöst werden. In dem Verfahren wird ausgehend von einem Startwert $x_0$ der Wert von $x$ in so lange durch $f(x)$ ersetzt, bis die Gleichung mit der gewünschten Genauigkeit erfüllt ist.
+
+```{.pseudocode}
+ x ← x0
+ Solange wie |f(x) - x| > 10⁻¹⁰
+     x ← f(x)
+```
+
+Aufgaben: Öffnen Sie die Datei `05-fixpunktiteration/Fixpunktiteration.cs` und gehen Sie in den folgenden Schritte vor.
+
+1. Fixpunktiteration: Bestimmen Sie ausgehend von $x_0 = 0.2$ eine Näherungslösung der Gleichung $x = \ln(2 - x^2)$. Geben Sie zur Kontrolle $x$ und $f(x)$ aus.
+
+1. Visualisierung: Die Arbeitsweise des Verfahrens lässt sich sehr schön veranschaulichen, wenn man in jedem Schritt, vor der Aktualisierung von $x$, einer Polylinie die beiden Punkte $(x, x)$ und $(x, f(x))$ hinzufügt. Stellen Sie diese Polylinie dar. Hier ein Grundgerüst zum Zeichnen:
+
+    ```csharp
+    // Zeichnen
+    int n = 20;
+    double a = 0.8;
+    BoDrawApp app = new BoDrawApp();
+    Line l1 = new Line(0, 0, a, a);
+    l1.Color = Colors.SteelBlue;
+    l1.Thickness = 2;
+    Polyline l2 = new Polyline();
+    for (int i = 0; i < n; i++)
+    {
+        double xi = i * a / (n - 1);
+        double yi = f(xi);
+        l2.AddPoint(xi, yi);
+    }
+    l2.Color = Colors.DarkOrange;
+    l2.Thickness = 2;
+    app.Add(new Rectangle(0, 0, a, a));
+    app.Add(l1, l2);
+    app.SaveImage("fixpunktiteration.png");
+    ```
+:::
