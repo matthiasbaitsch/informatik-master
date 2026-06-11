@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/01-arrays/">
+    <Project Path="01-arrays/arrays.csproj" />
+  </Folder>
+  <Folder Name="/02-collections/">
+    <Project Path="02-collections/arrays.csproj" />
+  </Folder>
+</Solution>
