@@ -12,5 +12,7 @@
   <Folder Name="/04-paint/">
     <Project Path="04-paint/paint.csproj" />
   </Folder>
-  <Project Path="04-fixpunktiteration/fixpunktiteration.csproj" />
+  <Folder Name="/05-fixpunktiteration/">
+    <Project Path="05-fixpunktiteration/fixpunktiteration.csproj" />
+  </Folder>
 </Solution>
