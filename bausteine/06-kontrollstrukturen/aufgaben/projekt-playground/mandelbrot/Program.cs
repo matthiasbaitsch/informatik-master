@@ -4,11 +4,11 @@
 BoDrawApp app = new BoDrawApp();
 
 MandelbrotSet set = new MandelbrotSet();
-set.N = 20;
+set.N = 40;
 
 if (true)
 {
-    Image image = new Image(2600, 2600, -2.5, -2, 4);
+    Image image = new Image(-2, -1, 0.5, 1, 1000);
     ColorMap cm = ColorMap.Inferno.WithRange(1, set.N);
 
     foreach (var p in image.Pixels)
