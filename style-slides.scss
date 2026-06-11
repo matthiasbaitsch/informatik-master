@@ -95,6 +95,10 @@ $selection-bg: #26351c !default;
   font-weight: 400;
 }
 
+.reveal dl {
+  margin: 0;
+}
+
 .reveal pre {
   font-weight: lighter !important;
   font-size: 0.825em !important;
@@ -139,22 +143,20 @@ $selection-bg: #26351c !default;
 
 // Vertikale Abstände
 
-.reveal p {
+.reveal h2,
+.reveal h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.reveal h2 {
-  margin-bottom: 0;
+.reveal div.code-with-filename div,
+.reveal div.column,
+.reveal div.fragment {
+  margin-top: 0 !important;
 }
 
-.reveal h3 {
-  margin-top: 0.6em;
-  margin-bottom: 0;
-}
-
-.reveal div.code-with-filename div {
-  margin-top: 0em !important;
+.reveal div.fragment h3 {
+  margin-top: 0.6em !important;
 }
 
 .reveal pre.raw,
@@ -169,12 +171,20 @@ $selection-bg: #26351c !default;
 .reveal h2+p,
 .reveal h2+div,
 .reveal h2+pre,
+.reveal h2+h3,
 .reveal h3+p,
 .reveal h3+div,
 .reveal h3+pre,
 .reveal pre+p,
+.reveal pre+div,
+.reveal div+div,
+.reveal ul+h3,
 .reveal .code-copy-outer-scaffold+p {
   margin-top: 0.6em !important;
+}
+
+.reveal ul+h3 {
+  margin-top: 0.2em !important;
 }
 
 .reveal div+dl {
