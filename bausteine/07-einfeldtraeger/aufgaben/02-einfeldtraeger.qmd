@@ -70,4 +70,12 @@ Gehen Sie in folgenden Schritten vor:
 
 1. Implementieren Sie die Methoden zum Zeichnen, gehen Sie dabei in kleinen Schritten vor.
 
+Tipps zur Programmierung:
+
+- In BoDraw gibt es eine Klasse `Arrow`
+
+- Sie können in BoDraw ein Grafikobjekt direkt einfügen, zum Beispiel mit `group.Add(new Line(0, 0, 3, 3))`
+
+- Text mit Zahlen können Sie wie bei der Ausgabe auf die Konsole formatieren, zum Beispiel `new Text($"{a:0.00 mm}", ...)`
+
 :::
