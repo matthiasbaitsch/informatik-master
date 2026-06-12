@@ -62,12 +62,12 @@ schreiben. Verwenden Sie darüber hinaus einen Skalierungsfaktor `s`, den Sie in
 
 Gehen Sie in folgenden Schritten vor:
 
-1. Grundgerüst: Erstellen Sie die Klasse `Beam` mit Attributen und dem Konstruktor. Implementieren Sie alle Methoden im Klassendiagramm, die mit `M` beginnen, die Methoden sollen dabei zunächst alle den Wert 0 zurückgeben. Klicken Sie links auf das Reagenzglas und führen Sie die Tests aus. Sie sollten folgende Ausgabe erhalten.
+1. Grundgerüst: Erstellen Sie die Klasse `Beam` mit Attributen und dem Konstruktor. Implementieren Sie alle Methoden im Klassendiagramm, die mit `M` beginnen, die Methoden sollen dabei zunächst alle den Wert 0 zurückgeben. Klicken Sie links auf das Reagenzglas und führen Sie die Tests aus. Sie sollten in etwa folgende Ausgabe erhalten.
 
     ![](bilder/tests.png){width=70% fig-align="center"}
 
-1. Berechnung der Biegemomente: Implementieren Sie Schritt für Schritt die Methoden für die Biegemomente bis alle Tests grün sind.
+1. Berechnung der Biegemomente: Implementieren Sie nach und nach die Methoden für die Biegemomente bis alle Tests grün sind.
 
-1. Implementieren Sie Schritt für Schritt die Methoden zum Zeichnen.
+1. Implementieren Sie die Methoden zum Zeichnen, gehen Sie dabei in kleinen Schritten vor.
 
 :::
