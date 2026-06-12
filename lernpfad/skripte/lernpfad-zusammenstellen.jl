@@ -171,12 +171,12 @@ paths = readdir(bausteine_folder, join=true) |>
 
 # Clean
 for path = paths
-    bb = BuildingBlock(path)
-    for (_, folder) = components
-        output_folder = joinpath(lernpfad_folder, folder, "c")
-        rm(output_folder, force=true, recursive=true)
-        mkpath(output_folder)
-    end
+        bb = BuildingBlock(path)
+        for (_, folder) = components
+            output_folder = joinpath(lernpfad_folder, folder, "c")
+            rm(output_folder, force=true, recursive=true)
+            mkpath(output_folder)
+        end
 end
 
 # Make
