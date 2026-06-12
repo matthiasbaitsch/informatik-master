@@ -1,0 +1,17 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>100</x><y>110</y><w>360</w><h>250</h></coordinates><panel_attributes>Beam
+--
++ Length : double
++ SupportA : string
++ SupportB : string
++ Load : double
+--
++ Beam(l : double, a : string, b : string, q : double)
++ MA() : double
++ MB() : double
++ M(x : double) : double
++ MMax() : double
++ Draw(app : BoDrawApp) : void
++ DrawSystem(a : double) : Group
++ DrawSupport(x : double, a : double, type : string) : Group
++ DrawMomentLine(a : double)  : Group
++ DrawMomentText(x : double, s : double : a : double) : Group</panel_attributes><additional_attributes></additional_attributes></element></diagram>
