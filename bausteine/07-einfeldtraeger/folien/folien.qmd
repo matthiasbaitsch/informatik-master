@@ -1,0 +1,102 @@
+# Unit Tests
+
+## Was sind Unit Tests?
+
+Ein **Unit Test** ist ein kleines Programm, das automatisch prüft, ob eine einzelne Methode das richtige Ergebnis liefert.
+
+::: {.fragment}
+### Idee
+
+- Man weiß, was eine Methode berechnen soll
+- Man schreibt Code, der das prüft
+- Der Test kann automatisch ausgeführt werden
+:::
+
+::: {.fragment}
+### Beispiel
+
+Für ein Statikprogramm (Finite Elemente) sind für Spezialfällte (z.B. einen Einfeldträger) die Lösungen bekannt. In einem Unit-Test kann automatisch geprüft werden, ob das Programm richtig rechnet.
+:::
+
+## Warum Unit Tests?
+
+### Fehler entdecken
+
+- Sobald eine Methode falsch ist, schlägt der Test an
+- Es können systematisch alle wichtigen Fälle geprüft werden
+- Wichtig: Grenzfälle berücksichtigen
+
+### Sicherheit beim Ändern
+
+- Test zeigt, dass Code nach einer Änderung immer noch funktioniert
+
+### Erwartungen dokumentieren
+
+- Tests zeigen, welche Eingaben welche Ergebnisse liefern sollen
+- Oft verständlicher als ein Kommentar
+
+### Schrittweise entwickeln
+
+- Inkrementell schreiben, testen, verbessern
+- Tests geben Rückmeldung zu Stand der Arbeit
+
+## Unit Tests in C\#
+
+In C# verwenden wir **xUnit**. Ein Test ist eine Methode mit dem Attribut `[Fact]`.
+
+```{.csharp}
+public class Test
+{
+    public const double L = 3.2;
+    public const double Q = 1.3;
+
+    [Fact]
+    public void MAFixedFixed()
+    {
+        Beam b = new Beam(L, "Fixed", "Fixed", Q);
+        Assert.Equal(-Q * L * L / 12, b.MA());
+    }
+
+    [Fact]
+    public void MAFixedPinned()
+    {
+        Beam b = new Beam(L, "Fixed", "Pinned", Q);
+        Assert.Equal(-Q * L * L / 8, b.MA());
+    }
+}
+```
+
+::: {.fragment}
+`Assert.Equal(erwarteter Wert, tatsächlicher Wert)` – schlägt der Test fehl, wird eine Fehlermeldung angezeigt.
+:::
+
+## Test-Driven Development (TDD)
+
+**TDD** dreht die übliche Reihenfolge  bei der Softwareentwicklung um: erst der Test, dann der Code.
+
+::: {.fragment}
+### Ablauf
+
+1. **Red** – Test schreiben, der noch fehlschlägt; da sich in C# alle Tests fehlerfrei übersetzen lassen müssen, gibt jede neue Methode zunächst einen Platzhalterwert zurück (z.B. `return 0`)
+2. **Green** – minimalen Code schreiben, damit der Test besteht
+3. **Refactor** – Code aufräumen, Tests müssen weiterhin grün bleiben
+:::
+
+::: {.fragment}
+### Warum das sinnvoll ist
+
+- Man denkt zuerst darüber nach, *was* die Methode leisten soll – nicht *wie*
+- Jede neue Methode hat von Anfang an einen Test
+- Man weiß genau, wann man fertig ist: wenn alle Tests grün sind
+:::
+
+## Tests in VS Code
+
+![](bilder/tests.png)
+
+Tests im **Test Explorer** ausführen
+
+1. Links auf das Reagenzglas-Symbol klicken
+2. Auf den Pfeil neben einem Test oder der Testklasse klicken
+
+→ Bei fehlgeschlagenen Tests auf Hinweis klicken
