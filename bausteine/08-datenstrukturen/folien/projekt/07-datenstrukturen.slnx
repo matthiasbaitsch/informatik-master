@@ -5,4 +5,7 @@
   <Folder Name="/02-collections/">
     <Project Path="02-collections/arrays.csproj" />
   </Folder>
+  <Folder Name="/03-paint-foreach/">
+    <Project Path="03-paint-foreach/paint-foreach.csproj" />
+  </Folder>
 </Solution>

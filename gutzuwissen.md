@@ -20,3 +20,10 @@ dotnet nuget locals all -c
 
     ```{.csharp code-line-numbers="true"}
     ```
+
+- Link in neuem Fenster
+
+    ```
+    [link](url){target="_blank"}
+    ```
+    

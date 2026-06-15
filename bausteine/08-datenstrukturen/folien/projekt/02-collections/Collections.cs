@@ -11,9 +11,11 @@
 }
 
 {
+    // ## `List`-Klasse: Elemente suchen und entfernen
     List<int> numbers = [42, 54, 1];
     Console.WriteLine(numbers.Contains(1));
     Console.WriteLine(numbers.IndexOf(54));
+    Console.WriteLine(numbers.IndexOf(1));
     numbers.RemoveAt(0);
     numbers.Remove(1);
     numbers.Remove(99);
@@ -21,13 +23,17 @@
 }
 
 {
-    double sum = 0;
-    double[] sizes = [3.5, 1.2, 4.8, 2.1];
-    foreach (double s in sizes)
+    // ## Beispiel 1: Mit Array
+    double s2 = 0;
+    double[] forces = [12.5, 3.2, 8.7, 1.4, 9.1];
+
+    foreach (double f in forces)
     {
-        sum += s;
+        s2 += f * f;
     }
-    Console.WriteLine($"Summe = {sum}");
+    Console.WriteLine($"Summe der Quadrate: {s2}");
+    Console.WriteLine($"Summe mit Sum: {forces.Sum()}");
+    Console.WriteLine($"Min und Max: {forces.Min()} - {forces.Max()}");
 }
 
 {
@@ -41,4 +47,20 @@
     Console.WriteLine(String.Join(" • ", materials));
     Console.WriteLine(materials.Contains("Steel"));
     Console.WriteLine(materials.Contains("Concrete"));
+}
+
+{
+    // ### Array und Liste umwandeln
+    double[] array = [3.5, 1.2, 4.8];
+    List<double> list = array.ToList();
+    list.Add(2.1);
+    array = list.ToArray();
+    Console.WriteLine(array.Length);
+}
+
+{
+    // `IEnumerable` als Text ausgeben
+    List<string> names = ["Alice", "Bob", "Carol"];
+    Console.WriteLine(String.Join(", ", names));
+
 }

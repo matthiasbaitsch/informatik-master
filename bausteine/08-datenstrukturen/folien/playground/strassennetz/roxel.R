@@ -1,10 +1,12 @@
 library(sf)
-library(sfnetworks)
 library(tidyverse)
+library(sfnetworks)
 
-net = as_sfnetwork(roxel) |>
+net <- as_sfnetwork(roxel) |>
   activate("edges") |>
-  mutate(weight = as.numeric(edge_length()))
+  mutate(
+    weight = as.numeric(edge_length())
+  )
 
 edges_sf <- st_as_sf(net, "edges")
 nodes_sf <- st_as_sf(net, "nodes")

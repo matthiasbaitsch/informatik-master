@@ -1,33 +1,23 @@
 library(sf)
-library(sfnetworks)
-library(osmextract)
-library(tidygraph)
 library(tidyverse)
+library(tidygraph)
+library(osmextract)
+library(sfnetworks)
 options(timeout = 3000)
 
-de <- oe_get(
+net <- oe_get(
   "Germany",
   layer = "lines",
   extra_tags = c("ref"),
   query = "SELECT * FROM lines WHERE highway = 'motorway'",
-  
   quiet = FALSE
-)
-
-de <- st_transform(de, 25832)
-
-net <- as_sfnetwork(de, directed = FALSE) %>%
-  activate("edges") %>%
-  mutate(laenge_km = as.numeric(st_length(geometry)) / 1000) %>%
-  convert(to_spatial_subdivision)  %>%
-   convert(to_spatial_smooth)
-
-# net_de |>
-#   select(from, to, laenge_km) |>
-#   plot()
-
-# ggplot(data = de) +
-#   geom_sf()
+) |>
+  st_transform(25832) |>
+  as_sfnetwork(directed = FALSE) |>
+  activate("edges") |>
+  mutate(laenge_km = as.numeric(st_length(geometry)) / 1000) |>
+  convert(to_spatial_subdivision) |>
+  convert(to_spatial_smooth)
 
 edges_sf <- st_as_sf(net, "edges")
 nodes_sf <- st_as_sf(net, "nodes")

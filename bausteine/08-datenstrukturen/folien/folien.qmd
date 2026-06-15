@@ -5,16 +5,19 @@
 []{.down80}
 
 ::: {.columns}
-::: {.column width="45%"}
+::: {.column width="50%"}
 ![](bilder/roxel.png)
 :::
-::: {.column width="55%"}
+::: {.column width="50%"}
 ### Vorhanden
 
 - Orte (genauer: [Wegpunkte](https://de.wikipedia.org/wiki/Wegpunkt))
 - Streckenabschnitte mit Länge
 
 → Gegebenenfalls sehr viele
+
+::: {.fragment}
+[]{.down40}
 
 ### Notwendig für Dijkstra-Algorithmus
 
@@ -23,6 +26,7 @@
 - Liste aller mit Ort verbundenen Orte
 
 → Wie organisieren?
+:::
 :::
 :::
 
@@ -49,6 +53,7 @@
 
 []{.down20}
 
+::: {.fragment}
 ::: {.columns}
 ::: {.column width="33%"}
 ![](bilder/rechtschreibpreufung.png)
@@ -63,9 +68,11 @@
 → Wie nachschlagen, ob es ein Wort gibt?
 :::
 :::
+:::
 
 []{.down20}
 
+::: {.fragment}
 ::: {.columns}
 ::: {.column width="33%"}
 ![](bilder/autocompletion.png)
@@ -80,6 +87,8 @@
 → Wie wahrscheinliche Fortsetzung raussuchen?
 :::
 :::
+:::
+
 
 ## Datenstrukturen
 
@@ -122,20 +131,32 @@ Graph
 ### Braucht man ständig
 
 - `Array`: Viele Objekte vom selben Typ, Zugriff über Index, Größe fest
-- `List`: Wie Array aber Größe variabel
+- `List`: Wie Array aber Größe variabel (verwendet intern ein Array)
 
+[]{.down30}
+
+::: {.fragment}
 ### Manchmal praktisch
 
 - `Dictionary`: Zuordnung Schlüssel zu Wert
 - `Set`: Werte nur einmal speichern 
+:::
 
+[]{.down30}
+
+::: {.fragment}
 ### In Sonderfällen
 
-- `Queue`, `Stack`, `LinkedList`, `SortedMap`
+- `Queue`, `Stack`, `LinkedList`, `SortedDictionary`
+:::
 
+[]{.down30}
+
+::: {.fragment}
 ### Gemeinsamer Nenner für C\# Datenstrukturen
 
 - Schnittstelle `IEnumerable<T>`
+:::
 
 # Arrays
 
@@ -197,6 +218,8 @@ s = 0
 :::
 :::
 
+[]{.down30}
+
 ::: {.fragment}
 ### Arrayvariablen sind Referenzvariablen
 
@@ -240,8 +263,10 @@ Console.WriteLine($"a[0] = {a[0]}, a[1] = {a[1]}, a[2] = {a[2]}");
 a[0] = 1, a[1] = 98, a[2] = 4
 ```
 
+[]{.down30}
+
 ::: {.fragment}
-### Array ausgeben mit `String.join(...)`
+### Array ausgeben mit `String.Join(...)`
 
 ```csharp
 int[] a = [4, 6, 3, 0];
@@ -251,6 +276,8 @@ Console.WriteLine(String.Join(", ", a));
 4, 6, 3, 0
 ```
 :::
+
+[]{.down30}
 
 ::: {.fragment}
 ### Fehler bei Zugriff außerhalb Grenzen
@@ -279,6 +306,8 @@ Console.WriteLine(String.Join("; ", a));
 ```
 
 - Sortiert das Array aufsteigend, verändert das Array direkt
+
+[]{.down30}
 
 ::: {.fragment}
 ### Eintrag finden mit `Array.IndexOf`
@@ -350,7 +379,11 @@ a[2] = 1 / 2
 - Einträge sind mit `null` vorbelegt – `null` heißt kein Objekt
 - Einträge zeigen erst nach Zuweisung auf Objekte
 
+[]{.down40}
+
+::: {.fragment}
 → [Null References: The Billion Dollar Mistake - Tony Hoare](https://youtu.be/ybrQvs4x0Ps?si=bMKKhxOudVT38-yQ)
+:::
 
 # Die `List`-Klasse
 
@@ -383,6 +416,7 @@ Gilmore | Lopez | Machado
 List<int> numbers = [42, 54, 1];
 Console.WriteLine(numbers.Contains(1));
 Console.WriteLine(numbers.IndexOf(54));
+Console.WriteLine(numbers.IndexOf(1));
 numbers.RemoveAt(0);
 numbers.Remove(1);
 numbers.Remove(99);
@@ -391,6 +425,7 @@ Console.WriteLine(String.Join(", ", numbers));
 ``` {.output}
 True
 1
+2
 54
 ```
 
@@ -455,63 +490,114 @@ False
 
 ## Übersicht
 
-[]{.down40}
-
-Alle besprochenen Datenstrukturen implementieren die Schnittstelle `IEnumerable<T>`
-
-[]{.down30}
-
-| Schnittstelle | Bedeutung | Implementiert von |
-|---|---|---|
-| `IEnumerable<T>` | Elemente durchlaufen | Alle Collections |
-| `ICollection<T>` | `Count`, `Add`, `Remove`, `Contains` | `List<T>`, `HashSet<T>`, `Dictionary<K,V>` |
-| `IList<T>` | Index-Zugriff `[i]` | `List<T>`, Arrays |
+Alle besprochenen Datenstrukturen haben die Schnittstelle `IEnumerable`
 
 []{.down20}
 
-→ Methoden mit Parameter `IEnumerable<T>` funktionieren mit jeder Collection (`foreach`, `String.Join`, ...)
+| Methode | Bedeutung |
+|---|---|
+| `foreach(Datentyp e in a) {}` | Alle Elemente von `a` durchlaufen |
+| `a.Sum()` | Summe |
+| `a.Min()` / `a.Max()` | Minimum / Maximum der Elemente von `a`|
+| `a.Average()` | Mittelwert der Elemente von `a` |
+| `a.ToArray()` / `a.ToList()` / `a.ToHashSet()` | Kopie als Array / Liste / Menge erstellen |
 
-## Alle Elemente verarbeiten mit `foreach`
+[]{.down20}
+
+- Alle Methoden funktionieren mit Arrays, `List<T>`, `HashSet<T>`, ...
+- Methoden `Sum`, `Min`, `Max`, `Average` nur mit Zahlen
+- Technische Anmerkung: Methoden stammen aus [LINQ](https://learn.microsoft.com/de-de/dotnet/csharp/linq/){target="_blank"}
+    - Leistungsfähiges Sprachfeature von C# für Abfragen
+
+## Beispiel 1: Mit Array
 
 ```csharp
-double sum = 0;
-double[] sizes = [3.5, 1.2, 4.8, 2.1];
-foreach (double s in sizes)
+double s2 = 0;
+double[] forces = [12.5, 3.2, 8.7, 1.4, 9.1];
+
+foreach (double f in forces)
 {
-    sum += s;
+    s2 += f * f;
 }
-Console.WriteLine($"Summe = {sum}");
+Console.WriteLine($"Summe der Quadrate: {s2}");
+Console.WriteLine($"Summe mit Sum: {forces.Sum()}");
+Console.WriteLine($"Min und Max: {forces.Min()} - {forces.Max()}");
 ```
+
 ``` {.output}
-Summe = 11.6
+Summe der Quadrate: 326,95
+Summe mit Sum: 34,9
+Min und Max: 1,4 - 12,5
 ```
 
-- `foreach` durchläuft alle Elemente
-- Funktioniert mit Arrays, `List<T>`, `Dictionary<K,V>`, `HashSet<T>`, ...
-- Schreibweise: `foreach (Typ variable in collection)`
+- Summe der Quadrate in `foreach`-Schleife berechnen
+    - Schreibweise: `foreach(Datentyp variable in collection) {}`
+    - Summationsvariable `s2`
+- Summe und Minimum/Maximum mit vordefinierten Methoden
 
-## Beispiel: Image-Klasse aus BoDraw
+## Beispiel 2: Image-Klasse aus BoDraw 1/2
 
-## Praktische Hilfsmethoden
-
-### Array und Liste umwandeln
+### Alle Pixel von Rastergrafik mit geschachtelten Schleifen
 
 ```csharp
-double[] a = [3.5, 1.2, 4.8];
-List<double> list = new List<double>(a);
+BoDrawApp app = new BoDrawApp();
+Image image = new Image(-1.1, -1.1, 1.1, 1.1, 1500);
+
+for (int row = 0; row < image.PixelSize.Height; row++)
+{
+    for (int col = 0; col < image.PixelSize.Width; col++)
+    {
+        Image.Pixel p = image.PixelAt(row, col);
+        p.Color = ...;
+    }
+}
+```
+
+- Variablen `row` und `col` durchlaufen alle Zeilen und Spalten
+- Damit zeigt `p` einmal auf jedes Pixel
+
+→ Nicht gut: Intention 'alle Pixel verarbeiten' ist versteckt, viel zu tippen
+
+## Beispiel 2: Image-Klasse aus BoDraw 2/2
+
+### Dokumentation von [Image](https://matthiasbaitsch.github.io/BoDraw/api/BoDraw.Image.html){target="_blank"}
+
+![](bilder/image-api.png)
+
+### Alle Pixel mit `foreach`-Schleife
+
+```csharp
+foreach (Image.Pixel p in image.Pixels)
+{
+    p.Color = ...;
+}
+```
+
+- Variable `p` durchläuft alle Pixel
+- Programmcode macht Intention 'alle Pixel bearbeiten' deutlich
+
+## Praktische Hilfsmethoden für `IEnumerable`
+
+### In Array oder Liste kopieren
+
+```csharp
+double[] array = [3.5, 1.2, 4.8];
+List<double> list = array.ToList();
 list.Add(2.1);
-double[] a2 = list.ToArray();
-Console.WriteLine(a2.Length);
+array = list.ToArray();
+Console.WriteLine(array.Length);
 ```
 ``` {.output}
 4
 ```
 
-- `new List<T>(array)` – Array in Liste umwandeln
-- `list.ToArray()` – Liste in Array umwandeln (funktioniert auch für `HashSet<T>`, `Dictionary<K,V>`, ...)
+- `array.ToList()` – Werte in neue Liste kopieren
+- `list.ToArray()` – Werte in neues Array kopieren
+
+[]{.down30}
 
 ::: {.fragment}
-### Collection als Text ausgeben
+### Als Text ausgeben
 
 ```csharp
 List<string> names = ["Alice", "Bob", "Carol"];
@@ -521,18 +607,52 @@ Console.WriteLine(String.Join(", ", names));
 Alice, Bob, Carol
 ```
 
-- `String.Join(trennzeichen, collection)` – funktioniert mit Arrays und Listen
+- `String.Join(trennzeichen, collection)`
 :::
 
-## Weitere Informationen
+# Zusammenfassung, Auslassungen und weitere Informationen
 
-- https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/collections
-- https://learn.microsoft.com/en-us/dotnet/standard/collections/selecting-a-collection-class
+## Zusammenfassung
+
+### Datenstrukturen
+
+- Speichern und organisieren Daten
+- Operationen: Hinzufügen, Suchen, Entfernen etc.
+- Auswahl hängt vom Anwendungsfall ab
+
+[]{.down20}
+
+### Die wichtigsten C#-Datenstrukturen
+
+- `Array` – feste Größe, Zugriff über Index
+- `List<T>` – wie Array, aber Größe variabel, häufig die erste Wahl
+- `Dictionary<TKey, TValue>` – Schlüssel-Wert-Paare
+- `HashSet<T>` – Menge, jeder Wert nur einmal, schnelles Nachschlagen
+
+[]{.down20}
+
+### Gemeinsamer Nenner: `IEnumerable<T>`
+
+- Alle Datenstrukturen unterstützen `foreach`, `Sum`, `Min`, `Max`, `Average`
+- Konvertierung mit `ToArray()`, `ToList()`, `ToHashSet()`
 
 ## Was wir weggelassen haben
 
+[]{.down80}
+
 - Mehrdimensionale Arrays
-- LINQ
-- LinkedList, SortedSet
-- Queues, Deques
-- Bäume, Graphen
+- LinkedList
+- SortedSet
+- Queues und Deques
+- Bäume und Graphen
+- LINQ nur kurz erwähnt
+
+## Weitere Informationen
+
+[]{.down80}
+
+- [Dokumentation zu Collections](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/collections){target="_blank"}
+- [Geeignete Collection auswählen](https://learn.microsoft.com/en-us/dotnet/standard/collections/selecting-a-collection-class){target="_blank"}
+- [Array-Klassenreferenz](https://learn.microsoft.com/de-de/dotnet/api/system.array){target="_blank"}
+- [LINQ-Dokumentation](https://learn.microsoft.com/de-de/dotnet/csharp/linq/){target="_blank"}
+
