@@ -10,6 +10,7 @@ dotnet_diagnostic.CS8600.severity = error
 dotnet_diagnostic.IDE0003.severity = none
 dotnet_diagnostic.IDE0009.severity = warning
 dotnet_diagnostic.IDE0017.severity = none
+dotnet_diagnostic.IDE0028.severity = none
 dotnet_diagnostic.IDE0044.severity = none
 dotnet_diagnostic.IDE0059.severity = none
 dotnet_diagnostic.IDE0062.severity = none
@@ -19,6 +20,8 @@ dotnet_diagnostic.IDE0130.severity = none
 dotnet_diagnostic.IDE0180.severity = none
 dotnet_diagnostic.IDE0290.severity = none
 dotnet_diagnostic.IDE0300.severity = none
+dotnet_diagnostic.IDE0305.severity = none
+dotnet_diagnostic.IDE0306.severity = none
 
 # Use this in classes
 dotnet_style_qualification_for_field = true
