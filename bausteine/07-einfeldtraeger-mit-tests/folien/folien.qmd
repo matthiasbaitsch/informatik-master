@@ -73,10 +73,8 @@ public class Test
 
 - Test: Methode mit Annotation `[Fact]`
 - `Assert.Equal(erwarteter Wert, tatsächlicher Wert, [Toleranz])`
-:::
 
 ## Tests in VS Code
-
 
 ::: {.columns}
 ::: {.column}

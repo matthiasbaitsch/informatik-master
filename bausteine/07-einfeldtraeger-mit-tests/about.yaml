@@ -1,6 +1,7 @@
-titel: Einfeldträger
+titel: Einfeldträger mit Tests
 
 inhalt:
+  - Automatisch testen mit Unit Tests
   - Momentenverlauf Einfeldträger
 
 dauer: 3

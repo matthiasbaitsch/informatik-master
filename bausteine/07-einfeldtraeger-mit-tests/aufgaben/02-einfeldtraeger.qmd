@@ -47,7 +47,6 @@ Das UML-Klassendiagramm zeigt eine mögliche Umsetzung des Einfeldträgers in ei
 ::: {.column width="50%"}
 Die `Draw`-Methode soll das statische System und die Momentenlinie zeichnen, links ein Vorschlag, den Sie natürlich nach Ihren eigenen Vorstellungen interpretieren. Damit die Zeichnung auch dann gut aussieht, wenn der Träger 30m lang ist, bietet es sich an, eine Zeicheneinheit `a` einzuführen, und diese in Abhängigkeit der Länge des Trägers zu wählen, zum Beispiel $a = l / 30$.
 :::
-::: {.columns}
 :::
 
 Um das Zeichnen des Systems etwas zu organisieren werden weitere Methoden verwendet, die jeweils ein Zeichenelement erzeugen. Damit kann man dann zum Beispiel in der `Draw`-Methode einfach
