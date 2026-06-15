@@ -1,48 +1,53 @@
 # Unit Tests
 
+## Softwarefehler in [A2LL](https://de.wikipedia.org/wiki/A2LL)
+
+::: {.columns}
+::: {.column width="40%"}
+![](bilder/A2LL_Horizontaluebersicht.jpg)
+:::
+::: {.column width="2%"}
+:::
+::: {.column width="51%"}
+![](bilder/Abschaltung_A2LL_August_2017.jpg)
+:::
+:::
+
+- Webanwendung zur Erfassung und Verwaltung von finanziellen Leistungen für Empfänger des Arbeitslosengeldes II, Inbetriebnahme ab Oktober 2004
+- Zahlreiche Fehler traten auf, die nur mit einem erheblichen Mehraufwand seitens der Jobcenter bearbeitet bzw. umgangen werden konnten
+- Beispiel: Falsche Kontonummern (1234567000 anstatt 0001234567) führen zu Chaos bei Banken
+- Workaround: Barschecks versenden scheitert teilweise an abgeschnittenen Straßennamen
+
+##
+
+[]{.down200}
+
+::: {.r-fit-text}
+Software muss getestet werden
+:::
+
+Unit Tests sind dabei ein wichtiger Baustein...
+
 ## Was sind Unit Tests?
 
-Ein **Unit Test** ist ein kleines Programm, das automatisch prüft, ob eine einzelne Methode das richtige Ergebnis liefert.
+**Unit Test**: Software, die automatisch prüft, ob eine Klasse das tut, was sie soll
 
 ::: {.fragment}
-### Idee
+### Wie funktioniert das?
 
-- Man weiß, was eine Methode berechnen soll
-- Man schreibt Code, der das prüft
-- Der Test kann automatisch ausgeführt werden
+- Vergleich von Erwartung und Wirklichkeit
 :::
 
 ::: {.fragment}
-### Beispiel
+### Warum?
 
-Für ein Statikprogramm (Finite Elemente) sind für Spezialfällte (z.B. einen Einfeldträger) die Lösungen bekannt. In einem Unit-Test kann automatisch geprüft werden, ob das Programm richtig rechnet.
+- Fehler früh erkennen
+- Systematische Überprüfung von Grenzfällen
+- Sicherheit, dass Klasse nach einer Änderung immer noch funktioniert
+- Beispiel für Statikprogramm: Vergleich mit bekannter Lösung (Einfeldtäger)
 :::
 
-## Warum Unit Tests?
-
-### Fehler entdecken
-
-- Sobald eine Methode falsch ist, schlägt der Test an
-- Es können systematisch alle wichtigen Fälle geprüft werden
-- Wichtig: Grenzfälle berücksichtigen
-
-### Sicherheit beim Ändern
-
-- Test zeigt, dass Code nach einer Änderung immer noch funktioniert
-
-### Erwartungen dokumentieren
-
-- Tests zeigen, welche Eingaben welche Ergebnisse liefern sollen
-- Oft verständlicher als ein Kommentar
-
-### Schrittweise entwickeln
-
-- Inkrementell schreiben, testen, verbessern
-- Tests geben Rückmeldung zu Stand der Arbeit
-
-## Unit Tests in C\#
-
-In C# verwenden wir **xUnit**. Ein Test ist eine Methode mit dem Attribut `[Fact]`.
+## Unit Tests in C\# mit xUnit
 
 ```{.csharp}
 public class Test
@@ -54,49 +59,49 @@ public class Test
     public void MAFixedFixed()
     {
         Beam b = new Beam(L, "Fixed", "Fixed", Q);
-        Assert.Equal(-Q * L * L / 12, b.MA());
+        Assert.Equal(-Q * L * L / 12, b.MA(), 1e-14);
     }
 
     [Fact]
     public void MAFixedPinned()
     {
         Beam b = new Beam(L, "Fixed", "Pinned", Q);
-        Assert.Equal(-Q * L * L / 8, b.MA());
+        Assert.Equal(-Q * L * L / 8, b.MA(), 1e-14);
     }
 }
 ```
 
-::: {.fragment}
-`Assert.Equal(erwarteter Wert, tatsächlicher Wert)` – schlägt der Test fehl, wird eine Fehlermeldung angezeigt.
-:::
-
-## Test-Driven Development (TDD)
-
-**TDD** dreht die übliche Reihenfolge  bei der Softwareentwicklung um: erst der Test, dann der Code.
-
-::: {.fragment}
-### Ablauf
-
-1. **Red** – Test schreiben, der noch fehlschlägt; da sich in C# alle Tests fehlerfrei übersetzen lassen müssen, gibt jede neue Methode zunächst einen Platzhalterwert zurück (z.B. `return 0`)
-2. **Green** – minimalen Code schreiben, damit der Test besteht
-3. **Refactor** – Code aufräumen, Tests müssen weiterhin grün bleiben
-:::
-
-::: {.fragment}
-### Warum das sinnvoll ist
-
-- Man denkt zuerst darüber nach, *was* die Methode leisten soll – nicht *wie*
-- Jede neue Methode hat von Anfang an einen Test
-- Man weiß genau, wann man fertig ist: wenn alle Tests grün sind
+- Test: Methode mit Annotation `[Fact]`
+- `Assert.Equal(erwarteter Wert, tatsächlicher Wert, [Toleranz])`
 :::
 
 ## Tests in VS Code
 
-![](bilder/tests.png)
 
-Tests im **Test Explorer** ausführen
+::: {.columns}
+::: {.column}
+![](bilder/tests.png)
+:::
+::: {.column}
+### Tests im 'Test Explorer' ausführen
 
 1. Links auf das Reagenzglas-Symbol klicken
-2. Auf den Pfeil neben einem Test oder der Testklasse klicken
+1. Alle Tests mit 'Run Tests' Button ausführen
+1. Bei fehlgeschlagenen Tests auf Hinweis klicken
+:::
+:::
 
-→ Bei fehlgeschlagenen Tests auf Hinweis klicken
+::: {.fragment}
+**Hinweis:** In C# müssen sich alle Tests fehlerfrei übersetzen lassen. Neue Methoden geben daher zunächst einen Platzhalterwert zurück (`return 0`), bis sie implementiert sind.
+:::
+
+## Testgetriebene Entwicklung
+
+![Quelle: https://marsner.com](bilder/test-driven-development-TDD.png)
+
+Idee: Man schreibt erst die Tests, dann den Code
+
+1. **Red** – Test schreiben, der fehlschlägt
+1. **Green** – minimalen Code schreiben, damit der Test besteht
+1. **Refactor** – Code aufräumen, Tests müssen weiterhin grün bleiben
+
