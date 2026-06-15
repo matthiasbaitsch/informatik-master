@@ -622,19 +622,23 @@ Alice, Bob, Carol
 
 []{.down20}
 
+::: {.fragment}
 ### Die wichtigsten C#-Datenstrukturen
 
 - `Array` – feste Größe, Zugriff über Index
 - `List<T>` – wie Array, aber Größe variabel, häufig die erste Wahl
 - `Dictionary<TKey, TValue>` – Schlüssel-Wert-Paare
 - `HashSet<T>` – Menge, jeder Wert nur einmal, schnelles Nachschlagen
+:::
 
 []{.down20}
 
+::: {.fragment}
 ### Gemeinsamer Nenner: `IEnumerable<T>`
 
 - Alle Datenstrukturen unterstützen `foreach`, `Sum`, `Min`, `Max`, `Average`
 - Konvertierung mit `ToArray()`, `ToList()`, `ToHashSet()`
+:::
 
 ## Was wir weggelassen haben
 
