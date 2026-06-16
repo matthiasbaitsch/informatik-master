@@ -1,5 +1,7 @@
 # Einführung
 
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## Routenplanung
 
 []{.down80}
@@ -84,7 +86,7 @@
 
 - Liste mit Worten und Häufigkeiten
 
-→ Wie wahrscheinliche Fortsetzung raussuchen?
+→ Wie wahrscheinliche Fortsetzung heraussuchen?
 :::
 :::
 :::
@@ -159,6 +161,8 @@ Graph
 :::
 
 # Arrays
+
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
 
 ## Arrays: Das Allerwichtigste
 
@@ -322,7 +326,7 @@ Console.WriteLine($"i1 = {i1}, i2 = {i2}");
 i1 = 2, i2 = -1
 ```
 
-- Gibt den ersten Index des gesuchten Werts zurück, `-1` wenn nicht enthalten
+- Gibt den ersten Index des gesuchten Werts zurück, `-1`, wenn nicht enthalten
 :::
 
 ## Hilfsmethoden in der Array-Klasse 2/2
@@ -332,9 +336,9 @@ i1 = 2, i2 = -1
 - `Array.Copy(a, b, n)` – kopiert `n` Elemente von Array `a` nach `b`
 - `Array.Fill(a, v)` – belegt alle Einträge von `a` mit dem Wert `v`
 - `Array.Reverse(a)` – kehrt die Reihenfolge der Einträge um
-- `Array.Resize(ref a, n)` - vermeiden, besser Liste verwenden
+- `Array.Resize(ref a, n)` – vermeiden, besser Liste verwenden
 
-→ Vollständige Dokumentation [bei Microsoft](https://learn.microsoft.com/en-en/dotnet/api/system.array)
+→ Vollständige Dokumentation [bei Microsoft](https://learn.microsoft.com/en-us/dotnet/api/system.array)
 
 ## Arrays von Objekten
 
@@ -387,6 +391,8 @@ a[2] = 1 / 2
 
 # Die `List`-Klasse
 
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## `List`-Klasse: Das Allerwichtigste
 
 ```csharp
@@ -433,9 +439,11 @@ True
 - `Contains(v)` – prüft ob `v` in der Liste enthalten ist
 - `IndexOf(v)` – gibt Index von `v` zurück, `-1` wenn nicht enthalten
 - `RemoveAt(i)` – entfernt Element an Position `i`
-- `Remove(v)` – entfernt `v` falls vorhanden
+- `Remove(v)` – entfernt `v`, falls vorhanden
 
 # Manchmal praktisch
+
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
 
 ## Dinge mit einem Schlüssel speichern: `Dictionary`
 
@@ -488,6 +496,8 @@ False
 
 # Gemeinsamer Nenner: `IEnumerable<T>`
 
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## Übersicht
 
 Alle besprochenen Datenstrukturen haben die Schnittstelle `IEnumerable`
@@ -506,7 +516,7 @@ Alle besprochenen Datenstrukturen haben die Schnittstelle `IEnumerable`
 
 - Alle Methoden funktionieren mit Arrays, `List<T>`, `HashSet<T>`, ...
 - Methoden `Sum`, `Min`, `Max`, `Average` nur mit Zahlen
-- Technische Anmerkung: Methoden stammen aus [LINQ](https://learn.microsoft.com/de-de/dotnet/csharp/linq/){target="_blank"}
+- Technische Anmerkung: Methoden stammen aus [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/){target="_blank"}
     - Leistungsfähiges Sprachfeature von C# für Abfragen
 
 ## Beispiel 1: Mit Array
@@ -595,7 +605,7 @@ Burj Khalifa: 828
 Empire State: 443
 ```
 
-- `height.Keys` – Liste aller Schlüssel, kann mit `foreach` durchlaufen werden
+- `height.Keys` – Sammlung aller Schlüssel, kann mit `foreach` durchlaufen werden
 - Wert zu Schlüssel `building` wie gewohnt mit `height[building]`
 
 ## Praktische Hilfsmethoden für `IEnumerable`
@@ -632,7 +642,90 @@ Alice, Bob, Carol
 - `String.Join(trennzeichen, collection)`
 :::
 
+# Datenstrukturen für die Beispiele
+
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+
+## 
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width="35%"}
+![](bilder/roxel.png)
+:::
+::: {.column width="65%"}
+### Routenplanung
+
+![](bilder/graph.png){width=70%}
+
+- [Graph](https://de.wikipedia.org/wiki/Graphentheorie){target="_blank"} abstrahiert Straßennetz
+    - Knoten repräsentieren Orte
+    - Kanten sind Verbindungen
+:::
+:::
+
+[]{.down40}
+
+::: {.fragment}
+::: {.columns}
+::: {.column width="33%"}
+![](bilder/wec.png)
+:::
+::: {.column width="2%"}
+:::
+::: {.column width="65%"}
+### Finite-Elemente-Berechnung
+
+![](bilder/A-sparse-matrix-and-its-corresponding-CSR-row-pointer-column-indices-and-values-arrays.png){width=55%}
+
+- Listen, Datenstrukturen für Matrizen und Vektoren
+:::
+:::
+:::
+
+##
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width="33%"}
+![](bilder/rechtschreibpreufung.png)
+:::
+::: {.column width="2%"}
+:::
+::: {.column width="65%"}
+### Rechtschreibprüfung
+
+![](bilder/woerterbuch.jpg){width=40%}
+
+- Rund 150000 Wörter deutschen Sprache (Duden)
+- Perfekt geeignet: `HashSet<string>`
+:::
+:::
+
+[]{.down40}
+
+::: {.fragment}
+::: {.columns}
+::: {.column width="33%"}
+![](bilder/autocompletion.png)
+:::
+::: {.column width="2%"}
+:::
+::: {.column width="65%"}
+### Auto-Vervollständigung
+
+![](bilder/trie.jpg){width=70%}
+
+- Trie erlaubt effizientes Lookup
+:::
+:::
+:::
+
 # Zusammenfassung, Auslassungen und weitere Informationen
+
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
 
 ## Zusammenfassung
 
@@ -645,7 +738,7 @@ Alice, Bob, Carol
 []{.down20}
 
 ::: {.fragment}
-### Die wichtigsten C#-Datenstrukturen
+### Die wichtigsten C\#-Datenstrukturen
 
 - `Array` – feste Größe, Zugriff über Index
 - `List<T>` – wie Array, aber Größe variabel, häufig die erste Wahl
@@ -662,16 +755,19 @@ Alice, Bob, Carol
 - Konvertierung mit `ToArray()`, `ToList()`, `ToHashSet()`
 :::
 
-## Was wir weggelassen haben
+## Was wir hier weggelassen haben
 
 []{.down80}
 
 - Mehrdimensionale Arrays
-- LinkedList
-- SortedSet
-- Queues und Deques
-- Bäume und Graphen
+- LinkedList (verkettete Liste, schnelles Einfügen/Löschen)
+- Stack (Stapel, „Last In First Out")
+- SortedDictionary (Dictionary mit sortierten Schlüsseln)
+- Queues (Warteschlange) und Deques (doppelseitige Warteschlange)
+- Bäume
+- Graphen (Übungsaufgabe)
 - LINQ nur kurz erwähnt
+- Und einiges mehr...
 
 ## Weitere Informationen
 
@@ -679,6 +775,6 @@ Alice, Bob, Carol
 
 - [Dokumentation zu Collections](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/collections){target="_blank"}
 - [Geeignete Collection auswählen](https://learn.microsoft.com/en-us/dotnet/standard/collections/selecting-a-collection-class){target="_blank"}
-- [Array-Klassenreferenz](https://learn.microsoft.com/de-de/dotnet/api/system.array){target="_blank"}
-- [LINQ-Dokumentation](https://learn.microsoft.com/de-de/dotnet/csharp/linq/){target="_blank"}
+- [Array-Klassenreferenz](https://learn.microsoft.com/en-us/dotnet/api/system.array){target="_blank"}
+- [LINQ-Dokumentation](https://learn.microsoft.com/en-us/dotnet/csharp/linq/){target="_blank"}
 

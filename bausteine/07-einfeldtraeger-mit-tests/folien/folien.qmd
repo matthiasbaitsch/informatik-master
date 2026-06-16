@@ -1,5 +1,7 @@
 # Unit Tests
 
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## Softwarefehler in [A2LL](https://de.wikipedia.org/wiki/A2LL)
 
 ::: {.columns}
@@ -103,3 +105,6 @@ Idee: Man schreibt erst die Tests, dann den Code
 1. **Green** – minimalen Code schreiben, damit der Test besteht
 1. **Refactor** – Code aufräumen, Tests müssen weiterhin grün bleiben
 
+## Automatische Tests für BoDraw bei Github
+
+![](bilder/bodraw-tests.png)

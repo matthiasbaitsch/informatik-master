@@ -7,3 +7,6 @@ Referenzvariablen
 .column
 width
 Mittelpunktsregel
+Arrayvariablen
+Hashverfahren
+Summationsvariable
