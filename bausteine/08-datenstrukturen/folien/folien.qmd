@@ -1,6 +1,6 @@
 # Einführung
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/-kVkkvPdtow){target="_blank"} Erklärvideo auf YouTube
 
 ## Routenplanung
 
@@ -162,7 +162,7 @@ Graph
 
 # Arrays
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/gmOEktSt6EU){target="_blank"} Erklärvideo auf YouTube
 
 ## Arrays: Das Allerwichtigste
 
@@ -391,7 +391,7 @@ a[2] = 1 / 2
 
 # Die `List`-Klasse
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/AWxJPDvQVKE){target="_blank"} Erklärvideo auf YouTube
 
 ## `List`-Klasse: Das Allerwichtigste
 
@@ -443,7 +443,7 @@ True
 
 # Manchmal praktisch
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/hjfvYoG_OPM){target="_blank"} Erklärvideo auf YouTube
 
 ## Dinge mit einem Schlüssel speichern: `Dictionary`
 
@@ -496,7 +496,7 @@ False
 
 # Gemeinsamer Nenner: `IEnumerable<T>`
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/dBGjpUzSYJI){target="_blank"} Erklärvideo auf YouTube
 
 ## Übersicht
 
@@ -644,7 +644,7 @@ Alice, Bob, Carol
 
 # Datenstrukturen für die Beispiele
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/A6-CNLqI6tA){target="_blank"} Erklärvideo auf YouTube
 
 ## 
 
@@ -725,7 +725,7 @@ Alice, Bob, Carol
 
 # Zusammenfassung, Auslassungen und weitere Informationen
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/k9QlaiWCk90){target="_blank"} Erklärvideo auf YouTube
 
 ## Zusammenfassung
 
