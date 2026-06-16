@@ -576,6 +576,28 @@ foreach (Image.Pixel p in image.Pixels)
 - Variable `p` durchläuft alle Pixel
 - Programmcode macht Intention 'alle Pixel bearbeiten' deutlich
 
+## Beispiel 3: Schlüssel und Werte eines `Dictionary`
+
+```csharp
+Dictionary<string, double> height = [];
+height["Eiffel Tower"] = 330.0;
+height["Burj Khalifa"] = 828.0;
+height["Empire State"] = 443.0;
+
+foreach (string building in height.Keys)
+{
+    Console.WriteLine($"{building}: {height[building]}");
+}
+```
+``` {.output}
+Eiffel Tower: 330
+Burj Khalifa: 828
+Empire State: 443
+```
+
+- `height.Keys` – Liste aller Schlüssel, kann mit `foreach` durchlaufen werden
+- Wert zu Schlüssel `building` wie gewohnt mit `height[building]`
+
 ## Praktische Hilfsmethoden für `IEnumerable`
 
 ### In Array oder Liste kopieren

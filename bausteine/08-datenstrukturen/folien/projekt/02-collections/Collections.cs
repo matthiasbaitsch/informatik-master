@@ -64,3 +64,16 @@
     Console.WriteLine(String.Join(", ", names));
 
 }
+
+{
+    // ## Beispiel 3: Schlüssel und Werte eines `Dictionary`
+    Dictionary<string, double> height = [];
+    height["Eiffel Tower"] = 330.0;
+    height["Burj Khalifa"] = 828.0;
+    height["Empire State"] = 443.0;
+
+    foreach (string building in height.Keys)
+    {
+        Console.WriteLine($"{building}: {height[building]}");
+    }
+}
