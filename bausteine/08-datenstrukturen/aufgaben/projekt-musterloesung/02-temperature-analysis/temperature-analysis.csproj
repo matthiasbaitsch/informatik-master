@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>fixpoint_iteration</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <InvariantGlobalization>true</InvariantGlobalization>
@@ -10,7 +11,16 @@
 
   <ItemGroup>
     <PackageReference Include="BoDraw.App" Version="1.*" />
-    <PackageReference Include="ISections" Version="1.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="data/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../01-time-series/time-series.csproj" />
   </ItemGroup>
 
 </Project>
