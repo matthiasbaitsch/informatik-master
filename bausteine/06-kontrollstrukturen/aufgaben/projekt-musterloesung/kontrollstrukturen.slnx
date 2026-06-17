@@ -1,18 +1,7 @@
 <Solution>
-  <Folder Name="/01-fraction/">
-    <Project Path="01-fraction/fraction.csproj" />
-  </Folder>
-  <Folder Name="/02-ford-circles/">
-    <Project Path="02-ford-circles/ford-circles.csproj" />
-  </Folder>
-  <Folder Name="/03-treppenbemessung/">
-    <Project Path="03-treppenbemessung/treppenbemessung.csproj" />
-  </Folder>
-  <Folder Name="/04-fixpunktiteration/" />
-  <Folder Name="/04-paint/">
-    <Project Path="04-paint/paint.csproj" />
-  </Folder>
-  <Folder Name="/05-fixpunktiteration/">
-    <Project Path="05-fixpunktiteration/fixpunktiteration.csproj" />
-  </Folder>
+  <Project Path="01-fraction/fraction.csproj" />
+  <Project Path="02-ford-circles/ford-circles.csproj" />
+  <Project Path="03-treppenbemessung/treppenbemessung.csproj" />
+  <Project Path="04-paint/paint.csproj" />
+  <Project Path="05-fixpunktiteration/fixpunktiteration.csproj" />
 </Solution>

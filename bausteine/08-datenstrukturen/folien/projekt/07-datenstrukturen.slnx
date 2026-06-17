@@ -1,11 +1,6 @@
 <Solution>
-  <Folder Name="/01-arrays/">
-    <Project Path="01-arrays/arrays.csproj" />
-  </Folder>
-  <Folder Name="/02-collections/">
-    <Project Path="02-collections/arrays.csproj" />
-  </Folder>
-  <Folder Name="/03-paint-foreach/">
-    <Project Path="03-paint-foreach/paint-foreach.csproj" />
-  </Folder>
+  <Project Path="01-arrays/arrays.csproj" />
+  <Project Path="02-collections/arrays.csproj" />
+  <Project Path="03-paint-foreach/paint-foreach.csproj" />
+  <Project Path="../../aufgaben/projekt-musterloesung/01-time-series/time-series.csproj" />
 </Solution>

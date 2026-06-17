@@ -1,14 +1,6 @@
 <Solution>
-  <Folder Name="/01-normale-variablen/">
-    <Project Path="01-normale-variablen/value-types.csproj" />
-  </Folder>
-  <Folder Name="/02-referenzvariablen-kopie/">
-    <Project Path="02-referenzvariablen-kopie/reference-types.csproj" />
-  </Folder>
-  <Folder Name="/02-referenzvariablen/">
-    <Project Path="02-referenzvariablen/reference-types.csproj" />
-  </Folder>
-  <Folder Name="/04-exemplare/">
-    <Project Path="04-exemplare/reference-types.csproj" />
-  </Folder>
+  <Project Path="01-normale-variablen/value-types.csproj" />
+  <Project Path="02-referenzvariablen-kopie/reference-types.csproj" />
+  <Project Path="02-referenzvariablen/reference-types.csproj" />
+  <Project Path="04-exemplare/reference-types.csproj" />
 </Solution>

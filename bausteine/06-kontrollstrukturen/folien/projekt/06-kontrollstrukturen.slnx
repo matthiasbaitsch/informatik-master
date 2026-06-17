@@ -1,20 +1,8 @@
 <Solution>
-  <Folder Name="/01-klassifizierung/">
-    <Project Path="01-klassifizierung/klassifizierung.csproj" />
-  </Folder>
-  <Folder Name="/02-heron-grafik/">
-    <Project Path="02-heron-grafik/heron-grafik.csproj" />
-  </Folder>
-  <Folder Name="/02-heron/">
-    <Project Path="02-heron/heron.csproj" />
-  </Folder>
-  <Folder Name="/03-integration-grafik/">
-    <Project Path="03-integration-grafik/integration-grafik.csproj" />
-  </Folder>
-  <Folder Name="/03-integration/">
-    <Project Path="03-integration/integration.csproj" />
-  </Folder>
-  <Folder Name="/04-schaltjahre/">
-    <Project Path="04-schaltjahre/schaltjahre.csproj" />
-  </Folder>
+  <Project Path="01-klassifizierung/klassifizierung.csproj" />
+  <Project Path="02-heron-grafik/heron-grafik.csproj" />
+  <Project Path="02-heron/heron.csproj" />
+  <Project Path="03-integration-grafik/integration-grafik.csproj" />
+  <Project Path="03-integration/integration.csproj" />
+  <Project Path="04-schaltjahre/schaltjahre.csproj" />
 </Solution>

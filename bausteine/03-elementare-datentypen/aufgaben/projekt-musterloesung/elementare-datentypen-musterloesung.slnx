@@ -1,14 +1,6 @@
 <Solution>
-  <Folder Name="/01-variablen/">
-    <Project Path="01-variablen/variablen.csproj" />
-  </Folder>
-  <Folder Name="/02-rechnen/">
-    <Project Path="02-rechnen/rechnen.csproj" />
-  </Folder>
-  <Folder Name="/03-quadratische-gleichung/">
-    <Project Path="03-quadratische-gleichung/quadratische-gleichung.csproj" />
-  </Folder>
-  <Folder Name="/04-hallenrechner/">
-    <Project Path="04-hallenrechner/hallenrechner.csproj" />
-  </Folder>
+  <Project Path="01-variablen/variablen.csproj" />
+  <Project Path="02-rechnen/rechnen.csproj" />
+  <Project Path="03-quadratische-gleichung/quadratische-gleichung.csproj" />
+  <Project Path="04-hallenrechner/hallenrechner.csproj" />
 </Solution>

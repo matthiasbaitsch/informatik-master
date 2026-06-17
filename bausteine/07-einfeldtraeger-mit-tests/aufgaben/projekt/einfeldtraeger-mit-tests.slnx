@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="beam/beam.csproj" />
+  <Project Path="beam-test/beam-test.csproj" />
+</Solution>

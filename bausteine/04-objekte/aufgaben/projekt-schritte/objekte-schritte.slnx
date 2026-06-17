@@ -1,14 +1,6 @@
 <Solution>
-  <Folder Name="/01-zeichnen-01/">
-    <Project Path="01-zeichnen-01/zeichnen.csproj" />
-  </Folder>
-  <Folder Name="/01-zeichnen-02/">
-    <Project Path="01-zeichnen-02/zeichnen.csproj" />
-  </Folder>
-  <Folder Name="/01-zeichnen-03/">
-    <Project Path="01-zeichnen-03/zeichnen.csproj" />
-  </Folder>
-  <Folder Name="/01-zeichnen-04/">
-    <Project Path="01-zeichnen-04/zeichnen.csproj" />
-  </Folder>
+  <Project Path="01-zeichnen-01/zeichnen.csproj" />
+  <Project Path="01-zeichnen-02/zeichnen.csproj" />
+  <Project Path="01-zeichnen-03/zeichnen.csproj" />
+  <Project Path="01-zeichnen-04/zeichnen.csproj" />
 </Solution>

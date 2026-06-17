@@ -1,15 +1,6 @@
 <Solution>
-  <Folder Name="/01-complex/">
-    <Project Path="01-complex/complex.csproj" />
-  </Folder>
-  <Folder Name="/02-fraction/">
-    <Project Path="02-fraction/fraction.csproj" />
-  </Folder>
-  <Folder Name="/03-section/">
-    <Project Path="03-section/section.csproj" />
-  </Folder>
-  <Folder Name="/04-steel-hall/">
-    <Project Path="04-steel-hall/steel-hall.csproj" />
-  </Folder>
-
+  <Project Path="01-complex/complex.csproj" />
+  <Project Path="02-fraction/fraction.csproj" />
+  <Project Path="03-section/section.csproj" />
+  <Project Path="04-steel-hall/steel-hall.csproj" />
 </Solution>

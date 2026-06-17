@@ -1,7 +1,4 @@
 <Solution>
-  <Folder Name="/beam-test/">
-    <Project Path="beam-test/single-span-beam-test.csproj" />
-  </Folder>
+  <Project Path="beam-test/single-span-beam-test.csproj" />
   <Project Path="beam-01/beam.csproj" />
-
 </Solution>

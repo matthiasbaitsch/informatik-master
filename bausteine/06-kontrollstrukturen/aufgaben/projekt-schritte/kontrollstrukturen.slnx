@@ -1,18 +1,7 @@
 <Solution>
-  <Folder Name="/03-treppenbemessung-01/">
-    <Project Path="03-treppenbemessung-01/treppenbemessung-01.csproj" />
-  </Folder>
-  <Folder Name="/03-treppenbemessung-02/">
-    <Project Path="03-treppenbemessung-02/treppenbemessung-02.csproj" />
-  </Folder>
-  <Folder Name="/03-treppenbemessung-03/">
-    <Project Path="03-treppenbemessung-03/treppenbemessung-03.csproj" />
-  </Folder>
-  <Folder Name="/03-treppenbemessung-04/">
-    <Project Path="03-treppenbemessung-04/treppenbemessung-04.csproj" />
-  </Folder>
-  <Folder Name="/03-treppenbemessung-05/">
-    <Project Path="03-treppenbemessung-05/treppenbemessung-05.csproj" />
-  </Folder>
-
+  <Project Path="03-treppenbemessung-01/treppenbemessung-01.csproj" />
+  <Project Path="03-treppenbemessung-02/treppenbemessung-02.csproj" />
+  <Project Path="03-treppenbemessung-03/treppenbemessung-03.csproj" />
+  <Project Path="03-treppenbemessung-04/treppenbemessung-04.csproj" />
+  <Project Path="03-treppenbemessung-05/treppenbemessung-05.csproj" />
 </Solution>
