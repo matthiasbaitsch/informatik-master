@@ -1,7 +1,0 @@
-<Solution>
-  <Folder Name="/beam-test/">
-    <Project Path="beam-test/beam-test.csproj" />
-  </Folder>
-  <Project Path="beam/beam.csproj" />
-
-</Solution>
