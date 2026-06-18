@@ -1,0 +1,73 @@
+# Werkzeuge
+
+## Eingebaute Klassen
+
+[]{.down40}
+
+C# stellt eine Reihe von eingebauten Klassen bereit, die häufig benötigte Operationen anbieten.
+
+[]{.down20}
+
+| Klasse | Zweck |
+|--------|-------|
+| `string` | Zeichenketten verarbeiten |
+| `double`, `int` | Zahlen parsen und formatieren |
+| `File` | Dateien lesen und schreiben |
+
+## string
+
+[]{.down40}
+
+```csharp
+string s = "  Bochum;51.48;7.22  ";
+
+s.Trim()           // "Bochum;51.48;7.22"  – Leerzeichen entfernen
+s.Split(';')       // ["Bochum", "51.48", "7.22"]  – aufteilen
+s.Contains("Bo")   // true  – enthält Teilstring?
+s.StartsWith("Bo") // true  – beginnt mit?
+s.ToLower()        // "  bochum;51.48;7.22  "  – Kleinbuchstaben
+s.Replace("o","0") // "  B0chum;51.48;7.22  "  – ersetzen
+```
+
+## double und int
+
+[]{.down40}
+
+Zeichenketten in Zahlen umwandeln:
+
+```csharp
+double d = double.Parse("3.14");
+int    i = int.Parse("42");
+```
+
+[]{.down20}
+
+Zahlen in Zeichenketten umwandeln:
+
+```csharp
+string s1 = 3.14.ToString();       // "3,14"
+string s2 = 3.14.ToString("F2");   // "3.14"  – 2 Dezimalstellen
+string s3 = $"{3.14:F2}";          // "3.14"  – in Interpolation
+```
+
+## Textdatei einlesen
+
+[]{.down40}
+
+`File.ReadAllLines()` liest alle Zeilen einer Textdatei als Array:
+
+```csharp
+string[] lines = File.ReadAllLines("daten.csv");
+```
+
+[]{.down20}
+
+Mit `.Skip(1)` lässt sich eine Kopfzeile überspringen:
+
+```csharp
+foreach (string line in File.ReadAllLines("daten.csv").Skip(1))
+{
+    string[] fields = line.Split(';');
+    double value = double.Parse(fields[2]);
+}
+```
