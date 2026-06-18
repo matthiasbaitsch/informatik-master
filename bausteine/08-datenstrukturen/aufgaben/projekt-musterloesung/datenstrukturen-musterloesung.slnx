@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="01-time-series/time-series.csproj" />
+  <Project Path="02-temperature-analysis/temperature-analysis.csproj" />
 </Solution>

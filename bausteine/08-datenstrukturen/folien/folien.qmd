@@ -510,6 +510,7 @@ Alle besprochenen Datenstrukturen haben die Schnittstelle `IEnumerable`
 | `a.Sum()` | Summe |
 | `a.Min()` / `a.Max()` | Minimum / Maximum der Elemente von `a`|
 | `a.Average()` | Mittelwert der Elemente von `a` |
+| `a.Skip(n)` / `a.Take(n)` | Erste `n` Elemente überspringen / nur erste `n` Elemente |
 | `a.ToArray()` / `a.ToList()` / `a.ToHashSet()` | Kopie als Array / Liste / Menge erstellen |
 
 []{.down20}
@@ -752,6 +753,7 @@ Alice, Bob, Carol
 ### Gemeinsamer Nenner: `IEnumerable<T>`
 
 - Alle Datenstrukturen unterstützen `foreach`, `Sum`, `Min`, `Max`, `Average`
+- Elemente überspringen / auswählen mit `Skip(n)`, `Take(n)`
 - Konvertierung mit `ToArray()`, `ToList()`, `ToHashSet()`
 :::
 
