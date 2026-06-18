@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../01-time-series/time-series.csproj" />
+    <ProjectReference Include="../01-time-series-temperature/time-series-temperature.csproj" />
   </ItemGroup>
 
   <ItemGroup>

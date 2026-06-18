@@ -13,6 +13,8 @@ C# stellt eine Reihe von eingebauten Klassen bereit, die häufig benötigte Oper
 | `string` | Zeichenketten verarbeiten |
 | `double`, `int` | Zahlen parsen und formatieren |
 | `File` | Dateien lesen und schreiben |
+| `DateTime` | Zeitpunkte darstellen |
+| `TimeSpan` | Zeitspannen darstellen |
 
 ## string
 
@@ -48,6 +50,40 @@ Zahlen in Zeichenketten umwandeln:
 string s1 = 3.14.ToString();       // "3,14"
 string s2 = 3.14.ToString("F2");   // "3.14"  – 2 Dezimalstellen
 string s3 = $"{3.14:F2}";          // "3.14"  – in Interpolation
+```
+
+## DateTime
+
+[]{.down40}
+
+```csharp
+// Zeitpunkt aus String erzeugen
+DateTime t = DateTime.Parse("1.1.2000");
+
+// Zeitpunkt um eine Zeitspanne verschieben
+DateTime t2 = t + TimeSpan.FromDays(7);   // 7 Tage später (DateTime)
+
+// Abstand zwischen zwei Zeitpunkten berechnen
+TimeSpan abstand = t2 - t;                // ergibt eine TimeSpan
+
+// Kleinstmögliches Datum als Referenzzeitpunkt
+DateTime.MinValue                          // 1.1.0001
+```
+
+## TimeSpan
+
+[]{.down40}
+
+```csharp
+// Zeitspanne erzeugen
+TimeSpan dt1 = TimeSpan.FromSeconds(1);
+TimeSpan dt2 = TimeSpan.FromDays(1);
+
+// Zeitspanne skalieren
+TimeSpan dreimal = 3 * dt1;               // 3 Sekunden (TimeSpan)
+
+// Gesamtdauer in einer bestimmten Einheit
+double s = dt2.TotalSeconds;              // 86400.0
 ```
 
 ## Textdatei einlesen

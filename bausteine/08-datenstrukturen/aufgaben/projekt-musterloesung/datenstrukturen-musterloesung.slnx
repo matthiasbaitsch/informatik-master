@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="01-time-series/time-series.csproj" />
   <Project Path="01-time-series-tests/time-series-tests.csproj" />
-  <Project Path="01-temperature-analysis/temperature-analysis.csproj" />
+  <Project Path="01-time-series-temperature/time-series-temperature.csproj" />
 </Solution>
