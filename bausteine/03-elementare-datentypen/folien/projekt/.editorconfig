@@ -2,6 +2,7 @@
 
 # CA
 dotnet_diagnostic.CA1050.severity = none
+dotnet_diagnostic.CA1854.severity = none
 
 # CS
 dotnet_diagnostic.CS8600.severity = error
