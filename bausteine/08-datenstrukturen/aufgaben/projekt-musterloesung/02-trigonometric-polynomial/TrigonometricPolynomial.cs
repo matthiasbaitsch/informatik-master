@@ -2,7 +2,7 @@ using BoDraw;
 
 using static System.Math;
 
-public class TrigPoly
+public class TrigonometricPolynomial
 {
     public Dictionary<int, Complex> Coefficients = [];
 
@@ -28,9 +28,21 @@ public class TrigPoly
         Complex v = new Complex(0, 0);
         foreach (int k in this.Coefficients.Keys)
         {
-            v = v.Add(this.Coefficients[k].Multiply(new Complex(0, k * t).Exp()));
+            v = v.Add(this.Coefficients[k].Multiply(new Complex(Cos(k * t), Sin(k * t))));
         }
         return v;
+    }
+
+    public bool IsReal()
+    {
+        foreach (int k in this.Coefficients.Keys)
+        {
+            if (!this.GetCoefficient(k).Equals(this.GetCoefficient(-k).Conjugate()))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void Plot(BoDrawApp app, int nsteps)
@@ -48,6 +60,25 @@ public class TrigPoly
         pl.Thickness = 2;
 
         app.Add(pl);
+    }
+
+    public void PlotComponents(BoDrawApp app, int nsteps)
+    {
+        double dt = 2 * PI / (nsteps - 1);
+        Polyline pRe = new Polyline();
+        Polyline pIm = new Polyline();
+
+        for (int i = 0; i < nsteps; i++)
+        {
+            double t = i * dt;
+            Complex v = this.Evaluate(t);
+            pRe.AddPoint(t, v.Re);
+            pIm.AddPoint(t, v.Im);
+        }
+        pRe.Color = Colors.HotPink;
+        pRe.Thickness = 2;
+
+        app.Add(pRe, pIm, new Arrow(0, 0, 2 * PI, 0));
     }
 
 }

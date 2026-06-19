@@ -72,12 +72,6 @@ public class Complex
         return this.Re == w.Re && this.Im == w.Im;
     }
 
-    public Complex Exp()
-    {
-        double r = Math.Exp(this.Re);
-        return new Complex(r * Cos(this.Im), r * Sin(this.Im));
-    }
-
     public Complex Power(double n)
     {
         double rn = Pow(this.Abs(), n);

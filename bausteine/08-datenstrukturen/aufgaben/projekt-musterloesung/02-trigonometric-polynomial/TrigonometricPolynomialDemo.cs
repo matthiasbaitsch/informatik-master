@@ -9,7 +9,6 @@ p.Evaluate(0.1).Print("p(0.1)");
 Console.WriteLine($"Real: {p.IsReal()}");
 
 BoDrawApp app = new BoDrawApp();
-// p.Plot(app, 1000);
 p.PlotComponents(app, 1000);
 app.SaveImage("trigonometric-polynomial.png");
 app.Show();

@@ -3,7 +3,7 @@ using Xunit;
 public class VectorTests
 {
     [Fact]
-    public void Constructor_StoresValues()
+    public void Constructor()
     {
         double[] values = [1.0, 2.0, 3.0];
         Vector v = new Vector(values);
@@ -11,67 +11,61 @@ public class VectorTests
     }
 
     [Fact]
-    public void N_ReturnsNumberOfElements()
+    public void N()
     {
-        Vector v = new Vector([1.0, 2.0, 3.0]);
-        Assert.Equal(3, v.N());
+        Vector x = new Vector([1.0, 2.0, 3.0]);
+        Assert.Equal(3, x.N());
     }
 
     [Fact]
-    public void Print_DoesNotThrow()
+    public void Dot()
     {
-        Vector v = new Vector([1.0, 2.0, 3.0]);
-        v.Print("v");
+        Vector x = new Vector([1.0, 2.0, 3.0]);
+        Vector y = new Vector([4.0, 5.0, 6.0]);
+        Assert.Equal(x.Dot(y), y.Dot(x));
+        Assert.Equal(32.0, x.Dot(y));
     }
 
     [Fact]
-    public void Dot_ReturnsCorrectDotProduct()
+    public void EuclidianNorm()
     {
-        Vector a = new Vector([1.0, 2.0, 3.0]);
-        Vector b = new Vector([4.0, 5.0, 6.0]);
-        // 1*4 + 2*5 + 3*6 = 32
-        Assert.Equal(32.0, a.Dot(b));
+        Vector x = new Vector([3.0, 0.0, 4.0, 0.0]);
+        Assert.Equal(5.0, x.EuclidianNorm());
     }
 
     [Fact]
-    public void Dot_IsCommutative()
+    public void MaxNorm()
     {
-        Vector a = new Vector([1.0, 2.0, 3.0]);
-        Vector b = new Vector([4.0, 5.0, 6.0]);
-        Assert.Equal(a.Dot(b), b.Dot(a));
+        Vector x = new Vector([3.0, 4.0, 10.0]);
+        Vector y = new Vector([3.0, -40.0, 10.0]);
+        Assert.Equal(10, x.MaxNorm());
+        Assert.Equal(40, y.MaxNorm());
     }
 
     [Fact]
-    public void Norm_ReturnsCorrectLength()
+    public void Add()
     {
-        // 3-4-5-Dreieck: sqrt(9 + 16) = 5
-        Vector v = new Vector([3.0, 4.0]);
-        Assert.Equal(5.0, v.Norm());
+        Vector x = new Vector([1.0, 2.0, 3.0]);
+        Vector y = new Vector([4.0, 5.0, 6.0]);
+        Vector z = x.Add(y);
+        Assert.Equal([5.0, 7.0, 9.0], z.Values);
     }
 
     [Fact]
-    public void Norm_UnitVectorHasLengthOne()
+    public void Subtract()
     {
-        Vector v = new Vector([1.0, 0.0, 0.0]);
-        Assert.Equal(1.0, v.Norm());
+        Vector x = new Vector([4.0, 5.0, 6.0]);
+        Vector y = new Vector([1.0, 2.0, 3.0]);
+        Vector z = x.Subtract(y);
+        Assert.Equal([3.0, 3.0, 3.0], z.Values);
     }
 
     [Fact]
-    public void Add_ReturnsCorrectSum()
+    public void Multiply()
     {
-        Vector a = new Vector([1.0, 2.0, 3.0]);
-        Vector b = new Vector([4.0, 5.0, 6.0]);
-        Vector result = a.Add(b);
-        Assert.Equal(new double[] { 5.0, 7.0, 9.0 }, result.Values);
+        Vector x = new Vector([1.0, 2.0, 3.0]);
+        Vector z = x.Multiply(3.0);
+        Assert.Equal([3.0, 6.0, 9.0], z.Values);
     }
 
-    [Fact]
-    public void Add_ReturnsNewVector()
-    {
-        Vector a = new Vector([1.0, 2.0, 3.0]);
-        Vector b = new Vector([4.0, 5.0, 6.0]);
-        Vector result = a.Add(b);
-        Assert.NotSame(a, result);
-        Assert.NotSame(b, result);
-    }
 }
