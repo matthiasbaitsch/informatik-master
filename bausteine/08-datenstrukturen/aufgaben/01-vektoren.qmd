@@ -26,7 +26,7 @@ Das folgende Klassendiagramm zeigt die zu implementierende Klasse.
 
 Bearbeiten Sie nun folgende Schritte:
 
-1. Grundgerüst: Legen Sie im Verzeichnis `01-vector` die Dateien `Vector.cs` und `VectorDemo.cs` an. Erstellen Sie in `Vector.cs` die Klasse `Vector` und erstellen Sie alle Methoden aus dem Klassendiagramm, so dass der Code kompiliert und die Tests ausgeführt werden können – die Implementierung kommt in den nächsten Schritten. Für Methoden mit Rückgabewert genügt zunächst `return 0` bzw. `return new Vector([])`.
+1. Grundgerüst: Erstellen Sie in `Vector.cs` die Klasse `Vector` und erstellen Sie alle Methoden aus dem Klassendiagramm, so dass der Code kompiliert und die Tests ausgeführt werden können – die Implementierung kommt in den nächsten Schritten. Für Methoden mit Rückgabewert genügt zunächst `return 0` bzw. `return new Vector([])`.
 
     Erstellen Sie in `VectorDemo.cs` zwei Testvektoren:
 

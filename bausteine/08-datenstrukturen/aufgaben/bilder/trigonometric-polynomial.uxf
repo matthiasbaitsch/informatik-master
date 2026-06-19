@@ -1,0 +1,11 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>10</x><y>10</y><w>320</w><h>155</h></coordinates><panel_attributes>TrigonometricPolynomial
+--
++ Coefficients: Dictionary&lt;int, Complex&gt;
+--
++ AddCoefficient(k: int, ck: Complex): void
++ GetCoefficient(k: int): Complex
++ Degree(): int
++ Evaluate(t: double): Complex
++ IsReal(): bool
++ Plot(app: BoDrawApp, nsteps: int): void
++ PlotComponents(app: BoDrawApp, nsteps: int): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>

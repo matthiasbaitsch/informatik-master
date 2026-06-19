@@ -11,6 +11,13 @@ public class TrigonometricPolynomial
         this.Coefficients[k] = ck;
     }
 
+    public int Degree()
+    {
+        int kmin = this.Coefficients.Keys.Min();
+        int kmax = this.Coefficients.Keys.Max();
+        return Max(Abs(kmin), Abs(kmax));
+    }
+
     public Complex GetCoefficient(int k)
     {
         if (this.Coefficients.ContainsKey(k))

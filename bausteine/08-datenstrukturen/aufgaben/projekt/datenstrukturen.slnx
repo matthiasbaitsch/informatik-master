@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="01-vector/vector.csproj" />
+  <Project Path="01-vector-tests/vector-tests.csproj" />
+  <Project Path="02-trigonometric-polynomial/trigonometric-polynomial.csproj" />
+  <Project Path="02-trigonometric-polynomial-tests/trigonometric-polynomial-tests.csproj" />
+</Solution>
