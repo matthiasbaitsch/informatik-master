@@ -1,0 +1,10 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>10</x><y>10</y><w>160</w><h>140</h></coordinates><panel_attributes>Vector
+--
++ Values: double[]
+--
++ Vector(values: double[])
++ Print(label: string): void
++ N(): int
++ Dot(x: Vector): double
++ Norm(): double
++ Add(x: Vector): Vector</panel_attributes><additional_attributes></additional_attributes></element></diagram>

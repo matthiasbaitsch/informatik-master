@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"dotnet.codeLens.enableReferencesCodeLens": false,
+		"editor.formatOnSave": true,
+		"chat.disableAIFeatures": true,
+		"files.exclude": {
+			".editorconfig": true,
+			"*.code-workspace": true,
+			"**/bin": true,
+			"**/obj": true
+		},
+		"dotnet.defaultSolution": "vector.slnx",
+	}
+}
