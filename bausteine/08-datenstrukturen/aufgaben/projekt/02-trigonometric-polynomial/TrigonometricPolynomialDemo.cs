@@ -1,1 +1,1 @@
-Console.WriteLine("Hello World x"); // Löschen
+Console.WriteLine("Hello World"); // Löschen
