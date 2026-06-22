@@ -55,7 +55,7 @@ public class TrigonometricPolynomial
     public void Plot(BoDrawApp app, int nsteps)
     {
         double dt = 2 * PI / (nsteps - 1);
-        Polyline pl = new Polyline();
+        Polygon pl = new Polygon();
 
         for (int i = 0; i < nsteps; i++)
         {
@@ -63,10 +63,26 @@ public class TrigonometricPolynomial
             Complex v = this.Evaluate(t);
             pl.AddPoint(v.Re, v.Im);
         }
-        pl.Color = Colors.HotPink;
-        pl.Thickness = 2;
+        pl.FillColor = Colors.Orange;
+        pl.FillOpacity = 0.3;
+        pl.LineColor = Colors.HotPink;
+        pl.LineThickness = 2;
 
         app.Add(pl);
+    }
+
+    public void PlotArrows(BoDrawApp app, double t)
+    {
+        Complex p1 = new Complex(0, 0);
+
+        foreach (var k in this.Coefficients.Keys)
+        {
+            Complex p2 = p1.Add(this.Coefficients[k].Multiply(new Complex(Cos(k * t), Sin(k * t))));
+            Arrow arrow = new Arrow(p1.Re, p1.Im, p2.Re, p2.Im);
+            arrow.Color = Colors.SteelBlue;
+            app.Add(arrow);
+            p1 = p2;
+        }
     }
 
     public void PlotComponents(BoDrawApp app, int nsteps)
