@@ -12,10 +12,13 @@ Console.WriteLine($"Real: {p.IsReal()}");
 
 BoDrawApp app = new BoDrawApp();
 
-p.Plot(app, 1000);
-p.PlotArrows(app, 0.1 * PI);
-p.PlotArrows(app, 0.35 * PI);
-p.PlotArrows(app, PI);
+app.Animate(2 * PI, t =>
+{
+    app.Clear();
+    p.Plot(app, 1000);
+    p.PlotArrows(app, t);
+});
+
 // p.PlotComponents(app, 1000);
-app.SaveImage("trigonometric-polynomial.png");
-// app.Show();
+// app.SaveImage("trigonometric-polynomial.png");
+app.Show();

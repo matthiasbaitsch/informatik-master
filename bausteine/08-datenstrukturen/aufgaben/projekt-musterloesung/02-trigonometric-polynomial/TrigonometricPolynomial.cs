@@ -30,12 +30,17 @@ public class TrigonometricPolynomial
         }
     }
 
+    public Complex EvaluatePart(int k, double t)
+    {
+        return this.Coefficients[k].Multiply(new Complex(Cos(k * t), Sin(k * t)));
+    }
+
     public Complex Evaluate(double t)
     {
         Complex v = new Complex(0, 0);
         foreach (int k in this.Coefficients.Keys)
         {
-            v = v.Add(this.Coefficients[k].Multiply(new Complex(Cos(k * t), Sin(k * t))));
+            v = v.Add(this.EvaluatePart(k, t));
         }
         return v;
     }
@@ -77,10 +82,8 @@ public class TrigonometricPolynomial
 
         foreach (var k in this.Coefficients.Keys)
         {
-            Complex p2 = p1.Add(this.Coefficients[k].Multiply(new Complex(Cos(k * t), Sin(k * t))));
-            Arrow arrow = new Arrow(p1.Re, p1.Im, p2.Re, p2.Im);
-            arrow.Color = Colors.SteelBlue;
-            app.Add(arrow);
+            Complex p2 = p1.Add(this.EvaluatePart(k, t));
+            app.Add(new Arrow(p1.Re, p1.Im, p2.Re, p2.Im).WithColor(Colors.DarkSlateBlue));
             p1 = p2;
         }
     }

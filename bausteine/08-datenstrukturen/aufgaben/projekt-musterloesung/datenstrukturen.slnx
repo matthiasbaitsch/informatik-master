@@ -1,12 +1,6 @@
 <Solution>
   <Project Path="01-vector/vector.csproj" />
-  <Folder Name="/01-vector-tests/" />
-  <Folder Name="/01-vector/" />
-  <Folder Name="/02-trigonometric-polynomial-tests/">
-    <Project Path="02-trigonometric-polynomial-tests/trigonometric-polynomial-tests.csproj" />
-  </Folder>
-  <Folder Name="/02-trigonometric-polynomial/">
-    <Project Path="02-trigonometric-polynomial/trigonometric-polynomial.csproj" />
-  </Folder>
   <Project Path="01-vector-tests/vector-tests.csproj" />
+  <Project Path="02-trigonometric-polynomial/trigonometric-polynomial.csproj" />
+  <Project Path="02-trigonometric-polynomial-tests/trigonometric-polynomial-tests.csproj" />
 </Solution>
