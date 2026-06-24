@@ -45,6 +45,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 - CSS-Abstände in `style-slides.scss` immer über `margin-top` des nachfolgenden Elements steuern, nie über `margin-bottom` – Reveal.js nutzt Flexbox, dort kollabieren Margins nicht und addieren sich sonst unkontrolliert
 - In nummerierten Aufgabenlisten keine Fettschrift für Schrittbezeichnungen – also `1. Titel. Text`, nicht `1. **Titel.** Text`
 - Als Dezimaltrennzeichen wird durchgehend der Punkt verwendet (also `0.75`, nicht `0,75` – auch in Fließtext und Matheumgebungen)
+- Reveal.js-Fragments: Soll Inhalt A beim Öffnen der Folie sichtbar sein und auf einen Klick durch Inhalt B ersetzt werden, beide in ein `r-stack` packen, A mit `.fragment .fade-out fragment-index=1`, B mit `.fragment .fade-in fragment-index=1` – gleicher Index sorgt für simultanen Übergang
 
 ## Inhaltliche Richtlinien
 

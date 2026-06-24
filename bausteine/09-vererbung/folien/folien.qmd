@@ -4,17 +4,29 @@
 
 ![https://www.evogeneao.com](bilder/tree-of-life_2000.png)
 
-- Klassifikation von Organismen
+- Klassifikation der Art 'Tier → Wirbeltier → Säugetier → Hauskatze'
+
+- Gruppiert nach Gemeinsamkeiten
 
 ## In der objektorientierten Programmierung
+
+[]{.down60}
 
 - Vererbung
     - Klassen organisieren
     - Gemeinsame Eigenschaften/Methoden nur einmal Programmieren
 
+. . .
+
+[]{.down60}
+
 - Polymorphismus
     - Programme flexibel erweitern
     - Unterschiedliche Objekte einheitlich behandeln
+
+. . .
+
+[]{.down60}
 
 → Wichtige Grundprinzipien
 
@@ -39,8 +51,8 @@
 
 ::: {.column width=55%}
 - `Beam`: Balken mit Bezugsfaser
-- `FixedSupport`: Gelenkiges Lager
-- `PinnedSupport`: Eingespanntes Lager
+- `PinnedSupport`: Gelenkiges Lager
+- `FixedSupport`: Eingespanntes Lager
 - `Load`: Streckenlast
 :::
 ::: {.column width=45%}
@@ -153,7 +165,7 @@ Definition Basisklasse
 ## {.smaller}
 
 ::: {.tall-code}
-```csharp
+```{.csharp code-line-numbers="|3|7|"}
 {{< include projekt/sysdraw-step-02/Beam.cs >}}
 ```
 :::
@@ -184,8 +196,8 @@ Definition abgeleitete Klasse
 []{.down60}
 
 ::: {.r-stack}
-::: {.fragment .fade-in-then-out style="width:100%"}
-Verwendung: Eigenschaften und Methoden aus beiden Klassen 
+::: {.fragment .fade-out fragment-index=1 style="width:100%"}
+Verwendung: Eigenschaften und Methoden aus beiden Klassen
 ```csharp
 BoDrawApp app = new BoDrawApp();
 Beam beam = new Beam(3, 12, 90, 7);
@@ -202,7 +214,7 @@ Beam x: 4, y: 2, l: 7
 
 → Alles aus `StructuralElement` plus das, was in `Beam` dazukommt
 :::
-::: {.fragment .fade-in-then-out style="width:100%"}
+::: {.fragment .fade-in fragment-index=1 style="width:100%"}
 Verwendung: Basisklasse als Datentyp
 ```csharp
 BoDrawApp app = new BoDrawApp();
@@ -271,43 +283,57 @@ Beam x: 4, y: 2
 - Attribute `X`, `Y`, `Angle` und Methode `MoveTo` nur noch einmal
 - Viel Programmcode in `SysdrawDemo`
 
-# Polymorphismus
-
-## Idee: Klasse `Structure` für die ganze Zeichnung
-
-[]{.down40}
-
-::: {.full-width-img}
-![Achtung: So nicht funktionsfähig!](bilder/sysdraw-step-03.1.png)
-:::
-
-- Klasse `Structure` verwaltet Objekte vom Typ `StructuralElement`
-
-- `Draw`-Methode von `Structure` führt `Draw` für jedes `StructuralElement` in `Elements` aus
-
-→ Einfacher und flexibler Programmcode in `SysdrawDemo`
-
-## {.smaller}
+## Ziel: Statisches System als Objekt {.smaller}
 
 ::: {.columns}
-::: {.column}
-::: {.tall-code}
+::: {.column width=63%}
+Aktuell
 ```csharp
-{{< include projekt/sysdraw-step-03/Structure.cs >}}
+{{< include projekt/sysdraw-step-02/SysdrawDemo.cs >}}
 ```
 :::
-:::
-::: {.column}
-::: {.tall-code}
+::: {.column width=37%}
+Gewünscht
 ```csharp
 {{< include projekt/sysdraw-step-03/SysdrawDemo.cs >}}
 ```
 :::
 :::
+
+- Statisches System als `Structure`-Objekt – Elemente intern verwaltet
+
+- Übersichtlicher Programmcode in `SysdrawDemo`, egal wie viele Elemente
+
+→ Notwendig: Neue Klasse `Structure`
+
+# Polymorphismus
+
+## Klasse `Structure` für statisches System
+
+[]{.down40}
+
+::: {.full-width-img}
+![Achtung: Grundidee, so nicht funktionsfähig!](bilder/sysdraw-step-03.1.png)
+:::
+
+- Klasse `Structure` verwaltet Objekte vom Typ `StructuralElement`
+
+- `Draw`-Methode in `Structure` führt `Draw` für alle Elemente aus
+
+[]{.down20}
+
+→ Einfacher und flexibler Programmcode in `SysdrawDemo`
+
+## {.smaller}
+
+::: {.tall-code}
+```csharp
+{{< include projekt/sysdraw-step-03/Structure.cs >}}
+```
 :::
 
 - Code in `Structure`
-    - `A`: Symbolgrö0e für alle Elemente
+    - `A`: Symbolgröße für alle Elemente
     - `Elements`: Elemente der Zeichung
     - `Add`: Element hinzufügen
     - `Draw`: Zeichnen, alles in eine Gruppe
@@ -315,21 +341,10 @@ Beam x: 4, y: 2
 
 ## {.smaller}
 
-::: {.columns}
-::: {.column}
 ::: {.tall-code}
 ```csharp
 {{< include projekt/sysdraw-step-03/fail/Structure.cs >}}
 ```
-:::
-:::
-::: {.column}
-::: {.tall-code}
-```csharp
-{{< include projekt/sysdraw-step-03/SysdrawDemo.cs >}}
-```
-:::
-:::
 :::
 
 ::: {.columns}
@@ -385,13 +400,222 @@ Beam x: 4, y: 2
 
 - Abstrakte Klasse `StructuralElement` mit abstrakter Methode `Draw`
 
-- Kenntlich gemacht durch `{abstract}`
+- Im UML-Diagramm durch `{abstract}` kenntlich gemacht
 
-- Klar, dass abgeleitete Klassen `Draw` bereitstellen, weglassen
+- `Draw` muss in jeder Unterklasse implementiert werden – explizite Angabe in den Unterklassen kann entfallen
 
 → Wichtiges Prinzip in objektorientierter Programmierung
 
-## Polymorphismus
+## Programm im Debugger ausführen
+
+:::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+![](bilder/debugger/debugger-01.png){width=80%}
+
+`SysdrawDemo.cs` – Programm starten
+:::
+::: {.fragment .fade-in-then-out}
+![](bilder/debugger/debugger-02.png){width=80%}
+
+Schleife in `Structure.Draw()` - `e` zeigt auf ein `Beam`-Objekt
+:::
+::: {.fragment .fade-in-then-out}
+![](bilder/debugger/debugger-03.png){width=80%}
+
+Schritt hinein → `Beam.Draw(a)` wird ausgeführt
+:::
+::: {.fragment .fade-in-then-out}
+![](bilder/debugger/debugger-04.png){width=80%}
+
+Nächste Schleifenrunde – `e` zeigt jetzt auf ein `PinnedSupport`-Objekt
+:::
+::: {.fragment .fade-in-then-out}
+![](bilder/debugger/debugger-05.png){width=80%}
+
+Schritt hinein → `PinnedSupport.Draw(a)` wird ausgeführt
+:::
+::: {.fragment .fade-in-then-out}
+![](bilder/debugger/debugger-06.png){width=80%}
+
+Nächste Schleifenrunde – `e` zeigt jetzt auf ein `FixedSupport`-Objekt
+:::
+::: {.fragment .fade-in-then-out}
+![](bilder/debugger/debugger-07.png){width=80%}
+
+Schritt hinein → `FixedSupport.Draw(a)` wird ausgeführt
+:::
+::: {.fragment}
+![](bilder/debugger/debugger-08.png){width=80%}
+
+Nächste Schleifenrunde – `e` zeigt jetzt auf ein `Load`-Objekt
+:::
+::::
+
+## Was wir gesehen haben heißt Polymorphismus
+
+[]{.down40}
+
+### Bedeutung Polymorphismus
+
+- Griechisches Wort für Vielgestaltigkeit
+
+- Variable `e` ist immer vom abstrakten Typ `StructuralElement`
+
+- Objekt, auf das `e` zeigt, hat konkreten Datentyp (`Beam` etc.)
+
+- `e.Draw(a)` ruft die `Draw`-Methode des tatsächlichen Objekttyps auf
+
+→ Selber Methodenname, unterschiedliche Wirkung, je nach Objekttyp
+
+[]{.down40}
+
+::: {.fragment}
+### Flexible Programmierung
+
+- Abstrakte Methode `Draw` in abstrakter Klasse `StructuralElement` 
+
+- Alle konkreten Unterklassen implementieren abstrakte Methode
+
+- Keine Änderung in `Structure` notwendig, falls neue Klassen dazukommen
+
+→ Programme lassen sich flexibel erweitern, ohne bestehenden Code zu ändern
+:::
+
+# Was man sonst noch wissen sollte
 
 
+## Die `Object`-Klasse
 
+[]{.down60}
+
+Klasse ohne explizit angegebene Basisklasse erbt automatisch von `Object`
+
+```csharp
+public class StructuralElement {}
+```
+
+ist daher gleichbedeutend mit
+
+```csharp
+public class StructuralElement : Object {}
+```
+
+[]{.down60}
+  
+- `Object` ist vordefinierte Klasse aus C#
+
+- Grundlegende Methoden wie `ToString()` oder `HashCode()`
+
+- Damit ist `Object` die Wurzel jeder Klassenhierarchie
+
+## Methoden überschreiben: `ToString()`
+
+[]{.down40}
+
+```csharp
+Beam beam = new Beam(0, 0, 0, 5);
+Console.WriteLine(beam.ToString()); // Ausgabe: BoDraw.Beam
+```
+
+- Methode `ToString()` in `Object` vereinbart
+
+- Gibt standardmäßig den Klassennamen zurück
+
+. . .
+
+[]{.down20}
+
+```csharp
+public class Beam 
+{
+    ...
+    public override string ToString()
+    {
+        return $"Beam x={this.X}, y={this.Y}, length={this.Length}";
+    }
+}
+```
+
+```csharp
+Beam beam = new Beam(0, 0, 0, 5);
+Console.WriteLine(beam.ToString()); // Ausgabe: Beam x=0, y=0, length=5
+```
+
+- Informative Ausgabe mit überschriebener Methode
+
+. . .
+
+[]{.down20}
+
+→ Schlüsselwort `override` um Methode aus Basisklasse neu zu definieren
+
+## Interfaces 
+
+::: {.columns}
+::: {.column width=52%}
+```csharp
+public interface IComparable<T>
+{
+    int CompareTo(T other);
+}
+```
+```csharp
+public class Fraction : 
+                   IComparable<Fraction>
+{
+    public int A;
+    public int B;
+
+    ... 
+
+    public int CompareTo(Fraction q)
+    {
+        int z1 = this.A * q.B;
+        int z2 = this.B * q.A;
+        if (z1 < z2) { return -1; }
+        else if (z1 == z2) { return 0; }
+        else{ return 1; }
+    }
+}
+```
+:::
+::: {.column width=48%}
+- Wie abstrakte Klasse, aber ausschließlich abstrakte Methoden
+- Klasse kann Klasse mehrere Interfaces implementieren
+- In C# weit verbreitet – begegnen einem in Dokumentation und Beispielen häufig
+- Name beginnt in der Regel mit großem I
+
+→ Für uns nicht zentral
+:::
+:::
+
+
+# Zusammenfassung und Auslassungen
+
+## Zusammenfassung
+
+[]{.down40}
+
+Vererbung
+: Gemeinsame Eigenschaften und Methoden in einer Basisklasse zusammenfassen – `public class Beam : StructuralElement {}`
+
+Abstrakte Klasse
+: Basisklasse mit abstrakten Methoden, erzwingt Implementierung in Unterklassen – `public abstract Group Draw(double a);`
+
+Polymorphismus
+: Gleicher Methodenaufruf, unterschiedliches Verhalten je nach tatsächlichem Objekttyp – `e.Draw()` ruft `Beam.Draw()`, `PinnedSupport.Draw()`, ... auf
+
+Klasse `Object`
+: Wurzel jeder Klassenhierarchie – stellt u.a. `ToString()` bereit, 
+
+Methoden überschreiben
+: Methoden in abgeleiteter Klasse neu definieren, Schlüsselwort `override`
+
+## Auslassungen
+
+[]{.down100}
+
+- Mehrfachvererbung (in C# nicht möglich)
+- Generics (`List<T>`, `IComparable<T>`)
+- Typprüfung zur Laufzeit (`is`, `as`)
+- Interfaces im Detail
