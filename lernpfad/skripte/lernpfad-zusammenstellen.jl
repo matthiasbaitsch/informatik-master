@@ -50,11 +50,32 @@ function substitute_text(text::String, dict::Dict)
     return text
 end
 
+function resolve_includes(text::String, base_folder::String)
+    result = IOBuffer()
+    pos = 1
+    for m in eachmatch(r"\{\{<\s*include\s+(.*?)\s*>\}\}", text)
+        write(result, text[pos:m.offset-1])
+        path = strip(m.captures[1])
+        full_path = joinpath(base_folder, path)
+        if isfile(full_path)
+            write(result, read(full_path, String))
+        else
+            @warn "Include not found: $full_path"
+            write(result, m.match)
+        end
+        pos = m.offset + ncodeunits(m.match)
+    end
+    write(result, text[pos:end])
+    return String(take!(result))
+end
+
 function copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_file::String)
     text = header
     text *= "\n"
     for f = filter(f -> endswith(f, ".qmd"), readdir(from_folder, join=true))
-        text *= read(f, String)
+        content = read(f, String)
+        content = resolve_includes(content, from_folder)
+        text *= content
         text *= "\n\n"
     end
     text = substitute_text(text, make_dict(bb))
