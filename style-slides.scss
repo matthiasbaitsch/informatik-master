@@ -109,6 +109,18 @@ $selection-bg: #26351c !default;
   font-size: 0.825em !important;
 }
 
+.tall-code pre {
+  max-height: none !important;
+}
+
+.tall-code pre code {
+  max-height: none !important;
+}
+
+.full-width-img img {
+  max-width: 100%;
+}
+
 .reveal div.sourceCode pre code {
   margin-left: 0.5em !important;
 }

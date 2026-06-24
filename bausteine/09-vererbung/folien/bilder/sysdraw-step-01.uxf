@@ -1,0 +1,45 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>18</y><w>198</w><h>135</h></coordinates><panel_attributes>Beam
+--
++ X : double
++ Y : double
++ Angle : double
++ Length : double
+
+--
++ Beam(...)
++ MoveTo(x: double, y: double) : void
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>621</x><y>18</y><w>198</w><h>135</h></coordinates><panel_attributes>Load
+--
++ X : double
++ Y : double
++ Angle : double
++ Length : double
++ Q : double
+--
++ Load(...)
++ MoveTo(x: double, y: double) : void
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>414</x><y>18</y><w>198</w><h>135</h></coordinates><panel_attributes>FixedSupport
+--
++ X : double
++ Y : double
++ Angle : double
+
+
+--
++ FixedSupport(...)
++ MoveTo(x: double, y: double) : void
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>207</x><y>18</y><w>198</w><h>135</h></coordinates><panel_attributes>PinnedSupport
+--
++ X : double
++ Y : double
++ Angle : double
+
+
+--
++ PinnedSupport(...)
++ MoveTo(x: double, y: double) : void
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

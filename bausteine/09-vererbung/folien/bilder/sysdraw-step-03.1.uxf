@@ -1,0 +1,45 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>210</x><y>220</y><w>220</w><h>90</h></coordinates><panel_attributes>Beam
+--
++ Length : double
+
+--
++ Beam(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>220</y><w>220</w><h>90</h></coordinates><panel_attributes>Load
+--
++ Length : double
++ Q : double
+--
++ Load(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>220</y><w>220</w><h>90</h></coordinates><panel_attributes>FixedSupport
+--
+
+
+--
++ FixedSupport(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>220</y><w>220</w><h>90</h></coordinates><panel_attributes>PinnedSupport
+--
+
+
+--
++ PinnedSupport(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>10</y><w>220</w><h>110</h></coordinates><panel_attributes>StructuralElement
+--
++ X : double
++ Y : double
++ Angle : double
+--
++ StructuralElement(...)
++ MoveTo(x: double, y: double) : void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>110</y><w>370</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>350;10;350;70;10;70;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>110</y><w>140</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;120;70;10;70;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>110</y><w>140</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70;120;70;120;110</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>110</y><w>380</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70;360;70;360;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>10</y><w>220</w><h>110</h></coordinates><panel_attributes>Structure
+--
++ A : double
++ Elements : List&lt;StructuralElement&gt;
+--
++ Structure(a: double)
++ Add(e: StructuralElement) : void
++ Draw() : Group
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

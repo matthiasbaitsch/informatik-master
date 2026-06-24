@@ -10,5 +10,11 @@
 		"prefix": "larr",
 		"body": "←",
 		"description": "Pfeil nach links"
+	},
+	"Include": {
+		"scope": "quarto",
+		"prefix": "inc",
+		"body": "\n{{< include x.qmd >}}\n",
+		"description": "Include file"
 	}
 }

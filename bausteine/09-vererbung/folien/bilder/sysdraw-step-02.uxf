@@ -1,0 +1,37 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>252</y><w>198</w><h>81</h></coordinates><panel_attributes>Beam
+--
++ Length : double
+
+--
++ Beam(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>621</x><y>252</y><w>198</w><h>81</h></coordinates><panel_attributes>Load
+--
++ Length : double
++ Q : double
+--
++ Load(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>414</x><y>252</y><w>198</w><h>81</h></coordinates><panel_attributes>FixedSupport
+--
+
+
+--
++ FixedSupport(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>207</x><y>252</y><w>198</w><h>81</h></coordinates><panel_attributes>PinnedSupport
+--
+
+
+--
++ PinnedSupport(...)
++ Draw(a : double) : Group
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>306</x><y>90</y><w>198</w><h>99</h></coordinates><panel_attributes>StructuralElement
+--
++ X : double
++ Y : double
++ Angle : double
+--
++ StructuralElement(...)
++ MoveTo(x: double, y: double) : void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>180</y><w>333</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>350;10;350;50;10;50;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>180</y><w>126</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;120;50;10;50;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>180</y><w>126</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;120;50;120;80</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>180</y><w>342</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;360;50;360;80</additional_attributes></element></diagram>
