@@ -488,77 +488,80 @@ Nächste Schleifenrunde – `e` zeigt jetzt auf ein `Load`-Objekt
 
 # Was es noch zu wissen gibt
 
-[🎥](#){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/_cmAOQaAcKI){target="_blank"} Erklärvideo auf YouTube
 
 ## Die `Object`-Klasse
 
 []{.down60}
 
-Klasse ohne explizit angegebene Basisklasse erbt automatisch von `Object`
-
-```csharp
-public class StructuralElement {}
-```
-
-ist daher gleichbedeutend mit
-
-```csharp
-public class StructuralElement : Object {}
-```
-
-[]{.down60}
-  
 - `Object` ist vordefinierte Klasse aus C#
 
 - Grundlegende Methoden wie `ToString()` oder `HashCode()`
 
+- Klasse ohne explizit angegebene Basisklasse erbt automatisch von `Object`
+
+    ```csharp
+    public class StructuralElement {}
+    ```
+
+    ist gleichbedeutend mit
+
+    ```csharp
+    public class StructuralElement : Object {}
+    ```
+
 - Damit ist `Object` die Wurzel jeder Klassenhierarchie
 
-## Methoden überschreiben: `ToString()`
+## Methoden überschreiben: `ToString()` {.smaller}
 
-[]{.down40}
+[]{.down30}
+
+### Sie kennen bereits
 
 ```csharp
-Beam beam = new Beam(0, 0, 0, 5);
-Console.WriteLine(beam.ToString()); // Ausgabe: BoDraw.Beam
+Fraction q = new Fraction(3, 4);
+Console.WriteLine($"q = {q}");
+```
+```output
+q = Fraction
 ```
 
-- Methode `ToString()` in `Object` vereinbart
+→ Standardmäßig Klassenname, wenig Informativ!
 
-- Gibt standardmäßig den Klassennamen zurück
 
-. . .
+::: {.fragment}
+[]{.down40}
 
-[]{.down20}
+### Lösung: Methode `ToString` überschreiben
 
 ```csharp
-public class Beam 
+public class Complex
 {
     ...
     public override string ToString()
     {
-        return $"Beam x={this.X}, y={this.Y}, length={this.Length}";
-    }
+        return $"{this.Re:0.####} {this.Im:+ 0.####;- 0.####}i";
+    }    
 }
 ```
-
 ```csharp
-Beam beam = new Beam(0, 0, 0, 5);
-Console.WriteLine(beam.ToString()); // Ausgabe: Beam x=0, y=0, length=5
+Complex z = new Complex(1, -8);
+Console.WriteLine($"z = {z}");
+```
+```output
+z = 1 - 8i
 ```
 
-- Informative Ausgabe mit überschriebener Methode
-
-. . .
-
-[]{.down20}
-
 → Schlüsselwort `override` um Methode aus Basisklasse neu zu definieren
+:::
 
-## Interfaces 
+
+## Interfaces {.smaller}
+
+[]{.down30}
 
 ::: {.columns}
-::: {.column width=52%}
+::: {.column width=45%}
 ```csharp
 public interface IComparable<T>
 {
@@ -566,8 +569,7 @@ public interface IComparable<T>
 }
 ```
 ```csharp
-public class Fraction : 
-                   IComparable<Fraction>
+public class Fraction : IComparable<Fraction>
 {
     public int A;
     public int B;
@@ -578,34 +580,41 @@ public class Fraction :
     {
         int z1 = this.A * q.B;
         int z2 = q.A * this.B;
-        if (z1 < z2) { return -1; }
-        else if (z1 == z2) { return 0; }
-        else{ return 1; }
+        if (z1 < z2) { 
+            return -1; 
+        }
+        else if (z1 == z2) { 
+            return 0; 
+        }
+        else{ 
+            return 1; 
+        }
     }
 }
 ```
 :::
-::: {.column width=48%}
+::: {.column width=55%}
 - Wie abstrakte Klasse, aber ausschließlich abstrakte Methoden
 
-- Klasse kann Klasse mehrere Interfaces implementieren
+- Klasse kann nur von einer Klasse erben, aber beliebig viele Interfaces implementieren
 
 - In C# weit verbreitet – begegnen einem in Dokumentation und Beispielen häufig
 
 - Name beginnt in der Regel mit großem I
 
-- Interface `IComparable<T>` zum Sortieren von Listen [🌐](https://learn.microsoft.com/en-us/dotnet/api/system.icomparable)
+- Interface `IComparable<T>` aus C# Klassenbibliothek zum Sortieren von Listen [🌐](https://learn.microsoft.com/en-us/dotnet/api/system.icomparable)
 
 - Sie kennen bereits `IEnumerable<T>` aus Abschnitt Datenstrukturen [🌐](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)
 
-→ Kennen, nicht selber anwenden
-:::
-:::
+[]{.down20}
 
+→ Interfaces sollen Sie kennen, aber nicht selber anwenden
+:::
+:::
 
 # Zusammenfassung und Auslassungen
 
-[🎥](#){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/dQCj2qTQHy4){target="_blank"} Erklärvideo auf YouTube
 
 ## Zusammenfassung
 

@@ -2,5 +2,5 @@
   <Project Path="sysdraw-step-01/sysdraw-step-01.csproj" />
   <Project Path="sysdraw-step-02/sysdraw-step-02.csproj" />
   <Project Path="sysdraw-step-03/sysdraw-step-03.csproj" />
-  <!--<Project Path="../../../../../software/BoDraw/src/BoDraw.App/BoDraw.App.csproj" />-->
+  <Project Path="was-es-noch-zu-wissen-gibt/was-es-noch-zu-wissen-gibt.csproj" />
 </Solution>

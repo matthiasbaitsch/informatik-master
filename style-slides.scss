@@ -90,6 +90,10 @@ $selection-bg: #26351c !default;
   font-size: 1.1em;
 }
 
+.reveal .slides section.smaller h3 {
+  font-size: 1.3em;
+}
+
 .reveal dl dt {
   color: $accent2;
   font-weight: 400;
