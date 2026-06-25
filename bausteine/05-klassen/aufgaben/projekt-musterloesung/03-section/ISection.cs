@@ -3,31 +3,31 @@ using static System.Math;
 public class ISection
 {
 
-    public double w;
-    public double h;
-    public double tw;
-    public double tf;
+    public double W;
+    public double H;
+    public double Tw;
+    public double Tf;
 
     public ISection(double w, double h, double tw, double tf)
     {
-        this.w = w;
-        this.h = h;
-        this.tw = tw;
-        this.tf = tf;
+        this.W = w;
+        this.H = h;
+        this.Tw = tw;
+        this.Tf = tf;
     }
 
     public double A()
     {
-        return this.w * this.h - (this.w - this.tw) * (this.h - 2 * this.tf);
+        return this.W * this.H - (this.W - this.Tw) * (this.H - 2 * this.Tf);
     }
 
     public double Iy()
     {
-        return (this.w * Pow(this.h, 3) - Pow(this.h - 2 * this.tf, 3) * (this.w - this.tw)) / 12;
+        return (this.W * Pow(this.H, 3) - Pow(this.H - 2 * this.Tf, 3) * (this.W - this.Tw)) / 12;
     }
 
     public double Iz()
     {
-        return (2 * Pow(this.w, 3) * this.tf + Pow(this.tw, 3) * (this.h - 2 * this.tf)) / 12;
+        return (2 * Pow(this.W, 3) * this.Tf + Pow(this.Tw, 3) * (this.H - 2 * this.Tf)) / 12;
     }
 }
