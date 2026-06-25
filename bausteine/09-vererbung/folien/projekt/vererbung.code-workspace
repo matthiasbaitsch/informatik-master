@@ -5,8 +5,9 @@
 		}
 	],
 	"settings": {
+		"dotnet.hotReload.enabled": false,
 		"dotnet.codeLens.enableReferencesCodeLens": false,
-		"editor.formatOnSave": false,
+		"editor.formatOnSave": true,
 		"chat.disableAIFeatures": true,
 		"files.exclude": {
 			".editorconfig": true,
@@ -14,6 +15,5 @@
 			"**/bin": true,
 			"**/obj": true
 		},
-		"dotnet.defaultSolution": "sysdraw-step-01.slnx",
 	}
 }
