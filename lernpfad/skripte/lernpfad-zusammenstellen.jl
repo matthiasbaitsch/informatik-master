@@ -127,7 +127,7 @@ end
 
 function try_zip_folien_projekt(folder, folder_in_zipfile, zipfile)
     !isdir(folder) && return
-    allowed = r"\.(cs|csproj|slnx|code-workspace)$"
+    allowed = r"\.(cs|csproj|slnx|code-workspace|editorconfig)$"
     ZipWriter(zipfile) do w
         for entry in readdir(folder)
             full = joinpath(folder, entry)
