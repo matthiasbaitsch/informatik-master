@@ -8,7 +8,7 @@ public class Load
     public double Length;
     public double Q;
 
-    public Load(double x, double y, double length, double angle, double q)
+    public Load(double x, double y, double angle, double length, double q)
     {
         this.X = x;
         this.Y = y;

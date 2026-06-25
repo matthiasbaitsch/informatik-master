@@ -4,7 +4,7 @@ public class PinnedSupport : StructuralElement
 {
     public PinnedSupport(double x, double y, double angle) : base(x, y, angle) { }
 
-    public override Group Draw(double a)
+    public override Shape Draw(double a)
     {
         double d = 0.2 * a;
         return new Group(

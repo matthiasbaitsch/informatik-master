@@ -34,7 +34,7 @@
 --
 + StructuralElement(...)
 + MoveTo(x: double, y: double) : void
-+ Draw(a: double) : Group {abstract}
++ Draw(a: double) : Shape {abstract}
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>140</y><w>370</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>350;10;350;40;10;40;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>140</y><w>140</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;120;40;10;40;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>140</y><w>140</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;120;40;120;80</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>140</y><w>380</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;360;40;360;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>10</y><w>220</w><h>110</h></coordinates><panel_attributes>Structure
 --
 + A : double

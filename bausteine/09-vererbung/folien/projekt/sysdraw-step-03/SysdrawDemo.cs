@@ -6,7 +6,7 @@ Structure beam = new Structure(a);
 beam.Add(new Beam(0, 0, 0, 8));
 beam.Add(new PinnedSupport(0, 0, 0));
 beam.Add(new FixedSupport(8, 0, 90));
-beam.Add(new Load(0, 0, 8, 0, 1.5));
+beam.Add(new Load(0, 0, 0, 8, 1.5));
 
 // Rahmen
 Structure frame = new Structure(a);
@@ -15,8 +15,8 @@ frame.Add(new Beam(0, 5, 0, 8));
 frame.Add(new Beam(8, 5, -90, 5));
 frame.Add(new FixedSupport(0, 0, 0));
 frame.Add(new FixedSupport(8, 0, 0));
-frame.Add(new Load(0, 0, 5, 90, 0.5));
-frame.Add(new Load(0, 5, 8, 0, 1.5));
+frame.Add(new Load(0, 0, 90, 5, 0.5));
+frame.Add(new Load(0, 5, 0, 8, 1.5));
 
 // Layout und anzeigen
 BoDrawApp app = new BoDrawApp();

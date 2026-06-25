@@ -5,7 +5,7 @@ public class Load : StructuralElement
     public double Length;
     public double Q;
 
-    public Load(double x, double y, double length, double angle, double q) : base(x, y, angle)
+    public Load(double x, double y, double angle, double length, double q) : base(x, y, angle)
     {
         this.Length = length;
         this.Q = q;

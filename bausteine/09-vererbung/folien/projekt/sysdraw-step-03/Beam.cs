@@ -9,7 +9,7 @@ public class Beam : StructuralElement
         this.Length = length;
     }
 
-    public override Group Draw(double a)
+    public override Shape Draw(double a)
     {
         return new Group(
             new Line(0, 0, this.Length, 0).WithThickness(3.0),

@@ -19,5 +19,5 @@ public abstract class StructuralElement
         this.Y = y;
     }
 
-    public abstract Group Draw(double a);
+    public abstract Shape Draw(double a);
 }
