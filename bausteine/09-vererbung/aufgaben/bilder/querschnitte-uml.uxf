@@ -1,0 +1,25 @@
+<diagram program="umletino" version="15.1"><zoom_level>19</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>380</y><w>342</w><h>209</h></coordinates><panel_attributes>RectangularSection
+--
++ W: double
++ H: double
+
+
+--
++ RectangularSection(...)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>532</x><y>380</y><w>361</w><h>209</h></coordinates><panel_attributes>ISection
+--
++ W: double
++ H: double
++ Tw: double
++ Tf: double
+--
++ ISection(...)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>152</x><y>0</y><w>570</w><h>228</h></coordinates><panel_attributes>CrossSection
+{abstract}
+--
+--
++ A() : double {abstract}
++ Iy() : double {abstract}
++ Iz() : double {abstract}
++ Height() : double {abstract}
++ Draw() : Shape {abstract}
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>152</x><y>209</y><w>304</w><h>209</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;140;50;10;50;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>399</x><y>209</y><w>342</w><h>209</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;160;50;160;90</additional_attributes></element></diagram>

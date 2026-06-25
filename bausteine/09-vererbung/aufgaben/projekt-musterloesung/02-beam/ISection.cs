@@ -1,7 +1,7 @@
 using BoDraw;
 using static System.Math;
 
-public class ISection : Section
+public class ISection : CrossSection
 {
 
     public double W;
@@ -32,12 +32,17 @@ public class ISection : Section
         return (2 * Pow(this.W, 3) * this.Tf + Pow(this.Tw, 3) * (this.H - 2 * this.Tf)) / 12;
     }
 
+    public override double Height()
+    {
+        return this.H;
+    }
+
     public override Shape Draw()
     {
         double z1 = this.H / 2;
         double z2 = z1 - this.Tf;
         double y1 = this.W / 2;
-        double y2 = this.Tf / 2;
+        double y2 = this.Tw / 2;
 
         return new Polygon(
             -y1, -z1,

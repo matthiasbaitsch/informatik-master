@@ -9,7 +9,7 @@ public class Beam
     public string SupportA;
     public string SupportB;
     public double Load;
-    public Section Section = new RectangularSection(0.2, 0.6);
+    public CrossSection Section = new RectangularSection(0.2, 0.6);
 
     public Beam(double length, string supportB, string supportA, double load)
     {
@@ -76,11 +76,17 @@ public class Beam
         return Max(m1, Max(m2, m3));
     }
 
+    public double MaxSigma()
+    {
+        return Abs(this.MMax()) / this.Section.Iy() * this.Section.Height() / 2;
+    }
+
     public void Draw(BoDrawApp app)
     {
         double a = this.Length / 30;
         app.Add(this.DrawSystem(a));
         app.Add(this.DrawMomentLine(a));
+        app.Add(this.DrawSigmaText(a));
     }
 
     private Group DrawSystem(double a)
@@ -111,6 +117,8 @@ public class Beam
         load.Nx = 16;
         load.Dx = this.Length / 15;
         group.Add(load);
+        group.Add(new Line(0, 2 * a, this.Length, 2 * a).WithColor(Colors.Red));
+        group.Add(new Line(0, 4 * a, this.Length, 4 * a).WithColor(Colors.Red));
 
         // Text
         group.Add(new Text("System", this.Length + a, 0, a));
@@ -203,5 +211,11 @@ public class Beam
         }
 
         return group;
+    }
+
+    public Shape DrawSigmaText(double a)
+    {
+        double sigma = 1e-3 * this.MaxSigma();
+        return new Text($"Maximale Spannung: {sigma:0.##} N/mm²", 0, -15 * a, 0.75 * a);
     }
 }

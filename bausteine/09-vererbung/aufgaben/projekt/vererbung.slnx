@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="01-sysdraw/sysdraw.csproj" />
+  <Project Path="02-beam/beam.csproj" />
+  <Project Path="02-beam-test/beam-test.csproj" />
+</Solution>

@@ -1,7 +1,7 @@
 using BoDraw;
 using static System.Math;
 
-public class RectangularSection : Section
+public class RectangularSection : CrossSection
 {
 
     public double W;
@@ -26,6 +26,11 @@ public class RectangularSection : Section
     public override double Iz()
     {
         return Pow(this.W, 3) * this.H / 12;
+    }
+
+    public override double Height()
+    {
+        return this.H;
     }
 
     public override Shape Draw()
