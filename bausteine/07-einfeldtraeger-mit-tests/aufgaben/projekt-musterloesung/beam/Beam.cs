@@ -146,7 +146,6 @@ public class Beam
 
         // Group
         Group group = new Group();
-        group.Move(0, -12 * a);
 
         // Beam
         Line l = new Line(0, 0, this.Length, 0);
@@ -175,6 +174,9 @@ public class Beam
         // Text
         group.Add(new Text("Momentenlinie", this.Length + a, 0, a));
         group.Add(new Text("(kNm)", this.Length + a, -a, 0.75 * a));
+
+        // Move group after adding shapes
+        group.Move(0, -12 * a);
 
         return group;
     }
