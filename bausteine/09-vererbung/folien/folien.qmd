@@ -1,5 +1,7 @@
 # Einführung
 
+[🎥](https://youtu.be/05kPiamBDW0){target="_blank"} Erklärvideo auf YouTube
+
 ## Klassifikation
 
 ![https://www.evogeneao.com](bilder/tree-of-life_2000.png)
@@ -134,6 +136,8 @@
 → Identischer Code an mehreren Stellen ([DRY](https://de.wikipedia.org/wiki/Don’t_repeat_yourself)-Prinzip verletzt)
 
 # Vererbung
+
+[🎥](https://youtu.be/4i-SWfpriqs){target="_blank"} Erklärvideo auf YouTube
 
 ## Gemeinsame Basisklasse
 
@@ -308,6 +312,8 @@ Gewünscht
 
 # Polymorphismus
 
+[🎥](https://youtu.be/K6i_iuxDhDI){target="_blank"} Erklärvideo auf YouTube
+
 ## Klasse `Structure` für statisches System
 
 []{.down40}
@@ -337,7 +343,6 @@ Gewünscht
     - `Elements`: Elemente der Zeichung
     - `Add`: Element hinzufügen
     - `Draw`: Zeichnen, alles in eine Gruppe
-
 
 ## {.smaller}
 
@@ -410,42 +415,42 @@ Gewünscht
 
 :::: {.r-stack}
 ::: {.fragment .fade-in-then-out}
-![](bilder/debugger/debugger-01.png){width=80%}
+![](bilder/debugger-01.png){width=80%}
 
 `SysdrawDemo.cs` – Programm starten
 :::
 ::: {.fragment .fade-in-then-out}
-![](bilder/debugger/debugger-02.png){width=80%}
+![](bilder/debugger-02.png){width=80%}
 
 Schleife in `Structure.Draw()` - `e` zeigt auf ein `Beam`-Objekt
 :::
 ::: {.fragment .fade-in-then-out}
-![](bilder/debugger/debugger-03.png){width=80%}
+![](bilder/debugger-03.png){width=80%}
 
 Schritt hinein → `Beam.Draw(a)` wird ausgeführt
 :::
 ::: {.fragment .fade-in-then-out}
-![](bilder/debugger/debugger-04.png){width=80%}
+![](bilder/debugger-04.png){width=80%}
 
 Nächste Schleifenrunde – `e` zeigt jetzt auf ein `PinnedSupport`-Objekt
 :::
 ::: {.fragment .fade-in-then-out}
-![](bilder/debugger/debugger-05.png){width=80%}
+![](bilder/debugger-05.png){width=80%}
 
 Schritt hinein → `PinnedSupport.Draw(a)` wird ausgeführt
 :::
 ::: {.fragment .fade-in-then-out}
-![](bilder/debugger/debugger-06.png){width=80%}
+![](bilder/debugger-06.png){width=80%}
 
 Nächste Schleifenrunde – `e` zeigt jetzt auf ein `FixedSupport`-Objekt
 :::
 ::: {.fragment .fade-in-then-out}
-![](bilder/debugger/debugger-07.png){width=80%}
+![](bilder/debugger-07.png){width=80%}
 
 Schritt hinein → `FixedSupport.Draw(a)` wird ausgeführt
 :::
 ::: {.fragment}
-![](bilder/debugger/debugger-08.png){width=80%}
+![](bilder/debugger-08.png){width=80%}
 
 Nächste Schleifenrunde – `e` zeigt jetzt auf ein `Load`-Objekt
 :::
@@ -481,8 +486,9 @@ Nächste Schleifenrunde – `e` zeigt jetzt auf ein `Load`-Objekt
 → Programme lassen sich flexibel erweitern, ohne bestehenden Code zu ändern
 :::
 
-# Was man sonst noch wissen sollte
+# Was es noch zu wissen gibt
 
+[🎥](#){target="_blank"} Erklärvideo auf YouTube
 
 ## Die `Object`-Klasse
 
@@ -571,7 +577,7 @@ public class Fraction :
     public int CompareTo(Fraction q)
     {
         int z1 = this.A * q.B;
-        int z2 = this.B * q.A;
+        int z2 = q.A * this.B;
         if (z1 < z2) { return -1; }
         else if (z1 == z2) { return 0; }
         else{ return 1; }
@@ -581,16 +587,25 @@ public class Fraction :
 :::
 ::: {.column width=48%}
 - Wie abstrakte Klasse, aber ausschließlich abstrakte Methoden
+
 - Klasse kann Klasse mehrere Interfaces implementieren
+
 - In C# weit verbreitet – begegnen einem in Dokumentation und Beispielen häufig
+
 - Name beginnt in der Regel mit großem I
 
-→ Für uns nicht zentral
+- Interface `IComparable<T>` zum Sortieren von Listen [🌐](https://learn.microsoft.com/en-us/dotnet/api/system.icomparable)
+
+- Sie kennen bereits `IEnumerable<T>` aus Abschnitt Datenstrukturen [🌐](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)
+
+→ Kennen, nicht selber anwenden
 :::
 :::
 
 
 # Zusammenfassung und Auslassungen
+
+[🎥](#){target="_blank"} Erklärvideo auf YouTube
 
 ## Zusammenfassung
 
