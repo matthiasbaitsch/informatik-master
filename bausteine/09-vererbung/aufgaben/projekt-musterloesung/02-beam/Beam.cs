@@ -11,11 +11,11 @@ public class Beam
     public double Load;
     public CrossSection Section = new RectangularSection(0.2, 0.6);
 
-    public Beam(double length, string supportB, string supportA, double load)
+    public Beam(double length, string supportA, string supportB, double load)
     {
         this.Length = length;
-        this.SupportA = supportB;
-        this.SupportB = supportA;
+        this.SupportA = supportA;
+        this.SupportB = supportB;
         this.Load = load;
     }
 
