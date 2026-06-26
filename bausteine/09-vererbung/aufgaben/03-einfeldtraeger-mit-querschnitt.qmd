@@ -103,7 +103,7 @@ Schritte:
 1. Testen Sie die Klasse für den I-Querschnitt. Sie können das im Demo-Programm mit
 
     ```csharp
-    beam.Section = new ISection(0.2, 0.4, 0.05, 0.01);
+    beam.Section = new ISection(0.2, 0.4, 0.005, 0.01);
     ```
 
     ändern.
