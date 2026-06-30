@@ -2,15 +2,18 @@ abgabetermin: "4. Oktober 2026"
 
 aufgaben:
   - stahlbetonbemessung
-  - lastverteilung-wind
-  - klaeranlage
-  - verstaerkung-pfetten
-  - duennwandige-querschnitte
-  - knotenstromplaene
-  - fundamente
-  - laermschutz
-  - verbundtraeger
-  - lasteinzugsflaechen
   - hohlkoerperdecken
-  - traktionsberechnung
+  - bodenprobe
+  - fundamente
+  - druckfestigkeit-beton
+  - luftschalldaemmung
+  - erdbebeneinwirkung
+  - lastverteilung-wind
+  - lasteinzugsflaechen
+  - verstaerkung-pfetten
+  - klaeranlage
+  - duennwandige-querschnitte
+  - laermschutz
+  - knotenstromplaene
   - laufzeitprogramme-lsa
+  - traktionsberechnung

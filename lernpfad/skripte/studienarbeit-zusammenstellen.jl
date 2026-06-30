@@ -33,7 +33,7 @@ function fill_template(abgabetermin, content, template_text)
 	return template_text
 end
 
-function process_yaml_for_year(file, pool_folder, output_folder, template_text)
+function process_yaml_for_year(file, pool_folder, output_folder_base, template_text)
 	!isfile(file) && error("No such file: $file")
 
 	# basic stuff
@@ -41,18 +41,36 @@ function process_yaml_for_year(file, pool_folder, output_folder, template_text)
 	assignments     = get(data, "aufgaben", String[])
 	year            = parse(Int, splitext(basename(file))[1])
 	submission_date = get(data, "abgabetermin", "")
-	output_folder   = joinpath(output_folder, string(year))
+	output_folder   = joinpath(output_folder_base, string(year))
 
 	# Make folder and copy images
 	mkpath(output_folder)
 	cp(joinpath(pool_folder, "bilder"), joinpath(output_folder, "bilder"))
 
-	# Process assignments
-	for (i, a) ∈ enumerate(assignments)
-		in_file = joinpath(pool_folder, a * ".qmd")
-		out_file = "a" * lpad(string(i), 2, "0") * "-" * a * ".qmd"
-		text = fill_template(submission_date, extract_content(in_file), template_text)
-		write(joinpath(output_folder, out_file), text)
+	# HTML
+	open(joinpath(output_folder, "index.html"), "w") do html_io
+		println(html_io, "<ol>")
+
+		# Process assignments
+		for (i, a) ∈ enumerate(assignments)
+
+			# Input
+			in_file = joinpath(pool_folder, a * ".qmd")
+			content = extract_content(in_file)
+			assignment_text = fill_template(submission_date, content, template_text)
+
+			# Output destinations
+			out_base = "a" * lpad(string(i), 2, "0") * "-" * a
+			out_file = out_base * ".qmd"
+			out_url  = "https://matthiasbaitsch.github.io/informatik-master/lernpfad/studienarbeit/c/$year/$out_base.html"
+
+			# Write
+			write(joinpath(output_folder, out_file), assignment_text)
+			println(html_io, "<li> <a href=\"$out_url\" target=\"_blank\">$(content.titel)</a> <br/> ($(content.betreuende)) </li>")
+		end
+
+		# Finish html
+		println(html_io, "</ol>")
 	end
 end
 
