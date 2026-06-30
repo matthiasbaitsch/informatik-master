@@ -13,10 +13,10 @@
 
 Ansprechpartner:innen für Fragen zu dieser Studienarbeit sind:
 
-- Prof. Dr.-Ing. Matthias Baitsch und Dipl.-Ing. Martin Vogel (Programmierung)
-<<betreuende>>.
+- Prof. Dr.-Ing. Matthias Baitsch (Programmierung)
+<<betreuende>>
 
-Bitte stellen Sie Fragen entweder per Email oder zu den angegebenen Sprechzeiten.
+Bitte stellen Sie Fragen entweder per E-Mail oder zu den Sprechzeiten.
 
 ## Abgabetermin
 
@@ -24,7 +24,7 @@ Spätester Abgabetermin für die Studienarbeit ist der **<<abgabetermin>>**.
 
 ## Abgabeform
 
-Zum Abgabetermin sind die Programmbeschreibung und -dokumentation sowie der vollständige Quelltext der erstellten Software auf Moodle hochzuladen. Eine Abgabe in ausgedruckter Form, per E-Mail, CD oder Diskette ist nicht erforderlich.
+Zum Abgabetermin sind die Programmbeschreibung und -dokumentation sowie der vollständige Quelltext der erstellten Software auf Moodle hochzuladen.
 
 ## Schriftliche Ausarbeitung
 
@@ -38,11 +38,11 @@ Benutzungsoberfläche
 : Welche Funktionen stehen zur Verfügung, wie werden diese bedient, welche Besonderheiten sind zu beachten?
 
 Implementierung
-: Beschreibung des zu Grunde liegenden Klassenmodells mit Hilfe eines UML-Klassendiagramms.
+: Beschreibung des zugrunde liegenden Klassenmodells mithilfe eines UML-Klassendiagramms.
 
-## Kolloquium
+## Mündliche Prüfung
 
-Im Rahmen des Kolloquiums wird geprüft, ob die Bearbeitung der Studienarbeit selbständig erfolgt ist und welche Anteile die Teilnehmer an der Erstellung der Studienarbeit hatten. Dabei wird auch auf Inhalte der Vorlesung Bezug genommen. Das Gespräch erfolgt in Gruppen.
+Im Rahmen der mündlichen Prüfung wird festgestellt, ob die Bearbeitung der Studienarbeit selbständig erfolgt ist. Dabei wird auch auf Inhalte der Vorlesung Bezug genommen.
 
 ## Bewertung der Studienleistung
 
@@ -52,10 +52,10 @@ Bei der Festlegung der Gesamtnote für die Studienleistung werden berücksichtig
 - Funktionsumfang, Bedienbarkeit und Erscheinungsbild der erstellten Applikation,
 - Organisation des Programmcodes (Trennung von Datenmodell und grafischer
   Oberfläche),
-- Einsatz objektorientierter Programmiertechniken (Kapselung, Vererbung,
-  Polymorphie),
-- Qualität des Java-Quellcodes (Namen, Formatierung),
+- Einsatz objektorientierter Programmiertechniken (Vererbung,
+  Polymorphismus),
+- Qualität des Quellcodes (Namen, Formatierung),
 - Aufbau und Qualität der Dokumentation,
-- Verständnis des Programmcodes und der Vorlesungsinhalte im Kolloquium.
+- Leistung in der mündlichen Prüfung.
 
-Nach dem Kolloquium wird für alle teilnehmenden Studierenden eine individuelle Note vergeben.
+Für alle teilnehmenden Studierenden wird eine individuelle Note vergeben.

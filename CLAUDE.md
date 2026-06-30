@@ -32,6 +32,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 ## Zusammenarbeit mit dem Nutzer
 
 - Den Nutzer duzen
+- „sauber" nicht als Qualitätsurteil verwenden (z.B. nicht „das Dokument ist sauber") – stattdessen „gut", „stimmig", „nichts anzumerken" o.Ä.
 
 ## Hinweise zur Zusammenarbeit
 
