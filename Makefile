@@ -1,11 +1,15 @@
 prepare-render:
-	cd lernpfad/skripte && julia --project lernpfad-zusammenstellen.jl
+	cd lernpfad/skripte && julia --project lernpfad-zusammenstellen.jl && cd .. || exit 1
+	cd lernpfad/skripte && julia --project studienarbeit-zusammenstellen.jl && cd .. || exit 1
 
 render-assignments: prepare-render
 	quarto render lernpfad/aufgaben -t html
 
 render-slides: prepare-render
 	quarto render lernpfad/folien -t revealjs
+
+render-study-assignments: prepare-render
+	quarto render lernpfad/studienarbeit
 
 render: render-slides render-assignments
 

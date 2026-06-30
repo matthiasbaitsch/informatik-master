@@ -38,14 +38,19 @@ jobs:
         run: julia --project -e 'using Pkg; Pkg.instantiate()'
         working-directory: lernpfad/skripte
 
-      - name: "Prepare render"
+      - name: "Prepare render 1"
         run: julia --project lernpfad-zusammenstellen.jl
+        working-directory: lernpfad/skripte
+
+      - name: "Prepare render 2"
+        run: julia --project studienarbeit-zusammenstellen.jl
         working-directory: lernpfad/skripte
 
       - name: "Render"
         run: |
-          quarto render lernpfad/folien -t revealjs
+          quarto render lernpfad/studienarbeit
           quarto render lernpfad/aufgaben -t html
+          quarto render lernpfad/folien -t revealjs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
