@@ -1,2 +1,5 @@
 - Mehr: Wo ist hier der Fehler als Quiz
 - ToDouble erklären
+- In Vererbung
+    - Beam mit sysdraw, Branch beam-with-sysdraw
+    - Querschnitte mit W,H in Basisklasse oder mit Kreisquerschnitt
