@@ -1,0 +1,17 @@
+---
+titel: "Ermittlung der Schalldämmung trennender Bauteile nach DIN 4109:2016"
+betreuende: "Prof. Dr. Gerrit Höfker"
+---
+
+Das zu erstellende Programm soll folgenden Funktionsumfang haben:
+
+- Berechnung des Schalldämm-Maßes $R_w'$ im Massivbau gemäß DIN 4109:2016
+- dabei Berücksichtigung aller Übertragungswege ($1\times$ Direkt,
+  $12\times$ Flankenweg), Art der Stoßstelle, eventuell angebrachte Vorsatzschalen
+  am Trennbauteil sowie den Flankenbauteilen, reale Raumgeometrien
+- Als Eingabe soll jedes Bauteil individuell zusammengebaut werden können
+- Endergebnis Schalldämm-Maß $R_w'$ mit Anforderungen vergleichen
+- Die grafische Oberfläche soll das gesamte Trennbauteil mit Flankenbauteilen zeigen
+- Wünschenswert aber nicht zwingend notwendig ist die Ermittlung der
+  Trittschalldämmung einer Trenndecke gemäß DIN 4109:2016 und eine entsprechende
+  grafische Darstellung

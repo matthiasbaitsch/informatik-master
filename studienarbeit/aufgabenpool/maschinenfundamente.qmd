@@ -1,0 +1,16 @@
+---
+titel: "Dimensionierung von Maschinenfundamenten"
+betreuende: "N.N."
+---
+
+Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Vordimensionierung
+von Maschinenfundamenten entwickelt werden. Dabei soll es für Anwender möglich sein,
+die relevanten Systemparameter (Erregerfrequenz, Kraft, Federsteifigkeit,
+Bettungsmodul, Dämpfung, etc.) einzugeben sowie unter verschiedenen Lagerungsarten
+(Feder auf Baugrund, Feder auf elastischer Unterlage, etc.) zu wählen.
+
+Darüber hinaus soll das Programm folgenden Funktionsumfang zur Verfügung stellen:
+
+- Grafische Darstellung des Maschinenfundaments,
+- Plot des zeitlichen Verlaufs der Auslenkung,
+- Ausgabe der wichtigsten Parameter für die Bemessung des Fundaments.

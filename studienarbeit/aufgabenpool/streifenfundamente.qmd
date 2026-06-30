@@ -1,0 +1,24 @@
+---
+titel: "Standsicherheitsnachweis für ausmittig belastete Streifenfundamente"
+betreuende: "Dipl.-Ing. Stephan Reher"
+---
+
+Werden Streifenfundamente ausmittig belastet oder sind Biegemomente aus
+angeschlossenen Stahlbetonwänden zu berücksichtigen, ist dies bei der
+Nachweisführung besonders zu berücksichtigen. In dieser Studienarbeit soll eine
+Applikation entwickelt werden, mit der die wichtigsten Nachweise für solche
+Fundamente geführt werden können.
+
+Funktionsumfang der Applikation:
+
+1. Eingabe der Kenngrößen des Streifenfundaments:
+   a. Breite und Höhe des Fundaments, Art der Bewehrung (bewehrt/unbewehrt),
+   b. Dicke und Baustoff der Wand (Mauerwerk/Stahlbeton), Ausmittigkeit,
+   c. Lasten aus der Wand,
+   d. Baugrundeigenschaften.
+2. Durchführung der wesentlichen Nachweise zur Standfestigkeit und Lagesicherheit
+   des Fundaments:
+   a. Ermittlung der erforderlichen Bewehrung,
+   b. Nachweis von Sohlpressung und der Kippsicherheit und Gleitsicherheit,
+   c. Querkraftnachweis.
+3. Ausgabe des Nachweises und grafische Darstellung des Fundaments.

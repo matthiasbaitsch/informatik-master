@@ -1,0 +1,31 @@
+---
+titel: "Bemessung und Tragfähigkeitsnachweis von Verbundträgern"
+betreuende: "Prof. Dr.-techn. J. Robra (Stahl-Verbundbau)"
+literatur:
+
+  - "Schneider Bautabellen"
+  - "Pfenning, S., Mensinger, M., Brunkhorst, S. und Zehfuß, J. (2017): Mindest­verdübelung\
+    \ von Verbundträgern im Brand – Betrachtung der Auswirkungen von erhöhten Temperaturen\
+    \ auf die Verbundfuge, Münchener Stahlbautage 2017"
+---
+
+![Verbundträger mit Schubdübeln und Stahlbetonplatte [Pfenning et al., 2017]](bilder/verbund.png){width=90%}
+
+Im Rahmen der Studienarbeit soll ein Programm zur Bemessung der Schubdübel von
+Verbundträgern (Abbildung 1) entwickelt werden. Dabei sollen in einem ersten Schritt
+zunächst nur Einfeldträger betrachtet werden.
+
+Funktionsumfang der Applikation:
+
+1. Eingabe der Kenngrößen des Trägers, zum Beispiel
+   a. Spannweite und Auflagerbedingungen,
+   b. Belastung durch Strecken- und ggf. Einzellasten,
+   c. Dicke der Stahlbetonplatte und gewähltes Stahlprofil.
+2. Berechnung des Querkraft- und Momentenverlaufs des Einfeldträgers.
+3. Statische Nachweise für Stahlbetonplatte und Stahlprofil, Bemessung der
+   Schubdübel und Ermittlung der Anordnung, dabei
+   a. Bestimmung der Nulllinie des Querschnitts,
+   b. Wahl der Anordnung der Dübel (äquidistante / abgestufte Dübelverteilung).
+4. Grafische Darstellung des Trägers mit den Verbunddübeln in Querschnitt und
+   Draufsicht. Die wesentlichen Maße sollen ablesbar sein. Darstellung der
+   Schnittgrößen.

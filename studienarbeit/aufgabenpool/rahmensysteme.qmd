@@ -1,0 +1,21 @@
+---
+titel: "Profilbemessung von Rahmensystemen"
+betreuende: "N.N."
+---
+
+Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur
+Schnittgrößenermittlung und Walzprofilbemessung von unterschiedlichen
+Rahmensystemen entwickelt werden. Dabei soll es für Anwender in einfacher Weise
+möglich sein, die relevanten Systemparameter (Lagerung der Fußpunkte und Ausführung
+der Rahmenecken), die Belastung (Dachlasten, Schneelasten und Windlasten als
+Streckenlasten) sowie das gewünschte Stahlprofil für die Stütze und den Riegel
+(IPE-, HEA-Profil) anzugeben.
+
+Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+realisiert werden:
+
+1. Grafische Darstellung des Systems,
+2. Ermittlung des für die Bemessung maßgeblichen Biegemoments und die Biegemomente
+   an den maßgebenden Punkten,
+3. Automatische Auswahl des erforderlichen Walzprofils,
+4. Angabe der Ausnutzung der Stahlprofile.

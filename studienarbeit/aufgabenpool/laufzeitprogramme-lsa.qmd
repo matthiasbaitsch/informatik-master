@@ -1,0 +1,28 @@
+---
+titel: "Laufzeitprogramme für Lichtsignalanlagen"
+betreuende: "Prof. Dr.-Ing. Sebastian Seipel"
+literatur:
+  - "Richtlinien für Lichtsignalanlagen"
+
+---
+
+Das technische Regelwerk Richtlinien für Lichtsignalanlagen (kurz RiLSA) enthält
+Vorgaben und Empfehlungen für die Planung und Betrieb von Lichtsignalanlagen in
+Deutschland. Ausgehend von einem Signallageplan (Abbildung links) sowie vorliegenden
+Verkehrsstärken lässt sich damit eine einfache Signalisierung in Zweiphasen- und
+Festzeitsteuerung für eine innerstädtische Kreuzung auslegen.
+
+::: {layout-ncol=2}
+![](bilder/verkehr-lsa-1.png){height=50mm}
+
+![](bilder/verkehr-lsa-2.png){height=47mm}
+:::
+
+Mit dem zu erstellenden Programm soll für eine gegebene Kreuzung ein
+Festzeitprogramm bestimmt werden. Im Einzelnen sollen folgende Punkte realisiert
+werden:
+
+- Möglichkeit zur Eingabe der Verkehrsstärken
+- Grafische Darstellung der eingegebenen Werte zur Kontrolle
+- Berechnung der Sättigungsverkehrsstärken und einer zweckmäßigen Umlaufzeit
+- Bestimmung und grafische Darstellung des Signalzeitenplans (Abbildung rechts)

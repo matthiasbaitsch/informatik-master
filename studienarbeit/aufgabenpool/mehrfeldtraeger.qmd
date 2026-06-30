@@ -1,0 +1,21 @@
+---
+titel: "Schnittgrößenermittlung und Bemessung von Ein- und Mehrfeldträgern"
+betreuende: "N.N."
+---
+
+Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur
+Schnittgrößenermittlung und Biegebemessung von Ein- und Mehrfeldträgern entwickelt
+werden. Dabei soll es für Anwender in einfacher Weise möglich sein, die relevanten
+Systemparameter (Anzahl der Felder, Stützweiten), die Belastung (ständige Lasten
+und Verkehrslasten) sowie den Baustoff (Holz, Stahl, ggf. Stahlbeton) anzugeben.
+
+Weiterhin soll das Programm folgenden Funktionsumfang zur Verfügung stellen:
+
+- Grafische Darstellung des Systems, der Verformung und der Schnittgrößenverläufe,
+- Ermittlung des für die Bemessung maßgeblichen Biegemoments,
+- Biegespannungsnachweis für ein vom Anwender vorgegebenes Profil,
+- Nachweis der Gebrauchstauglichkeit.
+
+Über den Spannungsnachweis (für einen gegebenen Querschnitt) hinaus wäre es
+wünschenswert, wenn das Programm aus einer gegebenen Profilreihe (z.B. IPE) ein
+passendes Profil ermitteln könnte.

@@ -1,0 +1,29 @@
+---
+titel: "Bemessung von Bindern aus Brettschichtholz"
+betreuende: "N.N."
+---
+
+In Rahmen dieser Studienarbeit sollen vier verschiedene Arten von Holzbindern auf
+ihre Tragfähigkeit untersucht werden. Das Programm soll bei jeweiligen Typ von
+Binder, an maßgebenden Stellen, die Biegebemessung und den Kippnachweis durchführen
+können. Beim Auftreten von Querzugspannungen soll der Querzugkraftnachweis zusätzlich
+geführt werden.
+
+Alle Binder können zusätzlich auf Brandschutz bemessen werden. Alle Nachweise
+erfolgen nach der aktuellen Norm, dem Eurocode 5.
+
+1. Ausgangsdaten (Eingabe):
+   - Abmessungen des Binders, Materialkennwerte (BSH)
+   - Belastung des Binders (Gleichstreckenlast)
+   - Abstände der seitlichen Halterungen (Knicken)
+   - Anzahl und Lage der Beflammungsseiten (Brandschutz)
+   - Bemessungsrelevante Beiwerte
+
+2. Bemessungswerte ausgeben:
+   - $W_x, M_{d,x}, \sigma_{d,x}$ etc. mit Formeln ausrechnen und ausgeben.
+
+3. Bemessung der Holzbinder:
+   - Biegenachweis
+   - Querzugspannungsnachweis
+   - Kippnachweis
+   - Brandschutznachweis

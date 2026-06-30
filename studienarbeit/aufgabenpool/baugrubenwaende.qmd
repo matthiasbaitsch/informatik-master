@@ -1,0 +1,29 @@
+---
+titel: "Belastung von einfach gestützten Baugrubenwänden"
+betreuende: "Prof. Dr.-Ing. Marie-Theres Steinhoff"
+---
+
+Auf der Homepage des Institutes für Geotechnik sind bzw. werden in Kürze Programme
+veröffentlicht, die es den Studierenden ermöglichen, die Ergebnisse von gerechneten
+Aufgaben auf Richtigkeit zu überprüfen. Im Einzelnen sind dies
+
+- Berechnung des aktiven Erddrucks,
+- Berechnung axial belasteter Bohrpfähle,
+- Setzungsberechnung (direkte Setzungsberechnung),
+- Nachweis der äußeren Standsicherheit von Flachgründungen.
+
+Zur Vervollständigung ist ein Programm zu entwickeln, das sich mit der Berechnung
+der Belastung von einfach gestützten Baugrubenwänden bis zur Baugrubensohle
+beschäftigt. Dieses Programm muss in der Lage sein, den erhöhten aktiven Erddruck
+zu berechnen. Hierzu ist die Berechnung des Erdruhedrucks erforderlich. Die
+Rechenwerte des aktiven Erddrucks können aus dem schon vorhandenen Programm
+(<http://www.hochschule-bochum.de/fbb/institute/igt/programme.html>) übernommen
+werden. Bei anstehendem Grundwasser ist der Wasserdruck zu berücksichtigen.
+
+Die Gesamtresultierende der Erddruckspannungen des erhöhten aktiven Erddrucks ist
+zu ermitteln, um die Erddruckumlagerung durchführen zu können. Die Erddruckumlagerung
+soll bei verankerten Baugrubenwänden in ein Rechteck, bei ausgesteiften
+Baugrubenwänden nach EAB (Empfehlungen des Arbeitskreises Baugruben) erfolgen.
+
+Sollte es in dem zur Verfügung stehenden Zeitraum noch möglich sein, soll das
+statische System aufgestellt werden und die Schnittgrößen ermittelt werden.

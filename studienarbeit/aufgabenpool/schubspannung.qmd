@@ -1,0 +1,19 @@
+---
+titel: "Berechnung und Visualisierung der Schubspannungsverteilung für Querschnitte aus dem Stahlbau"
+betreuende: "N.N."
+---
+
+In dieser Studienarbeit soll eine Java-Applikation zur grafischen Darstellung der
+Schubspannung infolge von Querkraft für Stahlträger mit verschiedenen Profiltypen
+konzipiert und implementiert werden.
+
+Dies beinhaltet:
+
+- Implementierung üblicher Profile mit dazugehörigen Querschnittswerten (die z.B.
+  über Dropdown-Listen ausgewählt werden könnten),
+- Alternativ zu den Standardprofilen sollen auch geschweißte Profile berechnet werden
+  können (der Nutzer gibt dann anhand eines Schemas Werte für Höhe, Breite, Steg-
+  und Flanschdicke ein),
+- Eingabe der relevanten Schnittgrößen,
+- Berechnung der Schubspannung in wichtigen Punkten und grafische Darstellung des
+  Schubspannungsverlaufs (mit Zahlenwerten) am Träger.

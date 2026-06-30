@@ -1,0 +1,44 @@
+---
+titel: "Ermittlung der Zusammensetzung von Normalbeton auf Grundlage einer Mischungsberechnung nach Zementmerkblatt B20"
+betreuende: "Prof. i.V. Dr.-Ing. Andreas Dridiger"
+literatur:
+  - "Vorlesungsunterlagen Baustoffkunde und Zement- und Betontechnologie"
+  - "Zementmerkblatt B20"
+
+---
+
+Die Zusammensetzung eines Normalbetons ist von mehreren Faktoren abhängig, die die
+Verarbeitbarkeit des Frischbetons und die Festigkeit sowie die Dauerhaftigkeit des
+Festbetons bestimmen.
+
+Im Rahmen dieser Studienarbeit soll ein Programm entwickelt werden, das die
+Mischberechnung eines Normalbetons automatisiert. Dabei sollen die
+betontechnologischen Grenzwerte (Wasserzementwert, Mindestzementgehalt, minimale
+Durchfestigkeit des Betons, maximal zulässiges Größtkorn der Gesteinskörnung usw.)
+aus den Expositionsklassen und der Tragwerksplanung festgelegt werden können. Der
+erforderliche Wasserbedarf soll für die Konsistenzklassen des Frischbetons F1 bis F3
+unter der Berücksichtigung der Kornzusammensetzung (Sieblinie der Gesteinskörnung),
+der verwendeten Gesteinskörnungsart und der Zusatzmittel (Betonverflüssiger,
+Fließmittel und Luftporenbildner) ermittelt werden. Das Programm soll ebenfalls in
+der Lage sein, für eine angestrebte Sieblinie eigenständig Mischkreuzrechnungen aus
+maximal vier unterschiedlichen Korngruppen durchzuführen. Zudem kann auch eine
+Korngruppe durch eine rezyklierte Gesteinskörnung ausgetauscht werden. Der Zielwert
+der mittleren Betondruckfestigkeit soll in Anbetracht der Betonlagerung und eines
+vorgegebenen Vorhaltemaßes berechnet und in der Betonzusammensetzung berücksichtigt
+werden. Der maßgebende Wasserzementwert soll unter Berücksichtigung eines
+Vorhaltemaßes von 0,02 bis 0,05 beim aus den Expositionsklassen resultierenden
+Wasserzementwert festgelegt werden. Der Zementgehalt soll unter Berücksichtigung
+einer optionalen Flugaschezugabe bestimmt werden. Die Menge der Gesteinskörnung wird
+über die Stoffraumrechnung ermittelt und auf einzelne Korngruppen aufgeteilt. Hierbei
+wird optional der Feuchtegehalt der Gesteinskörnung berücksichtigt. Die Menge des
+Zugabewassers soll an den Feuchtegehalt der Gesteinskörnung angepasst werden. Die
+Zugabemenge der flüssigen Zusatzmittel wird ermittelt und ggf. beim Wasserzementwert
+berücksichtigt. Der maximal zulässige Mehlkorngehalt soll überprüft werden.
+
+Weitere Informationen zur Mischberechnung des Normalbetons sind aus den unten
+angegebenen Literaturquellen zu entnehmen.
+
+Das Programm soll die Menge der einzelnen Ausgangsstoffe in Kilogramm für die
+Mischung eines Kubikmeters und eines beliebig vorgegebenen Volumens des Frischbetons
+berechnen und ausgeben. Wünschenswert, aber nicht zwingend notwendig, wäre darüber
+hinaus eine Ausgabe in einem PDF-Dokument.

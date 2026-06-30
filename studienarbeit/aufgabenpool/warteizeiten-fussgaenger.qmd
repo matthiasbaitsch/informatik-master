@@ -1,0 +1,25 @@
+---
+titel: "Ermittlung der Wartezeit für Fußgänger an einer anbaufreien Straße"
+betreuende: "Prof. Dr.-Ing. Iris Mühlenbruch (Verkehrswesen)"
+---
+
+Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Ermittlung der
+Wartezeiten für Fußgänger auf einer freien Strecke entwickelt werden. Dabei soll
+es für den Anwender möglich sein, alle relevanten Systemparameter anzugeben
+(Fahrbahnbreite, die minimale Kfz-Stärke pro Stunde, die maximale Kfz-Stärke pro
+Stunde, eine Schrittweite der Kfz-Stärke, Sicherheitszuschläge für die Fußgänger,
+eine Fortbewegungsgeschwindigkeit der Fußgänger und die Anzahl der Fußgänger).
+
+Weiterhin soll das Programm folgenden Funktionsumfang zur Verfügung stellen:
+
+- Ermittlung von WZ 10 % (Wartezeit die in 10 % aller Fälle erreicht oder
+  überschritten wird)
+- Ermittlung von WZ 5 % (Wartezeit die in 5 % aller Fälle erreicht oder
+  überschritten wird)
+- Ermittlung von WZ 1 % (Wartezeit die in 1 % aller Fälle erreicht oder
+  überschritten wird)
+- Ermittlung von $t_w$ (durchschnittliche Fußgängerwartezeit)
+- $W_0$ (Wahrscheinlichkeit nicht warten zu müssen)
+- $W_w$ (Wartewahrscheinlichkeit)
+- Ausgabe eines Graphs (stündliche Kfz-Stärke zur durchschnittlichen Wartezeit)
+- Schematische Darstellung der Ausgangslage

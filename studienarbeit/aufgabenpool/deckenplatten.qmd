@@ -1,0 +1,25 @@
+---
+titel: "Bemessung von einachsig gespannten Deckenplatten"
+betreuende: "N.N."
+---
+
+Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Ermittlung der
+erforderlichen Längsbewehrung einer einachsig gespannten Deckenplatte entwickelt
+werden. Die Deckenplatte kann dabei als Ein- oder Mehrfeldträger (max. 3 Felder)
+eingegeben werden.
+
+Das zu entwickelnde Programm soll es Anwendern mit Hilfe einer grafischen
+Benutzungsoberfläche ermöglichen
+
+- ständige und veränderliche Lasten einzugeben,
+- die Deckenstärke $h$ zu wählen,
+- anzugeben, welche Baustoffe verwendet werden sollen,
+- die Mindestbetondeckung einzugeben.
+
+Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+realisiert werden:
+
+1. Grafische Darstellung der Platte (mit Bemaßung),
+2. Darstellung des statischen Systems und der Verformungen,
+3. Ermittlung des Biegemoments an der maßgebenden Stelle,
+4. Ermittlung der erforderlichen Längsbewehrung im Querschnitt.

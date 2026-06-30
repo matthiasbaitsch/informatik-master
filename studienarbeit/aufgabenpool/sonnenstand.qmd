@@ -1,0 +1,31 @@
+---
+titel: "Sonnenstandsberechnungen"
+betreuende: "Prof. Dr. Gerrit Höfker (Bauphysik)"
+literatur:
+
+  - "Eicker, U. (2001): Solare Technologien für Gebäude, Teubner"
+---
+
+Zur Planung energieeffizienter Bauwerke ist die Berücksichtigung des
+Energieeintrages aus der Sonnenstrahlung ein wesentliches Kriterium. Ziel dieser
+Studienarbeit ist die Entwicklung eines Java-Programms, das für einen frei zu
+wählenden Standort planungsrelevante Daten zum Sonnenstand und dem
+Strahlungswinkel bereitstellt.
+
+![](bilder/SonnStand49Nord.png){width=75%}
+
+Das zu entwickelnde Programm soll es Anwendern mit Hilfe einer grafischen
+Benutzungsoberfläche ermöglichen
+
+- Sonnenstandsdiagramme zu erzeugen,
+- den Einfallswinkel auf eine beliebig geneigte Fläche zu berechnen und ggf.
+  in einer dreidimensionalen Darstellung zu visualisieren.
+
+Wünschenswert aber nicht zwingend erforderlich wäre darüber hinaus
+
+- die Analyse von Klimadatensätzen und eine Optimierungsberechnung für die
+  Ausrichtung thermischer Solarkollektoren zur Gebäudebeheizung (vorwiegend
+  Direktstrahlung — normal zu Sonnenstrahlen günstig; Diffusstrahlung — liegend
+  günstiger),
+- die Lösung des zur Sonnenstandsberechnung inversen Problems der
+  Standortbestimmung.

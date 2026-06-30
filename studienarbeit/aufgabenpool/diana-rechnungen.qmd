@@ -1,0 +1,21 @@
+---
+titel: "Steuerung von Diana-Simulationsrechnungen"
+betreuende: "M.Sc. Denis Busch"
+literatur:
+
+  - "Programmdokumentation Diana"
+---
+
+Ziel ist die Entwicklung eines Programms zur Steuerung von rechenzeitintensiven
+Computersimulationen mit dem FE-Programm Diana. Es sollen folgende Punkte
+bearbeitet werden:
+
+- Auswählen der zu überprüfenden Dateien bzw. einen Ordner.
+- Erstellen des Python-Skripts im Ordner (Analyse-Ablauf).
+- Batchdatei erstellen, um das Python-Skript mit DianaIE zu starten (Beginn der Analyse).
+- Ausgewählten Ordner nach .tb-Datei durchsuchen und die Last-Verformung auslesen.
+- Ausgelesene Last-Verformung auf abfallende Last überprüfen. Falls ein Lastabfall
+  festgestellt wird, wird der Task nl41.exe beendet. (Nicht Diana selber, sodass
+  die nächste Berechnung im Ablauf-Skript gestartet wird.)
+- Grafische und tabellarische Darstellung der Last-Verformung, ggf. Ausgabe in
+  TXT-Datei.

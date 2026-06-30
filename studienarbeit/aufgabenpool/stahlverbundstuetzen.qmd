@@ -1,0 +1,34 @@
+---
+titel: "Bemessung von Stahlverbundstützen"
+betreuende: "Prof. J. Robra"
+---
+
+Im Rahmen dieser Studienarbeit sollen Verbundstützen auf ihre Tragfähigkeit
+nachgewiesen werden. Im ersten Schritt soll das Programm für Pendelstützen mit
+einem Verbundquerschnitt für Druckbeanspruchung den Nachweis anhand eines Diagrammes
+führen. Dabei sollen auch alle wichtigen Zwischenwerte ausgegeben werden. Der
+Nachweis erfolgt nach der aktuellen Norm, dem Eurocode 4. Im zweiten Schritt soll
+das Programm auch Verbundstützen nachweisen können, die auf Druck und Biegung
+beansprucht sind. Hierfür sollen wiederum die Zwischenwerte ausgegeben werden und
+am Ende der Nachweis geführt werden.
+
+Im Folgenden soll ein schematischer Aufbau des Programms aufgezeigt werden:
+
+1. Ausgangsdaten (Eingabe):
+   - Länge der Stütze
+   - Stahl-Querschnitt eingeben (ggf. auch für zusammengesetzte Querschnitte)
+   - Beton-Querschnitt eingeben: Festigkeit und E-Modul
+   - Die vorhandenen Schnittgrößen
+   - Kriechzahl, Knicklinie, Beta eingeben
+2. Querschnittswerte ausgeben:
+   - $A_c, I_c, A_a, I_a, A_s, I_s$ mit Formel ausrechnen und ausgeben
+3. Nachweis gegen lokales Beulen:
+   - $d/t$ für jeden Querschnitt je nach der Art des Querschnitts
+4. Tragfähigkeitsnachweis:
+   - Überprüfen ob Anwendung von EC4 zulässig ist
+   - Interaktionsdiagramm
+5. Stabilitätsnachweis (nur Druck)
+6. Stabilitätsnachweis (Druck und Biegung)
+
+Das Programm soll eine Hilfestellung zur schnellen Dimensionierung von typischen
+Verbundstützen darstellen.

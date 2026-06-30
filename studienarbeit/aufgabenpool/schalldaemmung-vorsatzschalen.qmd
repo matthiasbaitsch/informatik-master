@@ -1,0 +1,28 @@
+---
+titel: "Verbesserung der Schalldämmung von massiven Wänden durch biegeweiche Vorsatzschalen"
+betreuende: "Prof. Dr. Gerrit Höfker"
+literatur:
+  - "Forschungsbericht B-BA 2/2008, Fraunhofer Institut für Bauphysik"
+
+---
+
+Mit biegeweichen Vorsatzschalen ist es möglich, den Schallschutz einschaliger
+Wände in Massivbauweise erheblich zu verbessern. Dies betrifft sowohl das
+Verbesserungsmaß für die Direktübertragung ($\Delta R$) als auch das
+Verbesserungsmaß für die Flankenübertragung ($\Delta R_{ij}$) bei Anwendung vor
+flankierenden Wänden. Dabei bildet die Vorsatzschale mit der massiven Wand ein
+Feder-Masse-System. Das Verbesserungsmaß ist abhängig von der konstruktiven
+Ausbildung der Vorsatzschale.
+
+Mit dem Forschungsbericht B-BA 2/2008 des Fraunhofer Instituts für Bauphysik steht
+ein leistungsfähiges Berechnungsverfahren für solche Vorsatzschalen zur Verfügung.
+Allerdings ist dieses Verfahren in Anwendung recht kompliziert. Im Rahmen dieser
+Studienarbeit soll daher ein Programm entwickelt werden, mit dem das im Bericht
+B-BA 2/2008 vorgeschlagene Berechnungsverfahren anwenderfreundlich zur Auslegung
+von Vorsatzschalen eingesetzt werden kann. Ein wichtiger Punkt hierbei ist es, die
+akustischen Eigenschaften (Resonanzfrequenzen etc.) der zur Anwendung kommenden
+Bauteile zu erfassen und in geeigneter Form für das Programm zur Verfügung zu
+stellen. Als Ergebnis soll ein Prüfbericht (inklusive grafischer Auswertung) mit
+terzweise rechnerisch ermittelten Werten erstellt werden, mit dem der bauakustische
+Nutzen von biegeweichen Vorsatzschalen vor massiven Grundbauteilen bewertet werden
+kann.

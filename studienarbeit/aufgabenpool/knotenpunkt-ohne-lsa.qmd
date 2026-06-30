@@ -1,0 +1,36 @@
+---
+titel: "Verkehrsqualität von Knotenpunkten ohne Lichtsignalanlage"
+betreuende: "Prof. Dr.-Ing. Sebastian Seipel"
+literatur:
+  - "Handbuch für die Bemessung von Straßenverkehrsanlagen 2015 - Teil S Stadtstraßen"
+
+---
+
+Mit dem Handbuch für die Bemessung von Straßenverkehrsanlagen (HBS) 2015 werden
+unter anderem Verkehrsqualitäten für Knotenpunkte im Straßenverkehr bemessen. Das
+HBS ist dabei in die drei Teile A (Autobahnen), L (Landstraßen) und S (Stadtstraßen)
+unterteilt. Unterschieden wird dabei im Weiteren zwischen Knotenpunkten mit
+Lichtsignalanlage und Knotenpunkten ohne Lichtsignalanlage. Im Zuge dieser Aufgabe
+soll ein Berechnungsprogramm für eine Knotenpunktform ohne LSA an Stadtstraßen
+erstellt werden.
+
+::: {layout-ncol=3}
+![HBS 2015](bilder/verkehr-01.png){width=28mm}
+
+![Kreisverkehr](bilder/verkehr-02.png){width=57mm}
+
+![Kreuzung VZ](bilder/verkehr-03.png){width=48mm}
+:::
+
+Mit dem zu erstellenden Programm soll entweder die Qualität eines Kreisverkehrs
+und/oder einer Kreuzung mit Vorfahrtregelung durch Verkehrszeichen bestimmt werden
+können. Im Einzelnen soll folgender Funktionsumfang zur Verfügung stehen:
+
+- Eingabe der zur Bestimmung der Verkehrsqualität erforderlichen Parameter
+- Grafische Darstellung der eingegebenen Werte zur Kontrolle
+- Berechnung der Verkehrsqualität zu den eingegebenen Eingangsparametern
+- Grafische Darstellung der Verkehrsqualität für die einzelnen Zufahrten in einem
+  Rot/Gelb/Grün-Schema
+- Nicht zwingend erforderlich aber wünschenswert ist eine Exportfunktion für die
+  Ergebnisse als Excel-Datei (die Excel-Blätter sollen dabei das Layout der
+  HBS-Formblätter besitzen)

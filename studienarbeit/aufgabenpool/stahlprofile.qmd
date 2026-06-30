@@ -1,0 +1,23 @@
+---
+titel: "Tragfähigkeitsnachweis für Stahlprofile"
+betreuende: "Prof. Dr.-techn. Jörgen Robra"
+---
+
+Im Rahmen dieser Studienarbeit soll eine Java-Applikation entwickelt werden, mit
+der für Walzprofile aus Stahl Tragsicherheitsnachweise nach DIN 18800 durchgeführt
+werden können. Es soll dabei möglich sein, den Nachweis sowohl nach dem Verfahren
+Elastisch-Elastisch als auch nach dem Verfahren Elastisch-Plastisch durchzuführen.
+Berücksichtigt werden Profile der Serien IPE, HEA und HEB; für den Nachweis sind
+die Querschnitte den entsprechenden Querschnittsklassen zuzuordnen, um das lokale
+Beulverhalten normgerecht zu erfassen. Darüber hinaus sollen mithilfe des Programms
+Nachweise gegen Knicken und Biegedrillknicken möglich sein.
+
+Das Programm soll folgenden Funktionsumfang umfassen:
+
+- Eingabe der Schnittgrößen,
+- Auswahl eines Profils aus einer bestimmten Profilreihe,
+- Angabe des gewählten Teilsicherheitskonzepts,
+- Ermittlung des Ausnutzungsgrades und Ausgabe, ob der Nachweis erbracht ist.
+
+Wünschenswert aber nicht zwingend notwendig wäre die Option, für eine gegebene
+Querschnittsreihe automatisch das wirtschaftlichste Profil zu ermitteln.

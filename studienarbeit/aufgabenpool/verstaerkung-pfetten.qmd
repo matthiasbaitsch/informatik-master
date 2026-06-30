@@ -1,0 +1,19 @@
+---
+titel: "Nachträgliche Verstärkung von Pfetten"
+betreuende: "Prof. Dr.-Ing. Stephan Löring"
+literatur:
+---
+
+Das Pfettendach ist eine Dachkonstruktion in Holzbauweise die häufig im Wohnungsbaubestand anzutreffen ist. Immer wieder kommt es vor, dass exisierende Pfetten nachträglich verstärkt werden müssen, zum Beispiel bei Bauschäden oder wenn sich die Nutzlasten erhöhen (neue Dacheindeckung, PV-Anlage). Im Rahmen dieser Studienarbeit soll eine Applikation entwickelt werden, mit der sich die Verstärkung von Pfetten dimensionieren lässt.
+
+![](bilder/pfetten.png){width=80% fig-align="center"}
+
+Das Programm soll den folgenden Funktionsumfang zur Verfügung stellen
+
+1. Eingabe des statisches Systems, der Belastung und des Altquerschnitts
+1. Auswahl der Art der Verstärkung (einseitig/zweiseitig sowie Holz/U-Profil)
+1. Bestimmung und Visualisierung der Schnittgrößen
+1. Nachweisführung im Grenzzustand der Tragfähigkeit (GZT) und Grenzzustand der Gebrauchstauglichkeit (GZG)
+1. Automatische Dimensionierung für
+    - Zusatzholz: Höhe wählbar, Breite ermitteln, so dass Nachweise GZT und GZG erfüllt
+    - U-Profil: Gleiche Ausnutzungsgrade im GZT, Nachweis GZG erfüllt

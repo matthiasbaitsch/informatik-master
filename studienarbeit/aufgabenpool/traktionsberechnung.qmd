@@ -1,0 +1,39 @@
+---
+titel: "Zugförderung / Traktionsberechnung"
+betreuende: "Prof. Dr. Maren Schnieder"
+---
+
+Im Rahmen der Studienarbeit soll eine interaktive Anwendung entwickelt werden, mit
+der die Zugförderung anschaulich visualisiert werden kann. Das Tool soll als
+Lehrprogramm in den Vorlesungen Elektrische Verkehrssysteme ÖV1 und ÖV2
+eingesetzt werden.
+
+**Funktionalität**
+
+Das Tool soll für definierte Streckenpunkte eine Traktionsberechnung durchführen.
+Dabei sind insbesondere folgende Schritte vorgesehen:
+
+- Berechnung der erforderlichen Zugkraft: Aus der Summe der zu erwartenden
+  Fahrwiderstände soll die notwendige Zugkraft bestimmt werden.
+- Adhäsionsprüfung: Es soll überprüft werden, ob die berechnete Zugkraft unter den
+  gegebenen Bedingungen (z.B. Reibwert zwischen Rad und Schiene) durch Adhäsion
+  übertragen werden kann.
+- Leistungsberechnung: Aus der ermittelten Zugkraft und der zugehörigen
+  Geschwindigkeit soll die Antriebsleistung berechnet werden.
+
+Alle, bzw. möglichst viele, in die Berechnung einfließenden Parameter sollen durch
+die Nutzer:innen verändert werden können:
+
+- Bei diskreten Werten (z.B. Zugtypen wie Schnellzüge, gewöhnliche Personenzüge,
+  leere Güterzüge) soll aus vordefinierten Optionen gewählt werden können.
+- Bei kontinuierlichen Werten (z.B. Masse, Neigung, Geschwindigkeit) soll eine
+  Anpassung über interaktive Schieberegler erfolgen.
+
+Sowohl Zwischenergebnisse als auch Endergebnisse der Berechnungen sollen
+übersichtlich dargestellt werden. Zudem soll visualisiert werden, ob unter den
+gewählten Bedingungen die Zugkraft durch Adhäsion übertragen werden kann.
+
+**Optional: Erweiterte Funktionen**
+
+Optional können zusätzliche interaktive Elemente integriert werden, z.B. motivierende
+und erklärende Hinweise, warum unter bestimmten Bedingungen Raddurchdrehen auftritt.

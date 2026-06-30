@@ -1,0 +1,37 @@
+---
+titel: "Ermittlung von Querschnittswerten dünnwandiger Stahlprofile"
+betreuende: "Prof. Dr.-techn. Jörgen Robra"
+literatur:
+  - "DIN EN 1993-1-3"
+
+---
+
+Bei der Berechnung von Querschnittswerten dünnwandiger Stahlprofile wird davon
+ausgegangen, dass die Biegesteifigkeit der Teilquerschnitte um die schwache Achse
+vernachlässigt werden kann. Die Ermittlung der zur Durchführung des
+Tragfähigkeitsnachweises notwendigen Flächenträgheitsmomente $I_y$, $I_x$ und
+$I_w$ oder $I_t$ ist in DIN EN 1993-1-3 erläutert. Besonders zu berücksichtigen
+sind dabei die Fälle von Querschnitten mit Verzweigungen beziehungsweise Querschnitten
+mit geschlossenem Querschnittsteil.
+
+```{=latex}
+\begin{center}
+  \includegraphics[height=50mm]{duennwandiges-profil}
+\end{center}
+```
+
+Im Rahmen dieser Studienarbeit soll ein Programm entwickelt werden, mit dem die
+Querschnittswerte solcher dünnwandiger Querschnittswerte komfortabel berechnet
+und ausgegeben werden können. Hierzu ist folgender Funktionsumfang erforderlich:
+
+- Eingabe der Koordinaten von Knotenpunkten und Blechdicken,
+- grafische Darstellung des Querschnitts zur Überprüfung der Eingabe,
+- Ausgabe der Querschnittswerte auf der grafischen Oberfläche und in Textform.
+
+Das Programm soll dabei automatisch erkennen, ob es sich bei dem Querschnitt um
+einen Querschnitt mit geschlossenem Querschnittsteil handelt. In diesem Fall soll
+anstatt des Wölbflächenmoments $I_w$ das Torsionswiderstandsmoment $I_t$ bestimmt
+werden. Wünschenswert aber nicht zwingend erforderlich ist die Durchführung eines
+Spannungsnachweises für schiefe Biegung mit Normalkraft. Eine Darstellung des
+Spannungsverlaufs für die gegebenen Schnittgrößen in einer dreidimensionalen Grafik
+stellt eine weitere Erweiterungsmöglichkeit des Programms dar.

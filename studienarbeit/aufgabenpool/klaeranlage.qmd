@@ -1,0 +1,32 @@
+---
+titel: "Vordimensionierung einer Kläranlage"
+betreuende: "Prof. Dr.-Ing. Bernd Nolting"
+literatur:
+
+  - "DWA-Regelwerk, Arbeitsblatt DWA-A 131, Bemessung von einstufigen\
+    \ Belebungsanlagen (2015)"
+  - "Grundlagen der Siedlungswasserwirtschaft (Skript 1-3, 3. Semester,\
+    \ Dozent: Prof. Dr.-Ing. Nolting)"
+  - "Biologische und chemische Abwasserbehandlung (Skript 1, 5. Semester,\
+    \ Dozent: Prof. Dr.-Ing. Nolting)"
+---
+
+Im Zuge der Studienarbeit soll ein Programm entwickelt werden, welches eine
+Vordimensionierung für Kläranlagen, bezogen auf die jeweilige Ausbaugröße und den
+auftretenden Abwasseranfall, ermöglicht.
+
+![](bilder/klaeranlage.png){width=130mm}
+
+Anhand von Bemessungsformeln des Arbeitsblattes DWA-A 131, die den Anforderungen
+der Abwasserordnung entsprechen, können Berechnungen in das Programm implementiert
+werden. Mit den Eingangsparametern des Zulaufes der Kläranlage können die
+Beckenabmessungen berechnet werden. Die Ausgabewerte beziehen sich auf die Bemessung
+der Vorklärbecken (optional vorhanden), der Belebungsbecken und der
+Nachklärbecken. Weitergehend ist zu überlegen, weitere Kapazitäten der Kläranlage
+berechnen zu lassen.
+
+Bei einer unzureichenden Dateneingabe (Datenverfügbarkeit) können gemäß der
+Eliminationsleistung nach A131 Mittelwerte ergänzt werden.
+
+Die Ergebnisse sollen mit Abbildungen der Stoffströme und den berechneten
+Beckengrößen visualisiert werden.

@@ -1,0 +1,46 @@
+---
+titel: "Automatisiertes Auswertetool zur in-situ Erfassung und Beurteilung von Betondruckfestigkeiten"
+betreuende: "Dipl.-Ing. Heiko Rahm (ZPP GERMAN ENGINEERING)"
+---
+
+**Grundlagen**
+
+Die Kenntnis der Betondruckfestigkeit von Bestandsbauwerken oder -bauteilen ist
+insbesondere beim Bauen im Bestand und in der Planung von Instandsetzungsmaßnahmen
+von großem Interesse. Die Bestimmung der Betondruckfestigkeit wird in der Praxis
+prinzipiell durch zwei Verfahren durchgeführt:
+
+a) Der zerstörenden Druckprüfung an aus dem Bauwerk entnommenen Bohrkernen
+b) Der zerstörungsfreien Prüfung durch Rückprallhammerprüfung
+
+Die Durchführung der Prüfung von a) ist in DIN EN 12504-1:2009, die von b) in
+DIN EN 12504-2:2012 normativ geregelt. Darüber hinaus ist die Bewertung der
+Prüfergebnisse beider Prüfverfahren in DIN EN 13791:2008-05 sowie der gegenwärtig
+gültigen Änderung A20 (DIN EN 13791/A20:2017-02) geregelt.
+
+Das zurzeit gültige Regelwerk ist in seiner Auswertung soweit komplex, dass eine
+„Handrechnung" ohne EDV-Unterstützung nur sehr zeitaufwändig realisiert werden kann.
+Ein allgemein zugängliches Softwaretool ist derzeit nicht bekannt.
+
+**Aufgabenstellung**
+
+Im Rahmen der Projektarbeit soll ein Auswertetool erstellt werden, dass folgenden
+Anforderungen genügt:
+
+- Programmierung eines Auswertetools zur Bewertung der Betondruckfestigkeit
+  entsprechend o.g. Regelwerke in der Programmiersprache JAVA
+- Darstellung einer grafischen Benutzeroberfläche mit Eingabemöglichkeit aller
+  zur Bewertung notwendigen Parameter
+- Möglichkeiten zur Eingabe von individualisierten Daten wie z.B. Prüfungsdatum,
+  Entnahmestellen, Bauteilnummer, Projektbezeichnung etc.
+- Fehlerausgabe bei Eingaben außerhalb der normativen Vorgaben
+- Normkonforme Bewertung der Eingabeparameter
+- Ausgabe der Ergebnisse in Form eines Beurteilungsberichts entsprechend
+  DIN 13791 in einem digital weiterverarbeitenden Format (*.docx oder *.pdf)
+- Bereitstellung einer im Programm erreichbaren Hilfe
+- Ggf. sollte die Einsetzbarkeit des Auswertetools auf mobilen Endgeräten
+  (z.B. Tablets) für einen direkten Feldeinsatz geprüft werden
+
+Soweit möglich und erforderlich sind wir natürlich gerne bereit durch die
+entsprechenden Fachabteilungen unseres Büros Unterstützung bei dieser
+Projektarbeit zu leisten.

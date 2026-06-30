@@ -1,0 +1,34 @@
+---
+titel: "Effektive Querschnittswerte von Z-Profilen"
+betreuende: "N.N."
+---
+
+**Funktionsumfang**
+
+- In einer Eingabemaske sollen zunächst die Abmessungen des Profils eingegeben
+  werden. Hierzu zählen Steghöhe, Gurtbreiten und Lippenlängen.
+- Ein Algorithmus prüft, ob die eingegebenen Abmessungen innerhalb des
+  vorgeschriebenen Rahmens liegen. Andernfalls Fehlermeldung.
+- Dann wird der wirksame Querschnitt des gedrückten Flansches sowie der Lippe unter
+  Biegung ermittelt. Hierzu ist ein Iterationsprozess notwendig. Zwischenergebnisse
+  werden über die Konsole ausgegeben.
+- Mittels der effektiven Gurt- und Lippenbreite sowie Lippenlänge folgt im Anschluss
+  die Ermittlung des wirksamen Stegquerschnitts.
+
+**Programmierspezifisches**
+
+- Da das Programm grundsätzlich erweiterbar sein soll, wird dem Anwender vor Eingabe
+  der Abmessungen ein Querschnitt vorgegeben. Im Rahmen des Programms wird zunächst
+  nur die Z-Pfette zur Auswahl stehen. Durch Unterklassen könnte das Programm um
+  z.B. C- oder CL-Profile erweitert werden.
+- Die Ausgabe erfolgt mit einer grafischen Darstellung des effektiven Querschnitts
+  der Z-Pfette.
+
+**Optionale Erweiterungen** (je nach zeitlichem Aufwand)
+
+- Implementierung der Berechnung von C-Profilen als Unterklasse
+- Druckausgabe der Berechnungen als PDF
+- Auswahl des Anwenders zur Genauigkeit des Iterationsprozesses (z.B. Dropdown-Menü
+  1 %, 0,1 % und 0,01 %)
+- Variation des Lippenwinkels (standardmäßig 45°, in 5°-Abständen über Dropdown
+  veränderbar bis 90°)

@@ -1,0 +1,33 @@
+---
+titel: "Berechnung von Wärmebrücken mit Finite-Differenzen-Verfahren"
+betreuende: "Prof. Dr.-Ing. Gerrit Höfker (Bauphysik)"
+literatur:
+
+  - "Schoch, T. (2013): Wärmebrückenberechnung, Beuth-Verlag"
+---
+
+::: {layout="[3,1]"}
+Im Rahmen dieser Studienarbeit soll eine Java-Applikation konzipiert und implementiert
+werden, mit der baupraktisch relevante Kenngrößen von Wärmebrücken an ausgewählten
+konstruktiven Situationen berechnet werden können. Die Berechnung der
+Temperaturverteilung soll dabei für ein zweidimensionales Gebiet mit Hilfe des
+Finite-Differenzen-Verfahrens für den stationären Zustand erfolgen. Mit der
+Applikation soll es möglich sein, die für den Wärmeschutznachweis notwendigen
+Berechnungen für eine ausgewählte Wärmebrücke (z.B. Balkonplatte, Dachanschluss,
+Geschossdecke, Innenwandanschluss Außenwand, Ecke) durchzuführen.
+
+![](bilder/espi4_7_2.png){height=50mm}
+:::
+
+Das zu entwickelnde Programm soll es Anwendern mit Hilfe einer grafischen
+Benutzungsoberfläche ermöglichen,
+
+- Bauteilabmessungen und Baustoffe der Wärmebrücke einzugeben,
+- die Außen- und Innentemperatur zu definieren,
+- die Temperaturverteilung sowie die Wärmeströme zu berechnen und grafisch
+  darzustellen,
+- als Endergebnis den Temperaturfaktor $f_{\mathrm{Rsi}}$ sowie den $\Psi$-Wert für
+  die Wärmeverluste anzugeben.
+
+Wünschenswert aber nicht zwingend erforderlich ist ein Katalog von Wärmebrücken,
+aus denen Anwender das zu berechnende Bauteil auswählen können.

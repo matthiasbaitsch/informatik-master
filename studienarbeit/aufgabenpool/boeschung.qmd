@@ -1,0 +1,25 @@
+---
+titel: "Nachweis einer Böschung gegen Geländebruch"
+betreuende: "Prof. Dr.-Ing. Karsten Dörendahl"
+literatur:
+  - "Unterlagen zur Vorlesung Erdbau"
+---
+
+Gemäß DIN 4084 kann der Nachweis einer Böschung gegen Geländebruch mit
+unterschiedlichen Bruchmechanismen geführt werden. Ein gängiges Verfahren hierbei
+ist das Lamellenverfahren mit kreisförmig gekrümmter Gleitfläche nach Bishop.
+
+Im Rahmen dieser Studienarbeit soll ein Lernprogramm für die Vorlesung „Erdbau"
+entwickelt werden, welches das Nachweisverfahren visualisiert und anschaulich
+nachvollziehbar macht. Das Programm sollte insbesondere beinhalten:
+
+- Wahl der Geometrie und einer Bodenschichtung durch den Nutzer
+- Eingabe der Bodenkennwerte durch den Nutzer
+- Wahl des Mittelpunkts und des Radius des Gleitkreises durch den Nutzer
+- Lamelleneinteilung durch den Nutzer
+- den Nachweis selber mit Berechnung der Summe der Einwirkungen und der Widerstände
+  und dem Ausnutzungsgrad
+
+Zur besseren Veranschaulichung der Kräfte an einer Lamelle wäre eine ergänzende
+separate Darstellung ausgewählter Lamellen inkl. der angrenzenden Schnittgrößen
+wünschenswert.

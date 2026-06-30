@@ -1,0 +1,61 @@
+# <<titel>>
+
+## Aufgabenstellung
+
+<<inhalt>>
+
+## Literatur
+
+- Unterlagen zur Vorlesung Informatik im Master
+<<literatur>>
+
+## Betreuung
+
+Ansprechpartner:innen für Fragen zu dieser Studienarbeit sind:
+
+- Prof. Dr.-Ing. Matthias Baitsch und Dipl.-Ing. Martin Vogel (Programmierung)
+<<betreuende>>.
+
+Bitte stellen Sie Fragen entweder per Email oder zu den angegebenen Sprechzeiten.
+
+## Abgabetermin
+
+Spätester Abgabetermin für die Studienarbeit ist der **<<abgabetermin>>**.
+
+## Abgabeform
+
+Zum Abgabetermin sind die Programmbeschreibung und -dokumentation sowie der vollständige Quelltext der erstellten Software auf Moodle hochzuladen. Eine Abgabe in ausgedruckter Form, per E-Mail, CD oder Diskette ist nicht erforderlich.
+
+## Schriftliche Ausarbeitung
+
+Die schriftliche Ausfertigung der Studienarbeit soll ca. 5 bis 10 Seiten umfassen
+und folgendermaßen aufgebaut sein:
+
+Einleitung
+: Allgemeine Beschreibung der Problemstellung und der Anforderungen an die Applikation.
+
+Benutzungsoberfläche
+: Welche Funktionen stehen zur Verfügung, wie werden diese bedient, welche Besonderheiten sind zu beachten?
+
+Implementierung
+: Beschreibung des zu Grunde liegenden Klassenmodells mit Hilfe eines UML-Klassendiagramms.
+
+## Kolloquium
+
+Im Rahmen des Kolloquiums wird geprüft, ob die Bearbeitung der Studienarbeit selbständig erfolgt ist und welche Anteile die Teilnehmer an der Erstellung der Studienarbeit hatten. Dabei wird auch auf Inhalte der Vorlesung Bezug genommen. Das Gespräch erfolgt in Gruppen.
+
+## Bewertung der Studienleistung
+
+Bei der Festlegung der Gesamtnote für die Studienleistung werden berücksichtigt:
+
+- Schwierigkeitsgrad der mit dem Programm gelösten Problemstellung,
+- Funktionsumfang, Bedienbarkeit und Erscheinungsbild der erstellten Applikation,
+- Organisation des Programmcodes (Trennung von Datenmodell und grafischer
+  Oberfläche),
+- Einsatz objektorientierter Programmiertechniken (Kapselung, Vererbung,
+  Polymorphie),
+- Qualität des Java-Quellcodes (Namen, Formatierung),
+- Aufbau und Qualität der Dokumentation,
+- Verständnis des Programmcodes und der Vorlesungsinhalte im Kolloquium.
+
+Nach dem Kolloquium wird für alle teilnehmenden Studierenden eine individuelle Note vergeben.

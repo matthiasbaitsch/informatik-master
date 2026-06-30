@@ -1,5 +1,5 @@
 /__output
-/.quarto/
+**/.quarto/
 /.DS_Store
 
 **/*.quarto_ipynb
@@ -11,4 +11,3 @@ bin
 *Attic
 *_files
 *.lscache
-bausteine/04-objekte/aufgaben/projekt-musterloesung/03-hallenrechner-2/test.png

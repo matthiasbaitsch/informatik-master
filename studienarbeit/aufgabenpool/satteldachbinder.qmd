@@ -1,0 +1,29 @@
+---
+titel: "Bemessung von Satteldachbindern in Holzbauweise"
+betreuende: "N.N."
+---
+
+**Funktionsumfang**
+
+Entwicklung eines Programmes, das für einen Einfeld-Satteldachbinder aus Holz die
+erforderlichen Nachweise führt.
+
+**Auszug der zu bearbeitenden Punkte:**
+
+- Grafische Oberfläche mit Eingabefeldern für den Werkstoff, Geometrie und
+  Belastung des Trägers.
+- Grafische Darstellung des Trägers.
+
+**Methoden**
+
+- Ermittlung der maximalen Einwirkungskombination ($p_d$, $k_{mod}$).
+- Ermittlung der Stelle des maximalen Momentes nach EC5.
+- Widerstandsmomente im Firstbereich und im Bereich des maximalen Momentes.
+- Spannungsnachweis im Firstbereich, Stelle der maximalen Biegespannung und am
+  angeschnittenen Rand.
+- Schubnachweis und Überprüfung der Auflagerpressung.
+
+**Rückgaben**
+
+Erstellung eines Ausgabedokumentes (Textdatei) mit einer Übersicht über die
+Bearbeitung des Programmes.

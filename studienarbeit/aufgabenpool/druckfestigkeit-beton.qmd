@@ -1,0 +1,28 @@
+---
+titel: "Bewertung der Druckfestigkeit von Beton"
+betreuende: "Prof. Dr.-Ing. Andreas Dridiger"
+---
+
+Im Rahmen der Studienarbeit soll ein Berechnungstool zur Bewertung der Druckfestigkeit
+von Beton in Bauwerken und Bauteilen gemäß DIN EN 13791 und DIN EN 13791/A20
+„Abschätzung der Druckfestigkeiten von Bauwerksbeton und der charakteristischen
+Druckfestigkeit des Betons in Bauwerken/Bauwerksteilen nach direkten Verfahren"
+erstellt werden.
+
+![](bilder/bohrkernpruefung.pdf){width=60%}
+
+Nach Eingabe der Anzahl und Abmessungen (Höhe, Durchmesser, Masse) der zu prüfenden
+Probekörper und der gemessenen maximalen Druckkraft wird vom Programm folgendes
+bestimmt:
+
+- Verhältnis $H/D$
+- Prüffläche $A \; [\mathrm{mm}^2]$
+- Rohdichte $\rho \; [\mathrm{kg/dm}^3]$
+- Druckfestigkeiten der Proben (Bohrkerne) $f_{c,i} \; [\mathrm{N/mm}^2]$
+- Unterscheidung nach Zylinder- und Würfeldruckfestigkeit
+- Ermittlung der mittleren Druckfestigkeit $f_{c,m,is} \; [\mathrm{N/mm}^2]$
+- Überprüfung möglicher Ausreißer nach dem Grubbs-Test
+- Auswahl des zu prüfenden Abschnitts in Abhängigkeit von der Anzahl der Probekörper
+- Berechnung der Standardabweichung $s$
+- Ermittlung der charakteristischen Festigkeit $f_{ck,is} \; [\mathrm{N/mm}^2]$
+- Zuordnung einer Druckfestigkeitsklasse gemäß DIN EN 206-1 / DIN 1045-2

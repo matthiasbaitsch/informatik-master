@@ -1,0 +1,26 @@
+---
+titel: "Berechnung von Verformungen und Schnittgrößen ebener Stabtragwerke"
+betreuende: "Prof. Dr.-Ing. M. Mertens"
+---
+
+Im Rahmen der Studienarbeit soll ein Programm zur komfortablen Analyse ebener
+Stabtragwerke konzipiert und implementiert werden. Neben den Verformungen und
+Schnittgrößen sollen auch ausgewählte in der Berechnung ermittelte
+Zwischenergebnisse ausgegeben werden, so dass Studierende das Programm zur
+Überprüfung eigener Berechnungen einsetzen können. Zur Modellierung von Tragwerken
+sollen dabei sowohl Fachwerkstabelemente als auch Balkenelemente zur Verfügung stehen.
+
+Funktionsumfang des Programms:
+
+1. Eingabe des statischen Systems, insbesondere
+   a. Koordinaten von Knotenpunkten,
+   b. Stäbe mit Querschnitts- und Materialeigenschaften,
+   c. Auflagerbedingungen und Belastung durch Strecken- und Einzellasten.
+   Die Eingabe kann entweder textbasiert mittels geeigneter Eingabemasken oder
+   grafisch-interaktiv erfolgen.
+2. Berechnung von Verformungen und Schnittgrößen des Tragwerks.
+3. Textuelle Ausgabe der Berechnungsergebnisse (Verformungen, Schnittgrößen) sowie
+   von Zwischenergebnissen (Elementsteifigkeitsmatrizen, Transformationsmatrizen,
+   Lastvektoren, etc.)
+4. Grafische Darstellung des statischen Systems und der berechneten Verformungen
+   und Schnittgrößen.
