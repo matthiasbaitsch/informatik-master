@@ -21,13 +21,13 @@ end
 
 function fill_template(abgabetermin, content, template_text)
 	lit_text        = !isnothing(content.literatur) ? join("- " .* content.literatur, "\n") : ""
-	betreuende_text = "- " * content.betreuende
+	betreuende_text = !isnothing(content.betreuende) ? join("- " .* content.betreuende, "\n") : ""
 
 	template_text = replace(template_text,
 		"<<titel>>"        => content.titel,
 		"<<inhalt>>"       => content.inhalt,
 		"<<literatur>>"    => lit_text,
-		"<<betreuende>>."  => betreuende_text * ".",
+		"<<betreuende>>"   => betreuende_text,
 		"<<abgabetermin>>" => abgabetermin,
 	)
 	return template_text
