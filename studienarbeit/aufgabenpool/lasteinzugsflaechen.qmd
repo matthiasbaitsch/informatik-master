@@ -1,6 +1,7 @@
 ---
 titel: "Lasteinzugsflächen von Wänden im Mauerwerksbau"
-betreuende: "Prof. Dr.-Ing. Stephan Löring"
+betreuende: 
+  - "Prof. Dr.-Ing. Stephan Löring"
 ---
 
 Im Mauerwerksbau werden Lasten aus den Decken über gemauerte Wände in den Baugrund

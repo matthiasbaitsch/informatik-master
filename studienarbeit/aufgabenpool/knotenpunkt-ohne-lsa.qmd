@@ -1,6 +1,7 @@
 ---
 titel: "Verkehrsqualität von Knotenpunkten ohne Lichtsignalanlage"
-betreuende: "Prof. Dr.-Ing. Sebastian Seipel"
+betreuende: 
+  - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:
   - "Handbuch für die Bemessung von Straßenverkehrsanlagen 2015 - Teil S Stadtstraßen"
 

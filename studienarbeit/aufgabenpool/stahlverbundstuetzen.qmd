@@ -1,6 +1,7 @@
 ---
 titel: "Bemessung von Stahlverbundstützen"
-betreuende: "Prof. J. Robra"
+betreuende: 
+  - "Prof. J. Robra"
 ---
 
 Im Rahmen dieser Studienarbeit sollen Verbundstützen auf ihre Tragfähigkeit

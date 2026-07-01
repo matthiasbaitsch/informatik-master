@@ -1,6 +1,7 @@
 ---
 titel: "Vordimensionierung einer Kläranlage"
-betreuende: "Prof. Dr.-Ing. Bernd Nolting"
+betreuende: 
+  - "Prof. Dr.-Ing. Bernd Nolting"
 literatur:
 
   - "DWA-Regelwerk, Arbeitsblatt DWA-A 131, Bemessung von einstufigen\

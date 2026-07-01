@@ -1,6 +1,7 @@
 ---
 titel: "Berechnung von Verformungen und Schnittgrößen ebener Stabtragwerke"
-betreuende: "Prof. Dr.-Ing. M. Mertens"
+betreuende: 
+  - "Prof. Dr.-Ing. M. Mertens"
 ---
 
 Im Rahmen der Studienarbeit soll ein Programm zur komfortablen Analyse ebener

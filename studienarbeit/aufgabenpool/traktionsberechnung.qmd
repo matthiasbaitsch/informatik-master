@@ -1,6 +1,7 @@
 ---
 titel: "Zugförderung / Traktionsberechnung"
-betreuende: "Prof. Dr. Maren Schnieder"
+betreuende: 
+  - "Prof. Dr. Maren Schnieder"
 ---
 
 Im Rahmen der Studienarbeit soll eine interaktive Anwendung entwickelt werden, mit

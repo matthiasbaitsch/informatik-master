@@ -1,6 +1,7 @@
 ---
 titel: "Belastung von einfach gestützten Baugrubenwänden"
-betreuende: "Prof. Dr.-Ing. Marie-Theres Steinhoff"
+betreuende: 
+  - "Prof. Dr.-Ing. Marie-Theres Steinhoff"
 ---
 
 Auf der Homepage des Institutes für Geotechnik sind bzw. werden in Kürze Programme

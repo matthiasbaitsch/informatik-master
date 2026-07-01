@@ -49,24 +49,24 @@ function process_yaml_for_year(file, pool_folder, output_folder_base, template_t
 
 	# HTML
 	open(joinpath(output_folder, "index.html"), "w") do html_io
+
+		# Start html
 		println(html_io, "<ol>")
 
 		# Process assignments
 		for (i, a) ∈ enumerate(assignments)
 
-			# Input
-			in_file = joinpath(pool_folder, a * ".qmd")
-			content = extract_content(in_file)
+			# Input and output destinations
+			in_file         = joinpath(pool_folder, a * ".qmd")
+			content         = extract_content(in_file)
 			assignment_text = fill_template(submission_date, content, template_text)
-
-			# Output destinations
-			out_base = "a" * lpad(string(i), 2, "0") * "-" * a
-			out_file = out_base * ".qmd"
-			out_url  = "https://matthiasbaitsch.github.io/informatik-master/lernpfad/studienarbeit/c/$year/$out_base.html"
+			out_base        = "a" * lpad(string(i), 2, "0") * "-" * a
+			out_file        = out_base * ".qmd"
+			out_url         = "https://matthiasbaitsch.github.io/informatik-master/lernpfad/studienarbeit/c/$year/$out_base.html"
 
 			# Write
 			write(joinpath(output_folder, out_file), assignment_text)
-			println(html_io, "<li> <a href=\"$out_url\" target=\"_blank\">$(content.titel)</a> <br/> ($(content.betreuende)) </li>")
+			println(html_io, "<li> <a href=\"$out_url\" target=\"_blank\">$(content.titel)</a><br/>($(content.betreuende))</li>")
 		end
 
 		# Finish html

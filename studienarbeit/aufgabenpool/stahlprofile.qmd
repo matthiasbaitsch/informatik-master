@@ -1,6 +1,7 @@
 ---
 titel: "Tragfähigkeitsnachweis für Stahlprofile"
-betreuende: "Prof. Dr.-techn. Jörgen Robra"
+betreuende: 
+  - "Prof. Dr.-techn. Jörgen Robra"
 ---
 
 Im Rahmen dieser Studienarbeit soll eine Java-Applikation entwickelt werden, mit

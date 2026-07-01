@@ -1,6 +1,7 @@
 ---
 titel: "Simulation des Spannungszustands und des Last-Verformungs-Verhaltens einer Bodenprobe im triaxialen Scherversuch"
-betreuende: "Prof. Dr.-Ing. Karsten Dörendahl"
+betreuende: 
+  - "Prof. Dr.-Ing. Karsten Dörendahl"
 literatur:
   - "Schmidt et al.: Grundlagen der Geotechnik, 6. Auflage, 2023, Springer Verlag"
   - "Handbuch PLAXIS 2D"

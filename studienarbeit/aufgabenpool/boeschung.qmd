@@ -1,6 +1,7 @@
 ---
 titel: "Nachweis einer Böschung gegen Geländebruch"
-betreuende: "Prof. Dr.-Ing. Karsten Dörendahl"
+betreuende: 
+  - "Prof. Dr.-Ing. Karsten Dörendahl"
 literatur:
   - "Unterlagen zur Vorlesung Erdbau"
 ---

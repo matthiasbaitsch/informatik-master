@@ -1,6 +1,7 @@
 ---
 titel: "Verbesserung der Schalldämmung von massiven Wänden durch biegeweiche Vorsatzschalen"
-betreuende: "Prof. Dr. Gerrit Höfker"
+betreuende: 
+  - "Prof. Dr. Gerrit Höfker"
 literatur:
   - "Forschungsbericht B-BA 2/2008, Fraunhofer Institut für Bauphysik"
 

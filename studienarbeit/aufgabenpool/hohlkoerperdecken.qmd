@@ -1,8 +1,8 @@
 ---
 titel: "Bemessung der Querkrafttragfähigkeit von zweiachsig gespannten Hohlkörperdecken"
-betreuende: "Dr.-Ing. Denis Busch"
+betreuende: 
+  - "Dr.-Ing. Denis Busch"
 literatur:
-
   - "Görtz, S.: Zum Schubrissverhalten von Stahlbeton- und Spannbetonbalken aus\
     \ Normal- und Hochleistungsbeton, Dissertation, TH Aachen, 2004"
   - "Albrecht, C.: Bemessung von Stahlbetondecken mit abgeflachten\

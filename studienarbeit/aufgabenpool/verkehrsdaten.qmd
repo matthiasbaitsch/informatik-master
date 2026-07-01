@@ -1,6 +1,7 @@
 ---
 titel: "Entwicklung einer Programmoberfläche zur grafischen Auswertung von Verkehrsdaten"
-betreuende: "Prof. Dr.-Ing. Sebastian Seipel"
+betreuende: 
+  - "Prof. Dr.-Ing. Sebastian Seipel"
 ---
 
 Das Ziel dieser Studienarbeit ist die Entwicklung einer Programmoberfläche zur

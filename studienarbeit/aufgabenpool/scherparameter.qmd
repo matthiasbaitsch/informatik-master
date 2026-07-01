@@ -1,6 +1,7 @@
 ---
 titel: "Bestimmung von Scherparametern für Bodenproben im Laborversuch"
-betreuende: "Prof. Dr.-Ing. Karsten Dörendahl (Geotechnik)"
+betreuende: 
+  - "Prof. Dr.-Ing. Karsten Dörendahl (Geotechnik)"
 literatur:
 
   - "Skript zur Vorlesung Bodenmechanik"

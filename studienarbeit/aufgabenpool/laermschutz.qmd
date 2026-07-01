@@ -1,6 +1,7 @@
 ---
 titel: "Bestimmung des Beurteilungspegels zum Nachweis des Lärmschutzes an Straßen"
-betreuende: "Prof. Dr.-Ing. Sebastian Seipel"
+betreuende: 
+  - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:
   - "Richtlinien für den Lärmschutz an Straßen RLS-19"
 

@@ -1,6 +1,7 @@
 ---
 titel: "Bemessung und Tragfähigkeitsnachweis von Verbundträgern"
-betreuende: "Prof. Dr.-techn. Jörgen Robra"
+betreuende: 
+  - "Prof. Dr.-techn. Jörgen Robra"
 literatur:
 
   - "Schneider Bautabellen"

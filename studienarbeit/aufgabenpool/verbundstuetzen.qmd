@@ -1,6 +1,7 @@
 ---
 titel: "Bemessung von Verbundstützen"
-betreuende: "N.N."
+betreuende: 
+  - "N.N."
 ---
 
 Im Rahmen der Studienarbeit soll ein Software-Tool zur Unterstützung der Bemessung

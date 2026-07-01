@@ -1,6 +1,7 @@
 ---
 titel: "Konvertierung und grafische Aufbereitung von Messdaten aus Bohrwiderstandsmessungen"
-betreuende: "Dipl.-Ing. Oliver Gunkel, M.Sc."
+betreuende: 
+  - "Dipl.-Ing. Oliver Gunkel, M.Sc."
 ---
 
 ::: {layout="[3,1]"}

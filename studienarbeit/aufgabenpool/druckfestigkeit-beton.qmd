@@ -1,6 +1,7 @@
 ---
 titel: "Bewertung der Druckfestigkeit von Beton"
-betreuende: "Prof. Dr.-Ing. Andreas Dridiger"
+betreuende: 
+  - "Prof. Dr.-Ing. Andreas Dridiger"
 ---
 
 Im Rahmen der Studienarbeit soll ein Berechnungstool zur Bewertung der Druckfestigkeit

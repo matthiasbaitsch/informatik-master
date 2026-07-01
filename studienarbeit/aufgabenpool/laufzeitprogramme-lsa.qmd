@@ -1,6 +1,7 @@
 ---
 titel: "Laufzeitprogramme für Lichtsignalanlagen"
-betreuende: "Prof. Dr.-Ing. Sebastian Seipel"
+betreuende: 
+  - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:
   - "Richtlinien für Lichtsignalanlagen"
 

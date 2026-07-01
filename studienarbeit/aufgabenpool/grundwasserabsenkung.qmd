@@ -1,6 +1,7 @@
 ---
 titel: "Berechnung und grafische Darstellung von Maßnahmen zur Absenkung von Grundwasser"
-betreuende: "N.N."
+betreuende: 
+  - "N.N."
 ---
 
 ![](bilder/grundwasser.png){width=120mm}

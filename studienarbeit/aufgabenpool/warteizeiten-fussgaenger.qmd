@@ -1,6 +1,7 @@
 ---
 titel: "Ermittlung der Wartezeit für Fußgänger an einer anbaufreien Straße"
-betreuende: "Prof. Dr.-Ing. Iris Mühlenbruch (Verkehrswesen)"
+betreuende: 
+  - "Prof. Dr.-Ing. Iris Mühlenbruch (Verkehrswesen)"
 ---
 
 Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Ermittlung der

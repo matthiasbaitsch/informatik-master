@@ -1,6 +1,7 @@
 ---
 titel: "Bestimmung des Spannungsfeldes in einem dickwandigen Zylinder"
-betreuende: "Dr. Mandy Duda (Geothermie)"
+betreuende: 
+  - "Dr. Mandy Duda (Geothermie)"
 ---
 
 ::: {layout="[3,2]"}

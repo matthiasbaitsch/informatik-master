@@ -1,6 +1,7 @@
 ---
 titel: "Berechnung von Wärmebrücken mit Finite-Differenzen-Verfahren"
-betreuende: "Prof. Dr.-Ing. Gerrit Höfker (Bauphysik)"
+betreuende: 
+  - "Prof. Dr.-Ing. Gerrit Höfker (Bauphysik)"
 literatur:
 
   - "Schoch, T. (2013): Wärmebrückenberechnung, Beuth-Verlag"

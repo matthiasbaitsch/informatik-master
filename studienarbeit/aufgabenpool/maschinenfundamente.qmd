@@ -1,6 +1,7 @@
 ---
 titel: "Dimensionierung von Maschinenfundamenten"
-betreuende: "N.N."
+betreuende: 
+  - "N.N."
 ---
 
 Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Vordimensionierung

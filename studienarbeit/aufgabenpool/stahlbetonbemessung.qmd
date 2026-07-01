@@ -1,8 +1,8 @@
 ---
 titel: "Ermittlung und Visualisierung von Spannungen und Schnittgrößen für Stahlbetonquerschnitte im Zustand II"
-betreuende: "Prof. Dr.-Ing. Andrej Albert und Dr.-Ing. Denis Busch"
+betreuende: 
+  - "Dr.-Ing. Denis Busch"
 literatur:
-
   - "Zilch, K. und Zehetmaier, G. (2010): Bemessung im konstruktiven Betonbau,\
     \ Springer Berlin Heidelberg"
 ---

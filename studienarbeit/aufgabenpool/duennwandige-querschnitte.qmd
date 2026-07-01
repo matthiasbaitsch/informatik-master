@@ -1,6 +1,7 @@
 ---
 titel: "Ermittlung von Querschnittswerten dünnwandiger Stahlprofile"
-betreuende: "Prof. Dr.-techn. Jörgen Robra"
+betreuende: 
+  - "Prof. Dr.-techn. Jörgen Robra"
 literatur:
   - "DIN EN 1993-1-3"
 

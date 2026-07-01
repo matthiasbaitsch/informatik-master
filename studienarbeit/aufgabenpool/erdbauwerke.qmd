@@ -1,6 +1,7 @@
 ---
 titel: "Berechnung von Erdbauwerken"
-betreuende: "Prof. Dr.-Ing. Marie-Theres Steinhoff"
+betreuende: 
+  - "Prof. Dr.-Ing. Marie-Theres Steinhoff"
 literatur:
 
   - "Literatur zur Vorlesung Geotechnik"

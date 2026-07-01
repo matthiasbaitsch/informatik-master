@@ -1,6 +1,7 @@
 ---
 titel: "Ermittlung der Schalldämmung trennender Bauteile nach DIN 4109:2016"
-betreuende: "Prof. Dr. Gerrit Höfker"
+betreuende: 
+  - "Prof. Dr. Gerrit Höfker"
 ---
 
 Das zu erstellende Programm soll folgenden Funktionsumfang haben:

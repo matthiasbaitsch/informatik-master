@@ -1,6 +1,7 @@
 ---
 titel: "Berechnung und Visualisierung der Schubspannungsverteilung für Querschnitte aus dem Stahlbau"
-betreuende: "N.N."
+betreuende: 
+  - "N.N."
 ---
 
 In dieser Studienarbeit soll eine Java-Applikation zur grafischen Darstellung der

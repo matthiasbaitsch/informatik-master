@@ -1,6 +1,7 @@
 ---
 titel: "Erstellung einer Applikation zur Darstellung von Knotenstromplänen"
-betreuende: "Prof. Dr.-Ing. Sebastian Seipel"
+betreuende: 
+  - "Prof. Dr.-Ing. Sebastian Seipel"
 ---
 
 Knotenstrompläne sind eine elementare Grundlage für die Bestimmung der

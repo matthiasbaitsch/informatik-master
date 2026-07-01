@@ -1,6 +1,7 @@
 ---
 titel: "Bemessung von Satteldachbindern in Holzbauweise"
-betreuende: "N.N."
+betreuende: 
+  - "N.N."
 ---
 
 **Funktionsumfang**

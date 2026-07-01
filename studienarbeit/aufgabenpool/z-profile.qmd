@@ -1,6 +1,7 @@
 ---
 titel: "Effektive Querschnittswerte von Z-Profilen"
-betreuende: "N.N."
+betreuende: 
+  - "N.N."
 ---
 
 **Funktionsumfang**

@@ -1,6 +1,7 @@
 ---
 titel: "Bemessung von Bindern aus Brettschichtholz"
-betreuende: "N.N."
+betreuende: 
+  - "N.N."
 ---
 
 In Rahmen dieser Studienarbeit sollen vier verschiedene Arten von Holzbindern auf
