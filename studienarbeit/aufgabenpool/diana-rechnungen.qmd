@@ -1,9 +1,8 @@
 ---
 titel: "Steuerung von Diana-Simulationsrechnungen"
 betreuende: 
-  - "M.Sc. Denis Busch"
+  - "Dr.-Ing. Denis Busch"
 literatur:
-
   - "Programmdokumentation Diana"
 ---
 

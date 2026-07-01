@@ -37,7 +37,7 @@ Im Einzelnen sind folgende Punkte zu bearbeiten:
 
 1. Grafische Darstellung der Hohlkörperdecke
 
-   ![](bilder/hohlkoerperdecke-1.png){width=120mm}
+   ![](bilder/hohlkoerperdecke-1.png){width=120mm fig-align="center"}
 
    Die Berechnung der Tragfähigkeit erfolgt über 100 Stützstellen. Für jede
    Stützstelle wird die Breite $b(y)$ in Abhängigkeit der Lage und unter
@@ -47,7 +47,7 @@ Im Einzelnen sind folgende Punkte zu bearbeiten:
 
 2. Ermittlung des Traganteils der Rissreibung
 
-   ![](bilder/hohlkoerperdecke-2.png){width=80mm}
+   ![](bilder/hohlkoerperdecke-2.png){width=80mm fig-align="center"}
 
    Der Traganteil der Rissreibung entspricht den über die Rissufer übertragbaren
    Normal- und Schubspannungen nach Walraven.
@@ -63,7 +63,7 @@ Im Einzelnen sind folgende Punkte zu bearbeiten:
 
 3. Ermittlung des Traganteils der Dübelwirkung der Längsbewehrung
 
-   ![](bilder/hohlkoerperdecke-3.png){width=120mm}
+   ![](bilder/hohlkoerperdecke-3.png){width=120mm fig-align="center"}
 
    Der Traganteil der Dübelwirkung wird nach Görtz berechnet. Durch die Hohlkörper
    wird die Tragfähigkeit der Dübelwirkung nach Markus Aldejohann reduziert.

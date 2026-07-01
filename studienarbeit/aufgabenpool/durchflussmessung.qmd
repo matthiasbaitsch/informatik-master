@@ -3,9 +3,7 @@ titel: "Auswertung und grafische Darstellung von Daten aus Durchflussmessungen"
 betreuende: 
   - "Prof. Dr.-Ing. Christoph Mudersbach (Wasserbau und Hydromechanik)"
 literatur:
-
-  - "Morgenschweis, G. (2010): Hydrometrie - Theorie und Praxis der Durchflussmessung
-    in offenen Gerinnen, Springer"
+  - "Morgenschweis, G. (2010): Hydrometrie - Theorie und Praxis der Durchflussmessung in offenen Gerinnen, Springer"
 ---
 
 ::: {layout="[3,1]"}

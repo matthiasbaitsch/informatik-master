@@ -3,7 +3,6 @@ titel: "Erdbebenbemessung gemäß EC 8"
 betreuende: 
   - "Prof. Dr.-Ing. Andrej Albert"
 literatur:
-
   - "Unterlagen zur Vorlesung Massivbaukonstruktion im Master"
   - "DIN EN 1998"
 ---

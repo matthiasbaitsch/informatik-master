@@ -3,7 +3,6 @@ titel: "Erdbebeneinwirkungen für Hochbauten"
 betreuende: 
   - "Prof. Dr.-Ing. Stephan Löring"
 literatur:
-
   - "DIN EN 1998-1/NA:2023-11"
 ---
 

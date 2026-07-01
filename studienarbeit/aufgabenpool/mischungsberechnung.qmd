@@ -5,7 +5,6 @@ betreuende:
 literatur:
   - "Vorlesungsunterlagen Baustoffkunde und Zement- und Betontechnologie"
   - "Zementmerkblatt B20"
-
 ---
 
 Die Zusammensetzung eines Normalbetons ist von mehreren Faktoren abhängig, die die

@@ -1,4 +1,7 @@
-# <<titel>>
+---
+title: <<titel>>
+subtitle: Studienarbeit Informatik im Master Bauingenieurwesen und Regenerative Energiesysteme
+---
 
 ## Aufgabenstellung
 
@@ -32,12 +35,12 @@ Die schriftliche Ausfertigung der Studienarbeit soll ca. 5 bis 10 Seiten umfasse
 und folgendermaßen aufgebaut sein:
 
 Einleitung
-: Allgemeine Beschreibung der Problemstellung und der Anforderungen an die Applikation.
+: Beschreibung der Problemstellung und der Anforderungen an die Applikation.
 
 Benutzungsoberfläche
 : Welche Funktionen stehen zur Verfügung, wie werden diese bedient, welche Besonderheiten sind zu beachten?
 
-Implementierung
+Implementation
 : Beschreibung des zugrunde liegenden Klassenmodells mithilfe eines UML-Klassendiagramms.
 
 ## Mündliche Prüfung

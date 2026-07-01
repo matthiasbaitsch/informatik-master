@@ -4,7 +4,6 @@ betreuende:
   - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:
   - "Handbuch für die Bemessung von Straßenverkehrsanlagen 2015 – Teil S Stadtstraßen"
-
 ---
 
 Mit dem HBS 2015 werden unter anderem Verkehrsqualitäten für Knotenpunkte im

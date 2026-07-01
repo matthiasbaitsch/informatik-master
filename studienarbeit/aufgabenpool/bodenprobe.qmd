@@ -7,8 +7,6 @@ literatur:
   - "Handbuch PLAXIS 2D"
 ---
 
-![Beispiel von Grafiken für das Last-Verformungs-Verhalten des Bodens](bilder/triaxialversuch.jpg){width=70%}
-
 Die Bestimmung der Bodenkenngrößen „Reibungswinkel" und „Kohäsion" erfolgt im Labor
 in der Regel mittels triaxialen Scherversuchen. Hierbei wird die Bodenprobe zunächst
 mit einem Zelldruck hydrostatisch belastet und anschließend über einen Stempel die
@@ -17,6 +15,8 @@ Bestimmung des Spannungszustands in der Probe (Mohrscher Spannungskreis) und das
 Grenzkriterium von Coulomb [aufnehmbare Scherspannung = Normalspannung · tan(Reibungswinkel)
 + Kohäsion] können aus den Ergebnissen von 3 Versuchen mit unterschiedlichen Zelldrücken
 die o.g. Bodenkenngrößen bestimmt werden.
+
+![Beispiel von Grafiken für das Last-Verformungs-Verhalten des Bodens](bilder/triaxialversuch.jpg){width=60%}
 
 Um das nichtlineare Last-Verformungs-Verhalten von Böden in numerischen Berechnungen
 zu simulieren, wird als Stoffmodell oftmals das „Hardening Soil Model" (HS-Gesetz)

@@ -10,7 +10,7 @@ von Beton in Bauwerken und Bauteilen gemäß DIN EN 13791 und DIN EN 13791/A20
 Druckfestigkeit des Betons in Bauwerken/Bauwerksteilen nach direkten Verfahren"
 erstellt werden.
 
-![](bilder/bohrkernpruefung.pdf){width=60%}
+![](bilder/bohrkernpruefung.pdf){width=60% fig-align="center"}
 
 Nach Eingabe der Anzahl und Abmessungen (Höhe, Durchmesser, Masse) der zu prüfenden
 Probekörper und der gemessenen maximalen Druckkraft wird vom Programm folgendes

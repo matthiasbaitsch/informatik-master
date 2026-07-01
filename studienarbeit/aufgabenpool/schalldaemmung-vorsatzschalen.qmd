@@ -4,7 +4,6 @@ betreuende:
   - "Prof. Dr. Gerrit Höfker"
 literatur:
   - "Forschungsbericht B-BA 2/2008, Fraunhofer Institut für Bauphysik"
-
 ---
 
 Mit biegeweichen Vorsatzschalen ist es möglich, den Schallschutz einschaliger

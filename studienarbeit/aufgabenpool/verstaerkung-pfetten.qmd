@@ -2,7 +2,6 @@
 titel: "Nachträgliche Verstärkung von Pfetten"
 betreuende: 
   - "Prof. Dr.-Ing. Stephan Löring"
-literatur:
 ---
 
 Das Pfettendach ist eine Dachkonstruktion in Holzbauweise die häufig im Wohnungsbaubestand anzutreffen ist. Immer wieder kommt es vor, dass exisierende Pfetten nachträglich verstärkt werden müssen, zum Beispiel bei Bauschäden oder wenn sich die Nutzlasten erhöhen (neue Dacheindeckung, PV-Anlage). Im Rahmen dieser Studienarbeit soll eine Applikation entwickelt werden, mit der sich die Verstärkung von Pfetten dimensionieren lässt.

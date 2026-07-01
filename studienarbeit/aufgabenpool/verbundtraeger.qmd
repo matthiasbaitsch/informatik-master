@@ -3,7 +3,6 @@ titel: "Bemessung und Tragfähigkeitsnachweis von Verbundträgern"
 betreuende: 
   - "Prof. Dr.-techn. Jörgen Robra"
 literatur:
-
   - "Schneider Bautabellen"
   - "Pfenning, S., Mensinger, M., Brunkhorst, S. und Zehfuß, J. (2017): Mindest­verdübelung\
     \ von Verbundträgern im Brand – Betrachtung der Auswirkungen von erhöhten Temperaturen\

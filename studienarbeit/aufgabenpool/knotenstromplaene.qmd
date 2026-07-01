@@ -13,7 +13,7 @@ anderen Strömen an. Im Zuge dieser Aufgabenstellung soll eine Applikation entwi
 werden, die den Prozess der Darstellung eines Knotenstromplans für eine (1) Kreuzung
 oder einen (2) Kreisverkehr automatisiert.
 
-![](bilder/verkehr-knotenstromplan.png){width=110mm}
+![](bilder/verkehr-knotenstromplan.png){width=90mm fig-align="center"}
 
 Im Einzelnen soll das Programm folgenden Funktionsumfang zur Verfügung stellen:
 
@@ -23,5 +23,4 @@ Im Einzelnen soll das Programm folgenden Funktionsumfang zur Verfügung stellen:
   unter Einfluss der Eingangsparameter (die Knotenpunktströme sollen dabei durch die
   Strichdicke die Relation zur Verkehrsstärke des Knotenpunktes verdeutlichen und je
   Zufahrt soll eine Farbe für die Darstellung frei wählbar sein)
-- Export-Funktion für den Knotenstromplan als JPG- oder PNG-Datei (Pixelverhältnis
-  1920×1080)
+- Export-Funktion für den Knotenstromplan als JPG- oder PNG-Datei

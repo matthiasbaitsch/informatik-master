@@ -7,8 +7,6 @@ literatur:
   - "Einschlägige Fachliteratur"
 ---
 
-![Beispiele für geradlinige Sohlspannungsverläufe und ihre Beeinflussung durch Exzentrizitäten der charakteristischen Resultierenden](bilder/sohlspannung.png){width=80%}
-
 Als Sohlnormalspannung wird die in der Gründungssohle zwischen dem Gründungskörper
 und dem Boden wirkende Druckspannung verstanden. Abhängig von den Belastungen $N_x$
 und $M_y$ (bzw. $N_y$ und $M_x$) des Gründungskörpers entsteht eine
@@ -16,6 +14,8 @@ Sohlnormalspannungsfigur, deren Verlauf auch über die Bestimmung der Ausmitte d
 Sohldruckresultierenden bestimmt werden kann. Überschreitet diese Ausmitte einen
 bestimmten Wert, so kommt es zu einer „klaffenden Fuge" zwischen dem Gründungskörper
 und dem Boden, die Sohlnormalspannungsfigur passt sich entsprechend an.
+
+![Beispiele für geradlinige Sohlspannungsverläufe und ihre Beeinflussung durch Exzentrizitäten der charakteristischen Resultierenden](bilder/sohlspannung.png){width=70%}
 
 Im Rahmen der Studienarbeit soll ein Programm für die Vorlesung „Bodenmechanik"
 entwickelt werden, welches die Sohlnormalspannungen in Abhängigkeit einer 1-axialen

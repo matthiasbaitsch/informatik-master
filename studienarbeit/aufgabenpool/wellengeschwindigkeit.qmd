@@ -3,7 +3,6 @@ titel: "Visualisierung der Ausbreitungsgeschwindigkeit von Wellen in anisotropen
 betreuende: 
   - "Prof. Dr. Erik H. Saenger"
 literatur:
-
   - "Mavko, G., Mukerji, T. und Dvorkin, J. (2009): The Rock Physics Handbook"
 ---
 

@@ -4,7 +4,6 @@ betreuende:
   - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:
   - "Richtlinien für den Lärmschutz an Straßen RLS-19"
-
 ---
 
 Die Richtlinien für den Lärmschutz an Straßen der Forschungsgesellschaft für
@@ -15,7 +14,7 @@ der akustischen Gebiets- und Straßenplanung, und berechnet sich aus der Stärke
 Schallquellen des Straßenverkehrs im Einzugsbereich des Immissionsortes und der
 Minderung des Schalls auf dem Ausbreitungsweg zwischen Emissions- und Immissionsort.
 
-![](bilder/verkehr-04.png){width=60%}
+![](bilder/verkehr-04.png){width=90mm fig-align="center"}
 
 Mit dem zu erstellenden Programm soll es möglich sein, für eine sinnvoll zu
 treffende Auswahl an Straßenraumsituationen und Immissionsorten den

@@ -3,7 +3,6 @@ titel: "Sonnenstandsberechnungen"
 betreuende: 
   - "Prof. Dr. Gerrit Höfker (Bauphysik)"
 literatur:
-
   - "Eicker, U. (2001): Solare Technologien für Gebäude, Teubner"
 ---
 

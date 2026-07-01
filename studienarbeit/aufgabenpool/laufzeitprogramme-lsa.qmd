@@ -4,7 +4,6 @@ betreuende:
   - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:
   - "Richtlinien für Lichtsignalanlagen"
-
 ---
 
 Das technische Regelwerk Richtlinien für Lichtsignalanlagen (kurz RiLSA) enthält

@@ -17,7 +17,7 @@ der Betondehnung $\varepsilon_{c2}$ (siehe Abbildung) ab. Zur Bemessung eines
 Querschnitts für gegebene Schnittgrößen muss daher ein nichtlineares
 Gleichungssystem mit zwei Unbekannten gelöst werden.
 
-![Quelle: Zilch & Zehetmaier, Bemessung im konstruktiven Betonbau](bilder/stahlbeton.png){width=130mm}
+![Quelle: Zilch & Zehetmaier, Bemessung im konstruktiven Betonbau](bilder/stahlbeton.png){width="80%"}
 
 Im Rahmen dieser Studienarbeit soll ein Lehrprogramm für die Grundlagenvorlesung
 in Massivbau entwickelt werden, das die Tragwirkung von Stahlbetonquerschnitten
@@ -26,9 +26,9 @@ im Zustand II visualisiert und anschaulich nachvollziehbar macht.
 Auf Grundlage der eingegebenen Querschnittswerte (Abmessungen, Betongüte,
 Bewehrung, Betondeckung) sollen Studierende die Möglichkeit haben
 
-1. die Bemessungsschnittgrößen vorzugeben und die entsprechenden Verzerrungen zu
-   bestimmen,
-2. eine Bemessung des Querschnitts durchzuführen.
+1. Verzerrungen vorzugeben (Schieberegler) und Schnittgrößen zu ermitteln,
+1. die Schnittgrößen vorzugeben und Verzerrungen zu bestimmen,
+1. eine Bemessung des Querschnitts durchzuführen.
 
 Besonderer Wert wird dabei auf die anschauliche Darstellung des Spannungszustands
 im Querschnitt und den resultierenden Kräften gelegt. Darüber hinaus sollen
