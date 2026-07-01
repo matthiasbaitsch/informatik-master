@@ -66,7 +66,7 @@ function process_yaml_for_year(file, pool_folder, output_folder_base, template_t
 
 			# Write
 			write(joinpath(output_folder, out_file), assignment_text)
-			println(html_io, "<li> <a href=\"$out_url\" target=\"_blank\">$(content.titel)</a><br/>($(content.betreuende))</li>")
+			println(html_io, "<li> <a href=\"$out_url\" target=\"_blank\">$(content.titel)</a><br/>($(content.betreuende[1]))</li>")
 		end
 
 		# Finish html
