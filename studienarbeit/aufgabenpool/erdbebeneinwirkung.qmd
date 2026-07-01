@@ -1,5 +1,6 @@
 ---
 titel: "Erdbebeneinwirkungen für Hochbauten"
+titel-kurz: "Erdbebeneinwirkung"
 betreuende: 
   - "Prof. Dr.-Ing. Stephan Löring"
 literatur:

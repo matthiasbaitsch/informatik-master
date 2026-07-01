@@ -1,5 +1,6 @@
 ---
 titel: "Berechnung von Erdbauwerken"
+titel-kurz: "Erdbauwerke"
 betreuende: 
   - "Prof. Dr.-Ing. Marie-Theres Steinhoff"
 literatur:

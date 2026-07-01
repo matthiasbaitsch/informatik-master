@@ -1,5 +1,6 @@
 ---
 titel: "Sohlnormalspannungen unter Fundamenten"
+titel-kurz: "Fundamente"
 betreuende: 
   - "Prof. Dr.-Ing. Karsten Dörendahl"
 literatur:

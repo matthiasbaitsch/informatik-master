@@ -1,5 +1,6 @@
 ---
 titel: "Laufzeitprogramme für Lichtsignalanlagen"
+titel-kurz: "Laufzeitprogramme LSA"
 betreuende: 
   - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:

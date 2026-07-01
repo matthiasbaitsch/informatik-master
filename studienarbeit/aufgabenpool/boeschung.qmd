@@ -1,5 +1,6 @@
 ---
 titel: "Nachweis einer Böschung gegen Geländebruch"
+titel-kurz: "Böschung"
 betreuende: 
   - "Prof. Dr.-Ing. Karsten Dörendahl"
 literatur:

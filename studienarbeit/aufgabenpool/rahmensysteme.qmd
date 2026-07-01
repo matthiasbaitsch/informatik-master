@@ -1,5 +1,6 @@
 ---
 titel: "Profilbemessung von Rahmensystemen"
+titel-kurz: "Rahmensysteme"
 betreuende: 
   - "N.N."
 ---

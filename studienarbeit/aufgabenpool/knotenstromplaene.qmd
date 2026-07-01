@@ -1,5 +1,6 @@
 ---
 titel: "Erstellung einer Applikation zur Darstellung von Knotenstromplänen"
+titel-kurz: "Knotenstrompläne"
 betreuende: 
   - "Prof. Dr.-Ing. Sebastian Seipel"
 ---

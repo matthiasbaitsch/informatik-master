@@ -1,5 +1,6 @@
 ---
 titel: "Bemessung von Stahlverbundstützen"
+titel-kurz: "Stahlverbundstützen"
 betreuende: 
   - "Prof. J. Robra"
 ---

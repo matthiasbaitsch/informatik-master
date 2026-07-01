@@ -1,5 +1,6 @@
 ---
 titel: "Bestimmung des Beurteilungspegels zum Nachweis des Lärmschutzes an Straßen"
+titel-kurz: "Lärmschutz"
 betreuende: 
   - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:

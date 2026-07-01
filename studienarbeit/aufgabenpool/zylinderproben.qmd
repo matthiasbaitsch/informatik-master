@@ -1,5 +1,6 @@
 ---
 titel: "Bestimmung des Spannungsfeldes in einem dickwandigen Zylinder"
+titel-kurz: "Zylinderproben"
 betreuende: 
   - "Dr. Mandy Duda (Geothermie)"
 ---

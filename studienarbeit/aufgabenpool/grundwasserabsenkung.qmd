@@ -1,5 +1,6 @@
 ---
 titel: "Berechnung und grafische Darstellung von Maßnahmen zur Absenkung von Grundwasser"
+titel-kurz: "Grundwasserabsenkung"
 betreuende: 
   - "N.N."
 ---

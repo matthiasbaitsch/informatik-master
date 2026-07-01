@@ -1,5 +1,6 @@
 ---
 titel: "Bewertung der Druckfestigkeit von Beton"
+titel-kurz: "Druckfestigkeit Beton"
 betreuende: 
   - "Prof. Dr.-Ing. Andreas Dridiger"
 ---

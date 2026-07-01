@@ -1,5 +1,6 @@
 ---
 titel: "Simulation des Spannungszustands und des Last-Verformungs-Verhaltens einer Bodenprobe im triaxialen Scherversuch"
+titel-kurz: "Bodenprobe"
 betreuende: 
   - "Prof. Dr.-Ing. Karsten Dörendahl"
 literatur:

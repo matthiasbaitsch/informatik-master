@@ -1,5 +1,6 @@
 ---
 titel: "Effektive Querschnittswerte von Z-Profilen"
+titel-kurz: "Z-Profile"
 betreuende: 
   - "N.N."
 ---

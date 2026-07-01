@@ -1,5 +1,6 @@
 ---
 titel: "Querschnittswerte dünnwandiger Stahlprofile"
+titel-kurz: "Dünnwandige Querschnitte"
 betreuende: 
   - "Prof. Dr.-techn. Jörgen Robra"
 literatur:

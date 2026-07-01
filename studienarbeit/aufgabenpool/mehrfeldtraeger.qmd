@@ -1,5 +1,6 @@
 ---
 titel: "Schnittgrößenermittlung und Bemessung von Ein- und Mehrfeldträgern"
+titel-kurz: "Mehrfeldträger"
 betreuende: 
   - "N.N."
 ---

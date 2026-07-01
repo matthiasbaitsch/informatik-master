@@ -1,5 +1,6 @@
 ---
 titel: "Auswertung und grafische Darstellung von Daten aus Durchflussmessungen"
+titel-kurz: "Durchflussmessung"
 betreuende: 
   - "Prof. Dr.-Ing. Christoph Mudersbach (Wasserbau und Hydromechanik)"
 literatur:

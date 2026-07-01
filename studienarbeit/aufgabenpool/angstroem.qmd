@@ -1,5 +1,6 @@
 ---
 titel: "Bestimmung der thermischen Leitfähigkeit durch die Angström Methode"
+titel-kurz: "Angström"
 betreuende: 
   - "Thomas Andolfsson (thomas.andolfsson@hs-bochum.de), Angström-Methode"
 literatur:

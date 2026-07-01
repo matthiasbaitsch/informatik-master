@@ -1,5 +1,6 @@
 ---
 titel: "Ermittlung und Visualisierung von Spannungen und Schnittgrößen für Stahlbetonquerschnitte im Zustand II"
+titel-kurz: "Stahlbetonbemessung"
 betreuende: 
   - "Dr.-Ing. Denis Busch"
 literatur:

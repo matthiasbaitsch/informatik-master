@@ -1,5 +1,6 @@
 ---
 titel: "Bemessung der Querkrafttragfähigkeit von zweiachsig gespannten Hohlkörperdecken"
+titel-kurz: "Hohlkörperdecken"
 betreuende: 
   - "Dr.-Ing. Denis Busch"
 literatur:

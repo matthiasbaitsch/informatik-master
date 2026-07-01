@@ -1,5 +1,6 @@
 ---
 titel: "Automatisiertes Auswertetool zur in-situ Erfassung und Beurteilung von Betondruckfestigkeiten"
+titel-kurz: "Auswertetool Betondruckfestigkeiten"
 betreuende: 
   - "Dipl.-Ing. Heiko Rahm (ZPP GERMAN ENGINEERING)"
 ---

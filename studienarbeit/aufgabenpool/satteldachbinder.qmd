@@ -1,5 +1,6 @@
 ---
 titel: "Bemessung von Satteldachbindern in Holzbauweise"
+titel-kurz: "Satteldachbinder"
 betreuende: 
   - "N.N."
 ---

@@ -1,5 +1,6 @@
 ---
 titel: "Tragfähigkeitsnachweis für Stahlprofile"
+titel-kurz: "Stahlprofile"
 betreuende: 
   - "Prof. Dr.-techn. Jörgen Robra"
 ---

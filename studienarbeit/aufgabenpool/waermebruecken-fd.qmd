@@ -1,5 +1,6 @@
 ---
 titel: "Berechnung von Wärmebrücken mit Finite-Differenzen-Verfahren"
+titel-kurz: "Wärmebrücken FD"
 betreuende: 
   - "Prof. Dr.-Ing. Gerrit Höfker (Bauphysik)"
 literatur:

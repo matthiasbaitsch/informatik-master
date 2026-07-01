@@ -1,5 +1,6 @@
 ---
 titel: "Entwicklung einer Programmoberfläche zur grafischen Auswertung von Verkehrsdaten"
+titel-kurz: "Verkehrsdaten"
 betreuende: 
   - "Prof. Dr.-Ing. Sebastian Seipel"
 ---

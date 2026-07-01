@@ -1,5 +1,6 @@
 ---
 titel: "Lasteinzugsflächen von Wänden im Mauerwerksbau"
+titel-kurz: "Lasteinzugsflächen"
 betreuende: 
   - "Prof. Dr.-Ing. Stephan Löring"
 ---

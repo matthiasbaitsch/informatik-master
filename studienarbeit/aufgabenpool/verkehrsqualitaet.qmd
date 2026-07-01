@@ -1,5 +1,6 @@
 ---
 titel: "Erstellung eines Berechnungsprogramms für die Verkehrsqualität von Knotenpunkten ohne Lichtsignalanlage (LSA) nach dem HBS 2015"
+titel-kurz: "Verkehrsqualität"
 betreuende: 
   - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:

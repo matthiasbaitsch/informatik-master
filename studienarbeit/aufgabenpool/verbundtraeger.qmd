@@ -1,5 +1,6 @@
 ---
 titel: "Bemessung und Tragfähigkeitsnachweis von Verbundträgern"
+titel-kurz: "Verbundträger"
 betreuende: 
   - "Prof. Dr.-techn. Jörgen Robra"
 literatur:

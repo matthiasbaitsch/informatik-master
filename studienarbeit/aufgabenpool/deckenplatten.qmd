@@ -1,5 +1,6 @@
 ---
 titel: "Bemessung von einachsig gespannten Deckenplatten"
+titel-kurz: "Deckenplatten"
 betreuende: 
   - "N.N."
 ---

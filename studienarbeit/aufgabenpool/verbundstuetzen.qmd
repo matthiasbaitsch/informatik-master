@@ -1,5 +1,6 @@
 ---
 titel: "Bemessung von Verbundstützen"
+titel-kurz: "Verbundstützen"
 betreuende: 
   - "N.N."
 ---

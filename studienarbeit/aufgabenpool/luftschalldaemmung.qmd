@@ -1,5 +1,6 @@
 ---
 titel: "Berechnung der Luftschalldämmung nach DIN 4109-2"
+titel-kurz: "Luftschalldämmung"
 betreuende: 
   - "Prof. Dr. Gerrit Höfker"
 ---

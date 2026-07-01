@@ -1,5 +1,6 @@
 ---
 titel: "Nachträgliche Verstärkung von Pfetten"
+titel-kurz: "Verstärkung Pfetten"
 betreuende: 
   - "Prof. Dr.-Ing. Stephan Löring"
 ---

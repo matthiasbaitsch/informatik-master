@@ -1,5 +1,6 @@
 ---
 titel: "Ermittlung der Schalldämmung trennender Bauteile nach DIN 4109:2016"
+titel-kurz: "Schalldämmung 4109"
 betreuende: 
   - "Prof. Dr. Gerrit Höfker"
 ---

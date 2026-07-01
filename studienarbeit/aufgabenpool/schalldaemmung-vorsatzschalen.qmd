@@ -1,5 +1,6 @@
 ---
 titel: "Verbesserung der Schalldämmung von massiven Wänden durch biegeweiche Vorsatzschalen"
+titel-kurz: "Schalldämmung Vorsatzschalen"
 betreuende: 
   - "Prof. Dr. Gerrit Höfker"
 literatur:

@@ -1,5 +1,6 @@
 ---
 titel: "Dimensionierung von Maschinenfundamenten"
+titel-kurz: "Maschinenfundamente"
 betreuende: 
   - "N.N."
 ---

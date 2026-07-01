@@ -1,5 +1,6 @@
 ---
 titel: "Auswertung von Versuchsdaten zur Bemessung von Stahlbetonbauteilen"
+titel-kurz: "Versuchsdaten"
 betreuende: 
   - "Prof. Dr.-Ing. Andrej Albert, Dipl.-Ing. (FH), M.Sc. Stephan Eilers (Massivbau)"
 literatur:

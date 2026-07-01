@@ -1,5 +1,6 @@
 ---
 titel: "Berechnung von Wärmebrücken mit der Methode der Finiten Elemente"
+titel-kurz: "Wärmebrücken FEM"
 betreuende: 
   - "Prof. Dr. Gerrit Höfker (Bauphysik)"
 literatur:

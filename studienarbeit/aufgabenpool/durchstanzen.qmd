@@ -1,6 +1,7 @@
 ---
 titel: "Berechnung des Lasterhöhungsbeiwertes $\\beta$ bei einem Durchstanznachweis"
-betreuende: 
+titel-kurz: "Durchstanzen"
+betreuende:
   - "Prof. Dr.-Ing. Andrej Albert und Dr.-Ing. Denis Busch"
 literatur:
   - "Zehetmaier (Hg.) 2010: Bemessung im konstruktiven Betonbau"

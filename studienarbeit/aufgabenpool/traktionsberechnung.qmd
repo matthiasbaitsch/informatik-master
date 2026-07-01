@@ -1,5 +1,6 @@
 ---
 titel: "Zugförderung / Traktionsberechnung"
+titel-kurz: "Traktionsberechnung"
 betreuende: 
   - "Prof. Dr. Maren Schnieder"
 ---

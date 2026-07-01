@@ -1,5 +1,6 @@
 ---
 titel: "Standsicherheitsnachweis für ausmittig belastete Streifenfundamente"
+titel-kurz: "Streifenfundamente"
 betreuende: 
   - "Dipl.-Ing. Stephan Reher"
 ---

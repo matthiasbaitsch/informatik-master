@@ -1,5 +1,6 @@
 ---
 titel: "Berechnung und Visualisierung der Schubspannungsverteilung für Querschnitte aus dem Stahlbau"
+titel-kurz: "Schubspannung"
 betreuende: 
   - "N.N."
 ---

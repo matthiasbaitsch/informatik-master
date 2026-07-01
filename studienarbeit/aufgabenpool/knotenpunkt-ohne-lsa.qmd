@@ -1,5 +1,6 @@
 ---
 titel: "Verkehrsqualität von Knotenpunkten ohne Lichtsignalanlage"
+titel-kurz: "Knotenpunkt ohne LSA"
 betreuende: 
   - "Prof. Dr.-Ing. Sebastian Seipel"
 literatur:

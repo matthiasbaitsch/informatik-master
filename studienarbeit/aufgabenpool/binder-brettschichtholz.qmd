@@ -1,5 +1,6 @@
 ---
 titel: "Bemessung von Bindern aus Brettschichtholz"
+titel-kurz: "Binder Brettschichtholz"
 betreuende: 
   - "N.N."
 ---

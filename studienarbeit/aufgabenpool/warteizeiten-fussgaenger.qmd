@@ -1,6 +1,7 @@
 ---
 titel: "Ermittlung der Wartezeit für Fußgänger an einer anbaufreien Straße"
-betreuende: 
+titel-kurz: "Warteizeiten Fußgänger"
+betreuende:
   - "Prof. Dr.-Ing. Iris Mühlenbruch (Verkehrswesen)"
 ---
 

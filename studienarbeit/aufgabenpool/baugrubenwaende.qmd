@@ -1,5 +1,6 @@
 ---
 titel: "Belastung von einfach gestützten Baugrubenwänden"
+titel-kurz: "Baugrubenwände"
 betreuende: 
   - "Prof. Dr.-Ing. Marie-Theres Steinhoff"
 ---

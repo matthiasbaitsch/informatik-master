@@ -1,5 +1,6 @@
 ---
 titel: "Vordimensionierung einer Kläranlage"
+titel-kurz: "Kläranlage"
 betreuende: 
   - "Prof. Dr.-Ing. Bernd Nolting"
 literatur:

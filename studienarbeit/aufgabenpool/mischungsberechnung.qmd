@@ -1,5 +1,6 @@
 ---
 titel: "Ermittlung der Zusammensetzung von Normalbeton auf Grundlage einer Mischungsberechnung nach Zementmerkblatt B20"
+titel-kurz: "Mischungsberechnung"
 betreuende: 
   - "Prof. i.V. Dr.-Ing. Andreas Dridiger"
 literatur:

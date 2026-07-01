@@ -1,5 +1,6 @@
 ---
 titel: "Berechnung von Verformungen und Schnittgrößen ebener Stabtragwerke"
+titel-kurz: "Ebene Stabtragwerke"
 betreuende: 
   - "Prof. Dr.-Ing. M. Mertens"
 ---

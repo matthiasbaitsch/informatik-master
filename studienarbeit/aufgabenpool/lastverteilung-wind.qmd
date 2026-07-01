@@ -1,5 +1,6 @@
 ---
 titel: "Verteilung von Windlasten bei Massivbauten"
+titel-kurz: "Lastverteilung Wind"
 betreuende: 
   - "Prof. Dr.-Ing. Stephan Löring"
 literatur:

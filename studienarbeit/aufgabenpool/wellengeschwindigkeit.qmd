@@ -1,5 +1,6 @@
 ---
 titel: "Visualisierung der Ausbreitungsgeschwindigkeit von Wellen in anisotropen elastischen Medien"
+titel-kurz: "Wellengeschwindigkeit"
 betreuende: 
   - "Prof. Dr. Erik H. Saenger"
 literatur:

@@ -1,5 +1,6 @@
 ---
 titel: "Sonnenstandsberechnungen"
+titel-kurz: "Sonnenstand"
 betreuende: 
   - "Prof. Dr. Gerrit Höfker (Bauphysik)"
 literatur:
