@@ -13,7 +13,7 @@ anderen Strömen an. Im Zuge dieser Aufgabenstellung soll eine Applikation entwi
 werden, die den Prozess der Darstellung eines Knotenstromplans für eine (1) Kreuzung
 oder einen (2) Kreisverkehr automatisiert.
 
-![](bilder/verkehr-04.png){width=110mm}
+![](bilder/verkehr-knotenstromplan.png){width=110mm}
 
 Im Einzelnen soll das Programm folgenden Funktionsumfang zur Verfügung stellen:
 
