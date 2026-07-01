@@ -1,7 +1,8 @@
 ---
 title: <<titel>>
-subtitle: Studienarbeit Informatik im Master Bauingenieurwesen und Regenerative Energiesysteme
 ---
+
+Studienarbeit Informatik im Master Bauingenieurwesen und Regenerative Energiesysteme
 
 ## Aufgabenstellung
 

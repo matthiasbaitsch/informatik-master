@@ -94,6 +94,8 @@ for f ∈ filter(f -> endswith(f, ".yaml"), readdir(joinpath(lernpfad_folder, "s
 end
 
 # Copy
-cp(joinpath(studienarbeit_folder, "_metadata.yaml"), joinpath(output_folder, "_metadata.yaml"))
+for f ∈ ["_metadata.yaml"]
+	cp(joinpath(studienarbeit_folder, f), joinpath(output_folder, f))
+end
 
 
