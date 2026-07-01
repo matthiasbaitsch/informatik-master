@@ -24,7 +24,7 @@ Querkrafttraganteilen
 
 zusammen.
 
-Das in dieser Studienarbeit in einem Java-Programm umzusetzende Bemessungsmodell
+Das in dieser Studienarbeit in einem C#-Programm umzusetzende Bemessungsmodell
 beruht auf der Dissertation von Stephan Görtz. Hierbei werden die drei
 Querkrafttraganteile zunächst getrennt voneinander berechnet. Die Gesamttragfähigkeit
 lässt sich durch Addition der drei Haupttraganteile ermitteln. Christian Albrecht

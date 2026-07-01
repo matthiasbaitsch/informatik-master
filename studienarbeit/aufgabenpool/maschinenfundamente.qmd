@@ -4,7 +4,7 @@ betreuende:
   - "N.N."
 ---
 
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Vordimensionierung
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation zur Vordimensionierung
 von Maschinenfundamenten entwickelt werden. Dabei soll es für Anwender möglich sein,
 die relevanten Systemparameter (Erregerfrequenz, Kraft, Federsteifigkeit,
 Bettungsmodul, Dämpfung, etc.) einzugeben sowie unter verschiedenen Lagerungsarten

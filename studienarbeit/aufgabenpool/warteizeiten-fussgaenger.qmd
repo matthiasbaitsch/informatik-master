@@ -4,7 +4,7 @@ betreuende:
   - "Prof. Dr.-Ing. Iris Mühlenbruch (Verkehrswesen)"
 ---
 
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Ermittlung der
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation zur Ermittlung der
 Wartezeiten für Fußgänger auf einer freien Strecke entwickelt werden. Dabei soll
 es für den Anwender möglich sein, alle relevanten Systemparameter anzugeben
 (Fahrbahnbreite, die minimale Kfz-Stärke pro Stunde, die maximale Kfz-Stärke pro

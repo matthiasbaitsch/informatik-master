@@ -8,7 +8,7 @@ literatur:
 ---
 
 ::: {layout="[3,1]"}
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation konzipiert und implementiert
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation konzipiert und implementiert
 werden, mit der baupraktisch relevante Kenngrößen von Wärmebrücken an ausgewählten
 konstruktiven Situationen berechnet werden können. Die Berechnung der
 Temperaturverteilung soll dabei für ein zweidimensionales Gebiet mit Hilfe des

@@ -13,7 +13,7 @@ Durchflussmessungen in Gerinnen (Flüssen) werden vielfach mit punktuellen
 Flügelmessungen durchgeführt. Aus den Punktmessungen muss eine
 Geschwindigkeitsverteilung und eine mittlere Geschwindigkeit für das gesamte
 Profil berechnet werden um so den gesamten Durchfluss zu bestimmen. Im Rahmen
-dieser Studienarbeit soll eine Java-Applikation entwickelt werden, mit der die
+dieser Studienarbeit soll eine C#-Applikation entwickelt werden, mit der die
 entsprechenden Messdaten aus einer Datei ausgelesen und zahlenmäßig ausgewertet
 sowie grafisch dargestellt werden sollen.
 

@@ -20,7 +20,7 @@ in Form einer CSV-Datei vor.
 ![](bilder/erdbeben-1.png){height=75mm}
 :::
 
-Im Rahmen der Studienarbeit soll eine Java-Applikation entwickelt werden, die auf
+Im Rahmen der Studienarbeit soll eine C#-Applikation entwickelt werden, die auf
 Grundlage der Eingabe
 
 1. der geografischen Lage in der Form „51,44760° N, 7,26874° E" (zum Beispiel aus

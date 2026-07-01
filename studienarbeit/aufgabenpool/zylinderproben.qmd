@@ -33,7 +33,7 @@ Für den Fluiddruck innerhalb des Bohrlochs können Maximaldrücke bis 80 MPa
 angenommen werden. Für den triaxialen Spannungszustand sind bis zu 150 MPa
 realistisch.
 
-Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+Im Rahmen der Studienarbeit soll eine C#-Applikation mit folgendem Funktionsumfang
 realisiert werden:
 
 1. Erstellen eines Makros mit den folgenden Eingangsparametern: Probendimension

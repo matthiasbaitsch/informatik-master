@@ -12,12 +12,15 @@ so erfolgen, dass für jeden Punkt der Deckenplatte ermittelt wird, welche Wand 
 nächsten liegt. Alle Punkte, die zu einer bestimmten Wand den geringsten Abstand
 besitzen, bilden die geometrische Lasteinzugsfläche dieser Wand.
 
-::: {layout-ncol=2}
-```{=latex}
-\includegraphics{abstandsfunktion}
-```
-
-![](bilder/einzugsflaeche.png){height=69mm}
+::: {.columns}
+::: {.column width=10%}
+:::
+::: {.column width=40%}
+![](bilder/abstandsfunktion.png){height=55mm}
+:::
+::: {.column width=50%}
+![](bilder/einzugsflaeche.png){height=50mm}
+:::
 :::
 
 Für die mathematische Formulierung dieser Idee benötigen wir zunächst für jede Wand
@@ -29,10 +32,10 @@ Grundlage definieren wir die Funktion $w : \Omega \to \mathbb{N}$ mit
 $$w(x, y) = \arg\min_{i} d_i(x, y),$$
 die für jeden Punkt die am nächsten gelegene Wand ermittelt (Beispiel in der
 Abbildung rechts). Dabei liefert der Operator $\arg\min$ dasjenige $i$, für das
-$d_i(x, y)$ den kleinsten Wert hat. Die Umsetzung von $w$ in Java erfolgt mithilfe
+$d_i(x, y)$ den kleinsten Wert hat. Die Umsetzung von $w$ in C# erfolgt mithilfe
 einer Schleife über alle Wände.
 
-Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+Im Rahmen der Studienarbeit soll eine C#-Applikation mit folgendem Funktionsumfang
 realisiert werden:
 
 1. Eingabe des Grundrisses mit einer beliebigen Anzahl von Wänden

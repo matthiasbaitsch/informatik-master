@@ -4,7 +4,7 @@ betreuende:
   - "N.N."
 ---
 
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation zur
 Schnittgrößenermittlung und Walzprofilbemessung von unterschiedlichen
 Rahmensystemen entwickelt werden. Dabei soll es für Anwender in einfacher Weise
 möglich sein, die relevanten Systemparameter (Lagerung der Fußpunkte und Ausführung
@@ -12,7 +12,7 @@ der Rahmenecken), die Belastung (Dachlasten, Schneelasten und Windlasten als
 Streckenlasten) sowie das gewünschte Stahlprofil für die Stütze und den Riegel
 (IPE-, HEA-Profil) anzugeben.
 
-Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+Im Rahmen der Studienarbeit soll eine C#-Applikation mit folgendem Funktionsumfang
 realisiert werden:
 
 1. Grafische Darstellung des Systems,

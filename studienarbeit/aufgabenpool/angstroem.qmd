@@ -44,7 +44,7 @@ eines gleitenden Durchschnitts normiert werden, sodass die Temperaturkurve um ei
 Nullwert oszilliert. Erst dann können Phasenverschiebung und Dämpfung zuverlässig
 bestimmt werden.
 
-Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+Im Rahmen der Studienarbeit soll eine C#-Applikation mit folgendem Funktionsumfang
 realisiert werden:
 
 1. Einlesen und Darstellung der Daten aus ascii, Excel oder Matlab-Formaten

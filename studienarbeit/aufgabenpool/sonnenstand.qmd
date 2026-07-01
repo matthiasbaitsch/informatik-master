@@ -9,7 +9,7 @@ literatur:
 
 Zur Planung energieeffizienter Bauwerke ist die Berücksichtigung des
 Energieeintrages aus der Sonnenstrahlung ein wesentliches Kriterium. Ziel dieser
-Studienarbeit ist die Entwicklung eines Java-Programms, das für einen frei zu
+Studienarbeit ist die Entwicklung eines C#-Programms, das für einen frei zu
 wählenden Standort planungsrelevante Daten zum Sonnenstand und dem
 Strahlungswinkel bereitstellt.
 

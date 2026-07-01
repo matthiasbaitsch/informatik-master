@@ -11,7 +11,7 @@ einem Programm zur wissenschaftlichen Visualisierung ist es notwendig, die Daten
 in zwei Dateien (Bohrwiderstand, Vorschub) zusammenzufassen. Zusätzlich muss
 jedem Messwert eine 3D-Koordinate zugeordnet werden.
 
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation konzipiert und
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation konzipiert und
 implementiert werden, mit der solche Daten aus binären Dateien ausgelesen werden
 können und automatisch in einer neu zu erstellenden Datei mit entsprechenden
 Koordinaten hinterlegt wird. Darüber hinaus sollen die Daten grafisch aufbereitet

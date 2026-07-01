@@ -11,3 +11,4 @@ bin
 *Attic
 *_files
 *.lscache
+/.quarto/

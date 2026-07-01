@@ -4,7 +4,7 @@ betreuende:
   - "Prof. Dr.-techn. Jörgen Robra"
 ---
 
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation entwickelt werden, mit
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation entwickelt werden, mit
 der für Walzprofile aus Stahl Tragsicherheitsnachweise nach DIN 18800 durchgeführt
 werden können. Es soll dabei möglich sein, den Nachweis sowohl nach dem Verfahren
 Elastisch-Elastisch als auch nach dem Verfahren Elastisch-Plastisch durchzuführen.

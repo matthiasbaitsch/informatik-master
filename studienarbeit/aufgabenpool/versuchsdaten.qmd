@@ -14,7 +14,7 @@ Mit dem Heft 597 des DAfStb existiert eine umfassende Datenbank zu
 Querkraftversuchen von Stahlbetonbauteilen mit und ohne Bügelbewehrung. Ein Teil
 dieser Versuche, die nach bestimmten Kriterien ausgewählt wurden, ist Grundlage für
 die zur Zeit gültige halb-empirische Bemessungsgleichung nach EC2.
-Im Rahmen dieser Studienarbeit soll ein Java-Programm entwickelt werden, mit dem
+Im Rahmen dieser Studienarbeit soll ein C#-Programm entwickelt werden, mit dem
 die vorliegenden Daten aus den Versuchen ausgewertet und mit gängigen
 Bemessungsverfahren verglichen werden können.
 

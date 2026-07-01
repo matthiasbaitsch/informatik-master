@@ -8,13 +8,13 @@ literatur:
 ---
 
 ::: {layout="[3,1]"}
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation konzipiert und implementiert
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation konzipiert und implementiert
 werden, mit der baupraktisch relevante Kenngrößen von Wärmebrücken an ausgewählten
 konstruktiven Situationen berechnet werden können. Die Temperaturverteilung soll
 dabei für ein dreidimensionales Gebiet mit der Methode der Finiten Elemente für
 einen stationären Zustand ermittelt werden. Die eigentliche Berechnung soll dabei
 mithilfe des Finite-Elemente-Programms Comsol (<http://www.comsol.de>) erfolgen.
-Die Software verfügt über eine gut dokumentierte Java-Schnittstelle und kann
+Die Software verfügt über eine gut dokumentierte C#-Schnittstelle und kann
 vergleichsweise einfach in eigene Programme eingebunden werden.
 
 Mit der zu entwickelnden Applikation soll es möglich sein, die für den

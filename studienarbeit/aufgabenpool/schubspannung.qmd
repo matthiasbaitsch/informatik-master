@@ -4,7 +4,7 @@ betreuende:
   - "N.N."
 ---
 
-In dieser Studienarbeit soll eine Java-Applikation zur grafischen Darstellung der
+In dieser Studienarbeit soll eine C#-Applikation zur grafischen Darstellung der
 Schubspannung infolge von Querkraft für Stahlträger mit verschiedenen Profiltypen
 konzipiert und implementiert werden.
 

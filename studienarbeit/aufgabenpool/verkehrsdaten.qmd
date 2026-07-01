@@ -33,7 +33,7 @@ Benutzungsoberfläche ermöglichen,
   Kartengrundlage (online oder offline, z.B. Open-Streetmap (OSM) Karte Deutschland
   mit Bundesfernstraßennetz) darzustellen, z.B. über unterschiedliche Farben
   (Ampel-Skala) oder Punktgrößen. Für die Darstellung der OSM-Karten kann die
-  Java-Bibliothek JMapViewer verwendet werden.
+  C#-Bibliothek JMapViewer verwendet werden.
 - die folgenden Zeitbereiche zu filtern:
   - Jahre (von/bis)
   - Monate (von/bis)
@@ -59,4 +59,4 @@ Als Datengrundlagen dienen Auszüge und exemplarisch aufbereitete Datentabellen:
 - Location Code List (LCL) [MS Excel]
 - Event Code List (ECL) [MS Excel]
 
-Auf diese Daten kann mit entsprechenden Java-Bibliotheken zugegriffen werden.
+Auf diese Daten kann mit entsprechenden C#-Bibliotheken zugegriffen werden.

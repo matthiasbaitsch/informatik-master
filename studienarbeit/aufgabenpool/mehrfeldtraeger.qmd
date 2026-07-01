@@ -4,7 +4,7 @@ betreuende:
   - "N.N."
 ---
 
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation zur
 Schnittgrößenermittlung und Biegebemessung von Ein- und Mehrfeldträgern entwickelt
 werden. Dabei soll es für Anwender in einfacher Weise möglich sein, die relevanten
 Systemparameter (Anzahl der Felder, Stützweiten), die Belastung (ständige Lasten

@@ -4,7 +4,7 @@ betreuende:
   - "N.N."
 ---
 
-Im Rahmen dieser Studienarbeit soll eine Java-Applikation zur Ermittlung der
+Im Rahmen dieser Studienarbeit soll eine C#-Applikation zur Ermittlung der
 erforderlichen Längsbewehrung einer einachsig gespannten Deckenplatte entwickelt
 werden. Die Deckenplatte kann dabei als Ein- oder Mehrfeldträger (max. 3 Felder)
 eingegeben werden.
@@ -17,7 +17,7 @@ Benutzungsoberfläche ermöglichen
 - anzugeben, welche Baustoffe verwendet werden sollen,
 - die Mindestbetondeckung einzugeben.
 
-Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+Im Rahmen der Studienarbeit soll eine C#-Applikation mit folgendem Funktionsumfang
 realisiert werden:
 
 1. Grafische Darstellung der Platte (mit Bemaßung),

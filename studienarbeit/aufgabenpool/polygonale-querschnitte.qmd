@@ -26,7 +26,7 @@ Polygons bekannt sein.
 ![](bilder/polygon-querschnitte-formel.png)
 :::
 
-Im Rahmen der Studienarbeit soll eine Java-Applikation mit folgendem Funktionsumfang
+Im Rahmen der Studienarbeit soll eine C#-Applikation mit folgendem Funktionsumfang
 realisiert werden:
 
 1. Eingabe der Eckpunkte des begrenzenden Polygons und der Schnittgrößen
