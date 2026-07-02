@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="unit_converter.MainWindow"
+        SizeToContent="WidthAndHeight"
+        Title="Unit Converter">
+
+    <StackPanel Margin="20" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <StackPanel.Styles>
+            <Style Selector="Label">
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+            <Style Selector="TextBox">
+                <Setter Property="Width" Value="150" />
+            </Style>
+            <Style Selector="ComboBox">
+                <Setter Property="Width" Value="100" />
+            </Style>
+        </StackPanel.Styles>
+
+        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+            <Label Grid.Row="0" Grid.Column="0">Value</Label>
+            <TextBox x:Name="ValueTB" Grid.Row="0" Grid.Column="1">1.0</TextBox>
+            <ComboBox x:Name="ValueUnitCoBo" Grid.Row="0" Grid.Column="2"></ComboBox>
+            <Label Grid.Row="1" Grid.Column="0">Result</Label>
+            <TextBox x:Name="ResultTB" Grid.Row="1" Grid.Column="1"></TextBox>
+            <ComboBox x:Name="ResultUnitCoBo" Grid.Row="1" Grid.Column="2"></ComboBox>
+        </Grid>
+        <Button x:Name="ConvertB" HorizontalAlignment="Right">Convert</Button>
+    </StackPanel>
+</Window>

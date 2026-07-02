@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="01-unit-converter-01/unit-converter-01.csproj" />
+  <Project Path="01-unit-converter-02/unit-converter-02.csproj" />
+  <Project Path="01-unit-converter-03/unit-converter-03.csproj" />
+  <Project Path="01-unit-converter-04/unit-converter-04.csproj" />
+  <Project Path="01-unit-converter-05/unit-converter-05.csproj" />
+</Solution>

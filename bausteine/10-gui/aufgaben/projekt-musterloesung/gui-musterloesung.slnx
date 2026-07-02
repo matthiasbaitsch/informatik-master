@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="01-unit-converter/unit-converter.csproj" />
+  <Project Path="02-steel-hall/steel-hall.csproj" />
+  <Project Path="02-steel-hall-ui/steel-hall-ui.csproj" />
+</Solution>

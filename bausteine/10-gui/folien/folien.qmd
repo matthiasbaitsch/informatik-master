@@ -1,0 +1,176 @@
+## Grafische Benutzungsoberflächen (GUIs)
+
+::: {.columns}
+::: {.column width=27%}
+![AutoCAD 12 (1992)](bilder/autocad-12.jpg){.lightbox}
+
+![Revit 2025](bilder/revit.jpg){.lightbox}
+
+![PyCharm 2026](bilder/pycharm.png){.lightbox}
+:::
+::: {.column width=2%}
+:::
+::: {.column width=71%}
+- Grafische Oberflächen werden programmiert (klar!)
+- Grundlage: Bibliothek mit entsprechenden Klassen
+- Aufgaben
+    - Buttons, Listen, Menüs usw. bereitstellen
+    - Objekte dynamisch auf Bildschirm anordnen
+    - Interaktionen mit eigenem Code verknüpfen
+- Weit verbreitet
+    - WPF (Windows), SwiftUI (Mac), Qt (Win/Mac/Linux)
+- Wir verwenden [Avalonia](https://avaloniaui.net){target="_blank"}
+    - Platformunabhängig (Win/Mac/Linux/Mobil)
+    - Deklarativer Ansatz (XAML-basiert)
+    - Open Source
+:::
+:::
+
+## Arbeitsweise Avalonia
+
+::: {.r-stack}
+::: {.fragment}
+![](bilder/avalonia-arbeitsweise-1.png){height=400px}
+:::
+::: {.fragment}
+![](bilder/avalonia-arbeitsweise-2.png){height=400px}
+:::
+::: {.fragment}
+![](bilder/avalonia-arbeitsweise-3.png){height=400px}
+:::
+:::
+
+- Grundgerüst für Projekt wird automatisch angelegt (später)
+- Wichtig für uns nur
+    - `MainWindow.axaml`: Grafische Oberfläche mit Vorschau
+    - `MainWindow.axaml.cs`: Programmlogik
+
+## Minimalbeispiel 1/2
+
+![](bilder/the-amazing-clickme.png)
+
+## Minimalbeispiel 2/2 {.smaller}
+
+### Grafische Oberfläche in `MainWindow.axaml.cs`
+
+::: {.columns}
+::: {.column width=75%}
+```{.xml code-line-numbers="true"}
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="clickme.MainWindow"
+        Title="The Amazing Clickme">
+    <Button x:Name="ClickmeB">Clicked 0 times</Button>
+</Window>
+```
+:::
+::: {.column width=25%}
+- Zeilen 1-6 vordefiniert
+- Zeile 7: Titel des Fensters
+- Zeile 8: Button einfügen
+    - Attribut `ClickmeB`
+:::
+:::
+
+[]{.down20}
+
+### Programmlogik in `MainWindow.axaml.cs`
+
+::: {.columns}
+::: {.column width=75%}
+```{.csharp code-line-numbers="true"}
+using Avalonia.Controls;
+using Avalonia.Interactivity;
+namespace clickme;
+
+public partial class MainWindow : Window
+{
+    public int Count = 1;
+
+    public MainWindow()
+    {
+        this.InitializeComponent();
+        this.ClickmeB.Click += this.OnClickmeClicked;
+    }
+
+    public void OnClickmeClicked(object? sender, RoutedEventArgs e)
+    {
+        this.ClickmeB.Content = $"Clicked {this.Count++} times";
+    }
+}
+```
+:::
+::: {.column width=25%}
+- Zeile 8: Attribut zum Zählen
+- Zeile 12: Initialisierung, vordefiniert
+- Zeile 13: Methode bei Button anmelden
+- Zeilen 16-19: Wird bei Klick ausgeführt
+:::
+:::
+
+
+## Wie das funktioniert (die grobe Idee)
+
+[]{.down40}
+
+```{mermaid}
+graph LR
+    A["MainWindow.axaml"] -->|Compiler| B["Generierter Code"]
+    C["MainWindow.axaml.cs"] --> D
+    B --> D["MainWindow"]
+```
+
+[]{.down40}
+
+- Compiler erzeugt aus `.axaml` automatisch C#-Code
+- Generierter Code und `MainWindow.axaml.cs` bilden zusammen eine Klasse
+- `InitializeComponent()` ruft den generierten Code auf
+
+→ Deshalb: `ClickmeB` in `MainWindow` verfügbar, obwohl es dort nicht deklariert ist
+
+## XML
+
+[]{.down30}
+
+- eXtensible Markup Language – textbasiertes Format für hierarchisch strukturierte Daten
+- Grundbausteine: Elemente (Tags) und Attribute
+
+    ```xml
+    <Person Name="Anna" Age="30">
+        <Address City="Bochum"></Address>
+    </Person>
+    ```
+
+- `Person`, `Address`: Elemente – Start-Tag `<Tag>` und Ende-Tag `</Tag>`
+- `Name="Anna"`: Attribut, im Start-Tag angegeben
+- `Address` ist ein Bestandteil von `Person`
+
+[]{.down20}
+
+Datei `MainWindow.axaml` ist XML
+
+- Element `Button` erzeugt `Button`-Objekt
+- Attribut `x:Name` erzeugt Attribut in Klasse
+
+# Komponenten
+
+TODO
+
+# Layout
+
+TODO
+
+# Mit Code verknüpfen
+
+TODO
+
+# Zusammenfassung etc.
+
+TODO
+
+## Quellen
+
+- [Dokumentation](https://docs.avaloniaui.net/docs/layout/)
