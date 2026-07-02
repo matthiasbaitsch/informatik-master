@@ -18,7 +18,7 @@ public partial class MainWindow : Window
     {
         // Konvertieren
         double input = double.Parse(this.ValueTB.Text!);
-        double result = 6894.757293168 * input;
+        double result = input / 6894.757293168;
 
         // Anzeigen
         this.ResultTB.Text = $"{result:0.0####}";
