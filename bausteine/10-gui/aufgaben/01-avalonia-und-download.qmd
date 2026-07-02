@@ -1,4 +1,6 @@
 Bevor Sie mit den Aufgaben loslegen:
 
+- Installieren Sie die Avalonia-Erweiterung in Visual Studio Code
+    ![](bilder/avalonia-installieren.png)
 - Die [Zip-Datei](${slug}.zip) herunterladen und in den Ordner 'projekte' entpacken.
 - Starten Sie mit einem Doppelklick auf die Datei `${slug-nn}.code-workspace` die Entwicklungsumgebung Visual Studio Code.
