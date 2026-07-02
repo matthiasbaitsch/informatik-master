@@ -10,6 +10,7 @@
 		"editor.formatOnSave": true,
 		"chat.disableAIFeatures": true,
 		"files.exclude": {
+			".vscode": true,
 			".editorconfig": true,
 			"*.code-workspace": true,
 			"**/bin": true,
