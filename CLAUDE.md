@@ -15,7 +15,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 
 ## Projektstruktur
 
-- `lernpfad/` ist automatisch generiert – nie manuell bearbeiten. Alle Änderungen gehen in `bausteine/`.
+- `lernpfad/` ist automatisch generiert – nie manuell bearbeiten. Alle Änderungen gehen in `bausteine/`. Ausnahme: `lernpfad/skripte/` ist nicht generiert und darf direkt bearbeitet werden.
 
 ## Technischer Aufbau
 

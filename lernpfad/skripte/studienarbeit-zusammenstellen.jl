@@ -4,6 +4,11 @@ using YAML
 # Helpers
 # -------------------------------------------------------------------------------------------------
 
+function last_name(betreuer)
+	name = strip(first(split(betreuer, r"[(,]")))
+	return last(split(name))
+end
+
 function extract_content(file)
 	!isfile(file) && error("No such file: $file")
 	text = read(file, String)
@@ -12,11 +17,12 @@ function extract_content(file)
 
 	meta       = YAML.load(m[1])
 	titel      = get(meta, "titel", "")
+	titel_kurz = get(meta, "titel-kurz", "")
 	betreuende = get(meta, "betreuende", "")
 	literatur  = get(meta, "literatur", String[])
 	inhalt     = strip(m[2])
 
-	return (titel = titel, betreuende = betreuende, literatur = literatur, inhalt = inhalt)
+	return (titel = titel, titel_kurz = titel_kurz, betreuende = betreuende, literatur = literatur, inhalt = inhalt)
 end
 
 function fill_template(abgabetermin, content, template_text)
@@ -50,6 +56,9 @@ function process_yaml_for_year(file, pool_folder, output_folder_base, template_t
 	# HTML
 	open(joinpath(output_folder, "index.html"), "w") do html_io
 
+		# List for Google-Sheet
+		list = []
+
 		# Start html
 		println(html_io, "<ol>")
 
@@ -67,10 +76,14 @@ function process_yaml_for_year(file, pool_folder, output_folder_base, template_t
 			# Write
 			write(joinpath(output_folder, out_file), assignment_text)
 			println(html_io, "<li> <a href=\"$out_url\" target=\"_blank\">$(content.titel)</a><br/>($(content.betreuende[1]))</li>")
+
+			# Append
+			push!(list, "$(content.titel_kurz) ($(join(last_name.(content.betreuende), ", ")))")
 		end
 
 		# Finish html
 		println(html_io, "</ol>")
+		foreach(l -> println(html_io, l), list)
 	end
 end
 
