@@ -2,7 +2,7 @@
 titel: "Vordimensionierung einer Kläranlage"
 titel-kurz: "Kläranlage"
 betreuende: 
-  - "Prof. Dr.-Ing. Bernd Nolting"
+  - "Prof. Dr.-Ing. Christian Kazner"
 literatur:
   - "DWA-Regelwerk, Arbeitsblatt DWA-A 131, Bemessung von einstufigen\
     \ Belebungsanlagen (2015)"

@@ -24,7 +24,7 @@
             <TextBox x:Name="ValueTB" Grid.Row="0" Grid.Column="1">1.0</TextBox>
             <Label Grid.Row="0" Grid.Column="2">Pa</Label>
             <Label Grid.Row="1" Grid.Column="0">Result</Label>
-            <TextBox x:Name="ResultTB" Grid.Row="1" Grid.Column="1"></TextBox>
+            <TextBox x:Name="ResultTB" Grid.Row="1" Grid.Column="1" IsReadOnly="True"></TextBox>
             <Label Grid.Row="1" Grid.Column="2">PSI</Label>
         </Grid>
         <Button x:Name="ConvertB" HorizontalAlignment="Center">Convert</Button>

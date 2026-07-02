@@ -13,7 +13,7 @@ public partial class MainWindow : Window
     {
         this.InitializeComponent();
 
-        // Umrechnunsfaktoren speichern
+        // Umrechnungsfaktoren speichern
         this.Factors["Pa"] = 1;
         this.Factors["MPa"] = 1e6;
         this.Factors["N/m²"] = 1;
@@ -22,28 +22,28 @@ public partial class MainWindow : Window
         this.Factors["PSI"] = 6894.757293168;
 
         // Einheit Eingangswert
-        this.FromUnitCoBo.ItemsSource = this.Factors.Keys;
-        this.FromUnitCoBo.SelectedIndex = 0;
+        this.ValueUnitCoBo.ItemsSource = this.Factors.Keys;
+        this.ValueUnitCoBo.SelectedIndex = 0;
 
         // Einheit Ausgangswert
-        this.ToUnitCoBo.ItemsSource = this.Factors.Keys;
-        this.ToUnitCoBo.SelectedIndex = 1;
+        this.ResultUnitCoBo.ItemsSource = this.Factors.Keys;
+        this.ResultUnitCoBo.SelectedIndex = 1;
 
         // Aktion verdrahten
-        this.ConvertB.Click += this.OnConvertClick;
+        this.ConvertB.Click += this.OnConvertBClicked;
     }
 
-    private void OnConvertClick(object? sender, RoutedEventArgs e)
+    private void OnConvertBClicked(object? sender, RoutedEventArgs e)
     {
-        // Umrechnen
+        // Konvertieren
         double input = double.Parse(this.ValueTB.Text!);
-        string inputUnit = (string)this.FromUnitCoBo.SelectedItem!;
-        string resultUnit = (string)this.ToUnitCoBo.SelectedItem!;
+        string inputUnit = (string)this.ValueUnitCoBo.SelectedItem!;
+        string resultUnit = (string)this.ResultUnitCoBo.SelectedItem!;
         double a1 = this.Factors[inputUnit];
         double a2 = this.Factors[resultUnit];
         double result = input * a1 / a2;
 
-        // Wert setzen
-        this.ResultTB.Text = $"{result:0.0###}";
+        // Ergebnis anzeigen
+        this.ResultTB.Text = $"{result:0.0###############}";
     }
 }

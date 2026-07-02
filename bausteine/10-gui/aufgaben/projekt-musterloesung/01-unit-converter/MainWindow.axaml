@@ -7,7 +7,7 @@
         SizeToContent="WidthAndHeight"
         Title="Unit Converter">
 
-    <StackPanel Margin="20" Spacing="15" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Margin="20" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
 
         <StackPanel.Styles>
             <Style Selector="Label">
@@ -18,21 +18,18 @@
                 <Setter Property="Width" Value="150" />
             </Style>
             <Style Selector="ComboBox">
-                <Setter Property="Width" Value="120" />
+                <Setter Property="Width" Value="100" />
             </Style>
         </StackPanel.Styles>
 
         <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
             <Label Grid.Row="0" Grid.Column="0">Value</Label>
-            <TextBox Grid.Row="0" Grid.Column="1" x:Name="ValueTB">1.0</TextBox>
-            <ComboBox Grid.Row="0" Grid.Column="2" x:Name="FromUnitCoBo" />
-
+            <TextBox x:Name="ValueTB" Grid.Row="0" Grid.Column="1">1.0</TextBox>
+            <ComboBox x:Name="ValueUnitCoBo" Grid.Row="0" Grid.Column="2"></ComboBox>
             <Label Grid.Row="1" Grid.Column="0">Result</Label>
-            <TextBox Grid.Row="1" Grid.Column="1" x:Name="ResultTB" IsReadOnly="True" />
-            <ComboBox Grid.Row="1" Grid.Column="2" x:Name="ToUnitCoBo" />
+            <TextBox x:Name="ResultTB" Grid.Row="1" Grid.Column="1" IsReadOnly="True"></TextBox>
+            <ComboBox x:Name="ResultUnitCoBo" Grid.Row="1" Grid.Column="2"></ComboBox>
         </Grid>
-
-        <Button HorizontalAlignment="Right" x:Name="ConvertB">Convert</Button>
-
+        <Button x:Name="ConvertB" HorizontalAlignment="Right">Convert</Button>
     </StackPanel>
 </Window>

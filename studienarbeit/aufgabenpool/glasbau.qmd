@@ -1,0 +1,8 @@
+---
+titel: "Aufgabenstellung aus dem Bereich Glasbau"
+titel-kurz: "Glasbau"
+betreuende: 
+  - "Dr.-Ing. Denis Busch"
+---
+
+Wird noch ergänzt.

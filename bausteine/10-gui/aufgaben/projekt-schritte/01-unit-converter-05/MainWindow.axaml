@@ -27,7 +27,7 @@
             <TextBox x:Name="ValueTB" Grid.Row="0" Grid.Column="1">1.0</TextBox>
             <ComboBox x:Name="ValueUnitCoBo" Grid.Row="0" Grid.Column="2"></ComboBox>
             <Label Grid.Row="1" Grid.Column="0">Result</Label>
-            <TextBox x:Name="ResultTB" Grid.Row="1" Grid.Column="1"></TextBox>
+            <TextBox x:Name="ResultTB" Grid.Row="1" Grid.Column="1" IsReadOnly="True"></TextBox>
             <ComboBox x:Name="ResultUnitCoBo" Grid.Row="1" Grid.Column="2"></ComboBox>
         </Grid>
         <Button x:Name="ConvertB" HorizontalAlignment="Right">Convert</Button>

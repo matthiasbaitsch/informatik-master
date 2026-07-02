@@ -13,7 +13,7 @@ public partial class MainWindow : Window
     {
         this.InitializeComponent();
 
-        // Umrechnunsfaktoren speichern
+        // Umrechnungsfaktoren speichern
         this.Factors["Pa"] = 1;
         this.Factors["MPa"] = 1e6;
         this.Factors["N/m²"] = 1;
