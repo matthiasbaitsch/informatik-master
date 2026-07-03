@@ -9,7 +9,7 @@ Für die Bearbeitung können Sie das Minimalbeispiel in den Folien als Referenz 
 
 ### Spannung von Pascal nach PSI konvertieren
 
-Zunächst soll das Programm nur von Pascal nach PSI umrechnen. Die Auswahl der Einheiten kommt im zweiten Teil dazu.
+Zunächst soll das Programm nur von Pascal nach PSI umrechnen. Die Auswahl der Einheiten kommt dann im zweiten Teil dazu.
 
 1. Elemente hinzufügen: Öffnen Sie im Projekt `01-unit-converter` die Datei `MainWindow.axaml`. Damit mehrere Elemente Platz finden, brauchen Sie ein Layout-Element – ersetzen Sie den Text `Welcome to Avalonia!` durch ein `StackPanel`, das seine Inhalte einfach untereinander anordnet:
 
