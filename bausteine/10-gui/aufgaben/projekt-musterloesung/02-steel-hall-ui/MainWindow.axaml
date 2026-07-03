@@ -48,41 +48,15 @@
             <TextBox Grid.Row="5" Grid.Column="1" x:Name="RoofPitchTB">5.0</TextBox>
 
             <Label Grid.Row="6" Grid.Column="0">Columns</Label>
-            <ComboBox Grid.Row="6" Grid.Column="1" SelectedIndex="3" x:Name="ProfileColumnsCoBo">
-                <x:String>HE-A 140</x:String>
-                <x:String>HE-A 160</x:String>
-                <x:String>HE-A 180</x:String>
-                <x:String>HE-A 200</x:String>
-                <x:String>HE-A 220</x:String>
-                <x:String>HE-A 240</x:String>
-                <x:String>HE-A 260</x:String>
-                <x:String>HE-A 280</x:String>
-                <x:String>HE-A 300</x:String>
-                <x:String>HE-A 320</x:String>
-                <x:String>HE-A 340</x:String>
-                <x:String>HE-A 360</x:String>
-                <x:String>HE-A 400</x:String>
-            </ComboBox>
+            <ComboBox Grid.Row="6" Grid.Column="1" x:Name="ProfileColumnsCoBo"></ComboBox>
 
             <Label Grid.Row="7" Grid.Column="0">Beams</Label>
-            <ComboBox Grid.Row="7" Grid.Column="1" SelectedIndex="3" x:Name="ProfileBeamsCoBo">
-                <x:String>IPE 200</x:String>
-                <x:String>IPE 220</x:String>
-                <x:String>IPE 240</x:String>
-                <x:String>IPE 270</x:String>
-                <x:String>IPE 300</x:String>
-                <x:String>IPE 330</x:String>
-                <x:String>IPE 360</x:String>
-                <x:String>IPE 400</x:String>
-                <x:String>IPE 450</x:String>
-                <x:String>IPE 500</x:String>
-                <x:String>IPE 550</x:String>
-            </ComboBox>
+            <ComboBox Grid.Row="7" Grid.Column="1" x:Name="ProfileBeamsCoBo"></ComboBox>
         </Grid>
 
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
-            <Button Click="OnPlotClick">Plot</Button>
-            <Button Click="OnExitClick">Exit</Button>
+            <Button x:Name="PlotB">Plot</Button>
+            <Button x:Name="ExitB">Exit</Button>
         </StackPanel>
 
         <Border BorderBrush="gray" BorderThickness="2">

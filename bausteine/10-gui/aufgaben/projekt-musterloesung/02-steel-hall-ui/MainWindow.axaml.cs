@@ -13,6 +13,19 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         this.InitializeComponent();
+
+        // Profile Stützen
+        this.ProfileColumnsCoBo.ItemsSource = ISection.SizesString("HE-A");
+        this.ProfileColumnsCoBo.SelectedIndex = 5;
+
+        // Profile Riegel
+        this.ProfileBeamsCoBo.ItemsSource = ISection.SizesString("IPE");
+        this.ProfileBeamsCoBo.SelectedIndex = 9;
+
+        // Aktionen verdrahten
+        this.PlotB.Click += this.OnPlotBClicked;
+        this.ExitB.Click += this.OnExitBClicked;
+
         this.Apply();
     }
 
@@ -32,12 +45,12 @@ public partial class MainWindow : Window
         this.SteelHall.Draw(this.Canvas);
     }
 
-    private void OnPlotClick(object? sender, RoutedEventArgs e)
+    private void OnPlotBClicked(object? sender, RoutedEventArgs e)
     {
         this.Apply();
     }
 
-    private void OnExitClick(object? sender, RoutedEventArgs e)
+    private void OnExitBClicked(object? sender, RoutedEventArgs e)
     {
         this.Close();
     }

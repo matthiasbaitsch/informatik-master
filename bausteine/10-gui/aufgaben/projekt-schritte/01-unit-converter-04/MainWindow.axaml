@@ -27,6 +27,6 @@
             <TextBox x:Name="ResultTB" Grid.Row="1" Grid.Column="1" IsReadOnly="True"></TextBox>
             <Label Grid.Row="1" Grid.Column="2">PSI</Label>
         </Grid>
-        <Button x:Name="ConvertB" HorizontalAlignment="Center">Convert</Button>
+        <Button x:Name="ConvertB" HorizontalAlignment="Right">Convert</Button>
     </StackPanel>
 </Window>

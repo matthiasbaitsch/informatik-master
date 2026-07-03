@@ -1,19 +1,17 @@
 ::: {#exr-einheiten-konvertieren}
 ## Einheiten von Spannungen konvertieren
 
-Spannungen und Drücke werden je nach Land und Fachgebiet in unterschiedlichen Einheiten angegeben: Bei uns üblich sind Pascal ($1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$) und davon abgeleitete Einheiten wie $\mathrm{N/mm^2}$ oder $\mathrm{kN/cm^2}$. In den USA wird dagegen mit PSI gerechnet (pounds per square inch, Pfund pro Quadratzoll). Wer mit amerikanischen Normen oder Datenblättern arbeitet, muss also umrechnen – es gilt
+Spannungen werden je nach Land und Fachgebiet in unterschiedlichen Einheiten angegeben: Bei uns üblich sind Pascal ($1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$) und davon abgeleitete Einheiten wie $\mathrm{N/mm^2}$ oder $\mathrm{kN/cm^2}$. In den USA wird dagegen mit PSI gerechnet (pounds per square inch, Pfund pro Quadratzoll). Wer mit amerikanischen Normen oder Datenblättern arbeitet, muss also umrechnen, dabei gilt $1\,\mathrm{PSI} = 6894.757293168\,\mathrm{Pa}.$ In dieser Aufgabe entwickeln Sie Schritt für Schritt eine grafische Anwendung, mit der sich Spannungen zwischen verschiedenen Einheiten umrechnen lassen. Am Ende soll das Programm in etwa so aussehen:
 
-$$1\,\mathrm{PSI} = 6894.757293168\,\mathrm{Pa}.$$
+![](bilder/unit-converter.png){width="50%" fig-align="center"}
 
-In dieser Aufgabe entwickeln Sie Schritt für Schritt eine grafische Anwendung, mit der sich Spannungen zwischen verschiedenen Einheiten umrechnen lassen. Am Ende soll das Programm so aussehen:
-
-![](bilder/unit-converter.png){width="60%" fig-align="center"}
+Für die Bearbeitung können Sie das Minimalbeispiel in den Folien als Referenz verwenden.
 
 ### Spannung von Pascal nach PSI konvertieren
 
-Zunächst soll das Programm nur in eine Richtung umrechnen: Eingabe in Pa, Ergebnis in PSI. Die Auswahl der Einheiten kommt im letzten Schritt dazu.
+Zunächst soll das Programm nur von Pascal nach PSI umrechnen. Die Auswahl der Einheiten kommt im zweiten Teil dazu.
 
-1. Elemente hinzufügen: Öffnen Sie im Projekt `01-unit-converter` die Datei `MainWindow.axaml`. Ein Fenster kann nur ein einziges Element direkt enthalten. Damit mehrere Elemente Platz finden, brauchen Sie ein Layout-Element – ersetzen Sie den Text `Welcome to Avalonia!` durch ein `StackPanel`, das seine Inhalte einfach untereinander anordnet:
+1. Elemente hinzufügen: Öffnen Sie im Projekt `01-unit-converter` die Datei `MainWindow.axaml`. Damit mehrere Elemente Platz finden, brauchen Sie ein Layout-Element – ersetzen Sie den Text `Welcome to Avalonia!` durch ein `StackPanel`, das seine Inhalte einfach untereinander anordnet:
 
     ```xml
     <StackPanel>
@@ -23,9 +21,9 @@ Zunächst soll das Programm nur in eine Richtung umrechnen: Eingabe in Pa, Ergeb
     </StackPanel>
     ```
 
-    Ergänzen Sie in `MainWindow.axaml` analog ein Label `Result`, eine leere `TextBox` für das Ergebnis, ein Label `PSI` sowie einen `Button` mit der Aufschrift `Convert`. Setzen Sie außerdem im `Window`-Element den Titel des Fensters auf `Unit Converter`. Starten Sie das Programm: Alle Elemente sind da, aber sie kleben untereinander und die Anordnung passt noch nicht zum Zielbild.
+    Ergänzen Sie in `MainWindow.axaml` analog ein Label `Result`, eine leere `TextBox` für das Ergebnis, ein Label `PSI` sowie einen `Button` mit der Aufschrift `Convert`. Setzen Sie außerdem ganz oben in der Datei im `Window`-Element den Titel des Fensters auf `Unit Converter`. Starten Sie das Programm, Sie sollten alle Elemente sehen.
 
-2. Elemente anordnen: Beschriftung, Eingabefeld und Einheit sollen nebeneinander stehen – dafür gibt es das `Grid`, das seine Inhalte in Zeilen und Spalten anordnet. Ersetzen Sie die sechs Elemente (der Button bleibt außerhalb im `StackPanel`) durch ein Grid mit drei Spalten und zwei Zeilen:
+2. Elemente anordnen: Beschriftung, Eingabefeld und Einheit sollen neben- und untereinander stehen. Dafür gibt es das `Grid`, das seine Inhalte in Zeilen und Spalten anordnet. Ordnen Sie die ersten sechs Elemente (der Button bleibt außerhalb im `StackPanel`) in einem Raster mit drei Spalten und zwei Zeilen an:
 
     ```xml
     <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto">
@@ -35,9 +33,9 @@ Zunächst soll das Programm nur in eine Richtung umrechnen: Eingabe in Pa, Ergeb
     </Grid>
     ```
 
-    Dabei bedeutet `Auto`, dass die Spalte so breit wird wie ihr Inhalt, und `*`, dass die Spalte den restlichen Platz bekommt. Jedes Element gibt mit `Grid.Row` und `Grid.Column` an, in welcher Zelle es steht (Zählung ab 0). Sorgen Sie außerdem mit dem Attribut `SizeToContent="WidthAndHeight"` im `Window`-Element dafür, dass sich die Fenstergröße dem Inhalt anpasst.
+    Dabei bedeutet `Auto`, dass die Spalte so breit wird wie ihr Inhalt, und `*`, dass die Spalte den restlichen Platz bekommt. Jedes Element gibt mit `Grid.Row` und `Grid.Column` an, in welcher Zelle es steht (Zählung ab 0). Sorgen Sie außerdem mit dem Attribut `SizeToContent="WidthAndHeight"` im `Window`-Element dafür, dass sich die Fenstergröße dem Inhalt anpasst. Starten Sie das Programm und überprüfen Sie die Ausgabe.
 
-3. Layout verfeinern: Jetzt fehlen noch Abstände und Ausrichtung.
+3. Layout verfeinern: Die Anordnung der Komponenten ist jetzt richtig, aber schön ist das noch nicht. Daher:
 
     - Geben Sie dem `StackPanel` die Attribute `Margin="20"` (Abstand zum Fensterrand) und `Spacing="10"` (Abstand zwischen den Inhalten) sowie `HorizontalAlignment="Center"` und `VerticalAlignment="Center"`.
     - Im `Grid` erzeugen `ColumnSpacing="10"` und `RowSpacing="10"` Abstände zwischen den Zellen.
@@ -53,36 +51,59 @@ Zunächst soll das Programm nur in eine Richtung umrechnen: Eingabe in Pa, Ergeb
         ```
 
         Ergänzen Sie darin analog einen Style für `TextBox`, der die Breite (`Width`) auf 150 setzt.
-    - Zentrieren Sie den Button mit `HorizontalAlignment="Center"`.
+    - Richten Sie den Button mit `HorizontalAlignment="Right"` rechtsbündig aus.
 
-4. Konvertierung: Damit Sie die Elemente aus dem C#-Code ansprechen können, brauchen sie Namen: Geben Sie den beiden Textboxen und dem Button mit `x:Name` die Namen `ValueTB`, `ResultTB` und `ConvertB`. Setzen Sie bei `ResultTB` zusätzlich `IsReadOnly="True"`, damit dort niemand hineintippen kann.
+4. Konvertierung: Um die eigentliche Konvertierung durchführen zu können, ist noch Folgendes zu erledigen:
 
-    Melden Sie dann in `MainWindow.axaml.cs` im Konstruktor eine Methode für den Klick auf den Button an:
+    - Damit Sie aus dem C#-Code heraus die Elemente ansprechen können, brauchen sie Namen: Geben Sie den beiden Textboxen und dem Button mit `x:Name` die Namen `ValueTB`, `ResultTB` und `ConvertB`. 
+    
+    - Setzen Sie bei `ResultTB` zusätzlich `IsReadOnly="True"`, damit das Feld nicht verändert werden kann.
 
-    ```csharp
-    this.ConvertB.Click += this.OnConvertBClicked;
+    - Melden Sie dann in `MainWindow.axaml.cs` im Konstruktor eine Methode für den Klick auf den Button an:
+
+        ```csharp
+        this.ConvertB.Click += this.OnConvertBClicked;
+        ```
+
+        Die Methode `OnConvertBClicked` gibt es noch nicht. Lassen Sie sich vom QuickFix helfen: Klicken Sie auf den rot unterschlängelten Namen und erzeugen Sie den Methodenrumpf über die Glühbirne bzw. `Ctrl+.`. Der Typ `RoutedEventArgs` im Parameter der erzeugten Methode kommt aus dem Namespace `Avalonia.Interactivity` – falls er rot unterschlängelt ist, ergänzen Sie am Anfang der Datei die Zeile `using Avalonia.Interactivity;` (auch dabei hilft der QuickFix).
+
+    - Programmieren Sie in der Methode `OnConvertBClicked` die Umrechnung: Lesen Sie den eingegebenen Text mit `this.ValueTB.Text!` aus, wandeln Sie ihn mit `double.Parse` in eine Zahl um und teilen Sie durch den Umrechnungsfaktor. Zeigen Sie das Ergebnis formatiert an:
+
+        ```csharp
+        double input = double.Parse(this.ValueTB.Text!);
+        double result = input / 6894.757293168;
+        this.ResultTB.Text = $"{result:0.0####}";
+        ```
+
+        Testen Sie das Programm: Die Eingabe `6894.757293168` muss genau `1.0` PSI ergeben.
+
+### Auswahl der Einheiten
+
+Bislang rechnet das Programm fest von Pa nach PSI um. Jetzt soll die Einheit auf beiden Seiten frei wählbar sein wie im Bild oben. Das lässt sich mit zwei Auswahllisten (`ComboBox`) und einem Dictionary für die Umrechnungsfaktoren lösen.
+
+Gehen Sie in diesen Schritten vor und testen Sie in jedem Schritt das Programm (wie immer eigentlich).
+
+1. Ersetzen Sie die beiden Labels `Pa` und `PSI` durch Auswahllisten mit entsprechenden Namen. Für die Eingabeeinheit sieht das so aus:
+
+    ```xml
+    <ComboBox x:Name="ValueUnitCoBo" Grid.Row="0" Grid.Column="2"></ComboBox>
+    ...
     ```
 
-    Die Methode `OnConvertBClicked` gibt es noch nicht – lassen Sie sich helfen: Klicken Sie auf den rot unterschlängelten Namen und erzeugen Sie den Methodenrumpf über den QuickFix (Glühbirne bzw. `Ctrl+.`). Der Typ `RoutedEventArgs` im Parameter der erzeugten Methode kommt aus dem Namespace `Avalonia.Interactivity` – falls er rot unterschlängelt ist, ergänzen Sie am Anfang der Datei die Zeile `using Avalonia.Interactivity;` (auch dabei hilft der QuickFix).
+    Die Ausgabeeinheit passen Sie mit dem Namen `ResultUnitCoBo` entsprechend an.
 
-    In der Methode dann die eigentliche Umrechnung: Lesen Sie den eingegebenen Text mit `this.ValueTB.Text!` aus, wandeln Sie ihn mit `double.Parse` in eine Zahl um und teilen Sie durch den Umrechnungsfaktor. Zeigen Sie das Ergebnis formatiert an:
+1. Ergänzen Sie in den Styles eine Breite von 100 für `ComboBox`.
 
-    ```csharp
-    this.ResultTB.Text = $"{result:0.0####}";
-    ```
-
-    Testen Sie das Programm: Die Eingabe `6894.757293168` muss genau `1.0` PSI ergeben.
-
-5. Einheiten auswählen: Zum Schluss soll die Einheit auf beiden Seiten frei wählbar sein wie im Bild oben. Ersetzen Sie dazu die beiden Labels `Pa` und `PSI` durch Auswahllisten (`ComboBox`) mit den Namen `ValueUnitCoBo` und `ResultUnitCoBo`. Ergänzen Sie in den Styles eine Breite von 100 für `ComboBox` und richten Sie den Button mit `HorizontalAlignment="Right"` rechtsbündig aus.
-
-    Die Umrechnungsfaktoren speichern Sie am besten in einem Dictionary, das jeder Einheit ihren Faktor nach Pa zuordnet – als Attribut der Klasse:
+1. Speichern Sie die Umrechnungsfaktoren in einem Dictionary, das jeder Einheit den Faktor nach Pa zuordnet. Das Dictionary ist ein Attribut der Klasse:
 
     ```csharp
     // Umrechnungsfaktor Wert mit Einheit -> N/m² (Pa)
     public Dictionary<string, double> Factors = [];
     ```
 
-    Füllen Sie das Dictionary im Konstruktor mit den Einheiten `Pa` (Faktor 1), `MPa` (1e6), `N/m²` (1), `N/mm²` (1e6), `kN/cm²` (1e7) und `PSI` (6894.757293168). Die Einträge der Auswahllisten sind dann einfach die Schlüssel des Dictionarys:
+    Füllen Sie das Dictionary im Konstruktor mit den Einheiten `Pa` (Faktor 1), `MPa` (1e6), `N/m²` (1), `N/mm²` (1e6), `kN/cm²` (1e7) und `PSI` (6894.757293168). Hier müssen Sie gegebenenfalls nochmal in die Folien zu den Datenstrukturen schauen.
+    
+1. Danach füllen Sie die Einträge der Auswahllisten mit den Schlüsseln des Dictionarys:
 
     ```csharp
     this.ValueUnitCoBo.ItemsSource = this.Factors.Keys;
@@ -91,13 +112,14 @@ Zunächst soll das Programm nur in eine Richtung umrechnen: Eingabe in Pa, Ergeb
 
     Entsprechend für `ResultUnitCoBo`, dort mit `SelectedIndex = 1`.
 
-    Passen Sie zuletzt die Umrechnung an. Die gewählte Einheit liefert die ComboBox mit
+1. Passen Sie zuletzt die Umrechnung an. Die gewählte Einheit liefert die ComboBox mit
 
     ```csharp
     string inputUnit = (string)this.ValueUnitCoBo.SelectedItem!;
+    double inputFactor = this.Factors[inputUnit];
     ```
 
-    Die Idee der Umrechnung: Erst mit dem Faktor der Eingabe-Einheit nach Pa umrechnen (multiplizieren), dann mit dem Faktor der Ergebnis-Einheit in die Zieleinheit (dividieren). Spendieren Sie der Formatangabe ein paar zusätzliche `#`, damit auch kleine Werte genau angezeigt werden.
+    Rechnen Sie zunächst mit dem Faktor der Eingabeeinheit nach Pa um (multiplizieren) und dann mit dem Faktor der Ausgabeeinheit in die Zieleinheit (dividieren). Ergänzen Sie in der Formatangabe ein paar zusätzliche `#`, damit auch kleine Werte genau angezeigt werden.
 
-    Testen Sie das fertige Programm mit dem Beispiel aus dem Bild: $3.14\,\mathrm{kN/cm^2}$ ergeben ungefähr $4554.18\,\mathrm{PSI}$.
+    Testen Sie das Programm mit dem Beispiel aus dem Bild: $3.14\,\mathrm{kN/cm^2}$ ergeben ungefähr $4554.18\,\mathrm{PSI}$.
 :::
