@@ -1,0 +1,1 @@
+- Projekt mit `dotnet new avalonia.app -o clickme` anlegen

@@ -26,6 +26,7 @@ public partial class MainWindow : Window
         this.PlotB.Click += this.OnPlotBClicked;
         this.ExitB.Click += this.OnExitBClicked;
 
+        // Anzeigen
         this.Apply();
     }
 
