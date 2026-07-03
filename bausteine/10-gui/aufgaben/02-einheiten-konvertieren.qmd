@@ -33,7 +33,7 @@ Zunächst soll das Programm nur von Pascal nach PSI umrechnen. Die Auswahl der E
     </Grid>
     ```
 
-    Dabei bedeutet `Auto`, dass die Spalte so breit wird wie ihr Inhalt, und `*`, dass die Spalte den restlichen Platz bekommt. Jedes Element gibt mit `Grid.Row` und `Grid.Column` an, in welcher Zelle es steht (Zählung ab 0). Sorgen Sie außerdem mit dem Attribut `SizeToContent="WidthAndHeight"` im `Window`-Element dafür, dass sich die Fenstergröße dem Inhalt anpasst. Starten Sie das Programm und überprüfen Sie die Ausgabe.
+    Dabei bedeutet `Auto`, dass die Spalte so breit wird wie ihr Inhalt ist, und `*`, dass die Spalte den restlichen Platz bekommt. Jedes Element gibt mit `Grid.Row` und `Grid.Column` an, in welcher Zelle es steht (Zählung ab 0). Sorgen Sie außerdem mit dem Attribut `SizeToContent="WidthAndHeight"` im `Window`-Element dafür, dass sich die Fenstergröße dem Inhalt anpasst. Starten Sie das Programm und überprüfen Sie die Ausgabe.
 
 3. Layout verfeinern: Die Anordnung der Komponenten ist jetzt richtig, aber schön ist das noch nicht. Daher:
 
