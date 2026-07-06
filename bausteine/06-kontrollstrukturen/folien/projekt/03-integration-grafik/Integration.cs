@@ -44,5 +44,5 @@ p.Color = Colors.Red;
 app.Add(p);
 
 // Results
-app.SaveImage("integration-2.png");
+app.SaveImage("../../bilder/integration-2.png");
 Console.WriteLine($"Integral I ≈ {sum}");

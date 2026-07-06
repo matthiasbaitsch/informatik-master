@@ -63,11 +63,11 @@ public class SteelHall
         Group sectionPlan = new Group();
         double hr = this.Span / 2 * Tan(this.RoofPitchRad());
         double hb = beamH / Cos(this.RoofPitchRad());
-        double x1 = -colW / 2;
-        double x2 = colW / 2;
+        double x1 = -colH / 2;
+        double x2 = colH / 2;
         double x3 = this.Span / 2;
-        double x4 = this.Span - colW / 2;
-        double x5 = this.Span + colW / 2;
+        double x4 = this.Span - colH / 2;
+        double x5 = this.Span + colH / 2;
         double y1 = this.Height - hb / 2;
         double y2 = this.Height;
         double y3 = this.Height + hb / 2;

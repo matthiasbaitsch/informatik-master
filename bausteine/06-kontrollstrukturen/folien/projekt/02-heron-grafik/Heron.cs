@@ -26,5 +26,5 @@ Text t = new Text($"Alle Flächen haben den Inhalt x = {x}", 2.0, x / 1.5, 0.3);
 t.VJust = 1.0;
 app.Add(t);
 
-app.SaveImage("heron.png", 1200);
+app.SaveImage("../../bilder/heron.png", 1200);
 // app.Show();
