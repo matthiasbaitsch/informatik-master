@@ -15,7 +15,9 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 
 ## Projektstruktur
 
-- `lernpfad/` ist automatisch generiert – nie manuell bearbeiten. Alle Änderungen gehen in `bausteine/`. Ausnahme: `lernpfad/skripte/` ist nicht generiert und darf direkt bearbeitet werden.
+- `lernpfad/` ist automatisch generiert – nie manuell bearbeiten. Alle Änderungen gehen in `bausteine/`.
+- Skripte (Julia) liegen in `skripte/` und dürfen direkt bearbeitet werden.
+- Manche Dateien existieren bewusst mehrfach (z.B. in Startcode und Musterlösung). `skripte/duplikate.txt` listet die inhaltsgleichen Gruppen; der Pre-Commit-Hook `githooks/pre-commit` erzeugt die Liste mit `julia skripte/duplikate.jl` neu und schlägt an, wenn sie sich dabei ändert – also wenn eine Kopie einseitig geändert wurde oder Duplikate hinzugekommen/weggefallen sind.
 
 ## Technischer Aufbau
 

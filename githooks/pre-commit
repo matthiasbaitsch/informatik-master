@@ -1,0 +1,9 @@
+#!/bin/sh
+# -t1 vermeidet sporadische Segfaults beim Prozessende von Julia 1.12 auf macOS
+julia -t1 skripte/duplikate.jl || exit 1
+if ! git diff --quiet -- skripte/duplikate.txt; then
+	git --no-pager diff -- skripte/duplikate.txt
+	echo "skripte/duplikate.txt hat sich geändert: Änderung in alle Kopien übernehmen –"
+	echo "oder duplikate.txt mit committen, falls die Abweichung gewollt ist."
+	exit 1
+fi

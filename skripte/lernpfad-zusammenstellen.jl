@@ -211,8 +211,8 @@ end
 # -------------------------------------------------------------------------------------------------
 
 Random.seed!(87362)
-bausteine_folder = realpath(joinpath(@__DIR__, "../../bausteine"))
-lernpfad_folder = realpath(joinpath(@__DIR__, ".."))
+bausteine_folder = realpath(joinpath(@__DIR__, "../bausteine"))
+lernpfad_folder = realpath(joinpath(@__DIR__, "../lernpfad"))
 
 components = [
     (make_slides, "folien"),

@@ -91,9 +91,9 @@ end
 # Main
 # -------------------------------------------------------------------------------------------------
 
-template_file        = realpath(joinpath(@__DIR__, "../../studienarbeit/template.qmd"))
-studienarbeit_folder = realpath(joinpath(@__DIR__, "../../studienarbeit"))
-lernpfad_folder      = realpath(joinpath(@__DIR__, ".."))
+template_file        = realpath(joinpath(@__DIR__, "../studienarbeit/template.qmd"))
+studienarbeit_folder = realpath(joinpath(@__DIR__, "../studienarbeit"))
+lernpfad_folder      = realpath(joinpath(@__DIR__, "../lernpfad"))
 pool_folder          = joinpath(studienarbeit_folder, "aufgabenpool")
 output_folder        = joinpath(lernpfad_folder, "studienarbeit", "c")
 template_text        = read(template_file, String)
