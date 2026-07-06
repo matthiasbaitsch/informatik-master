@@ -36,15 +36,15 @@ jobs:
 
       - name: "Install Julia packages"
         run: julia --project -e 'using Pkg; Pkg.instantiate()'
-        working-directory: lernpfad/skripte
+        working-directory: skripte
 
       - name: "Prepare render 1"
         run: julia --project lernpfad-zusammenstellen.jl
-        working-directory: lernpfad/skripte
+        working-directory: skripte
 
       - name: "Prepare render 2"
         run: julia --project studienarbeit-zusammenstellen.jl
-        working-directory: lernpfad/skripte
+        working-directory: skripte
 
       - name: "Render"
         run: |
