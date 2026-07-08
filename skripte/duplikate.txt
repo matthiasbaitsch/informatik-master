@@ -1,6 +1,3 @@
-bausteine/01-einfuehrung/folien/beam-structure.png
-bausteine/01-einfuehrung/folien/bilder/beam-structure.png
-
 bausteine/02-installation/aufgaben/projekt/01-beispielprogramm/01-beispielprogramm.csproj
 bausteine/03-elementare-datentypen/aufgaben/projekt-musterloesung/01-variablen/variablen.csproj
 bausteine/03-elementare-datentypen/aufgaben/projekt-musterloesung/02-rechnen/rechnen.csproj
