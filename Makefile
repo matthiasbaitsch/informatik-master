@@ -22,6 +22,9 @@ copy-templates:
 		if [[ "$$f" == *-schritte ]]; then \
 			package=$$package-schritte; \
 		fi; \
+		if [[ "$$f" == *-playground ]]; then \
+			package=$$package-playground; \
+		fi; \
 		cp bausteine/00-templates/.editorconfig $$f; \
 		cp -r bausteine/00-templates/.vscode $$f; \
 		cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \
