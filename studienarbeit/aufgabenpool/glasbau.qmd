@@ -1,8 +1,31 @@
 ---
-titel: "Aufgabenstellung aus dem Bereich Glasbau"
+titel: "Berechnung von Schnittgrößen und Verformungen von Glasplatten"
 titel-kurz: "Glasbau"
 betreuende: 
   - "Dr.-Ing. Denis Busch"
 ---
 
-Wird noch ergänzt.
+Es ist ein Programm zu entwickeln, das die Schnittgrößen und Verformungen von einachsig und zweiachsig gespannten Glasplatten berechnet. Die Berechnung soll auf Basis der Tabellen und Bemessungsansätze nach Beyle, Feldmeier und Sedlacek erfolgen – sowohl nach linearer als auch nach nichtlinearer Theorie.
+
+**Rahmenbedingungen**
+
+- **Bauteil**: Flachglasplatten (einachsig und zweiachsig gespannt)
+- **Belastung**: z.B. gleichmäßig verteilte Flächenlast, Linienlast, Einzellast
+- **Material**: Glas mit vorgegebenen Kennwerten (E-Modul, Dichte, zulässige Spannungen etc.)
+- **Theorieansätze**:
+  - Lineare Plattentheorie
+  - Nichtlineare Theorie (z.B. große Durchbiegungen)
+- **Bemessungsgrundlagen**: Tabellen/Diagramme nach Beyle, Feldmeier, Sedlacek (Beiwerttabellen für Durchbiegungen und Spannungen)
+
+**Anforderungen an das Programm**
+
+1.  **Eingabegrößen**
+    - **Geometrie**: Plattenabmessungen, Dicke, Lagerungsbedingungen (einachsig / zweiachsig gespannt, Randbedingungen)
+    - **Belastung**: Art und Größe der Lasten
+    - **Materialparameter**: E-Modul, charakteristische Festigkeit, ggf. Sicherheitsbeiwerte
+2.  **Berechnungsumfang**
+    - Berechnung der Spannungen
+    - Berechnung der Verformungen
+3.  **Ausgabe / Visualisierung**
+    - Numerische Ausgabe
+    - Grafische Ausgabe des Systems sowie relevanten Ergebnisgrößen
