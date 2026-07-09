@@ -35,6 +35,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 
 - Den Nutzer duzen
 - „sauber" nicht als Qualitätsurteil verwenden (z.B. nicht „das Dokument ist sauber") – stattdessen „gut", „stimmig", „nichts anzumerken" o.Ä.
+- Auf Fragen („wie geht…?", „kann ich…?", „warum…?") zuerst nur erklären – Code erst ändern, wenn der Nutzer ausdrücklich darum bittet
 
 ## Hinweise zur Zusammenarbeit
 
