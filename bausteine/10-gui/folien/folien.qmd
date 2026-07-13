@@ -1,3 +1,5 @@
+# Einführung
+
 ## Grafische Benutzungsoberflächen (GUIs)
 
 ::: {.columns}
@@ -29,10 +31,10 @@
 ## Arbeitsweise Avalonia
 
 ::: {.r-stack}
-::: {.fragment}
+::: {.fragment .fade-out fragment-index=1}
 ![](bilder/avalonia-arbeitsweise-1.png){height=400px}
 :::
-::: {.fragment}
+::: {.fragment .fade-in fragment-index=1}
 ![](bilder/avalonia-arbeitsweise-2.png){height=400px}
 :::
 ::: {.fragment}
@@ -54,24 +56,21 @@
 ### Grafische Oberfläche in `MainWindow.axaml.cs`
 
 ::: {.columns}
-::: {.column width=75%}
+::: {.column width=65%}
 ```{.xml code-line-numbers="true"}
 <Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="clickme.MainWindow"
+        ...
         Title="The Amazing Clickme">
     <Button x:Name="ClickmeB">Clicked 0 times</Button>
 </Window>
 ```
 :::
-::: {.column width=25%}
-- Zeilen 1-6 vordefiniert
-- Zeile 7: Titel des Fensters
-- Zeile 8: Button einfügen
-    - Attribut `ClickmeB`
+::: {.column width=3%}
+:::
+::: {.column width=32%}
+- Erster Teil vordefiniert
+- Zeile 3: Titel des Fensters
+- Zeile 4: Button `ClickmeB` einfügen
 :::
 :::
 
@@ -80,14 +79,16 @@
 ### Programmlogik in `MainWindow.axaml.cs`
 
 ::: {.columns}
-::: {.column width=75%}
+::: {.column width=65%}
 ```{.csharp code-line-numbers="true"}
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+
 namespace clickme;
 
 public partial class MainWindow : Window
 {
+
     public int Count = 1;
 
     public MainWindow()
@@ -103,14 +104,15 @@ public partial class MainWindow : Window
 }
 ```
 :::
-::: {.column width=25%}
-- Zeile 8: Attribut zum Zählen
-- Zeile 12: Initialisierung, vordefiniert
-- Zeile 13: Methode bei Button anmelden
-- Zeilen 16-19: Wird bei Klick ausgeführt
+::: {.column width=3%}
+:::
+::: {.column width=32%}
+- Zeile 9: Attribut zum Zählen
+- Zeile 13: Initialisierung, vordefiniert
+- Zeile 14: Methode bei Button anmelden
+- Zeilen 17-20: Wird bei Klick ausgeführt
 :::
 :::
-
 
 ## Wie das funktioniert (die grobe Idee)
 
@@ -118,59 +120,476 @@ public partial class MainWindow : Window
 
 ```{mermaid}
 graph LR
-    A["MainWindow.axaml"] -->|Compiler| B["Generierter Code"]
+    A["MainWindow.axaml"] -->|Avalonia| B["Generierter C# Code"]
     C["MainWindow.axaml.cs"] --> D
     B --> D["MainWindow"]
 ```
 
+[]{.down20}
+
+- Avalonia erzeugt aus `.axaml` automatisch C#-Code
+- `MainWindow` = `MainWindow.axaml.cs` + `Generierter Code`
+- `InitializeComponent()` ruft den generierten Code auf
+- Datei `MainWindow.axaml.cs` heißt auch Code-Behind
+
+→ `ClickmeB` in Klasse `MainWindow` verfügbar, obwohl von uns nicht deklariert
+
+## XML - eXtensible Markup Language
+
 []{.down40}
 
-- Compiler erzeugt aus `.axaml` automatisch C#-Code
-- Generierter Code und `MainWindow.axaml.cs` bilden zusammen eine Klasse
-- `InitializeComponent()` ruft den generierten Code auf
-
-→ Deshalb: `ClickmeB` in `MainWindow` verfügbar, obwohl es dort nicht deklariert ist
-
-## XML
-
-[]{.down30}
-
-- eXtensible Markup Language – textbasiertes Format für hierarchisch strukturierte Daten
-- Grundbausteine: Elemente (Tags) und Attribute
-
-    ```xml
-    <Person Name="Anna" Age="30">
-        <Address City="Bochum"></Address>
-    </Person>
-    ```
-
-- `Person`, `Address`: Elemente – Start-Tag `<Tag>` und Ende-Tag `</Tag>`
-- `Name="Anna"`: Attribut, im Start-Tag angegeben
-- `Address` ist ein Bestandteil von `Person`
+```xml
+<Person Name="Anna" Age="30">    
+    <Address City="Bochum" Street="Am Hochschulcampus 1"></Address>
+</Person>
+```
 
 []{.down20}
 
-Datei `MainWindow.axaml` ist XML
+- [XML](https://de.wikipedia.org/wiki/Extensible_Markup_Language){target="_blank"} ist ein textbasiertes Format für hierarchisch strukturierte Daten
+- Grundbausteine sind Elemente der Form `<Elementname></Elementname>`
+    - Start-*Tag* `<Elementname>` und End-*Tag* `</Elementname>`
+    - Das englische Wort *Tag* steht für Etikett oder Auszeichnung
+    - `Name="Anna"`: Attribute, im Start-Tag angegeben
+- Elemente können Text oder weitere Elemente enthalten
+    - `Address` ist ein Bestandteil von `Person`
 
-- Element `Button` erzeugt `Button`-Objekt
-- Attribut `x:Name` erzeugt Attribut in Klasse
+[]{.down20}
 
-# Komponenten
+→ Datei `MainWindow.axaml` ist XML
 
-TODO
+# Komponenten der grafischen Oberfläche
 
-# Layout
+## Komponenten heißen in Avalonia Controls
 
-TODO
+[]{.down30}
 
-# Mit Code verknüpfen
+- Controls (Komponenten) sind Bausteine der grafischen Oberfläche
+- Unterteilung von Controls in drei Gruppen
+    1. Eingabe: `Button`, `TextBox`, `CheckBox`, ...
+    1. Anzeige: `TextBlock`, `Image`, `BoDrawCanvas`, ...
+    1. Layout: `StackPanel`, `Grid`, ... ordnen andere Controls an
+- Jedes Control ist eine C#-Klasse
+    - Das XAML-Element `<Button>` erzeugt ein Objekt der Klasse `Button`
+    - XAML-Attribute setzen Properties des Objekts (`Content`, `FontSize`, ...)
+- Über Ereignisse (Events) reagiert das Programm auf Benutzeraktionen
+    - Beispiel: `Click` beim Button
+- Einige Controls nur mit kommerzieller Avalonia-Lizenz (Avalonia Pro)
 
-TODO
+[]{.down20}
 
-# Zusammenfassung etc.
+→ Schauen Sie auf jeden Fall in die [Dokumentation](https://docs.avaloniaui.net/controls){target="_blank"}
 
-TODO
+## Eingabecontrols {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="9-20"}
+{{< include projekt/02-input-controls/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/02-input-controls.png){class="drop-shadow"}
+:::
+:::
+
+::: {.columns}
+::: {.column}
+- `Button`: Zum anklicken (klar)
+- `CheckBox`: Aktiviert oder nicht aktiviert
+- `ComboBox`: Auswahl aus vorgegebenen Werten
+- `NumericUpDown`: Eingaben von Zahl mit hoch/runter
+:::
+::: {.column}
+- `RadioButton`: Mehrere Checkboxen, eine aktiv
+- `Slider`: Zahlenwert festlegen
+- `TextBox`: Kurzen Text oder Wert eingeben
+:::
+:::
+
+## Anzeigecontrols: `Image` und `TextBlock` {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="9-17"}
+{{< include projekt/03-output-controls/MainWindow.axaml >}}
+```
+```{.xml filename="projektname.csproj"}
+<ItemGroup>
+    ...
+    <AvaloniaResource Include="Assets/**" />
+</ItemGroup>
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/03-output-controls.png){class="drop-shadow"}
+:::
+:::
+
+- `Image`: Bild einfügen
+    - Grafik in Ordner innerhalb des Projekts (üblich ist `Assets`)
+    - Zusätzlicher Eintrag in `.csproj`-Datei (auch eine XML-Datei)
+- `TextBlock`: Text anzeigen, ggf. formatiert
+
+## Anzeigecontrols: `BoDrawCanvas`  {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="2,9"}
+{{< include projekt/04-output-controls-bodraw/MainWindow.axaml >}}
+```
+```{.csharp filename="MainWindow.axaml.cs" code-line-numbers="11"}
+{{< include projekt/04-output-controls-bodraw/MainWindow.axaml.cs >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/04-output-controls-bodraw.png){class="drop-shadow"}
+:::
+:::
+
+- `BoDrawCanvas`: Zeichnen mit BoDraw Zeichenpaket (wie `BoDrawApp`)
+- Verfügbar machen in Zeile 2 (wird automatisch eingefügt)
+
+# Layoutcontrols
+
+## Layoutcontrols: `StackPanel` {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="7-14"}
+{{< include projekt/05-layout-controls-stack-panel-1/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/05-layout-controls-stack-panel-1.png){class="drop-shadow"}
+:::
+:::
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="7-11"}
+{{< include projekt/05-layout-controls-stack-panel-2/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/05-layout-controls-stack-panel-2.png){class="drop-shadow"}
+:::
+:::
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=55%}
+- `StackPanel`: Ordnet Controls neben- oder untereinander an
+- `Orientation`: `Vertical` (Voreinstellung) oder `Horizontal`
+:::
+::: {.column width=45%}
+- `Spacing`: Abstand zwischen den Controls
+- `Margin`: Abstand zum umgebenden Element
+:::
+:::
+
+## Layoutcontrols: `Grid` {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="8-9,13-21|10-12|"}
+{{< include projekt/06-layout-controls-grid/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/06-layout-controls-grid.png){class="drop-shadow"}
+:::
+:::
+
+- `Grid`: Ordnet Controls in Zeilen und Spalten an
+- `RowSpacing` und `ColumnSpacing`: Abstand zwischen Zeilen und Spalten
+- `ColumnDefinitions` und `RowDefinitions`: `Auto` (so groß wie der Inhalt), `*` (restlicher Platz) oder feste Größe
+- `Grid.Row` und `Grid.Column`: Position festlegen (Zählung beginnt bei 0)
+- `Grid.ColumnSpan` und `Grid.RowSpan`: Control über mehrere Spalten/Zeilen
+- `Style` – setzt eine Eigenschaft für mehrere Controls
+
+## Layoutcontrols: `DockPanel` {.smaller}
+
+[]{.down20}
+
+::: {.r-stack}
+::: {.fragment .fade-out fragment-index=1}
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="7-13"}
+{{< include projekt/07-layout-controls-dock-panel-1/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/07-layout-controls-dock-panel-1.png){class="drop-shadow"}
+:::
+:::
+:::
+
+::: {.fragment .fade-in fragment-index=1}
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="7-13"}
+{{< include projekt/07-layout-controls-dock-panel-2/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/07-layout-controls-dock-panel-2.png){class="drop-shadow"}
+:::
+:::
+:::
+:::
+
+[]{.down40}
+
+- `DockPanel`: Ordnet Controls an den Rändern des Fensters an
+- `DockPanel.Dock`: Seite festlegen mit `Top`, `Bottom`, `Left` oder `Right`
+- Controls werden in der angegebenen Reihenfolge nacheinander angedockt
+- Das letzte Control füllt den verbleibenden Platz aus
+
+→ Praktisch für Anwendungsfenster mit Werkzeugleiste und Anzeigebereich
+
+## Layoutcontrols: `TabControl`, `GroupBox` und `Border` {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+::: {.tall-code}
+```{.xml filename="MainWindow.axaml" code-line-numbers="8-15|16-22|23-25|8-25"}
+{{< include projekt/08-layout-controls-misc/MainWindow.axaml >}}
+```
+:::
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/08-layout-controls-misc.png){class="drop-shadow"}
+:::
+:::
+
+[]{.down20}
+
+- `TabControl`: Verteilt Inhalte auf Registerkarten, je Registerkarte ein `TabItem` mit `Header`
+- `GroupBox`: Zeichnet einen Rahmen mit Überschrift um ein Control
+- `Border`: Zeichnet einen Rahmen um ein Control
+
+## Layoutcontrols: Feinjustierung {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="6|8-13|6,8-13"}
+{{< include projekt/09-layout-controls-adjustment/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/09-layout-controls-adjustment.png){class="drop-shadow"}
+:::
+:::
+
+[]{.down20}
+
+- `Width` und `Height`: Feste Größe vorgeben
+- `SizeToContent`: `Width`, `Height` oder `WidthAndHeight` Größe an Inhalt anpassen
+- `Margin`: Abstand zum umgebenden Element
+- `Padding`: Abstand zwischen Rand und Inhalt eines Controls
+- `HorizontalAlignment` und `VerticalAlignment`: `Left`, `Center`, `Right` oder `Stretch`
+
+→ Größen möglichst dem Layout überlassen, feste Werte vermeiden
+
+## Layoutcontrols: Controls verschachteln {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=70%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="7-26"}
+{{< include projekt/10-layout-controls-nested/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=20.5%}
+[]{.up10}
+![](bilder/10-layout-controls-nested.png){class="drop-shadow"}
+:::
+:::
+
+[]{.down20}
+
+- Layout-Controls lassen sich beliebig verschachteln
+- Anmerkung: XML-Code ist leider nicht besonders gut lesbar (Meinung des Autors)
+
+# Controls mit eigenem Code verknüpfen
+
+## Controls im Code ansprechen
+
+[]{.down20}
+
+```xml
+<TextBox x:Name="NameTB"></TextBox>
+```
+
+```csharp
+this.NameTB.Text = "Anna";
+string name = this.NameTB.Text!;
+```
+
+[]{.down20}
+
+- `x:Name`: Macht das Control als Attribut in `MainWindow` verfügbar
+    - Ohne `x:Name` ist das Control aus dem Code nicht erreichbar
+- Alle Eigenschaften lassen sich im Code lesen und setzen
+
+## Auf Ereignisse reagieren
+
+[]{.down20}
+
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+    this.OkB.Click += this.OnOkClicked;
+}
+
+public void OnOkClicked(object? sender, RoutedEventArgs e) { ... }
+```
+
+[]{.down20}
+
+- Events melden Benutzeraktionen (wie beim Minimalbeispiel)
+    - Methode mit `+=` beim Event anmelden (meist im Konstruktor)
+    - Avalonia ruft die Methode dann automatisch auf
+- Wichtige Events
+    - `Button`: `Click`, `TextBox`: `TextChanged`, `CheckBox`: `IsCheckedChanged`
+    - `ComboBox`: `SelectionChanged`, `Slider` und `NumericUpDown`: `ValueChanged`
+
+## Eingabewerte auslesen
+
+[]{.down20}
+
+```csharp
+string name = this.NameTB.Text!;
+double load = double.Parse(this.LoadTB.Text!);
+bool selfWeight = this.SelfWeightCB.IsChecked == true;
+int material = this.MaterialCoBo.SelectedIndex;
+```
+
+[]{.down20}
+
+- `Slider`: `Value` liefert `double`
+- `TextBox`: `Text!` liefert eine Zeichenkette
+    - Zahlen mit `double.Parse` oder `int.Parse` umwandeln
+- `CheckBox`: Abfrage, ob angehakt, mit `IsChecked == true`
+- `ComboBox`: `SelectedIndex` liefert die Position des gewählten Eintrags
+
+# Was man sonst noch wissen kann
+
+## Ungültige Eingaben abfangen
+
+[]{.down20}
+
+```csharp
+public void OnComputeClicked(object? sender, RoutedEventArgs e)
+{
+    try
+    {
+        double load = double.Parse(this.LoadTB.Text!);
+        this.ResultTB.Text = $"Gesamtlast: {5.0 * load} kN";
+    }
+    catch (Exception)
+    {
+        this.ResultTB.Text = "Ungültige Eingabe";
+    }
+}
+```
+
+[]{.down20}
+
+- `double.Parse` löst bei ungültigem Text eine Exception (Ausnahme) aus
+    - Unbehandelt bricht das Programm dann ab
+- `try`-Block: Code, der schiefgehen kann
+- `catch`-Block: Wird ausgeführt, wenn im `try`-Block ein Fehler auftritt
+    - `Exception` fängt dabei alle Arten von Fehlern ab
+
+## Namenskonvention
+
+[]{.down20}
+
+```xml
+<TextBox x:Name="NameTB"></TextBox>
+<CheckBox x:Name="SelfWeightCB">Eigengewicht berücksichtigen</CheckBox>
+<Button x:Name="OkB">Ok</Button>
+```
+
+[]{.down20}
+
+- Namen von Controls: Bedeutung + Kürzel für die Art des Controls
+    - `B` = `Button`, `TB` = `TextBox`, `CB` = `CheckBox`, `CoBo` = `ComboBox`, ...
+    - Vorteil: Am Namen ist ablesbar, um welche Art Control es sich handelt
+- Event-Methoden: `On` + Name + Ereignis in der Vergangenheitsform
+    - Beispiele: `OnOkClicked`, `OnComputeClicked`
+- Keine offizielle C#-Regel, sondern unsere Konvention in dieser Veranstaltung
+    - Wichtig ist vor allem, einheitlich zu bleiben
+
+# Zusammenfassung 
+
+## Zusammenfassung
+
+[]{.down30}
+
+- Grafische Oberflächen bestehen aus Controls: Eingabe, Anzeige, Layout
+- Die Oberfläche wird deklarativ in XAML beschrieben (`MainWindow.axaml`)
+- Layoutcontrols ordnen andere Controls an
+    - `StackPanel`, `Grid`, `DockPanel`, ...
+    - Verschachteln ergibt komplexe Layouts
+- Die Programmlogik steht im Code-Behind (`MainWindow.axaml.cs`)
+    - `x:Name` macht Controls im Code verfügbar
+    - Events verknüpfen Benutzeraktionen mit eigenen Methoden
 
 ## Quellen
 
-- [Dokumentation](https://docs.avaloniaui.net/docs/layout/)
+- [Dokumentation](https://docs.avaloniaui.net)

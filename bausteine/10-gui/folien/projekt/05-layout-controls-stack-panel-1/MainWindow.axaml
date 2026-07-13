@@ -1,0 +1,15 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="layout_controls_stack_panel_1.MainWindow"
+        Width="250" SizeToContent="Height" Title="Layout mit StackPanel">
+    <StackPanel Margin="20" Spacing="5">
+        <TextBlock>Name</TextBlock>
+        <TextBox>Jackie Brown</TextBox>
+        <TextBlock>Länge in m</TextBlock>
+        <NumericUpDown Value="4.5"/>
+        <TextBlock>Last in kN/m</TextBlock>
+        <NumericUpDown Value="12.0"/>
+    </StackPanel>
+</Window>

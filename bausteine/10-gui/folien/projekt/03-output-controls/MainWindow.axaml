@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="output_controls.MainWindow"
+        Width="250" SizeToContent="Height"
+        Title="Controls zur Ausgabe">
+    <StackPanel Margin="20" Spacing="30">
+        <Image Source="/Assets/hs-bo_logo.png" Width="200"></Image>
+        <TextBlock>Einfacher Textblock</TextBlock>
+        <TextBlock Foreground="Red">Einfacher Textblock mit Farbe</TextBlock>
+        <TextBlock TextWrapping="Wrap" Width="200">
+            Mehrzeiliger Texblock: <LineBreak/>
+            Das Glas ist in <Bold>halb voll</Bold> und <LineBreak/>
+            <Run Foreground="DarkSlateBlue" FontWeight="Bold">die Lage weitaus besser</Run><LineBreak/>
+            als viele <Italic>Pessimisten</Italic> denken.
+        </TextBlock>
+    </StackPanel>
+</Window>

@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="layout_controls_misc.MainWindow"
+        Width="250" SizeToContent="Height" Title="Weitere Layout Controls">
+    <StackPanel Margin="20" Spacing="20">
+        <TabControl>
+            <TabItem Header="System">
+                <TextBlock>Eingabeoptionen System</TextBlock>
+            </TabItem>
+            <TabItem Header="Lasten">
+                <TextBlock>Eingabeoptionen Lasten</TextBlock>
+            </TabItem>
+        </TabControl>
+        <GroupBox Header="Radiosender">
+            <StackPanel>
+                <RadioButton>Radio Atlantic</RadioButton>
+                <RadioButton>Radio Paradise</RadioButton>
+                <RadioButton>Radio Regenbogen</RadioButton>
+            </StackPanel>
+        </GroupBox>
+        <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="2">
+            <TextBox>Nummer 4</TextBox>
+        </Border>
+    </StackPanel>
+</Window>

@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="layout_controls_grid.MainWindow"
+        Width="250" SizeToContent="Height"
+        Title="Layout mit Grid">
+    <Grid Margin="20" RowSpacing="5" ColumnSpacing="10"
+          ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto">
+        <Grid.Styles><Style Selector="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style></Grid.Styles>
+        <TextBlock Grid.Row="0" Grid.Column="0">Name</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">Jackie Brown</TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0">Länge</TextBlock>
+        <NumericUpDown Grid.Row="1" Grid.Column="1" Value="4.5"/>
+        <TextBlock Grid.Row="1" Grid.Column="2">m</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0">Last</TextBlock>
+        <NumericUpDown Grid.Row="2" Grid.Column="1" Value="12.0"/>
+        <TextBlock Grid.Row="2" Grid.Column="2">kN/m</TextBlock>
+    </Grid>
+</Window>

@@ -45,6 +45,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 ## Arbeitshinweise für Claude
 
 - Linter-Hinweise in `.qmd`-Dateien ignorieren – das macht der Nutzer selbst
+- GUI-Apps nicht ungefragt starten (auch nicht zum Verifizieren oder für Screenshots) – Kompilieren zum Prüfen ist ok, Ausprobieren macht der Nutzer selbst
 - Reihenfolge Beispiel vor Erklärung nicht als Problem werten – didaktisch bewusst so
 - CSS-Abstände in `style-slides.scss` immer über `margin-top` des nachfolgenden Elements steuern, nie über `margin-bottom` – Reveal.js nutzt Flexbox, dort kollabieren Margins nicht und addieren sich sonst unkontrolliert
 - In nummerierten Aufgabenlisten keine Fettschrift für Schrittbezeichnungen – also `1. Titel. Text`, nicht `1. **Titel.** Text`

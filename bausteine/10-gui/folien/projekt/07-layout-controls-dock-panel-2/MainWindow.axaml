@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="layout_controls_dock_panel_2.MainWindow"
+        Width="250" Height="200" Title="Layout mit DockPanel">
+    <DockPanel>
+        <Rectangle Fill="SteelBlue" Width="40" DockPanel.Dock="Left" />
+        <Rectangle Fill="HotPink" Width="60" DockPanel.Dock="Right"/>
+        <Rectangle Fill="LightSalmon" Height="30" DockPanel.Dock="Top"/>
+        <Rectangle Fill="LightGreen" Height="50" DockPanel.Dock="Bottom"/>
+        <Rectangle Fill="Gray" />
+    </DockPanel>
+</Window>

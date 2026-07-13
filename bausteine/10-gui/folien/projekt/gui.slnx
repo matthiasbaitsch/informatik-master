@@ -1,3 +1,15 @@
 <Solution>
   <Project Path="01-clickme/clickme.csproj" />
+  <Project Path="02-input-controls/input-controls.csproj" />
+  <Project Path="03-output-controls/output-controls.csproj" />
+  <Project Path="04-output-controls-bodraw/output-controls-bodraw.csproj" />
+  <Project Path="05-layout-controls-stack-panel-1/layout-controls-stack-panel-1.csproj" />
+  <Project Path="05-layout-controls-stack-panel-2/layout-controls-stack-panel-2.csproj" />
+  <Project Path="06-layout-controls-grid/layout-controls-grid.csproj" />
+  <Project Path="07-layout-controls-dock-panel-1/layout-controls-dock-panel-1.csproj" />
+  <Project Path="07-layout-controls-dock-panel-2/layout-controls-dock-panel-2.csproj" />
+  <Project Path="08-layout-controls-misc/layout-controls-misc.csproj" />
+  <Project Path="09-layout-controls-adjustment/layout-controls-adjustment.csproj" />
+  <Project Path="10-layout-controls-nested/layout-controls-nested.csproj" />
+  <Project Path="99-datagrid/datagrid.csproj" />
 </Solution>

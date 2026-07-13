@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="layout_controls_nested.MainWindow"
+        SizeToContent="WidthAndHeight" Title="Verschachtelte Controls">
+    <DockPanel Margin="10" HorizontalSpacing="10" VerticalSpacing="10">
+        <Grid DockPanel.Dock="Left" RowSpacing="10" ColumnSpacing="5" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*,Auto">
+            <Grid.Styles>
+                <Style Selector="TextBlock">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </Grid.Styles>
+            <TextBlock Grid.Row="0" Grid.Column="0">Length</TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="1">10</TextBox>
+            <TextBlock Grid.Row="0" Grid.Column="2">m</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0">Width</TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1">20</TextBox>
+            <TextBlock Grid.Row="1" Grid.Column="2">m</TextBlock>
+        </Grid>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button>Compute</Button>
+            <Button>Exit</Button>
+        </StackPanel>
+        <Rectangle Width="300" Height="300" Fill="BlanchedAlmond"></Rectangle>
+    </DockPanel>
+</Window>
