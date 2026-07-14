@@ -8,10 +8,10 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         this.InitializeComponent();
-        this.ApplyB.Click += this.ApplyClicked;
+        this.ApplyB.Click += this.OnApplyClicked;
     }
 
-    private void ApplyClicked(object? sender, RoutedEventArgs e)
+    public void OnApplyClicked(object? sender, RoutedEventArgs e)
     {
         RectangularSection s1 = this.Section1Ctrl.CreateSection();
         this.Area1TBl.Text = $"Area is A = {s1.A()} cm²";

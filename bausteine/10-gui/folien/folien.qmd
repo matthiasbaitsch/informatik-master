@@ -1,5 +1,7 @@
 # Einführung
 
+[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## Grafische Benutzungsoberflächen (GUIs)
 
 ::: {.columns}
@@ -164,6 +166,8 @@ graph LR
 
 # Komponenten der grafischen Oberfläche
 
+[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## Komponenten heißen in Avalonia Controls
 
 []{.down30}
@@ -190,7 +194,7 @@ graph LR
 
 ::: {.columns}
 ::: {.column width=70%}
-```{.xml filename="MainWindow.axaml" code-line-numbers="9-20"}
+```{.xml filename="MainWindow.axaml" code-line-numbers="8-19"}
 {{< include projekt/02-input-controls/MainWindow.axaml >}}
 ```
 :::
@@ -207,7 +211,7 @@ graph LR
 - `Button`: Zum Anklicken (klar)
 - `CheckBox`: Aktiviert oder nicht aktiviert
 - `ComboBox`: Auswahl aus vorgegebenen Werten
-- `NumericUpDown`: Eingaben von Zahl mit hoch/runter
+- `NumericUpDown`: Eingabe einer Zahl mit hoch/runter
 :::
 ::: {.column}
 - `RadioButton`: Mehrere Checkboxen, eine aktiv
@@ -271,6 +275,8 @@ graph LR
 
 # Layoutcontrols
 
+[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## Layoutcontrols: `StackPanel` {.smaller}
 
 []{.down20}
@@ -324,7 +330,7 @@ graph LR
 
 ::: {.columns}
 ::: {.column width=70%}
-```{.xml filename="MainWindow.axaml" code-line-numbers="8-9,13-21|10-12|"}
+```{.xml filename="MainWindow.axaml" code-line-numbers="8-9,13-20|10-12|"}
 {{< include projekt/06-layout-controls-grid/MainWindow.axaml >}}
 ```
 :::
@@ -383,7 +389,7 @@ graph LR
 
 []{.down40}
 
-- `DockPanel`: Ordnet Controls an den Rändern des Fensters  und in der Mitte an
+- `DockPanel`: Ordnet Controls an den Rändern des Fensters und in der Mitte an
 - `DockPanel.Dock`: Seite festlegen mit `Top`, `Bottom`, `Left` oder `Right`
 - Control ohne Positionsangabe füllt verbleibenden Platz
 - Die Reihenfolge spielt eine Rolle
@@ -455,7 +461,7 @@ graph LR
 
 ::: {.columns}
 ::: {.column width=70%}
-```{.xml filename="MainWindow.axaml" code-line-numbers="7-26"}
+```{.xml filename="MainWindow.axaml" code-line-numbers="7-24"}
 {{< include projekt/10-layout-controls-nested/MainWindow.axaml >}}
 ```
 :::
@@ -474,6 +480,8 @@ graph LR
 
 # Controls mit eigenem Code verknüpfen
 
+[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+
 ## Controls im Code ansprechen
 
 []{.down40}
@@ -481,7 +489,7 @@ graph LR
 
 ```{.xml filename="MainWindow.axaml"}
 ...
-<TextBox x:Name="NameTB"></TextBox>
+<TextBox x:Name="NameTB"/>
 ...
 ```
 
@@ -524,7 +532,7 @@ public void OnOkClicked(object? sender, RoutedEventArgs e) { ... }
 []{.down20}
 
 - Methode mit `+=` bei Control anmelden
-- In diesem Zusammenhang ist `Click` ein Event (ein Benutzerinteraktion)
+- In diesem Zusammenhang ist `Click` ein Event (eine Benutzerinteraktion)
 - Erster Parameter ist das Objekt, das den Event ausgelöst hat
 - Typ des zweiten Parameters hängt vom Event ab (Vorschlag von VS Code)
 
@@ -551,7 +559,7 @@ string name = this.NameTB.Text!;
 double load = double.Parse(this.LoadTB.Text!);
 double length = this.LengthSL.Value;
 int materialIndex = this.MaterialCoBo.SelectedIndex;
-bool includeDeadfWeight = this.SelfWeightCB.IsChecked == true;
+bool includeDeadWeight = this.DeadWeightCB.IsChecked == true;
 ```
 
 []{.down20}
@@ -586,6 +594,8 @@ bool includeDeadfWeight = this.SelfWeightCB.IsChecked == true;
 → Fehlerbehandlung später
 
 # Rezepte für bestimmte Aufgaben
+
+[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
 
 ## Rezept: Zahl mit `NumericUpDown` einlesen
 
@@ -636,7 +646,7 @@ int numberOfSpans = (int)this.SpansNUD.Value!;
 
 []{.down40}
 
-- Eingabe von strukturieren Daten
+- Eingabe von strukturierten Daten
 - Erfordert in der Regel eine zusätzliche Klasse
 
 ## Rezept: Tabellen mit `DataGrid` 2/4 (Vorbereitung)  {.smaller}
@@ -715,6 +725,8 @@ int numberOfSpans = (int)this.SpansNUD.Value!;
 :::
 
 # Was man sonst noch wissen kann
+
+[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
 
 ## Ungültige Eingaben abfangen
 
@@ -891,8 +903,8 @@ dotnet new avalonia.usercontrol -n RectangularSectionControl
 []{.down40}
 
 ```xml
-<TextBox x:Name="NameTB"></TextBox>
-<CheckBox x:Name="SelfWeightCB">Eigengewicht berücksichtigen</CheckBox>
+<TextBox x:Name="NameTB"/>
+<CheckBox x:Name="DeadWeightCB">Eigengewicht berücksichtigen</CheckBox>
 <Button x:Name="OkB">Ok</Button>
 ```
 
@@ -907,6 +919,8 @@ dotnet new avalonia.usercontrol -n RectangularSectionControl
 - Keine offizielle C#-Regel, sondern unsere Konvention in dieser Veranstaltung
 
 # Zusammenfassung
+
+[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
 
 ## Zusammenfassung
 

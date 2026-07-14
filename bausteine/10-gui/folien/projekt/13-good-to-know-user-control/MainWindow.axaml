@@ -4,7 +4,7 @@
         xmlns:local="using:good_to_know_user_control"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="good_to_know_user_control.MainWindow"
-        Title="Custom Control" Width="250" SizeToContent="Height">
+        Title="User Control" Width="250" SizeToContent="Height">
     <StackPanel Margin="20" Spacing="10">
         <TextBlock>Section 1</TextBlock>
         <local:RectangularSectionControl x:Name="Section1Ctrl"/>

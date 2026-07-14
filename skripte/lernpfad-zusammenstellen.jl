@@ -8,34 +8,34 @@ using ZipArchives
 # -------------------------------------------------------------------------------------------------
 
 struct BuildingBlock
-    path::String
-    number::Int
-    name::String
-    title::String
-    content::Vector{String}
-    duration::Number
+	path::String
+	number::Int
+	name::String
+	title::String
+	content::Vector{String}
+	duration::Number
 end
 
 function BuildingBlock(path::String)
-    bn = basename(path)
-    about = YAML.load_file(joinpath(path, "about.yaml"))
-    return BuildingBlock(
-        path,
-        parse(Int, bn[1:2]), bn[4:end],
-        about["titel"], about["inhalt"], about["dauer"]
-    )
+	bn = basename(path)
+	about = YAML.load_file(joinpath(path, "about.yaml"))
+	return BuildingBlock(
+		path,
+		parse(Int, bn[1:2]), bn[4:end],
+		about["titel"], about["inhalt"], about["dauer"],
+	)
 end
 
 function slug(bb::BuildingBlock)
-    return lpad(bb.number, 2, '0') * "-" * replace(lowercase(bb.title), " " => "-")
+	return lpad(bb.number, 2, '0') * "-" * replace(lowercase(bb.title), " " => "-")
 end
 
 function make_dict(bb::BuildingBlock)
-    return Dict(
-        "title" => bb.title,
-        "slug" => slug(bb),
-        "slug-nn" => slug(bb)[4:end],
-    )
+	return Dict(
+		"title" => bb.title,
+		"slug" => slug(bb),
+		"slug-nn" => slug(bb)[4:end],
+	)
 end
 
 
@@ -44,107 +44,107 @@ end
 # -------------------------------------------------------------------------------------------------
 
 function substitute_text(text::String, dict::Dict)
-    for (key, value) in dict
-        text = replace(text, "\${$(key)}" => string(value))
-    end
-    return text
+	for (key, value) in dict
+		text = replace(text, "\${$(key)}" => string(value))
+	end
+	return text
 end
 
 function resolve_includes(text::String, base_folder::String)
-    result = IOBuffer()
-    pos = 1
-    for m in eachmatch(r"\{\{<\s*include\s+(.*?)\s*>\}\}", text)
-        write(result, text[pos:m.offset-1])
-        path = strip(m.captures[1])
-        full_path = joinpath(base_folder, path)
-        if isfile(full_path)
-            write(result, read(full_path, String))
-        else
-            @warn "Include not found: $full_path"
-            write(result, m.match)
-        end
-        pos = m.offset + ncodeunits(m.match)
-    end
-    write(result, text[pos:end])
-    return String(take!(result))
+	result = IOBuffer()
+	pos = 1
+	for m in eachmatch(r"\{\{<\s*include\s+(.*?)\s*>\}\}", text)
+		write(result, text[pos:(m.offset-1)])
+		path = strip(m.captures[1])
+		full_path = joinpath(base_folder, path)
+		if isfile(full_path)
+			write(result, read(full_path, String))
+		else
+			@warn "Include not found: $full_path"
+			write(result, m.match)
+		end
+		pos = m.offset + ncodeunits(m.match)
+	end
+	write(result, text[pos:end])
+	return String(take!(result))
 end
 
 function copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_file::String)
-    text = header
-    text *= "\n"
-    for f = filter(f -> endswith(f, ".qmd"), readdir(from_folder, join=true))
-        content = read(f, String)
-        content = resolve_includes(content, from_folder)
-        text *= content
-        text *= "\n\n"
-    end
-    text = substitute_text(text, make_dict(bb))
-    write(to_file, text)
+	text = header
+	text *= "\n"
+	for f ∈ filter(f -> endswith(f, ".qmd"), readdir(from_folder, join = true))
+		content = read(f, String)
+		content = resolve_includes(content, from_folder)
+		text *= content
+		text *= "\n\n"
+	end
+	text = substitute_text(text, make_dict(bb))
+	write(to_file, text)
 end
 
-function copy_files(from_folder::String, to_folder::String, allow_duplicates::Bool=false)
-    if isdir(from_folder)
-        !isdir(to_folder) && mkpath(to_folder)
-        for f = readdir(from_folder)
-            source_path = joinpath(from_folder, f)
-            target_path = joinpath(to_folder, f)
-            if isfile(source_path) && f != ".DS_Store"
-                if !isfile(target_path)
-                    cp(source_path, target_path)
-                else
-                    if allow_duplicates
-                        if mmap(open(source_path)) != mmap(open(target_path))
-                            error("Files not identical: ", source_path, " != ", target_path)
-                        end
-                    else
-                        error("Target file exists: ", target_path)
-                    end
-                end
-            end
-        end
-    end
+function copy_files(from_folder::String, to_folder::String, allow_duplicates::Bool = false)
+	if isdir(from_folder)
+		!isdir(to_folder) && mkpath(to_folder)
+		for f ∈ readdir(from_folder)
+			source_path = joinpath(from_folder, f)
+			target_path = joinpath(to_folder, f)
+			if isfile(source_path) && f != ".DS_Store"
+				if !isfile(target_path)
+					cp(source_path, target_path)
+				else
+					if allow_duplicates
+						if mmap(open(source_path)) != mmap(open(target_path))
+							error("Files not identical: ", source_path, " != ", target_path)
+						end
+					else
+						error("Target file exists: ", target_path)
+					end
+				end
+			end
+		end
+	end
 end
 
 function copy_images_folder(from_folder::String, to_folder::String)
-    copy_files(joinpath(from_folder, "bilder"), joinpath(to_folder, "bilder"))
+	copy_files(joinpath(from_folder, "bilder"), joinpath(to_folder, "bilder"))
 end
 
 function try_zip_folder(folder, folder_in_zipfile, zipfile)
-    !isdir(folder) && return
-    ZipWriter(zipfile) do w
-        for (root, _, files) in walkdir(folder)
-            for file in files
-                if !occursin(r"/obj\b|/bin\b", root) && file != ".DS_Store"
-                    file_path = joinpath(root, file)
-                    zip_path = joinpath(folder_in_zipfile, relpath(file_path, folder))
-                    zip_newfile(w, zip_path; compress=true)
-                    write(w, read(file_path))
-                end
-            end
-        end
-    end
+	!isdir(folder) && return
+	ZipWriter(zipfile) do w
+		for (root, _, files) in walkdir(folder)
+			for file in files
+				if !occursin(r"/obj\b|/bin\b", root) && file != ".DS_Store"
+					file_path = joinpath(root, file)
+					zip_path = joinpath(folder_in_zipfile, relpath(file_path, folder))
+					zip_newfile(w, zip_path; compress = true)
+					write(w, read(file_path))
+				end
+			end
+		end
+	end
 end
 
 function try_zip_folien_projekt(folder, folder_in_zipfile, zipfile)
-    !isdir(folder) && return
-    allowed = r"\.(cs|csproj|slnx|code-workspace|editorconfig)$"
-    ZipWriter(zipfile) do w
-        for entry in readdir(folder)
-            full = joinpath(folder, entry)
-            if isfile(full) && occursin(allowed, entry)
-                zip_newfile(w, joinpath(folder_in_zipfile, entry); compress=true)
-                write(w, read(full))
-            elseif isdir(full)
-                for f in readdir(full)
-                    file_path = joinpath(full, f)
-                    if isfile(file_path) && occursin(allowed, f)
-                        zip_newfile(w, joinpath(folder_in_zipfile, entry, f); compress=true)
-                        write(w, read(file_path))
-                    end
-                end
-            end
-        end
-    end
+	!isdir(folder) && return
+	allowed = r"\.(cs|csproj|slnx|code-workspace|editorconfig|axaml)$"
+	ZipWriter(zipfile) do w
+		for entry in readdir(folder)
+			full = joinpath(folder, entry)
+			if isfile(full) && occursin(allowed, entry)
+				zip_newfile(w, joinpath(folder_in_zipfile, entry); compress = true)
+				write(w, read(full))
+			elseif isdir(full)
+				for f in readdir(full)
+					file_path = joinpath(full, f)
+					if isfile(file_path) && occursin(allowed, f)
+						zip_newfile(w, joinpath(folder_in_zipfile, entry, f); compress = true)
+						write(w, read(file_path))
+					end
+				end
+			end
+		end
+	end
 end
 
 
@@ -153,56 +153,56 @@ end
 # -------------------------------------------------------------------------------------------------
 
 function make_slides(bb::BuildingBlock, path_input, path_output)
-    zipname = slug(bb) * "-folien.zip"
-    project_folder = joinpath(path_input, "projekt")
-    h = """
-    ---
-    title: \${title}
-    subtitle: Modul Informatik im Master Bauingenieurwesen
-    ---
-    """
-    if isdir(project_folder)
-        h *= "\n[]{.down150}\n[⬇ Projekt zu den Folien herunterladen]($(zipname)){target=\"_blank\"}\n"
-    end
-    copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * ".qmd"))
-    copy_images_folder(path_input, path_output)
-    try_zip_folien_projekt(
-        project_folder,
-        slug(bb) * "-folien",
-        joinpath(path_output, zipname)
-    )
+	zipname = slug(bb) * "-folien.zip"
+	project_folder = joinpath(path_input, "projekt")
+	h = """
+	---
+	title: \${title}
+	subtitle: Modul Informatik im Master Bauingenieurwesen
+	---
+	"""
+	if isdir(project_folder)
+		h *= "\n[]{.down150}\n[⬇ Projekt zu den Folien herunterladen]($(zipname)){target=\"_blank\"}\n"
+	end
+	copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * ".qmd"))
+	copy_images_folder(path_input, path_output)
+	try_zip_folien_projekt(
+		project_folder,
+		slug(bb) * "-folien",
+		joinpath(path_output, zipname),
+	)
 end
 
 function make_assignments(bb::BuildingBlock, path_input, path_output)
 
-    # Header for qmd file
-    header = """
-    ---
-    number-offset: $(bb.number - 1)
-    format:
-        typst:
-            include-in-header:
-                text: |
-                    #counter(heading).update($(bb.number - 1))
-    ---
-    # $(bb.title) (Aufgaben)
-    """
+	# Header for qmd file
+	header = """
+	---
+	number-offset: $(bb.number - 1)
+	format:
+		typst:
+			include-in-header:
+				text: |
+					#counter(heading).update($(bb.number - 1))
+	---
+	# $(bb.title) (Aufgaben)
+	"""
 
-    # Copy
-    copy_qmd(header, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
-    copy_images_folder(path_input, path_output)
+	# Copy
+	copy_qmd(header, bb, path_input, joinpath(path_output, slug(bb) * "-aufgaben.qmd"))
+	copy_images_folder(path_input, path_output)
 
-    # Zip project folder
-    try_zip_folder(
-        joinpath(path_input, "projekt"),
-        slug(bb),
-        joinpath(path_output, slug(bb) * ".zip")
-    )
-    try_zip_folder(
-        joinpath(path_input, "projekt-musterloesung"),
-        slug(bb) * "-musterloesung",
-        joinpath(path_output, slug(bb) * "-musterloesung-$(join(rand('a':'z', 5))).zip")
-    )
+	# Zip project folder
+	try_zip_folder(
+		joinpath(path_input, "projekt"),
+		slug(bb),
+		joinpath(path_output, slug(bb) * ".zip"),
+	)
+	try_zip_folder(
+		joinpath(path_input, "projekt-musterloesung"),
+		slug(bb) * "-musterloesung",
+		joinpath(path_output, slug(bb) * "-musterloesung-$(join(rand('a':'z', 5))).zip"),
+	)
 end
 
 
@@ -215,32 +215,32 @@ bausteine_folder = realpath(joinpath(@__DIR__, "../bausteine"))
 lernpfad_folder = realpath(joinpath(@__DIR__, "../lernpfad"))
 
 components = [
-    (make_slides, "folien"),
-    (make_assignments, "aufgaben")
+	(make_slides, "folien"),
+	(make_assignments, "aufgaben"),
 ]
 
-paths = readdir(bausteine_folder, join=true) |>
-        filter(d -> isdir(d) && !occursin(r"\.DS_Store|00-templates", d))
+paths = readdir(bausteine_folder, join = true) |>
+		filter(d -> isdir(d) && !occursin(r"\.DS_Store|00-templates", d))
 
 # Clean
-for path = paths
-        bb = BuildingBlock(path)
-        for (_, folder) = components
-            output_folder = joinpath(lernpfad_folder, folder, "c")
-            rm(output_folder, force=true, recursive=true)
-            mkpath(output_folder)
-        end
+for path ∈ paths
+	bb = BuildingBlock(path)
+	for (_, folder) ∈ components
+		output_folder = joinpath(lernpfad_folder, folder, "c")
+		rm(output_folder, force = true, recursive = true)
+		mkpath(output_folder)
+	end
 end
 
 # Make
-for path = paths
-    bb = BuildingBlock(path)
-    for (make_function, folder) = components
-        path_input = joinpath(path, folder)
-        if isdir(path_input)
-            output_folder = joinpath(lernpfad_folder, folder, "c")
-            copy_files(bausteine_folder, output_folder, true)
-            make_function(bb, path_input, output_folder)
-        end
-    end
+for path ∈ paths
+	bb = BuildingBlock(path)
+	for (make_function, folder) ∈ components
+		path_input = joinpath(path, folder)
+		if isdir(path_input)
+			output_folder = joinpath(lernpfad_folder, folder, "c")
+			copy_files(bausteine_folder, output_folder, true)
+			make_function(bb, path_input, output_folder)
+		end
+	end
 end

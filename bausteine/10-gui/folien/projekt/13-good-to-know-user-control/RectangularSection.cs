@@ -1,3 +1,5 @@
+namespace good_to_know_user_control;
+
 public class RectangularSection
 {
 

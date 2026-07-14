@@ -17,14 +17,14 @@ public partial class MainWindow : Window
         this.InitializeComponent();
 
         this.PersonsDG.ItemsSource = this.Persons;
-        this.PersonsDG.AutoGeneratingColumn += this.ColumnGenerated;
+        this.PersonsDG.AutoGeneratingColumn += this.OnColumnGenerated;
 
-        this.AddRowB.Click += this.AddRowClicked;
-        this.DeleteRowB.Click += this.DeleteRowClicked;
-        this.PrintB.Click += this.PrintClicked;
+        this.AddRowB.Click += this.OnAddRowClicked;
+        this.DeleteRowB.Click += this.OnDeleteRowClicked;
+        this.PrintB.Click += this.OnPrintClicked;
     }
 
-    private void ColumnGenerated(object? sender, DataGridAutoGeneratingColumnEventArgs e)
+    public void OnColumnGenerated(object? sender, DataGridAutoGeneratingColumnEventArgs e)
     {
         if (e.PropertyName == "Age")
         {
@@ -32,7 +32,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private void AddRowClicked(object? sender, RoutedEventArgs e)
+    public void OnAddRowClicked(object? sender, RoutedEventArgs e)
     {
         int row = this.PersonsDG.SelectedIndex;
 
@@ -46,7 +46,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private void DeleteRowClicked(object? sender, RoutedEventArgs e)
+    public void OnDeleteRowClicked(object? sender, RoutedEventArgs e)
     {
         int row = this.PersonsDG.SelectedIndex;
 
@@ -56,7 +56,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private void PrintClicked(object? sender, RoutedEventArgs e)
+    public void OnPrintClicked(object? sender, RoutedEventArgs e)
     {
         foreach (Person p in this.Persons)
         {
