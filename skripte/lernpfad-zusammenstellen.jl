@@ -135,11 +135,17 @@ function try_zip_folien_projekt(folder, folder_in_zipfile, zipfile)
 				zip_newfile(w, joinpath(folder_in_zipfile, entry); compress = true)
 				write(w, read(full))
 			elseif isdir(full)
-				for f in readdir(full)
-					file_path = joinpath(full, f)
-					if isfile(file_path) && occursin(allowed, f)
-						zip_newfile(w, joinpath(folder_in_zipfile, entry, f); compress = true)
-						write(w, read(file_path))
+				for (root, _, files) in walkdir(full)
+					# TODO: More flexible
+					occursin(r"/obj\b|/bin\b", root) && continue
+					in_assets = occursin(r"/Assets\b"i, root)
+					for f in files
+						if (occursin(allowed, f) || in_assets) && f != ".DS_Store"
+							file_path = joinpath(root, f)
+							zip_path = joinpath(folder_in_zipfile, entry, relpath(file_path, full))
+							zip_newfile(w, zip_path; compress = true)
+							write(w, read(file_path))
+						end
 					end
 				end
 			end
@@ -181,9 +187,9 @@ function make_assignments(bb::BuildingBlock, path_input, path_output)
 	number-offset: $(bb.number - 1)
 	format:
 	  typst:
-	    include-in-header:
-	      text: |
-	        #counter(heading).update($(bb.number - 1))
+		include-in-header:
+		  text: |
+			#counter(heading).update($(bb.number - 1))
 	---
 	# $(bb.title) (Aufgaben)
 	"""
