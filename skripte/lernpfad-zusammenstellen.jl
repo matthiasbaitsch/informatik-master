@@ -187,9 +187,9 @@ function make_assignments(bb::BuildingBlock, path_input, path_output)
 	number-offset: $(bb.number - 1)
 	format:
 	  typst:
-		include-in-header:
-		  text: |
-			#counter(heading).update($(bb.number - 1))
+	    include-in-header:
+	      text: |
+	        #counter(heading).update($(bb.number - 1))
 	---
 	# $(bb.title) (Aufgaben)
 	"""
