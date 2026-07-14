@@ -1,8 +1,6 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
-namespace good_to_know_custom_control;
+namespace good_to_know_user_control;
 
 public partial class RectangularSectionControl : UserControl
 {

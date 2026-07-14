@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace good_to_know_custom_control;
+namespace good_to_know_user_control;
 
 class Program
 {

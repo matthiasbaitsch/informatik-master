@@ -13,5 +13,5 @@
   <Project Path="10-layout-controls-nested/layout-controls-nested.csproj" />
   <Project Path="11-recipe-datagrid/recipe-datagrid.csproj" />
   <Project Path="12-good-to-know-error-handling/good-to-know-error-handling.csproj" />
-  <Project Path="13-good-to-know-custom-control/good-to-know-custom-control.csproj" />
+  <Project Path="13-good-to-know-user-control/good-to-know-user-control.csproj" />
 </Solution>

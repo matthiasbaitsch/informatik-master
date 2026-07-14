@@ -1,7 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace good_to_know_custom_control;
+namespace good_to_know_user_control;
 
 public partial class MainWindow : Window
 {

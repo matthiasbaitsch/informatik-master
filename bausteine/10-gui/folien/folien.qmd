@@ -140,7 +140,7 @@ graph LR
 
 ```xml
 <Person Name="Anna" Age="30">
-    <Address City="Bochum" Street="Am Hochschulcampus 1"></Address>
+    <Address City="Bochum" Street="Am Hochschulcampus 1"/>
     <Hobby>Klettern</Hobby>
 </Person>
 ```
@@ -155,6 +155,8 @@ graph LR
 - Elemente können Text oder weitere Elemente enthalten
     - `Address` ist ein Bestandteil von `Person`
     - `Hobby` enthält den Text `Klettern`
+- Elemente ohne Inhalt gehen auch mit nur einem Tag: `<Elementname/>`
+    - Beispiel: `<Address .../>` statt `<Address ...></Address>`
 
 []{.down20}
 
@@ -804,21 +806,21 @@ public async void OnComputeClicked(object? sender, RoutedEventArgs e)
 - Mehr Informationen [hier](https://docs.avaloniaui.net/troubleshooting/controls/messagebox)
 :::
 
-## Zusammengesetzte Controls 1/2 {.smaller}
+## Zusammengesetzte Controls 1/4 {.smaller}
 
 []{.down20}
 
 ::: {.columns}
 ::: {.column width=65%}
-```{.xml filename="MainWindow.axaml" code-line-numbers="4|10,13"}
-{{< include projekt/13-good-to-know-custom-control/MainWindow.axaml >}}
+```{.xml filename="MainWindow.axaml" code-line-numbers="4,10,13"}
+{{< include projekt/13-good-to-know-user-control/MainWindow.axaml >}}
 ```
 :::
 ::: {.column width=4%}
 :::
 ::: {.column width=26%}
 []{.up10}
-![](bilder/13-good-to-know-custom-control.png){class="drop-shadow"}
+![](bilder/13-good-to-know-user-control-1.png){class="drop-shadow"}
 :::
 :::
 
@@ -826,41 +828,63 @@ public async void OnComputeClicked(object? sender, RoutedEventArgs e)
 
 - Situation: Die Eingabe für einen Rechteckquerschnitt wird zweimal benötigt
 - Idee: Mehrere Controls zu einem eigenen Control zusammenfassen
-    - `RectangularSectionControl` bündelt Beschriftungen und Textfelder
-- Zeile 4: Namensraum des Projekts unter dem Kürzel `local` verfügbar machen
+    - `RectangularSectionControl` (nächste Folie) bündelt Beschriftungen und Textfelder
 - Zeilen 10 und 13: Eigenes Control wie jedes andere Control verwenden
+- Zeile 4: Namensraum verfügbar machen (übernimmt VS Code)
 
-## Zusammengesetzte Controls 2/2 {.smaller}
+## Zusammengesetzte Controls 2/4 {.smaller}
 
-[]{.down20}
+[]{.down40}
 
-::: {.half-code}
-::: {.columns}
-::: {.column width=55%}
 ```{.xml filename="RectangularSectionControl.axaml"}
-{{< include projekt/13-good-to-know-custom-control/RectangularSectionControl.axaml >}}
+{{< include projekt/13-good-to-know-user-control/RectangularSectionControl.axaml >}}
 ```
 
-[]{.down20}
+[]{.down40}
 
-- Aufbau wie bei einem Fenster
-    - Wurzelelement ist `UserControl` statt `Window`
+- Aufbau wie beim Fenster, aber `UserControl` statt `Window`
 - Inhalt wie gewohnt: `Grid` mit Beschriftungen und Textfeldern
-:::
-::: {.column width=45%}
-```{.csharp filename="RectangularSectionControl.axaml.cs"}
-{{< include projekt/13-good-to-know-custom-control/RectangularSectionControl.axaml.cs >}}
+
+[]{.down40}
+
+
+::: {.fragment}
+### Grundgerüst anlegen
+
+```bash
+dotnet new avalonia.usercontrol -n RectangularSectionControl
 ```
 
-[]{.down20}
+- Im Terminal eingeben
+:::
 
-- Code-Behind wie beim Fenster
-- Eigene Methoden ergänzen
-    - `CreateSection` liest die Eingaben aus und erzeugt ein `RectangularSection`-Objekt
-- Aufruf im Fenster: `this.Section1Ctrl.CreateSection()`
-:::
-:::
-:::
+## Zusammengesetzte Controls 3/4 {.smaller}
+
+[]{.down40}
+
+```{.csharp filename="RectangularSectionControl.axaml.cs"}
+{{< include projekt/13-good-to-know-user-control/RectangularSectionControl.axaml.cs >}}
+```
+
+[]{.down40}
+
+- Code-Behind wie beim Fenster, aber `UserControl` statt `Window` als Basisklasse
+- Eigene Methode `CreateSection` liest die Eingaben aus und erzeugt ein `RectangularSection`-Objekt
+
+## Zusammengesetzte Controls 4/4 {.smaller}
+
+[]{.down40}
+
+```{.csharp filename="MainWindow.axaml.cs"}
+{{< include projekt/13-good-to-know-user-control/MainWindow.axaml.cs >}}
+```
+
+[]{.down40}
+
+- Code-Behind des Fensters wie gewohnt
+- `this.Section1Ctrl.CreateSection()`: Methode des eigenen Controls aufrufen
+    - Liefert ein `RectangularSection`-Objekt mit den eingegebenen Werten
+    - Wie die Werte aus den Textfeldern kommen, regelt das Control selbst
 
 ## Namenskonvention
 
