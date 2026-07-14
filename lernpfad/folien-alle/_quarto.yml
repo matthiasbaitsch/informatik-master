@@ -1,0 +1,30 @@
+lang: de
+
+project:
+  type: book
+  output-dir: ../../__output/lernpfad/folien-alle
+
+book:
+  title: Informatik
+  subtitle: Modul Informatik im Master Bauingenieurwesen
+  author: Matthias Baitsch
+  date: today
+  chapters:
+    - index.qmd
+    - c/01-einführung.qmd
+    - c/03-elementare-datentypen.qmd
+    - c/04-objekte.qmd
+    - c/05-klassen.qmd
+    - c/06-algorithmen-und-kontrollstrukturen.qmd
+    - c/07-einfeldträger-mit-tests.qmd
+    - c/08-datenstrukturen.qmd
+    - c/09-vererbung-und-polymorphismus.qmd
+    - c/10-grafische-benutzungsoberflächen.qmd
+    - c/11-arbeiten-mit-projekten.qmd
+    - c/99-referenz.qmd
+
+number-sections: false
+
+format:
+  html:
+    theme: cosmo

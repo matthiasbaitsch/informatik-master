@@ -6,6 +6,10 @@ crossref:
 
 project:
   output-dir: __output
+  render:
+    - "**/*.qmd"
+    - "**/*.md"
+    - "!lernpfad/folien-alle/"
 
 toc-depth: 1
 number-depth: 1

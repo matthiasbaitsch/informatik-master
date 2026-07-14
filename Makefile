@@ -8,6 +8,9 @@ render-assignments: prepare-render
 render-slides: prepare-render
 	quarto render lernpfad/folien -t revealjs
 
+render-slides-all: prepare-render
+	quarto render lernpfad/folien-alle -t html
+
 render-study-assignments: prepare-render
 	quarto render lernpfad/studienarbeit
 

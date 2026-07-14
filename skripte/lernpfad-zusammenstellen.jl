@@ -69,7 +69,8 @@ function resolve_includes(text::String, base_folder::String)
 	return String(take!(result))
 end
 
-function copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_file::String)
+function copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_file::String;
+	transform = identity)
 	text = header
 	text *= "\n"
 	for f ∈ filter(f -> endswith(f, ".qmd"), readdir(from_folder, join = true))
@@ -79,7 +80,20 @@ function copy_qmd(header::String, bb::BuildingBlock, from_folder::String, to_fil
 		text *= "\n\n"
 	end
 	text = substitute_text(text, make_dict(bb))
-	write(to_file, text)
+	write(to_file, transform(text))
+end
+
+function demote_headings(text::String)
+	lines = String.(split(text, '\n'))
+	in_code_block = false
+	for (i, line) ∈ enumerate(lines)
+		if startswith(lstrip(line), "```")
+			in_code_block = !in_code_block
+		elseif !in_code_block && occursin(r"^#{1,5}\s", line)
+			lines[i] = "#" * line
+		end
+	end
+	return join(lines, "\n")
 end
 
 function copy_files(from_folder::String, to_folder::String, allow_duplicates::Bool = false)
@@ -179,6 +193,46 @@ function make_slides(bb::BuildingBlock, path_input, path_output)
 	)
 end
 
+function make_book_chapter(bb::BuildingBlock, path_input, path_output)
+	h = """
+	---
+	title: "\${title}"
+	---
+	"""
+	# Im Buch-Projekt ist folien-alle die here()-Wurzel, bausteine.R liegt dort in c
+	transform = text -> demote_headings(replace(text,
+		"here::here(\"bausteine/00-templates/bausteine.R\")" => "here::here(\"c/bausteine.R\")"))
+	copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * ".qmd"), transform = transform)
+	copy_images_folder(path_input, path_output)
+end
+
+function make_book_config(path_output, chapters::Vector{String})
+	write(joinpath(path_output, "index.qmd"), "Unterlagen zur Vorlesung Informatik.\n")
+	chapter_lines = join("    - " .* chapters, "\n")
+	write(joinpath(path_output, "_quarto.yml"), """
+	lang: de
+
+	project:
+	  type: book
+	  output-dir: ../../__output/lernpfad/folien-alle
+
+	book:
+	  title: Informatik
+	  subtitle: Modul Informatik im Master Bauingenieurwesen
+	  author: Matthias Baitsch
+	  date: today
+	  chapters:
+	    - index.qmd
+	$(chapter_lines)
+
+	number-sections: false
+
+	format:
+	  html:
+	    theme: cosmo
+	""")
+end
+
 function make_assignments(bb::BuildingBlock, path_input, path_output)
 
 	# Header for qmd file
@@ -250,3 +304,21 @@ for path ∈ paths
 		end
 	end
 end
+
+# Book with all slides
+book_folder = joinpath(lernpfad_folder, "folien-alle")
+book_output_folder = joinpath(book_folder, "c")
+rm(book_output_folder, force = true, recursive = true)
+mkpath(book_output_folder)
+cp(joinpath(bausteine_folder, "00-templates", "bausteine.R"), joinpath(book_output_folder, "bausteine.R"))
+chapters = String[]
+for path ∈ paths
+	bb = BuildingBlock(path)
+	path_input = joinpath(path, "folien")
+	if isdir(path_input)
+		copy_files(bausteine_folder, book_output_folder, true)
+		make_book_chapter(bb, path_input, book_output_folder)
+		push!(chapters, "c/" * slug(bb) * ".qmd")
+	end
+end
+make_book_config(book_folder, chapters)
