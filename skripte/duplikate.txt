@@ -113,6 +113,10 @@ bausteine/05-klassen/aufgaben/projekt/02-fraction/fraction.csproj
 bausteine/05-klassen/aufgaben/projekt/03-section/section.csproj
 bausteine/06-kontrollstrukturen/aufgaben/projekt-musterloesung/01-fraction/fraction.csproj
 bausteine/06-kontrollstrukturen/aufgaben/projekt/01-fraction/fraction.csproj
+bausteine/08-datenstrukturen/aufgaben/projekt-musterloesung/01-vector/vector.csproj
+bausteine/08-datenstrukturen/aufgaben/projekt/01-vector/vector.csproj
+bausteine/08-datenstrukturen/folien/playground/graph/graph/graph.csproj
+bausteine/09-vererbung/folien/projekt/was-es-noch-zu-wissen-gibt/was-es-noch-zu-wissen-gibt.csproj
 
 bausteine/03-elementare-datentypen/aufgaben/projekt-musterloesung/02-rechnen/Rechnen.cs
 bausteine/03-elementare-datentypen/aufgaben/projekt/02-rechnen/Rechnen.cs
@@ -158,6 +162,8 @@ bausteine/04-objekte/aufgaben/projekt/02-referenzvariablen/referenzvariablen.csp
 bausteine/06-kontrollstrukturen/aufgaben/projekt-playground/mandelbrot/mandelbrot.csproj
 bausteine/08-datenstrukturen/aufgaben/projekt-musterloesung/02-trigonometric-polynomial/trigonometric-polynomial.csproj
 bausteine/08-datenstrukturen/aufgaben/projekt/02-trigonometric-polynomial/trigonometric-polynomial.csproj
+bausteine/09-vererbung/aufgaben/projekt-musterloesung/01-sysdraw/sysdraw.csproj
+bausteine/09-vererbung/aufgaben/projekt/01-sysdraw/sysdraw.csproj
 
 bausteine/04-objekte/aufgaben/projekt-musterloesung/03-hallenrechner-2/hallenrechner-2.csproj
 bausteine/04-objekte/aufgaben/projekt/03-hallenrechner-2/hallenrechner-2.csproj
@@ -255,10 +261,6 @@ bausteine/08-datenstrukturen/aufgaben/projekt/01-vector-tests/VectorTests.cs
 bausteine/08-datenstrukturen/aufgaben/projekt-musterloesung/01-vector-tests/vector-tests.csproj
 bausteine/08-datenstrukturen/aufgaben/projekt/01-vector-tests/vector-tests.csproj
 
-bausteine/08-datenstrukturen/aufgaben/projekt-musterloesung/01-vector/vector.csproj
-bausteine/08-datenstrukturen/aufgaben/projekt/01-vector/vector.csproj
-bausteine/08-datenstrukturen/folien/playground/graph/graph/graph.csproj
-
 bausteine/08-datenstrukturen/aufgaben/projekt-musterloesung/02-trigonometric-polynomial-tests/trigonometric-polynomial-tests.csproj
 bausteine/08-datenstrukturen/aufgaben/projekt/02-trigonometric-polynomial-tests/trigonometric-polynomial-tests.csproj
 
@@ -294,9 +296,6 @@ bausteine/09-vererbung/folien/projekt/sysdraw-step-03/StructuralElement.cs
 bausteine/09-vererbung/aufgaben/projekt-musterloesung/01-sysdraw/Structure.cs
 bausteine/09-vererbung/aufgaben/projekt/01-sysdraw/Structure.cs
 bausteine/09-vererbung/folien/projekt/sysdraw-step-03/Structure.cs
-
-bausteine/09-vererbung/aufgaben/projekt-musterloesung/01-sysdraw/sysdraw.csproj
-bausteine/09-vererbung/aufgaben/projekt/01-sysdraw/sysdraw.csproj
 
 bausteine/09-vererbung/aufgaben/projekt-musterloesung/02-beam-test/BeamTest.cs
 bausteine/09-vererbung/aufgaben/projekt/02-beam-test/BeamTest.cs
@@ -368,6 +367,16 @@ bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-03/unit-converter-0
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-04/unit-converter-04.csproj
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-05/unit-converter-05.csproj
 bausteine/10-gui/aufgaben/projekt/01-unit-converter/unit-converter.csproj
+bausteine/10-gui/folien/projekt/01-clickme/clickme.csproj
+bausteine/10-gui/folien/projekt/02-input-controls/input-controls.csproj
+bausteine/10-gui/folien/projekt/05-layout-controls-stack-panel-1/layout-controls-stack-panel-1.csproj
+bausteine/10-gui/folien/projekt/05-layout-controls-stack-panel-2/layout-controls-stack-panel-2.csproj
+bausteine/10-gui/folien/projekt/06-layout-controls-grid/layout-controls-grid.csproj
+bausteine/10-gui/folien/projekt/07-layout-controls-dock-panel-1/layout-controls-dock-panel-1.csproj
+bausteine/10-gui/folien/projekt/07-layout-controls-dock-panel-2/layout-controls-dock-panel-2.csproj
+bausteine/10-gui/folien/projekt/08-layout-controls-misc/layout-controls-misc.csproj
+bausteine/10-gui/folien/projekt/09-layout-controls-adjustment/layout-controls-adjustment.csproj
+bausteine/10-gui/folien/projekt/10-layout-controls-nested/layout-controls-nested.csproj
 
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/App.axaml
 bausteine/10-gui/aufgaben/projekt/02-steel-hall-ui/App.axaml

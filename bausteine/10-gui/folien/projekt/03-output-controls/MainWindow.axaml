@@ -4,16 +4,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="output_controls.MainWindow"
         Width="250" SizeToContent="Height"
-        Title="Controls zur Ausgabe">
+        Title="Output Controls">
     <StackPanel Margin="20" Spacing="30">
         <Image Source="/Assets/hs-bo_logo.png" Width="200"></Image>
-        <TextBlock>Einfacher Textblock</TextBlock>
-        <TextBlock Foreground="Red">Einfacher Textblock mit Farbe</TextBlock>
+        <TextBlock>Simple text block</TextBlock>
+        <TextBlock Foreground="Red">Simple text block with color</TextBlock>
         <TextBlock TextWrapping="Wrap" Width="200">
-            Mehrzeiliger Texblock: <LineBreak/>
-            Das Glas ist in <Bold>halb voll</Bold> und <LineBreak/>
-            <Run Foreground="DarkSlateBlue" FontWeight="Bold">die Lage weitaus besser</Run><LineBreak/>
-            als viele <Italic>Pessimisten</Italic> denken.
+            Multi-line text block: <LineBreak/>
+            The glass is <Bold>half full</Bold> and <LineBreak/>
+            <Run Foreground="DarkSlateBlue" FontWeight="Bold">things are far better</Run><LineBreak/>
+            than many <Italic>pessimists</Italic> think.
         </TextBlock>
     </StackPanel>
 </Window>

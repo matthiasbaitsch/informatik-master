@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="layout_controls_adjustment.MainWindow"
         Width="250" SizeToContent="Height"
-        Title="Layouts anpassen">
+        Title="Adjusting Layouts">
     <StackPanel Margin="20" Spacing="5">
         <Button HorizontalAlignment="Left">Button A</Button>
         <Button HorizontalAlignment="Center">Button B</Button>

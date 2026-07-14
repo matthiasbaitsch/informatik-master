@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="using:good_to_know_custom_control"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="good_to_know_custom_control.MainWindow"
+        Title="Custom Control" Width="250" SizeToContent="Height">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock>Section 1</TextBlock>
+        <local:RectangularSectionControl x:Name="Section1Ctrl"></local:RectangularSectionControl>
+        <TextBlock x:Name="Area1TBl"></TextBlock>
+        <TextBlock>Section 2</TextBlock>
+        <local:RectangularSectionControl x:Name="Section2Ctrl"></local:RectangularSectionControl>
+        <TextBlock x:Name="Area2TBl"></TextBlock>
+        <Button x:Name="ApplyB">Apply</Button>
+    </StackPanel>
+</Window>

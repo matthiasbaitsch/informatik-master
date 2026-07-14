@@ -11,5 +11,7 @@
   <Project Path="08-layout-controls-misc/layout-controls-misc.csproj" />
   <Project Path="09-layout-controls-adjustment/layout-controls-adjustment.csproj" />
   <Project Path="10-layout-controls-nested/layout-controls-nested.csproj" />
-  <Project Path="99-datagrid/datagrid.csproj" />
+  <Project Path="11-recipe-datagrid/recipe-datagrid.csproj" />
+  <Project Path="12-good-to-know-error-handling/good-to-know-error-handling.csproj" />
+  <Project Path="13-good-to-know-custom-control/good-to-know-custom-control.csproj" />
 </Solution>

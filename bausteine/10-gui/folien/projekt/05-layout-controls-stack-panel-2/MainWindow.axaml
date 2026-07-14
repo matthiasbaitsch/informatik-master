@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="layout_controls_stack_panel_2.MainWindow"
-        Width="250" SizeToContent="Height" Title="Layout mit StackPanel">
+        Width="250" SizeToContent="Height" Title="Layout with StackPanel">
     <StackPanel Orientation="Horizontal" Margin="20" Spacing="5">
         <Button>Start</Button>
         <Button>Stop</Button>

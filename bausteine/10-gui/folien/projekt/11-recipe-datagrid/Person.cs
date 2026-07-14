@@ -1,7 +1,8 @@
-namespace datagrid;
+namespace recipe_datagrid;
 
 public class Person
 {
+
     public string Name { get; set; }
     public int Age { get; set; }
 
@@ -15,4 +16,5 @@ public class Person
     {
         return $"{this.Name} ({this.Age})";
     }
+
 }

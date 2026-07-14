@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace datagrid;
+namespace good_to_know_error_handling;
 
 class Program
 {

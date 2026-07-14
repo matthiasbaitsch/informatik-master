@@ -117,6 +117,10 @@ $selection-bg: #26351c !default;
   max-height: none !important;
 }
 
+.half-code pre {
+  max-height: 380px !important;
+}
+
 .tall-code pre code {
   max-height: none !important;
 }

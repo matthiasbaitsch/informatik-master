@@ -3,8 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="input_controls.MainWindow"
-        Width="250" SizeToContent="Height"
-        Title="Controls zur Eingabe">
+        Width="250" SizeToContent="Height" Title="Input Controls">
     <StackPanel Margin="20" Spacing="5">
         <Button>Button</Button>
         <CheckBox>Checkbox</CheckBox>
@@ -15,7 +14,7 @@
         <NumericUpDown Minimum="0" Maximum="10" Increment="0.5" Value="2.5"/>
         <RadioButton GroupName="rbg1">Radio Atlantic</RadioButton>
         <RadioButton GroupName="rbg1">Radio Paradise</RadioButton>
-        <RadioButton GroupName="rbg1">Radio Regenbogen</RadioButton>        
+        <RadioButton GroupName="rbg1">Radio Regenbogen</RadioButton>
         <Slider Minimum="0" Maximum="100" Value="20"></Slider>
         <TextBox>TextBox</TextBox>
     </StackPanel>

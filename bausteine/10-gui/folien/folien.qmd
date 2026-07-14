@@ -22,7 +22,7 @@
 - Weit verbreitet
     - WPF (Windows), SwiftUI (Mac), Qt (Win/Mac/Linux)
 - Wir verwenden [Avalonia](https://avaloniaui.net){target="_blank"}
-    - Platformunabhängig (Win/Mac/Linux/Mobil)
+    - Plattformunabhängig (Win/Mac/Linux/Mobil)
     - Deklarativer Ansatz (XAML-basiert)
     - Open Source
 :::
@@ -53,7 +53,7 @@
 
 ## Minimalbeispiel 2/2 {.smaller}
 
-### Grafische Oberfläche in `MainWindow.axaml.cs`
+### Grafische Oberfläche in `MainWindow.axaml`
 
 ::: {.columns}
 ::: {.column width=65%}
@@ -139,8 +139,9 @@ graph LR
 []{.down40}
 
 ```xml
-<Person Name="Anna" Age="30">    
+<Person Name="Anna" Age="30">
     <Address City="Bochum" Street="Am Hochschulcampus 1"></Address>
+    <Hobby>Klettern</Hobby>
 </Person>
 ```
 
@@ -153,6 +154,7 @@ graph LR
     - `Name="Anna"`: Attribute, im Start-Tag angegeben
 - Elemente können Text oder weitere Elemente enthalten
     - `Address` ist ein Bestandteil von `Person`
+    - `Hobby` enthält den Text `Klettern`
 
 []{.down20}
 
@@ -200,7 +202,7 @@ graph LR
 
 ::: {.columns}
 ::: {.column}
-- `Button`: Zum anklicken (klar)
+- `Button`: Zum Anklicken (klar)
 - `CheckBox`: Aktiviert oder nicht aktiviert
 - `ComboBox`: Auswahl aus vorgegebenen Werten
 - `NumericUpDown`: Eingaben von Zahl mit hoch/runter
@@ -337,7 +339,7 @@ graph LR
 - `ColumnDefinitions` und `RowDefinitions`: `Auto` (so groß wie der Inhalt), `*` (restlicher Platz) oder feste Größe
 - `Grid.Row` und `Grid.Column`: Position festlegen (Zählung beginnt bei 0)
 - `Grid.ColumnSpan` und `Grid.RowSpan`: Control über mehrere Spalten/Zeilen
-- `Style` – setzt eine Eigenschaft für mehrere Controls
+- `Style`: Setzt eine Eigenschaft für mehrere Controls auf einmal
 
 ## Layoutcontrols: `DockPanel` {.smaller}
 
@@ -379,10 +381,13 @@ graph LR
 
 []{.down40}
 
-- `DockPanel`: Ordnet Controls an den Rändern des Fensters an
+- `DockPanel`: Ordnet Controls an den Rändern des Fensters  und in der Mitte an
 - `DockPanel.Dock`: Seite festlegen mit `Top`, `Bottom`, `Left` oder `Right`
-- Controls werden in der angegebenen Reihenfolge nacheinander angedockt
-- Das letzte Control füllt den verbleibenden Platz aus
+- Control ohne Positionsangabe füllt verbleibenden Platz
+- Die Reihenfolge spielt eine Rolle
+- Hier `Rectangle` als Platzhalter
+
+[]{.down20}
 
 → Praktisch für Anwendungsfenster mit Werkzeugleiste und Anzeigebereich
 
@@ -432,11 +437,13 @@ graph LR
 
 []{.down20}
 
-- `Width` und `Height`: Feste Größe vorgeben
-- `SizeToContent`: `Width`, `Height` oder `WidthAndHeight` Größe an Inhalt anpassen
+- `Width` und `Height`: Größe vorgeben
 - `Margin`: Abstand zum umgebenden Element
-- `Padding`: Abstand zwischen Rand und Inhalt eines Controls
+- `Spacing`: Abstand der Elemente innerhalb des Controls
 - `HorizontalAlignment` und `VerticalAlignment`: `Left`, `Center`, `Right` oder `Stretch`
+- `Window`: `SizeToContent` passt die Größe an den Inhalt an (`Width`, `Height` oder `WidthAndHeight`)
+
+[]{.down20}
 
 → Größen möglichst dem Layout überlassen, feste Werte vermeiden
 
@@ -467,28 +474,42 @@ graph LR
 
 ## Controls im Code ansprechen
 
-[]{.down20}
+[]{.down40}
 
-```xml
+
+```{.xml filename="MainWindow.axaml"}
+...
 <TextBox x:Name="NameTB"></TextBox>
+...
 ```
 
-```csharp
+```{.csharp filename="MainWindow.axaml.cs"}
+...
 this.NameTB.Text = "Anna";
 string name = this.NameTB.Text!;
+...
 ```
 
 []{.down20}
 
-- `x:Name`: Macht das Control als Attribut in `MainWindow` verfügbar
-    - Ohne `x:Name` ist das Control aus dem Code nicht erreichbar
-- Alle Eigenschaften lassen sich im Code lesen und setzen
+- `x:Name`: Macht das Control als Attribut der Klasse `MainWindow` verfügbar
+- Alle Eigenschaften von Controls lassen sich im Code lesen und setzen
+
+[]{.down20}
+
+→ Ohne `x:Name` ist das Control aus dem Code nicht erreichbar
 
 ## Auf Ereignisse reagieren
 
 []{.down20}
 
-```csharp
+```{.xml filename="MainWindow.axaml"}
+...
+<Button x:Name="OkB">OK</Button>
+...
+```
+
+```{.csharp filename="MainWindow.axaml.cs"}
 public MainWindow()
 {
     this.InitializeComponent();
@@ -500,12 +521,24 @@ public void OnOkClicked(object? sender, RoutedEventArgs e) { ... }
 
 []{.down20}
 
-- Events melden Benutzeraktionen (wie beim Minimalbeispiel)
-    - Methode mit `+=` beim Event anmelden (meist im Konstruktor)
-    - Avalonia ruft die Methode dann automatisch auf
-- Wichtige Events
-    - `Button`: `Click`, `TextBox`: `TextChanged`, `CheckBox`: `IsCheckedChanged`
-    - `ComboBox`: `SelectionChanged`, `Slider` und `NumericUpDown`: `ValueChanged`
+- Methode mit `+=` bei Control anmelden
+- In diesem Zusammenhang ist `Click` ein Event (ein Benutzerinteraktion)
+- Erster Parameter ist das Objekt, das den Event ausgelöst hat
+- Typ des zweiten Parameters hängt vom Event ab (Vorschlag von VS Code)
+
+## Weitere wichtige Events
+
+[]{.down60}
+
+| Control         | Event              | Wird ausgelöst, wenn ...          |
+|:----------------|:-------------------|:----------------------------------|
+| `Button`        | `Click`            | der Button angeklickt wurde       |
+| `TextBox`       | `TextChanged`      | sich der Text geändert hat        |
+| `CheckBox`      | `IsCheckedChanged` | der Haken gesetzt/entfernt wurde  |
+| `RadioButton`   | `IsCheckedChanged` | sich die Auswahl geändert hat     |
+| `ComboBox`      | `SelectionChanged` | ein anderer Eintrag gewählt wurde |
+| `Slider`        | `ValueChanged`     | sich der Wert geändert hat        |
+| `NumericUpDown` | `ValueChanged`     | sich der Wert geändert hat        |
 
 ## Eingabewerte auslesen
 
@@ -514,35 +547,213 @@ public void OnOkClicked(object? sender, RoutedEventArgs e) { ... }
 ```csharp
 string name = this.NameTB.Text!;
 double load = double.Parse(this.LoadTB.Text!);
-bool selfWeight = this.SelfWeightCB.IsChecked == true;
-int material = this.MaterialCoBo.SelectedIndex;
+double length = this.LengthSL.Value;
+int materialIndex = this.MaterialCoBo.SelectedIndex;
+bool includeDeadfWeight = this.SelfWeightCB.IsChecked == true;
 ```
 
 []{.down20}
 
-- `Slider`: `Value` liefert `double`
 - `TextBox`: `Text!` liefert eine Zeichenkette
     - Zahlen mit `double.Parse` oder `int.Parse` umwandeln
-- `CheckBox`: Abfrage, ob angehakt, mit `IsChecked == true`
-- `ComboBox`: `SelectedIndex` liefert die Position des gewählten Eintrags
+- `Slider`: Aktueller Wert `Value` liefert `double`
+- `ComboBox`: Index des gewählten Eintrags mit `SelectedIndex`
+- `CheckBox`: Abfragen ob Checkbox selektiert mit `IsChecked == true`
+
+## Weitere wichtige Eigenschaften von Controls
+
+[]{.down60}
+
+| Control         | Eigenschaft     | Typ        | Bedeutung                  |
+|:----------------|:----------------|:-----------|:---------------------------|
+| `TextBox`       | `Text`          | `string?`  | Eingegebener Text          |
+| `TextBlock`     | `Text`          | `string?`  | Angezeigter Text           |
+| `CheckBox`      | `IsChecked`     | `bool?`    | Angehakt oder nicht        |
+| `RadioButton`   | `IsChecked`     | `bool?`    | Ausgewählt oder nicht      |
+| `ComboBox`      | `SelectedIndex` | `int`      | Index gewählter Eintrag    |
+| `Slider`        | `Value`         | `double`   | Eingestellter Wert         |
+| `NumericUpDown` | `Value`         | `decimal?` | Eingestellter Wert         |
+| alle Controls   | `IsEnabled`     | `bool`     | Bedienbar oder ausgegraut  |
+| alle Controls   | `IsVisible`     | `bool`     | Sichtbar oder ausgeblendet |
+
+[]{.down20}
+
+- Typen mit `?` sind *optional*: Dort kann statt eines Werts auch `null` stehen
+- Mit `!` beim Auslesen wird dieser Tatsache Rechnung getragen
+
+→ Fehlerbehandlung später
+
+# Rezepte für bestimmte Aufgaben
+
+## Rezept: Zahl mit `NumericUpDown` einlesen
+
+[]{.down20}
+
+```{.xml filename="MainWindow.axaml"}
+...
+<NumericUpDown x:Name="LengthNUD" Minimum="0" Maximum="20" Value="4.5"/>
+<NumericUpDown x:Name="SpansNUD" Minimum="1" Maximum="10" Value="3" FormatString="0"/>
+```
+
+```{.csharp filename="MainWindow.axaml.cs"}
+...
+double length = (double)this.LengthNUD.Value!;
+int numberOfSpans = (int)this.SpansNUD.Value!;
+```
+
+[]{.down20}
+
+- Für Zahleneingaben besser als eine `TextBox`
+    - Ungültige Eingaben sind gar nicht erst möglich, kein `double.Parse` nötig
+    - `Minimum` und `Maximum` begrenzen den Wertebereich
+- Für reelle Zahlen (z.B. Länge)
+    - `Value` mit `(double)` und `!` in ein `double` umwandeln
+- Für ganze Zahlen (z.B. Anzahl Felder)
+    - `FormatString="0"`: Anzeige ohne Nachkommastellen
+    - `Value` mit `(int)` und `!` in ein `int` umwandeln
+
+## Rezept: Tabellen mit `DataGrid` 1/4
+
+[]{.down60}
+
+::: {.columns}
+::: {.column width=20%}
+:::
+::: {.column width=30%}
+![](bilder/11-recipe-datagrid-e.png){class="drop-shadow"}
+:::
+::: {.column width=10%}
+:::
+::: {.column width=25%}
+[]{.down80}
+![](bilder/person.png)
+:::
+::: {.column width=10%}
+:::
+:::
+
+[]{.down40}
+
+- Eingabe von strukturieren Daten
+- Erfordert in der Regel eine zusätzliche Klasse
+
+## Rezept: Tabellen mit `DataGrid` 2/4 (Vorbereitung)  {.smaller}
+
+[]{.down100}
+
+```{.xml filename="projektname.csproj" code-line-numbers=3}
+<ItemGroup>
+    ...
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="12.0.1" />
+</ItemGroup>
+```
+
+[]{.down20}
+
+- `DataGrid` ist ein eigenes Paket, in der Projektdatei angeben
+
+[]{.down100}
+
+```{.xml filename="App.axaml" code-line-numbers="3"}
+<Application.Styles>
+    <FluentTheme />
+    <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+</Application.Styles>
+```
+
+[]{.down20}
+
+- Theme in `App.axaml` einbinden 
+
+## Rezept: Tabellen mit `DataGrid` 3/4 (Oberfläche)  {.smaller}
+
+[]{.down50}
+
+```{.xml filename="MainWindow.axaml" code-line-numbers="8|7-14"}
+{{< include projekt/11-recipe-datagrid/MainWindow.axaml >}}
+```
+[]{.down20}
+
+- `DataGrid`: Control für tabellarische Eingabe
+    - Mit `AutoGenerateColumns` Spalten automatisch erzeugen
+    - Alle Spalten gleich breit (wird gleich noch angepasst)
+- Buttons zum Bearbeiten und Ausgeben
+
+## Rezept: Tabellen mit `DataGrid` 4/4 (Code)  {.smaller}
+
+[]{.down20}
+
+::: {.half-code}
+::: {.columns}
+::: {.column width=40%}
+```{.csharp filename="Person.cs"}
+{{< include projekt/11-recipe-datagrid/Person.cs >}}
+```
+
+[]{.down20}
+
+- Klasse mit einem Attribut je Spalte 
+- Zusätzlich `{ get; set; }` damit es funktioniert
+- Avalonia-Applikationen immer in Namensraum
+:::
+::: {.column width=60%}
+```{.csharp filename="MainWindow.axaml.cs"}
+{{< include projekt/11-recipe-datagrid/MainWindow.axaml.cs >}}
+```
+
+[]{.down20}
+
+- `ItemsSource`: Verbindet List und Tabelle
+- `ObservableCollection`: Wie `List`, aber informiert über Änderungen
+    - Änderungen an Liste werden in Tabelle übernommen
+- `SelectedIndex`: Index der ausgewählten Zeile
+    - Liefert `-1` falls keine Zeile aktiv
+:::
+:::
+:::
 
 # Was man sonst noch wissen kann
 
 ## Ungültige Eingaben abfangen
 
-[]{.down20}
+[]{.down100}
 
-```csharp
+::: {.columns}
+::: {.column width=30%}
+![](bilder/12-good-to-know-error-handling-1.png){class="drop-shadow"}
+:::
+::: {.column width=6%}
+:::
+::: {.column width=30%}
+![](bilder/12-good-to-know-error-handling-2.png){class="drop-shadow"}
+:::
+::: {.column width=24%}
+![](bilder/12-good-to-know-error-handling-3.png){class="drop-shadow"}
+:::
+:::
+
+[]{.down50}
+
+- Ziel: Sinnvolle Rückmeldung bei falscher Eingabe
+    1. Links: Ausgabe auf Textfeld (einfach)
+    1. Rechts: Mit Dialog (etwas aufwändiger)
+
+
+## Ungültige Eingaben abfangen  {.smaller}
+
+[]{.down40}
+
+```{.csharp filename="MainWindow.axaml.cs"}
 public void OnComputeClicked(object? sender, RoutedEventArgs e)
 {
     try
     {
         double load = double.Parse(this.LoadTB.Text!);
-        this.ResultTB.Text = $"Gesamtlast: {5.0 * load} kN";
+        this.ResultTBl.Text = $"Total load: {5.0 * load} kN";
     }
     catch (Exception)
     {
-        this.ResultTB.Text = "Ungültige Eingabe";
+        this.ResultTBl.Text = "Invalid input";
     }
 }
 ```
@@ -550,14 +761,110 @@ public void OnComputeClicked(object? sender, RoutedEventArgs e)
 []{.down20}
 
 - `double.Parse` löst bei ungültigem Text eine Exception (Ausnahme) aus
-    - Unbehandelt bricht das Programm dann ab
-- `try`-Block: Code, der schiefgehen kann
-- `catch`-Block: Wird ausgeführt, wenn im `try`-Block ein Fehler auftritt
-    - `Exception` fängt dabei alle Arten von Fehlern ab
+- `try`-Block: Code, in dem ein Fehler auftreten kann
+- `catch`-Block: Anweisungen, die im Falle eines Fehlers ausgeführt werden
+
+## Ungültige Eingaben abfangen  {.smaller}
+
+[]{.down40}
+
+```{.csharp filename="MainWindow.axaml.cs"}
+public async void OnComputeClicked(object? sender, RoutedEventArgs e)
+{
+    try
+    {
+        double load = double.Parse(this.LoadTB.Text!);
+        this.ResultTBl.Text = $"Total load: {5.0 * load} kN";
+    }
+    catch (Exception)
+    {
+        await MessageBoxManager.GetMessageBoxStandard("Error", "Invalid Input!").ShowAsync();
+    }
+}
+```
+
+[]{.down20}
+
+- Wie vorher aber mit Dialogfenster
+- Details (`async` und `await`) für uns nicht relevant
+- Message Box mit `using MsBox.Avalonia;` einbinden
+
+[]{.down40}
+
+::: {.fragment}
+### Leider notwendig: Zusätzliches Paket
+
+```{.xml filename="projektname.csproj" code-line-numbers="3"}
+<ItemGroup>
+    ...
+    <PackageReference Include="MessageBox.Avalonia" Version="12.0.0" />
+</ItemGroup>
+```
+
+- Mehr Informationen [hier](https://docs.avaloniaui.net/troubleshooting/controls/messagebox)
+:::
+
+## Zusammengesetzte Controls 1/2 {.smaller}
+
+[]{.down20}
+
+::: {.columns}
+::: {.column width=65%}
+```{.xml filename="MainWindow.axaml" code-line-numbers="4|10,13"}
+{{< include projekt/13-good-to-know-custom-control/MainWindow.axaml >}}
+```
+:::
+::: {.column width=4%}
+:::
+::: {.column width=26%}
+[]{.up10}
+![](bilder/13-good-to-know-custom-control.png){class="drop-shadow"}
+:::
+:::
+
+[]{.down20}
+
+- Situation: Die Eingabe für einen Rechteckquerschnitt wird zweimal benötigt
+- Idee: Mehrere Controls zu einem eigenen Control zusammenfassen
+    - `RectangularSectionControl` bündelt Beschriftungen und Textfelder
+- Zeile 4: Namensraum des Projekts unter dem Kürzel `local` verfügbar machen
+- Zeilen 10 und 13: Eigenes Control wie jedes andere Control verwenden
+
+## Zusammengesetzte Controls 2/2 {.smaller}
+
+[]{.down20}
+
+::: {.half-code}
+::: {.columns}
+::: {.column width=55%}
+```{.xml filename="RectangularSectionControl.axaml"}
+{{< include projekt/13-good-to-know-custom-control/RectangularSectionControl.axaml >}}
+```
+
+[]{.down20}
+
+- Aufbau wie bei einem Fenster
+    - Wurzelelement ist `UserControl` statt `Window`
+- Inhalt wie gewohnt: `Grid` mit Beschriftungen und Textfeldern
+:::
+::: {.column width=45%}
+```{.csharp filename="RectangularSectionControl.axaml.cs"}
+{{< include projekt/13-good-to-know-custom-control/RectangularSectionControl.axaml.cs >}}
+```
+
+[]{.down20}
+
+- Code-Behind wie beim Fenster
+- Eigene Methoden ergänzen
+    - `CreateSection` liest die Eingaben aus und erzeugt ein `RectangularSection`-Objekt
+- Aufruf im Fenster: `this.Section1Ctrl.CreateSection()`
+:::
+:::
+:::
 
 ## Namenskonvention
 
-[]{.down20}
+[]{.down40}
 
 ```xml
 <TextBox x:Name="NameTB"></TextBox>
@@ -568,14 +875,14 @@ public void OnComputeClicked(object? sender, RoutedEventArgs e)
 []{.down20}
 
 - Namen von Controls: Bedeutung + Kürzel für die Art des Controls
-    - `B` = `Button`, `TB` = `TextBox`, `CB` = `CheckBox`, `CoBo` = `ComboBox`, ...
+    - `B` = `Button`, `TB` = `TextBox`, `TBl` = `TextBlock`, `CB` = `CheckBox`
+    - `CoBo` = `ComboBox`, `NUD` = `NumericUpDown`, `DG` = `DataGrid`, ...
     - Vorteil: Am Namen ist ablesbar, um welche Art Control es sich handelt
 - Event-Methoden: `On` + Name + Ereignis in der Vergangenheitsform
     - Beispiele: `OnOkClicked`, `OnComputeClicked`
 - Keine offizielle C#-Regel, sondern unsere Konvention in dieser Veranstaltung
-    - Wichtig ist vor allem, einheitlich zu bleiben
 
-# Zusammenfassung 
+# Zusammenfassung
 
 ## Zusammenfassung
 
@@ -589,6 +896,8 @@ public void OnComputeClicked(object? sender, RoutedEventArgs e)
 - Die Programmlogik steht im Code-Behind (`MainWindow.axaml.cs`)
     - `x:Name` macht Controls im Code verfügbar
     - Events verknüpfen Benutzeraktionen mit eigenen Methoden
+    - Eingabewerte über Properties auslesen (`Text`, `IsChecked`, ...)
+- Ungültige Eingaben mit `try` und `catch` abfangen
 
 ## Quellen
 

@@ -2,16 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="datagrid.MainWindow"
-        Title="datagrid">
-
-    <Grid
-        Margin="40"
-        RowDefinitions="*,Auto"
-        >
-        <DataGrid x:Name="PersonsTBL" Grid.Row="0" AutoGenerateColumns="True" ColumnWidth="*"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="5">
+        x:Class="recipe_datagrid.MainWindow"
+        Title="Datagrid" Width="350" Height="600">
+    <Grid Margin="20" RowDefinitions="*,Auto">
+        <DataGrid x:Name="PersonsDG" Grid.Row="0" AutoGenerateColumns="True" ColumnWidth="*"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal" Spacing="5">
             <Button x:Name="AddRowB">Add Row</Button>
             <Button x:Name="DeleteRowB">Delete Row</Button>
             <Button x:Name="PrintB">Print</Button>
