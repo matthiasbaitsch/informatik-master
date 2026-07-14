@@ -1,6 +1,6 @@
 # Einführung
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/ZUKN_zhfKqw){target="_blank"} Erklärvideo auf YouTube
 
 ## Grafische Benutzungsoberflächen (GUIs)
 
@@ -166,7 +166,7 @@ graph LR
 
 # Komponenten der grafischen Oberfläche
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/Wm-96taGMJo){target="_blank"} Erklärvideo auf YouTube
 
 ## Komponenten heißen in Avalonia Controls
 
@@ -275,7 +275,7 @@ graph LR
 
 # Layoutcontrols
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/l3rijHLtab8){target="_blank"} Erklärvideo auf YouTube
 
 ## Layoutcontrols: `StackPanel` {.smaller}
 
@@ -480,7 +480,7 @@ graph LR
 
 # Controls mit eigenem Code verknüpfen
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/pUAAYYsNScs){target="_blank"} Erklärvideo auf YouTube
 
 ## Controls im Code ansprechen
 
@@ -595,7 +595,7 @@ bool includeDeadWeight = this.DeadWeightCB.IsChecked == true;
 
 # Rezepte für bestimmte Aufgaben
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/Ujek6YMn0Lw){target="_blank"} Erklärvideo auf YouTube
 
 ## Rezept: Zahl mit `NumericUpDown` einlesen
 
@@ -726,7 +726,7 @@ int numberOfSpans = (int)this.SpansNUD.Value!;
 
 # Was man sonst noch wissen kann
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/TzZAUzsqpPM){target="_blank"} Erklärvideo auf YouTube
 
 ## Ungültige Eingaben abfangen
 
@@ -920,7 +920,7 @@ dotnet new avalonia.usercontrol -n RectangularSectionControl
 
 # Zusammenfassung
 
-[🎥](https://youtu.be/TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/3pCZyaP1FdM){target="_blank"} Erklärvideo auf YouTube
 
 ## Zusammenfassung
 
