@@ -3,7 +3,7 @@
 
 In dieser Aufgabe entwickeln Sie eine grafische Benutzungsoberfläche zu der Klasse `SteelHall` aus dem Abschnitt zu Klassen. Hier eine Anregung, wie die Oberfläche aussehen könnte. 
 
-![](bilder/hallu-ui.png){width="80%" fig-align="center"}
+![](bilder/halle-ui.png){width="80%" fig-align="center"}
 
 ### Die Klasse SteelHall übernehmen
 
