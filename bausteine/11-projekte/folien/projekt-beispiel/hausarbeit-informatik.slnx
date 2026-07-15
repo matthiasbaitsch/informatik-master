@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="steel-hall/steel-hall.csproj" />
+  <Project Path="steel-hall-ui/steel-hall-ui.csproj" />
+</Solution>

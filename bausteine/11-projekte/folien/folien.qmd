@@ -1,2 +1,13 @@
+# Softwareprojekte mit VS Code und .NET
 
-TODO
+## Projektstruktur
+
+TODO: Projektstruktur erläutern
+
+## Paketmanagement mit Nuget
+
+TODO: Nuget erläutern
+
+## Projekte anlegen
+
+TODO: dotnet Befehle erklären
