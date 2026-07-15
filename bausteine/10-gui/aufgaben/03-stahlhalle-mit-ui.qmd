@@ -40,5 +40,5 @@ Erstellen Sie in `MainWindow.axaml` die grafische Oberfläche. Denken Sie daran:
 
 1. Melden Sie Methoden für die beiden Buttons an; der Exit-Button schließt das Fenster mit `this.Close()`.
 
-1. Schreiben Sie eine Methode `Apply`, die die Eingaben in das `SteelHall`-Objekt überträgt. Rufen Sie `Apply` beim Klick auf `Plot` und am Ende des Konstruktors auf.
+1. Schreiben Sie eine Methode `Apply`, die die Eingaben in das `SteelHall`-Objekt überträgt. Für die Profile gibt es `ISection.Get`, das zur Bezeichnung aus der Auswahlliste das passende Profil liefert, zum Beispiel `ISection.Get("HE-A 200")`. Rufen Sie `Apply` beim Klick auf `Plot` und am Ende des Konstruktors auf.
 :::
