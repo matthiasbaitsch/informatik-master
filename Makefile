@@ -14,7 +14,7 @@ render-slides-all: prepare-render
 render-study-assignments: prepare-render
 	quarto render lernpfad/studienarbeit
 
-render: render-slides render-assignments
+render: render-slides render-slides-all render-assignments 
 
 copy-templates:
 	for f in bausteine/*/*/projekt*; do \
@@ -30,7 +30,10 @@ copy-templates:
 		fi; \
 		cp bausteine/00-templates/.editorconfig $$f; \
 		cp -r bausteine/00-templates/.vscode $$f; \
-		cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \
+		others=`ls $$f/*.code-workspace 2>/dev/null | grep -v "/$$package.code-workspace$$"`; \
+		if [[ -z "$$others" ]]; then \
+			cp bausteine/00-templates/projekt.code-workspace $$f/$$package.code-workspace; \
+		fi; \
 	done
 
 clean:

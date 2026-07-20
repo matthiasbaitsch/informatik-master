@@ -175,6 +175,7 @@ end
 function make_slides(bb::BuildingBlock, path_input, path_output)
 	zipname = slug(bb) * "-folien.zip"
 	project_folder = joinpath(path_input, "projekt")
+	vorlage_folder = joinpath(path_input, "projekt-hausarbeit-vorlage")
 	h = """
 	---
 	title: \${title}
@@ -190,6 +191,11 @@ function make_slides(bb::BuildingBlock, path_input, path_output)
 		project_folder,
 		slug(bb) * "-folien",
 		joinpath(path_output, zipname),
+	)
+	try_zip_folder(
+		vorlage_folder,
+		"hausarbeit-informatik",
+		joinpath(path_output, "projekt-hausarbeit-vorlage.zip"),
 	)
 end
 
