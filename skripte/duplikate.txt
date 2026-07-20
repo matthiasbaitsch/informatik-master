@@ -30,6 +30,8 @@ bausteine/10-gui/aufgaben/projekt-schritte/.editorconfig
 bausteine/10-gui/aufgaben/projekt/.editorconfig
 bausteine/10-gui/folien/projekt-demo/.editorconfig
 bausteine/10-gui/folien/projekt/.editorconfig
+bausteine/11-projekte/folien/projekt-beispiel/.editorconfig
+bausteine/11-projekte/folien/projekt-vorlage/.editorconfig
 
 bausteine/00-templates/.vscode/csharp.code-snippets
 bausteine/02-installation/aufgaben/projekt/.vscode/csharp.code-snippets
@@ -63,6 +65,8 @@ bausteine/10-gui/aufgaben/projekt-schritte/.vscode/csharp.code-snippets
 bausteine/10-gui/aufgaben/projekt/.vscode/csharp.code-snippets
 bausteine/10-gui/folien/projekt-demo/.vscode/csharp.code-snippets
 bausteine/10-gui/folien/projekt/.vscode/csharp.code-snippets
+bausteine/11-projekte/folien/projekt-beispiel/.vscode/csharp.code-snippets
+bausteine/11-projekte/folien/projekt-vorlage/.vscode/csharp.code-snippets
 
 bausteine/00-templates/projekt.code-workspace
 bausteine/02-installation/aufgaben/projekt/installation.code-workspace
@@ -97,6 +101,8 @@ bausteine/10-gui/aufgaben/projekt-schritte/gui-schritte.code-workspace
 bausteine/10-gui/aufgaben/projekt/gui.code-workspace
 bausteine/10-gui/folien/projekt-demo/gui.code-workspace
 bausteine/10-gui/folien/projekt/gui.code-workspace
+bausteine/11-projekte/folien/projekt-beispiel/hausarbeit-informatik.code-workspace
+bausteine/11-projekte/folien/projekt-vorlage/hausarbeit-informatik.code-workspace
 
 bausteine/02-installation/aufgaben/projekt/01-beispielprogramm/01-beispielprogramm.csproj
 bausteine/03-elementare-datentypen/aufgaben/projekt-musterloesung/01-variablen/variablen.csproj
@@ -171,6 +177,7 @@ bausteine/05-klassen/aufgaben/projekt-musterloesung/04-steel-hall/steel-hall.csp
 bausteine/05-klassen/aufgaben/projekt/04-steel-hall/steel-hall.csproj
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall/steel-hall.csproj
 bausteine/10-gui/aufgaben/projekt/02-steel-hall/steel-hall.csproj
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall/steel-hall.csproj
 
 bausteine/04-objekte/aufgaben/projekt-musterloesung/objekte-musterloesung.slnx
 bausteine/04-objekte/aufgaben/projekt/objekte.slnx
@@ -204,6 +211,7 @@ bausteine/09-vererbung/folien/projekt/was-es-noch-zu-wissen-gibt/Fraction.cs
 
 bausteine/05-klassen/aufgaben/projekt-musterloesung/04-steel-hall/SteelHallDemo.cs
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall/SteelHallDemo.cs
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall/SteelHallDemo.cs
 
 bausteine/05-klassen/aufgaben/projekt-musterloesung/klassen-musterloesung.slnx
 bausteine/05-klassen/aufgaben/projekt/klassen.slnx
@@ -380,18 +388,32 @@ bausteine/10-gui/folien/projekt/10-layout-controls-nested/layout-controls-nested
 
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/App.axaml
 bausteine/10-gui/aufgaben/projekt/02-steel-hall-ui/App.axaml
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall-ui/App.axaml
 
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/App.axaml.cs
 bausteine/10-gui/aufgaben/projekt/02-steel-hall-ui/App.axaml.cs
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall-ui/App.axaml.cs
+
+bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/MainWindow.axaml
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall-ui/MainWindow.axaml
+
+bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/MainWindow.axaml.cs
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall-ui/MainWindow.axaml.cs
 
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/Program.cs
 bausteine/10-gui/aufgaben/projekt/02-steel-hall-ui/Program.cs
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall-ui/Program.cs
 
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/app.manifest
 bausteine/10-gui/aufgaben/projekt/02-steel-hall-ui/app.manifest
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall-ui/app.manifest
 
 bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall-ui/steel-hall-ui.csproj
 bausteine/10-gui/aufgaben/projekt/02-steel-hall-ui/steel-hall-ui.csproj
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall-ui/steel-hall-ui.csproj
+
+bausteine/10-gui/aufgaben/projekt-musterloesung/02-steel-hall/SteelHall.cs
+bausteine/11-projekte/folien/projekt-beispiel/steel-hall/SteelHall.cs
 
 bausteine/10-gui/aufgaben/projekt-musterloesung/gui-musterloesung.slnx
 bausteine/10-gui/aufgaben/projekt/gui.slnx
@@ -399,3 +421,6 @@ bausteine/10-gui/aufgaben/projekt/gui.slnx
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-01/MainWindow.axaml.cs
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-02/MainWindow.axaml.cs
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-03/MainWindow.axaml.cs
+
+bausteine/11-projekte/folien/projekt-beispiel/hausarbeit-informatik.slnx
+bausteine/11-projekte/folien/projekt-vorlage/hausarbeit-informatik.slnx

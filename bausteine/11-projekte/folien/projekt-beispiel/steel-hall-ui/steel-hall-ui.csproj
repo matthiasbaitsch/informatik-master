@@ -21,6 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../02-steel-hall/steel-hall.csproj" />
+    <ProjectReference Include="../steel-hall/steel-hall.csproj" />
   </ItemGroup>
 </Project>
