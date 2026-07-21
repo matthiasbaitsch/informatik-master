@@ -1,32 +1,17 @@
-# Softwareprojekte mit VS Code und .NET
+# Softwareprojekte mit Visual Studio Code und .NET
 
-## Projektstruktur
+[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
 
-[]{.down20}
+## Beispielhafte Projektstruktur {.smaller}
 
-- Bisher: jede Aufgabe ein einzelnes Projekt (eine `.csproj`-Datei)
-- Für die Hausarbeit: mehrere Projekte in einer *Solution*
-    - **Projekt** (`.csproj`): Anwendungslogik oder Bedienoberfläche, für sich übersetzbar
-    - **Solution** (`.slnx`): fasst mehrere zusammengehörige Projekte zusammen
-- Unsere Aufteilung
-    - Ein Projekt mit der **Anwendungslogik** (Berechnung, Zeichnung, ...)
-    - Ein Projekt mit der **Bedienoberfläche** (Avalonia)
-    - Das UI-Projekt verwendet das Logik-Projekt über eine *Projektreferenz*
-
-[]{.down20}
-
-→ Logik lässt sich unabhängig von der Oberfläche testen und in mehreren Anwendungen verwenden
-
-## Projektstruktur: Beispiel {.smaller}
-
-[]{.down20}
+[]{.down40}
 
 ::: {.columns}
-::: {.column width=58%}
+::: {.column width=38%}
 ```
 hausarbeit-informatik/
-├── hausarbeit-informatik.slnx
-├── hausarbeit-informatik.code-workspace
+├── hausarbeit.slnx
+├── hausarbeit.code-workspace
 ├── .editorconfig
 ├── .vscode/
 │   └── csharp.code-snippets
@@ -44,26 +29,39 @@ hausarbeit-informatik/
     └── app.manifest
 ```
 :::
-::: {.column width=4%}
-:::
-::: {.column width=38%}
-- `*.slnx`: Solution, bündelt die Projekte
-- `*.code-workspace`: VS-Code-Workspace
-- `.editorconfig`: Programmierkonventionen
-- `.vscode/`: Code-Snippets
-- `steel-hall/`: Anwendungslogik, läuft auch ohne Oberfläche
-- `steel-hall-ui/`: Bedienoberfläche (Avalonia), verwendet `steel-hall`
-:::
-:::
+::: {.column width=62%}
+### Ordner für Programmcode
+
+- `steel-hall/`: Berechnung und Darstellung
+- `steel-hall-ui/`: Avalonia Benutzungsoberfläche
+- `*.cs`: Programmcode und `*.axaml`: GUI
 
 []{.down20}
 
-- Für die Hausarbeit steht Vorlage zum [Download](projekt-hausarbeit-vorlage.zip) bereit
+### Dateien für Einstellungen
+
+- `hausarbeit.slnx`: Solution-Datei, bündelt Projekte
+- `steel-hall.csproj` und `steel-hall-ui.csproj`: Projektdateien
+- `hausarbeit.code-workspace` und `.vscode/`: VS-Code Einstellungen
+- `.editorconfig`: Programmierkonventionen
+
+:::
+:::
+
+[]{.down30}
+
+- Für die Hausarbeit steht das Grundgerüst zum [Download](projekt-hausarbeit-vorlage.zip) bereit
     - Kann beliebig umbenannt werden
-    - Ist ein vollständiges Grundgerüst
     - Projekte noch nicht enthalten (nächste Folie)
 
-## Projekte und konfigurieren
+## Projekte anlegen und zu Solution hinzufügen {.smaller}
+
+### Hinweise
+
+- Die Befehle geben Sie im Terminalfenster von VS-Code ein (Menü → Terminal → New Terminal). 
+- Die Folien verwenden `steel-hall`, Sie überlegen sich einen passenden Namen für Ihr eigenes Projekt
+
+[]{.down20}
 
 ### Anlegen
 
@@ -72,56 +70,111 @@ dotnet new console -o steel-hall
 dotnet new avalonia.app -o steel-hall-ui
 ```
 
+[]{.down10}
+
 1. Projekt für die Anwendungslogik (Konsolenanwendung zum Testen)
 1. Projekt für die Bedienoberfläche (Avalonia)
 
-### Verknüpfen
+[]{.down10}
+
+→ Projekte einfach wieder löschen, wenn etwas schiefgegangen ist
 
 []{.down20}
+
+### Zu Solution hinzufügen
 
 ```{.bash}
-dotnet sln add steel-hall/steel-hall.csproj steel-hall-ui/steel-hall-ui.csproj
-dotnet add steel-hall-ui/steel-hall-ui.csproj reference steel-hall/steel-hall.csproj
+dotnet sln add */*.csproj
 ```
 
-1. Beide Projekte in die Solution aufnehmen
-1. Projektreferenz damit `steel-hall-ui` Klassen aus `steel-hall` verwenden kann
+[]{.down10}
 
-```{.xml filename="steel-hall-ui.csproj"}
-{{< include projekt-beispiel/steel-hall-ui/steel-hall-ui.csproj >}}
-```
-
-- Projektreferenz landet als `<ProjectReference>` in der `.csproj`-Datei
-- Danach: `dotnet build` bzw. `dotnet run --project steel-hall-ui` wie gewohnt
-
-## Paketmanagement mit Nuget
+1. Alle Projekte in Solution aufnehmen
 
 []{.down20}
 
-- NuGet: Paketverwalter für .NET-Bibliotheken (vergleichbar mit einem App Store)
-- Viele nützliche Pakete bereits verfügbar, auch unsere eigenen: `BoDraw.App`, `ISections`, Avalonia, ...
+Ergebnis
+
+[]{.down10}
+
+```{.xml filename="hausarbeit.slnx"}
+{{< include projekt-hausarbeit-beispiel/hausarbeit.slnx >}}
+```
+
+## Paketmanagement mit Nuget {.smaller}
+
+[]{.down20}
+
+- [NuGet](https://www.nuget.org){target="_blank"}: Paketverwaltung für .NET-Bibliotheken (wie Pip für Python)
+- Viele nützliche Pakete bereits verfügbar, z.B. `BoDraw.App`, `ISections`, Avalonia
 - Einbinden über die Kommandozeile
 
-```{.bash}
-dotnet add steel-hall/steel-hall.csproj package BoDraw.App
-dotnet add steel-hall/steel-hall.csproj package ISections
-```
+    ```{.bash}
+    dotnet add steel-hall/steel-hall.csproj package BoDraw.App
+    dotnet add steel-hall/steel-hall.csproj package ISections
+    ```
+
+    oder mit Rechtsklick auf `steel-hall.csproj` und `Add NuGet Package...`
 
 - Trägt jeweils eine `<PackageReference>` in die `.csproj`-Datei ein
-- Beim nächsten `dotnet build` bzw. `dotnet run` lädt NuGet die Pakete automatisch herunter
 
-## Paketmanagement mit Nuget: Versionen {.smaller}
+    ```{.xml filename="steel-hall.csproj"}
+    <Project Sdk="Microsoft.NET.Sdk">
 
-[]{.down20}
+    <PropertyGroup>
+        ...
+    </PropertyGroup>
 
-```{.xml filename="steel-hall.csproj"}
-{{< include projekt-beispiel/steel-hall/steel-hall.csproj >}}
+    <ItemGroup>
+        <PackageReference Include="BoDraw.App" Version="1.0.44" />
+        <PackageReference Include="ISections" Version="1.0.12" />
+    </ItemGroup>
+
+    </Project>
+    ```
+
+- Pakete werden beim ersten Start des Programms automatisch heruntergeladen
+
+## Weitere Einstellungen {.smaller}
+
+[]{.down30}
+
+### Projektreferenz ergänzen
+
+1. Mit rechts auf `steel-hall-ui.csproj` klicken
+1. `Add Project Reference` wählen
+1. Oben `steel-hall` selektieren
+
+[]{.down10}
+
+→ UI-Projekt verwendet Projekt mit Anwendungslogik
+
+[]{.down30}
+
+### Spracheinstellung (empfohlen)
+
+```{.xml filename="steel-hall-ui.csproj" code-line-numbers="5"}
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    ...
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  ...
+</Project>
 ```
 
-[]{.down20}
+[]{.down10}
 
-- Jedes Paket braucht eine Version, z.B. `Version="1.*"`
-    - `1.*`: neueste verfügbare 1.x-Version (Wildcard)
-    - Feste Version (z.B. `Version="12.1.0"`) legt genau eine Version fest
-- Pakete suchen und nachschlagen auf [nuget.org](https://www.nuget.org){target="_blank"}
-- `.csproj` ist nur eine Textdatei → `<PackageReference>` lässt sich auch direkt darin eintragen
+- In Projektdatei Zeile 5 hinzufügen
+
+[]{.down10}
+
+→ Projekt verwendet Punkt für Dezimaltrenner (spart viel Ärger)
+
+## Komplette Projektdatei für UI-Projekt {.smaller}
+
+```{.xml filename="steel-hall-ui/steel-hall-ui.csproj"}
+{{< include projekt-hausarbeit-beispiel/steel-hall-ui/steel-hall-ui.csproj >}}
+```
