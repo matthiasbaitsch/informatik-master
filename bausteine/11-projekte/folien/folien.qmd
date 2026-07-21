@@ -1,6 +1,6 @@
 # Softwareprojekte mit Visual Studio Code und .NET
 
-[🎥](TODO){target="_blank"} Erklärvideo auf YouTube
+[🎥](https://youtu.be/fDUsIMUE_uQ){target="_blank"} Erklärvideo auf YouTube
 
 ## Beispielhafte Projektstruktur {.smaller}
 
