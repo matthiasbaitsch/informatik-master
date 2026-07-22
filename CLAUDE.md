@@ -57,6 +57,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 - Reveal.js-Fragments: Soll Inhalt A beim Öffnen der Folie sichtbar sein und auf einen Klick durch Inhalt B ersetzt werden, beide in ein `r-stack` packen, A mit `.fragment .fade-out fragment-index=1`, B mit `.fragment .fade-in fragment-index=1` – gleicher Index sorgt für simultanen Übergang
 - In Musterlösungen Kapselung (private Felder/Properties) nicht als fehlend anmerken – Felder bleiben zu diesem Zeitpunkt bewusst öffentlich, Kapselung bringt den Studierenden hier noch keinen Lerngewinn
 - Bei Code-Reviews von Musterlösungen: Anzahl neuer Konzepte begrenzen – Refactorings, die nur DRY/Cleanliness verbessern (z.B. Datenlisten deduplizieren) aber neue Sprachkonstrukte einführen würden, nicht vorschlagen
+- Bei kleinen, punktuellen Korrekturen (einzelne CSS-Regel, kurze Textänderung) nicht ungefragt rendern/verifizieren/nachbessern – der Nutzer erledigt solche Kleinigkeiten oft selbst schneller. Änderung vorschlagen bzw. umsetzen und dann abwarten statt eigenständig weitere Schritte anzuhängen
 
 ## Inhaltliche Richtlinien
 
