@@ -254,6 +254,10 @@ $selection-bg: #26351c !default;
 // Listen
 
 .reveal ul {
+  // reveal.js setzt Top-Level-Listen sonst auf inline-block, wodurch der
+  // Browser eine schmalere shrink-to-fit-Breite berechnet und Fließtext in
+  // Listenpunkten unnötig umbricht
+  display: block;
   padding-left: 2px;
 
   li::marker {
