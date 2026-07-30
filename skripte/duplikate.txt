@@ -424,6 +424,3 @@ bausteine/10-gui/aufgaben/projekt/gui.slnx
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-01/MainWindow.axaml.cs
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-02/MainWindow.axaml.cs
 bausteine/10-gui/aufgaben/projekt-schritte/01-unit-converter-03/MainWindow.axaml.cs
-
-bausteine/12-werkzeuge/folien/projekt/01-excel-read/excel-read.csproj
-bausteine/12-werkzeuge/folien/projekt/02-excel-write/excel-write.csproj
