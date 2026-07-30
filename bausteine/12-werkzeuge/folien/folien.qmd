@@ -36,14 +36,16 @@ dotnet add package NPOI
 
 []{.down40}
 
-- Pfad `data/profile.xlsx` ist relativ zum Programm
+- Pfad `data/profile.xlsx` ist relativ zum Projektordner
 - Damit das beim Ausführen funktioniert, wird die Datei im `.csproj` ins Ausgabeverzeichnis kopiert
 
-```{.xml filename="excel-read.csproj"}
-<Content Include="data/**">
-  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-</Content>
-```
+    ```{.xml filename="excel-read.csproj"}
+    <ItemGroup>
+    <Content Include="data/**">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    </ItemGroup>
+    ```
 
 ## Excel-Datei schreiben {.smaller}
 
