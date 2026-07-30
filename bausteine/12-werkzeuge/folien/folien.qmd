@@ -1,0 +1,34 @@
+# Werkzeuge
+
+## NPOI
+
+[]{.down40}
+
+`NPOI` ist eine .NET-Bibliothek zum Lesen und Schreiben von Microsoft-Office-Dateien (Excel, Word, PowerPoint), ohne dass Office installiert sein muss. Sie ist eine Portierung der Java-Bibliothek Apache POI.
+
+[]{.down20}
+
+```
+dotnet add package NPOI
+```
+
+[]{.down20}
+
+- [Repository auf GitHub](https://github.com/nissl-lab/npoi){target="_blank"}
+- [Dokumentation (Wiki)](https://github.com/nissl-lab/npoi/wiki){target="_blank"}
+
+## Excel-Datei lesen
+
+[]{.down40}
+
+```{.csharp filename="ExcelReadDemo.cs"}
+{{< include projekt/01-excel-read/ExcelReadDemo.cs >}}
+```
+
+## Excel-Datei schreiben
+
+[]{.down40}
+
+```{.csharp filename="ExcelWriteDemo.cs"}
+{{< include projekt/02-excel-write/ExcelWriteDemo.cs >}}
+```

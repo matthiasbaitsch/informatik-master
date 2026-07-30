@@ -12,3 +12,4 @@ bin
 *_files
 *.lscache
 /.quarto/
+bausteine/12-werkzeuge/folien/projekt/02-excel-write/data/results.xlsx

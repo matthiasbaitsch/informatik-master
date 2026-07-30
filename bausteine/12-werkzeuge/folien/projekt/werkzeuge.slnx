@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="01-excel-read/excel-read.csproj" />
+  <Project Path="02-excel-write/excel-write.csproj" />
+</Solution>
