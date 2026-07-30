@@ -1,12 +1,8 @@
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using System.Runtime.CompilerServices;
-
-// Hilfsfunktion für Pfad relativ zu Projekt (einfach kopieren)
-static string ResolvePath(string fileName, [CallerFilePath] string sourceFile = "") => Path.Combine(Path.GetDirectoryName(sourceFile)!, fileName);
 
 // Arbeitsmappe und Tabellenblatt
-XSSFWorkbook workbook = new XSSFWorkbook(ResolvePath("data/profile.xlsx"));
+XSSFWorkbook workbook = new XSSFWorkbook("data/profile.xlsx");
 ISheet sheet = workbook.GetSheetAt(0);
 
 // Zeilen einlesen

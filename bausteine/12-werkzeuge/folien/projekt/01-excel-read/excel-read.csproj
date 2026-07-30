@@ -14,4 +14,10 @@
     <PackageReference Include="NPOI" Version="2.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="data/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
