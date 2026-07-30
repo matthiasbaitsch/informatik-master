@@ -2,7 +2,7 @@ using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.Runtime.CompilerServices;
 
-// Hilfsfunktion für Pfad relativ zu Projekt
+// Hilfsfunktion für Pfad relativ zu Projekt (einfach kopieren)
 static string ResolvePath(string fileName, [CallerFilePath] string sourceFile = "") => Path.Combine(Path.GetDirectoryName(sourceFile)!, fileName);
 
 // Arbeitsmappe und Tabellenblatt
