@@ -174,10 +174,10 @@ Design
 Implementation
 : Design in Programmcode umsetzen
 
-. . .
-
+::: {.fragment}
 []{.down40}
 → Schritt für Schritt am Beispiel der komplexen Zahlen
+:::
 
 # Analyse
 
@@ -761,8 +761,7 @@ public class Klassenname
 - In einer Methode zeigt `this` auf das Objekt, das die Methode ausführt
 - Methoden mit `void` liefern kein Ergebnis, sonst ist `return` obligatorisch
 
-. . .
-
+::: {.fragment}
 []{.down40}
 
 ### Die wichtigsten Begriffe mit Übersetzung
@@ -795,4 +794,5 @@ Konstruktor
 : *Constructor*
 :::
 
+:::
 :::
