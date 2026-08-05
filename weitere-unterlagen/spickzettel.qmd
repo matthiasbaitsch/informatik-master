@@ -1,0 +1,428 @@
+---
+title: "Spickzettel"
+subtitle: Modul Informatik im Master Bauingenieurwesen
+toc: true
+toc-depth: 2
+number-sections: false
+format:
+  html:
+    theme:
+      - style-assignments.scss
+---
+
+Kompakte Übersicht über die in der Veranstaltung behandelten C#-Konzepte zum Nachschlagen. Ersetzt nicht die Folien – dort finden Sie Erklärungen und Beispiele im Detail.
+
+## Datentypen und Variablen
+
+| Typ | Beschreibung | Beispiel |
+|---|---|---|
+| `bool` | Wahrheitswert | `true` |
+| `int` | Ganze Zahl (32 Bit) | `4711` |
+| `long` | Ganze Zahl (64 Bit) | `2147483648` |
+| `float` | Gleitkommazahl (32 Bit) | `3.1415927` |
+| `double` | Gleitkommazahl (64 Bit) | `2.718281828459045` |
+| `char` | Zeichen | `'A'` |
+| `string` | Zeichenkette | `"Hallo"` |
+
+Deklaration und Zuweisung
+
+```csharp
+datentyp variablenname;
+variablenname = wert;
+
+datentyp variablenname = wert;    // in einem Schritt
+```
+
+- Variablen müssen vor der ersten Verwendung deklariert werden, Deklaration nur einmal
+- Namen in camelCase, erster Buchstabe klein (`dateOfBirth`)
+- Typ muss zum zugewiesenen Wert passen (statische Typisierung)
+
+## Operatoren
+
+Arithmetisch: `+  -  *  /  %`
+
+- Ganzzahl-Division bei `int / int` (Nachkommastellen fallen weg)
+- Rest bei ganzzahliger Division mit `%`
+- `+` verbindet auch Zeichenketten
+
+Kurzschreibweisen: `+=  -=  *=  /=  ++  --`
+
+```csharp
+n += 3;    // n = n + 3
+i++;       // i = i + 1
+```
+
+Vergleich: `==  !=  <  <=  >  >=`
+
+Logisch: `&&` (und), `||` (oder), `!` (nicht)
+
+Mathematische Funktionen (`using static System.Math;`)
+
+```csharp
+Sqrt(2.0)       Pow(2.0, 10.0)     Abs(-3.7)
+Sin(x) Cos(x) Tan(x)   // Bogenmaß
+Log(x)          Log10(x)          Round(x, n)
+Min(a, b)       Max(a, b)         PI          E
+```
+
+## Ausgabe und String-Interpolation
+
+```csharp
+Console.WriteLine("Text");
+Console.WriteLine(variable);
+Console.WriteLine($"Text mit {variable}");
+```
+
+| Format | Bedeutung | Beispiel (`x = 12345.6789`) |
+|---|---|---|
+| `{x}` | Standardausgabe | `12345,6789` |
+| `{x,17}` | Breite 17, rechtsbündig | `·····12345,6789` |
+| `{x,-17}` | Breite 17, linksbündig | `12345,6789·····` |
+| `{x:0.00}` | Immer 2 Nachkommastellen | `12345,68` |
+| `{x:0.##}` | Maximal 2 Nachkommastellen | `12345,68` |
+| `{x:+0.##;-0.##}` | Vorzeichen erzwingen | `+12345,68` |
+
+## Kontrollstrukturen
+
+Verzweigung
+
+```csharp
+if (bedingung)
+{
+    ...
+}
+else if (bedingung2)
+{
+    ...
+}
+else
+{
+    ...
+}
+```
+
+`while`-Schleife – Anzahl Durchläufe unbekannt
+
+```csharp
+while (fortsetzungsbedingung)
+{
+    ...
+}
+```
+
+`for`-Schleife – Anzahl Durchläufe bekannt
+
+```csharp
+for (int i = 0; i < n; i++)
+{
+    ...
+}
+```
+
+`foreach`-Schleife – alle Elemente einer Datenstruktur durchlaufen
+
+```csharp
+foreach (datentyp element in collection)
+{
+    ...
+}
+```
+
+## Objekte und Klassen
+
+Objekt erzeugen, Eigenschaften und Methoden verwenden
+
+```csharp
+Klassenname variablenname = new Klassenname(parameter...);
+
+variablenname.Eigenschaft;             // lesen
+variablenname.Eigenschaft = wert;      // schreiben
+variablenname.Methode(parameter...);   // aufrufen
+```
+
+- Klasse: Bauplan. Objekt: konkretes Exemplar
+- Variablen für Objekte sind Referenzvariablen (enthalten einen Zeiger auf das Objekt, nicht das Objekt selbst)
+
+Grundgerüst einer Klasse
+
+```csharp
+public class Klassenname
+{
+    // Attribute
+    public Typ1 Attribut1;
+    public Typ2 Attribut2;
+
+    // Konstruktor - wird bei new ausgeführt
+    public Klassenname(Typ1 attribut1, Typ2 attribut2)
+    {
+        this.Attribut1 = attribut1;
+        this.Attribut2 = attribut2;
+    }
+
+    // Methode ohne Rückgabewert
+    public void Methodenname1(parameterliste)
+    {
+        ...
+    }
+
+    // Methode mit Rückgabewert
+    public Rückgabetyp Methodenname2(parameterliste)
+    {
+        ...
+        return wert;
+    }
+}
+```
+
+- Reihenfolge im Code: Attribute, Konstruktor, Methoden
+- `this` zeigt innerhalb einer Methode auf das Objekt, für das sie aufgerufen wurde
+- Rückgabetyp `void` = kein Ergebnis, sonst ist `return` Pflicht
+
+## Vererbung und Polymorphismus
+
+Basisklasse und abgeleitete Klasse
+
+```csharp
+public class Basisklasse
+{
+    ...
+}
+
+public class AbgeleiteteKlasse : Basisklasse
+{
+    public AbgeleiteteKlasse(parameterliste1) : base(parameterliste2)
+    {
+        ...
+    }
+}
+```
+
+Abstrakte Klasse und Methode – erzwingt Implementierung in Unterklassen
+
+```csharp
+public abstract class Basisklasse
+{
+    public abstract Rückgabetyp Methodenname(parameterliste);
+}
+
+public class AbgeleiteteKlasse : Basisklasse
+{
+    public override Rückgabetyp Methodenname(parameterliste)
+    {
+        ...
+    }
+}
+```
+
+- Polymorphismus: Derselbe Methodenaufruf (`e.Methode()`) verhält sich je nach tatsächlichem Objekttyp unterschiedlich
+- `Object`: Wurzel jeder Klassenhierarchie, stellt u.a. `ToString()` bereit
+- `ToString()` überschreiben, damit `Console.WriteLine(objekt)` sinnvoll ausgibt
+
+```csharp
+public override string ToString()
+{
+    return $"...";
+}
+```
+
+- Interface: wie abstrakte Klasse, aber ausschließlich abstrakte Methoden. Eine Klasse kann beliebig viele Interfaces implementieren (aber nur von einer Klasse erben). Bekannte Beispiele: `IComparable<T>`, `IEnumerable<T>`
+
+## Datenstrukturen
+
+| Datenstruktur | Eigenschaft |
+|---|---|
+| `Array` (`X[]`) | Feste Größe, Zugriff über Index |
+| `List<T>` | Wie Array, aber Größe variabel |
+| `Dictionary<TKey, TValue>` | Schlüssel-Wert-Paare |
+| `HashSet<T>` | Menge, jeder Wert nur einmal |
+
+```csharp
+// Array
+int[] a = new int[3];      // feste Größe, mit 0 vorbelegt
+int[] a = [1, 98, 4];      // mit Werten initialisieren
+a[0] = 7;                  // Zugriff über Index (0 bis Length-1)
+int n = a.Length;
+
+// List
+List<string> names = [];
+names.Add("Gilmore");
+names[0] = "Slater";
+names.Contains("Slater");
+names.IndexOf("Slater");
+names.Remove("Slater");
+names.RemoveAt(0);
+int n = names.Count;
+
+// Dictionary
+Dictionary<string, double> height = [];
+height["Eiffel Tower"] = 330.0;
+height.ContainsKey("Eiffel Tower");
+height.Remove("Eiffel Tower");
+
+// HashSet
+HashSet<string> materials = ["Concrete", "Wood"];
+materials.Add("Steel");
+materials.Contains("Steel");
+materials.Remove("Steel");
+```
+
+Hilfsmethoden der `Array`-Klasse: `Array.Sort(a)`, `Array.IndexOf(a, wert)`, `Array.Copy(a, b, n)`, `Array.Fill(a, wert)`, `Array.Reverse(a)`
+
+Gemeinsamer Nenner `IEnumerable<T>` – funktioniert mit Array, `List<T>`, `HashSet<T>`, ...
+
+| Methode | Bedeutung |
+|---|---|
+| `foreach (Typ e in a) {}` | alle Elemente durchlaufen |
+| `a.Sum()` / `a.Min()` / `a.Max()` / `a.Average()` | nur bei Zahlen |
+| `a.Skip(n)` / `a.Take(n)` | Elemente überspringen / nur erste n |
+| `a.ToArray()` / `a.ToList()` / `a.ToHashSet()` | Kopie erstellen |
+| `String.Join(trennzeichen, a)` | als Text ausgeben |
+
+## Eingebaute Klassen
+
+```csharp
+// string
+s.Trim()             // Leerzeichen entfernen
+s.Split(';')         // aufteilen -> string[]
+s.Contains("Bo")      s.StartsWith("Bo")
+s.ToLower()           s.Replace("o", "0")
+
+// double, int
+double d = double.Parse("3.14");
+int    i = int.Parse("42");
+string s = 3.14.ToString("F2");     // "3.14"
+
+// DateTime, TimeSpan
+DateTime t  = DateTime.Parse("1.1.2000");
+DateTime t2 = t + TimeSpan.FromDays(7);
+TimeSpan dt = t2 - t;
+TimeSpan.FromSeconds(1)   TimeSpan.FromDays(1)
+dt.TotalSeconds
+
+// Textdatei einlesen
+string[] lines = File.ReadAllLines("daten.csv");
+foreach (string line in File.ReadAllLines("daten.csv").Skip(1))  // Kopfzeile überspringen
+{
+    string[] fields = line.Split(';');
+}
+```
+
+## Unit Tests (xUnit)
+
+```csharp
+public class Test
+{
+    [Fact]
+    public void TestMethodName()
+    {
+        Beam b = new Beam(...);
+        Assert.Equal(erwarteterWert, b.Methode(), toleranz);
+    }
+}
+```
+
+- Test-Explorer in VS Code: Tests ausführen, bei Fehlschlag auf Hinweis klicken
+- TDD-Zyklus: **Red** (fehlschlagenden Test schreiben) → **Green** (minimaler Code, Test besteht) → **Refactor**
+
+## Projekte und NuGet
+
+```bash
+dotnet new console -o projektname          # Konsolenanwendung
+dotnet new avalonia.app -o projektname-ui  # Avalonia-Anwendung
+dotnet sln add */*.csproj                  # Projekte zur Solution hinzufügen
+
+dotnet add projektname/projektname.csproj package Paketname   # NuGet-Paket einbinden
+```
+
+Projektdatei (Auszug)
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <InvariantGlobalization>true</InvariantGlobalization>   <!-- Punkt statt Komma als Dezimaltrennzeichen -->
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Paketname" Version="1.0.0" />
+  </ItemGroup>
+</Project>
+```
+
+Projektreferenz ergänzen: Rechtsklick auf die `.csproj` der UI → `Add Project Reference`
+
+## GUI mit Avalonia
+
+Grundgerüst: `MainWindow.axaml` (Oberfläche, XML) + `MainWindow.axaml.cs` (Programmlogik, Code-Behind)
+
+```xml
+<Window xmlns="https://github.com/avaloniaui" Title="...">
+    <Button x:Name="OkB">OK</Button>
+</Window>
+```
+
+```csharp
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        this.InitializeComponent();
+        this.OkB.Click += this.OnOkClicked;
+    }
+
+    public void OnOkClicked(object? sender, RoutedEventArgs e)
+    {
+        ...
+    }
+}
+```
+
+- `x:Name` macht ein Control als Attribut der Klasse verfügbar
+- Namenskonvention: Bedeutung + Kürzel für Art des Controls (`OkB`, `NameTB`, `ResultTBl`, `DeadWeightCB`, `MaterialCoBo`, `LengthNUD`)
+- Event-Methoden: `On` + Name + Ereignis in Vergangenheitsform (`OnOkClicked`)
+
+Wichtige Controls
+
+| Gruppe | Controls |
+|---|---|
+| Eingabe | `Button`, `TextBox`, `CheckBox`, `RadioButton`, `ComboBox`, `Slider`, `NumericUpDown` |
+| Anzeige | `TextBlock`, `Image`, `BoDrawCanvas`, `DataGrid` |
+| Layout | `StackPanel`, `Grid`, `DockPanel`, `TabControl`, `GroupBox`, `Border` |
+
+Eigenschaften zum Auslesen von Eingaben
+
+```csharp
+string name       = this.NameTB.Text!;
+double load       = double.Parse(this.LoadTB.Text!);
+double length     = (double)this.LengthNUD.Value!;
+double sliderVal   = this.LengthSL.Value;
+int    selIndex   = this.MaterialCoBo.SelectedIndex;
+string material   = (string)this.MaterialCoBo.SelectedItem!;
+bool   isChecked  = this.DeadWeightCB.IsChecked == true;
+```
+
+Wichtige Events: `Click` (Button), `TextChanged` (TextBox), `IsCheckedChanged` (CheckBox/RadioButton), `SelectionChanged` (ComboBox), `ValueChanged` (Slider/NumericUpDown)
+
+Ungültige Eingaben abfangen
+
+```csharp
+try
+{
+    double load = double.Parse(this.LoadTB.Text!);
+    this.ResultTBl.Text = $"Total load: {5.0 * load} kN";
+}
+catch (Exception)
+{
+    this.ResultTBl.Text = "Invalid input";
+}
+```
+
+Layout-Eigenschaften: `Width` / `Height`, `Margin` (Abstand außen), `Spacing` (Abstand innen), `HorizontalAlignment` / `VerticalAlignment` (`Left`, `Center`, `Right`, `Stretch`)
+
+## Excel-Dateien (NPOI)
+
+```bash
+dotnet add package NPOI
+```
+
+- Bibliothek zum Lesen und Schreiben von Excel-Dateien ohne installiertes Office
+- Details und Beispielcode: Baustein „Werkzeuge", Folien

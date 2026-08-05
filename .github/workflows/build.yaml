@@ -52,6 +52,7 @@ jobs:
           quarto render lernpfad/aufgaben -t html
           quarto render lernpfad/folien -t revealjs
           quarto render lernpfad/folien-alle -t html
+          quarto render weitere-unterlagen -t html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
