@@ -21,6 +21,7 @@ book:
     - c/09-vererbung-und-polymorphismus.qmd
     - c/10-grafische-benutzungsoberflächen.qmd
     - c/11-arbeiten-mit-projekten.qmd
+    - c/12-werkzeuge.qmd
     - c/99-referenz.qmd
 
 number-sections: false
