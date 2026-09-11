@@ -12,7 +12,7 @@ und des Schwerverkehrs. Neben der faktischen Darstellung der Belastungswerte zei
 die Breite eines Knotenstroms im Knotenstromplan die Belastung in Relation zu den
 anderen Strömen an. Im Zuge dieser Aufgabenstellung soll eine Applikation entwickelt
 werden, die den Prozess der Darstellung eines Knotenstromplans für eine (1) Kreuzung
-oder einen (2) Kreisverkehr automatisiert.
+und einen (2) Kreisverkehr automatisiert.
 
 ![](bilder/verkehr-knotenstromplan.png){width=90mm fig-align="center"}
 
@@ -22,6 +22,6 @@ Im Einzelnen soll das Programm folgenden Funktionsumfang zur Verfügung stellen:
   (verkehrliche Belastungen, Straßennamen, Knotenpunktform)
 - Darstellung der verkehrlichen Belastungen für die definierte Knotenpunktsituation
   unter Einfluss der Eingangsparameter (die Knotenpunktströme sollen dabei durch die
-  Strichdicke die Relation zur Verkehrsstärke des Knotenpunktes verdeutlichen und je
+  Strichdicke die Relation zur Verkehrsstärke des Knotenpunktes verdeutlichen und (optional) je
   Zufahrt soll eine Farbe für die Darstellung frei wählbar sein)
 - Export-Funktion für den Knotenstromplan als JPG- oder PNG-Datei
