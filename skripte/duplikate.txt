@@ -163,15 +163,23 @@ bausteine/04-objekte/aufgaben/projekt/03-hallenrechner-2/assets/hs-bo_logo_en.pn
 
 bausteine/04-objekte/aufgaben/projekt-musterloesung/01-zeichnen/zeichnen.csproj
 bausteine/04-objekte/aufgaben/projekt-musterloesung/02-referenzvariablen/referenzvariablen.csproj
-bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-01/zeichnen.csproj
-bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-02/zeichnen.csproj
-bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-03/zeichnen.csproj
-bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-04/zeichnen.csproj
+bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-01/zeichnen-01.csproj
+bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-02/zeichnen-02.csproj
+bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-03/zeichnen-03.csproj
+bausteine/04-objekte/aufgaben/projekt-schritte/01-zeichnen-04/zeichnen-04.csproj
 bausteine/04-objekte/aufgaben/projekt/01-zeichnen/zeichnen.csproj
 bausteine/04-objekte/aufgaben/projekt/02-referenzvariablen/referenzvariablen.csproj
+bausteine/06-kontrollstrukturen/aufgaben/projekt-musterloesung/03-treppenbemessung/treppenbemessung.csproj
 bausteine/06-kontrollstrukturen/aufgaben/projekt-playground/mandelbrot/mandelbrot.csproj
+bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-01/treppenbemessung-01.csproj
+bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-02/treppenbemessung-02.csproj
+bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-03/treppenbemessung-03.csproj
+bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-04/treppenbemessung-04.csproj
+bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-05/treppenbemessung-05.csproj
+bausteine/06-kontrollstrukturen/aufgaben/projekt/03-treppenbemessung/treppenbemessung.csproj
 bausteine/08-datenstrukturen/aufgaben/projekt-musterloesung/02-trigonometric-polynomial/trigonometric-polynomial.csproj
 bausteine/08-datenstrukturen/aufgaben/projekt/02-trigonometric-polynomial/trigonometric-polynomial.csproj
+bausteine/08-datenstrukturen/folien/projekt/03-paint-foreach/paint-foreach.csproj
 bausteine/09-vererbung/aufgaben/projekt-musterloesung/01-sysdraw/sysdraw.csproj
 bausteine/09-vererbung/aufgaben/projekt/01-sysdraw/sysdraw.csproj
 
@@ -189,16 +197,16 @@ bausteine/04-objekte/aufgaben/projekt/objekte.slnx
 bausteine/04-objekte/folien/bilder/referenzvariablen-1.png
 bausteine/04-objekte/folien/bilder/referenzvariablen-zeiger-bild-6.png
 
-bausteine/04-objekte/folien/projekt/02-referenzvariablen-kopie/reference-types.csproj
+bausteine/04-objekte/folien/projekt/02-referenzvariablen-kopie/reference-types-copy.csproj
 bausteine/04-objekte/folien/projekt/02-referenzvariablen/reference-types.csproj
-bausteine/04-objekte/folien/projekt/04-exemplare/reference-types.csproj
+bausteine/04-objekte/folien/projekt/04-exemplare/instances.csproj
 bausteine/06-kontrollstrukturen/folien/projekt/02-heron-grafik/heron-grafik.csproj
 bausteine/06-kontrollstrukturen/folien/projekt/02-heron/heron.csproj
 bausteine/06-kontrollstrukturen/folien/projekt/03-integration-grafik/integration-grafik.csproj
 bausteine/06-kontrollstrukturen/folien/projekt/03-integration/integration.csproj
 bausteine/06-kontrollstrukturen/folien/projekt/04-schaltjahre/schaltjahre.csproj
 bausteine/08-datenstrukturen/folien/projekt/01-arrays/arrays.csproj
-bausteine/08-datenstrukturen/folien/projekt/02-collections/arrays.csproj
+bausteine/08-datenstrukturen/folien/projekt/02-collections/collections.csproj
 
 bausteine/05-klassen/aufgaben/01-download.qmd
 bausteine/06-kontrollstrukturen/aufgaben/01-download.qmd
@@ -228,17 +236,9 @@ bausteine/05-klassen/folien/bilder/konstruktor-4.png
 bausteine/05-klassen/folien/bilder/konstruktor-5.png
 
 bausteine/06-kontrollstrukturen/aufgaben/projekt-musterloesung/02-ford-circles/ford-circles.csproj
-bausteine/06-kontrollstrukturen/aufgaben/projekt-musterloesung/03-treppenbemessung/treppenbemessung.csproj
 bausteine/06-kontrollstrukturen/aufgaben/projekt-musterloesung/04-paint/paint.csproj
-bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-01/treppenbemessung-01.csproj
-bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-02/treppenbemessung-02.csproj
-bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-03/treppenbemessung-03.csproj
-bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-04/treppenbemessung-04.csproj
-bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-05/treppenbemessung-05.csproj
 bausteine/06-kontrollstrukturen/aufgaben/projekt/02-ford-circles/ford-circles.csproj
-bausteine/06-kontrollstrukturen/aufgaben/projekt/03-treppenbemessung/treppenbemessung.csproj
 bausteine/06-kontrollstrukturen/aufgaben/projekt/04-paint/paint.csproj
-bausteine/08-datenstrukturen/folien/projekt/03-paint-foreach/paint-foreach.csproj
 
 bausteine/06-kontrollstrukturen/aufgaben/projekt-musterloesung/03-treppenbemessung/Treppenbemessung.cs
 bausteine/06-kontrollstrukturen/aufgaben/projekt-schritte/03-treppenbemessung-05/Treppenbemessung.cs
