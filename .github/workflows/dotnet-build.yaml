@@ -1,4 +1,4 @@
-name: C#-Projekte bauen
+name: Build C# projects
 
 on:
   push:
@@ -9,16 +9,9 @@ on:
       - "bausteine/**/*.cs"
       - "bausteine/**/*.axaml"
       - ".github/workflows/dotnet-build.yaml"
-  pull_request:
-    paths:
-      - "bausteine/**/*.csproj"
-      - "bausteine/**/*.slnx"
-      - "bausteine/**/*.cs"
-      - "bausteine/**/*.axaml"
-      - ".github/workflows/dotnet-build.yaml"
   schedule:
-    # taeglich, unabhaengig von Commits: faengt Aenderungen bei
-    # gefloateten Paketversionen (z.B. Avalonia 12.*) ab
+    # daily, independent of commits: catches changes from floated
+    # package versions (e.g. Avalonia 12.*)
     - cron: "13 4 * * *"
   workflow_dispatch:
 
@@ -37,12 +30,12 @@ jobs:
       - name: Set up Julia
         uses: julia-actions/setup-julia@v2
 
-      - name: Cache NuGet-Pakete
+      - name: Cache NuGet packages
         uses: actions/cache@v4
         with:
           path: ~/.nuget/packages
           key: nuget-${{ hashFiles('bausteine/**/*.csproj') }}
           restore-keys: nuget-
 
-      - name: Solutions bauen
+      - name: Build solutions
         run: make build-dotnet

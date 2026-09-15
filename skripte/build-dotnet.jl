@@ -1,13 +1,13 @@
-# Baut alle C#-Projekte unter bausteine/, um Kompilierfehler fruehzeitig zu
-# finden (z.B. durch neue Avalonia-Versionen). Bricht beim ersten Fehler ab.
+# Builds every C# project under bausteine/ to catch compile errors early
+# (e.g. from new Avalonia versions). Stops at the first failure.
 #
-# Manche Aufgaben-Startcode-Projekte compilieren absichtlich nicht (Main
-# oder Implementierung fehlt noch, Studierende ergaenzen das). Projekten,
-# denen nur die Main-Methode fehlt, wird dafuer eine temporaere Main
-# spendiert, damit Nachbarprojekte in derselben Solution trotzdem geprueft
-# werden. Projekten, denen mehr fehlt, werden ganz uebersprungen.
+# Some exercise starter projects intentionally don't compile (Main or the
+# implementation is still missing, students fill it in). Projects missing
+# only the Main method get a temporary one added, so sibling projects in
+# the same solution still get checked. Projects missing more than that are
+# skipped entirely.
 #
-# Aufruf im Projekt-Wurzelverzeichnis: julia skripte/build-dotnet.jl
+# Run from the project root: julia skripte/build-dotnet.jl
 
 const DUMMY_MAIN_DIRS = [
 	"bausteine/03-elementare-datentypen/aufgaben/projekt/01-variablen",
