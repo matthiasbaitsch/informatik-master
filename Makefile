@@ -36,6 +36,9 @@ copy-templates:
 		fi; \
 	done
 
+build-dotnet:
+	julia skripte/build-dotnet.jl
+
 clean:
 	rm -rf lernpfad/*/c
 	rm -rf __output
