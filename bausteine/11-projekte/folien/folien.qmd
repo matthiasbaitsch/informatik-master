@@ -126,8 +126,8 @@ Ergebnis
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BoDraw.App" Version="1.0.44" />
-        <PackageReference Include="ISections" Version="1.0.12" />
+        <PackageReference Include="BoDraw.App" Version="1.*" />
+        <PackageReference Include="ISections" Version="1.*" />
     </ItemGroup>
 
     </Project>
