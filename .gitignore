@@ -12,4 +12,5 @@ bin
 *_files
 *.lscache
 /.quarto/
+__ci_dummy_main.cs
 bausteine/12-werkzeuge/folien/projekt/02-excel-write/data/results.xlsx
