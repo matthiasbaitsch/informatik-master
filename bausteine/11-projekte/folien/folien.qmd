@@ -84,7 +84,8 @@ dotnet new avalonia.app -o steel-hall-ui
 ### Zu Solution hinzufügen
 
 ```{.bash}
-dotnet sln add */*.csproj
+dotnet sln add steel-hall/steel-hall.csproj
+dotnet sln add steel-hall-ui/steel-hall-ui.csproj
 ```
 
 []{.down10}
