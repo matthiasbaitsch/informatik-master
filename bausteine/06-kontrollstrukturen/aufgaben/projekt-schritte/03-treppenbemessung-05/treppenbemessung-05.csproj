@@ -12,8 +12,4 @@
     <PackageReference Include="BoDraw.App" Version="1.*" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="../01-fraction/fraction.csproj" />
-  </ItemGroup>
-
 </Project>

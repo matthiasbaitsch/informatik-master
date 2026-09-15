@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="01-normale-variablen/value-types.csproj" />
-  <Project Path="02-referenzvariablen-kopie/reference-types.csproj" />
   <Project Path="02-referenzvariablen/reference-types.csproj" />
-  <Project Path="04-exemplare/reference-types.csproj" />
+  <Project Path="02-referenzvariablen-kopie/reference-types-copy.csproj" />
+  <Project Path="04-exemplare/instances.csproj" />
 </Solution>
