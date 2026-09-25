@@ -16,9 +16,7 @@ Polygons bekannt sein.
 
 ::: {layout="[2,3]"}
 ::: {}
-```{=latex}
-\includegraphics[width=0.7\linewidth]{polygon-querschnitte-2}
-```
+![](bilder/polygon-querschnitte-2.png){width=70%}
 
 ![](bilder/polygon-querschnitte-1.jpg)
 :::

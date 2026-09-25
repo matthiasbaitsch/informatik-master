@@ -17,7 +17,7 @@ Applikation soll es möglich sein, die für den Wärmeschutznachweis notwendigen
 Berechnungen für eine ausgewählte Wärmebrücke (z.B. Balkonplatte, Dachanschluss,
 Geschossdecke, Innenwandanschluss Außenwand, Ecke) durchzuführen.
 
-![](bilder/espi4_7_2.png){height=50mm}
+![](bilder/espi4_7_2.jpg){height=50mm}
 :::
 
 Das zu entwickelnde Programm soll es Anwendern mit Hilfe einer grafischen

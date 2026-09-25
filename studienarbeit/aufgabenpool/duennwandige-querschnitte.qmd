@@ -15,11 +15,7 @@ $I_w$ oder $I_t$ ist in DIN EN 1993-1-3 erläutert. Besonders zu berücksichtige
 sind dabei die Fälle von Querschnitten mit Verzweigungen beziehungsweise Querschnitten
 mit geschlossenem Querschnittsteil.
 
-```{=latex}
-\begin{center}
-  \includegraphics[height=50mm]{duennwandiges-profil}
-\end{center}
-```
+![](bilder/duennwandiges-profil.png){height=50mm}
 
 Im Rahmen dieser Studienarbeit soll ein Programm entwickelt werden, mit dem die
 Querschnittswerte solcher dünnwandiger Querschnittswerte komfortabel berechnet
