@@ -3,3 +3,4 @@
 - In Vererbung
     - Beam mit sysdraw, Branch beam-with-sysdraw
     - Querschnitte mit W,H in Basisklasse oder mit Kreisquerschnitt
+- Assoziationen etc. erklären
