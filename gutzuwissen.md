@@ -10,20 +10,17 @@ dotnet nuget locals all -c
 
 - Text automatisch so skalieren, dass er die Folie ausfüllt:
 
-    ```markdown
-    ::: {.r-fit-text}
-    Text hier
-    :::
-    ```
-
+  ```markdown
+  ::: {.r-fit-text}
+  Text hier
+  :::
+  ```
 - Code mit Zeilennummern
 
-    ```{.csharp code-line-numbers="true"}
-    ```
-
+  ```{.csharp code-line-numbers="true"}
+  ```
 - Link in neuem Fenster
 
-    ```
-    [link](url){target="_blank"}
-    ```
-    
+  ```
+  [link](url){target="_blank"}
+  ```
