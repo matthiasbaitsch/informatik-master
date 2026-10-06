@@ -18,6 +18,21 @@ render-slides-pdf:
 	find __output/lernpfad/folien/c -maxdepth 1 -name '*.html' -print0 | \
 		xargs -0 -P $(PDF_JOBS) -I {} sh -c 'decktape reveal $(DECKTAPE_ARGS) -s 1050x700 -p 200 "$$1" "$${1%.html}.pdf"' _ {}
 
+save-slides-pdf:
+	mkdir -p __vergleich
+	cp __output/lernpfad/folien/c/*.pdf __vergleich/
+
+diff-slides-pdf:
+	mkdir -p __vergleich/diff
+	for f in __vergleich/*.pdf; do \
+		n=`basename "$$f"`; \
+		if diff-pdf -s -m --output-diff="__vergleich/diff/$$n" "$$f" "__output/lernpfad/folien/c/$$n"; then \
+			echo "gleich:      $$n"; \
+		else \
+			echo "verschieden: $$n"; \
+		fi; \
+	done
+
 render-study-assignments: prepare-render
 	quarto render lernpfad/studienarbeit
 

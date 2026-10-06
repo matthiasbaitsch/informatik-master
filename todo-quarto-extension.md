@@ -115,12 +115,12 @@ Zweck: Vergleichsstand vor der Umstellung, außerdem Wunsch der Studierenden.
 - [X]  Make-Target `pdf-slides`: Folien-HTML in `__output/lernpfad/folien/c/` mit `decktape reveal` nach PDF,
   parallel (`xargs -P 4`), `-p 200` statt Standardpause
 - [X]  Fragments: nur Endzustand jeder Folie (Decktape-Standard)
-- [ ]  Vergleichsstand erzeugen und außerhalb der Ausgabeordner ablegen (die werden beim Rendern geleert)
-- [ ]  CI: Node, `decktape` und Chrome bereitstellen (oder Docker-Image `astefanutti/decktape`),
+- [X]  Vergleichsstand erzeugen und außerhalb der Ausgabeordner ablegen (die werden beim Rendern geleert)
+- [X]  CI: Node, `decktape` und Chrome bereitstellen (oder Docker-Image `astefanutti/decktape`),
   PDF-Schritt nach dem Rendern
 - [X]  PDF-Link auf der Titelfolie jeder Foliendatei (`make_slides` in `skripte/lernpfad-zusammenstellen.jl`),
   Moodle bleibt unverändert
-- [ ]  PDFs mit veröffentlichen (CI-Schritt oben, sonst läuft der Link ins Leere)
+- [X]  PDFs mit veröffentlichen (CI-Schritt oben, sonst läuft der Link ins Leere)
 
 - Bekannte, harmlose Meldungen beim Export: MathJax-`Config`-Fehler (siehe 2.2) und
   `Skipping font compression: Read ttf table data error`
