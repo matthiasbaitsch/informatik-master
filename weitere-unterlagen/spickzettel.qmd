@@ -6,8 +6,7 @@ toc-depth: 2
 number-sections: false
 format:
   html:
-    theme:
-      - style-assignments.scss
+    theme: default
 ---
 
 Kompakte Übersicht über die in der Veranstaltung behandelten C#-Konzepte zum Nachschlagen. Ersetzt nicht die Folien – dort finden Sie Erklärungen und Beispiele im Detail.
