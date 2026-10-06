@@ -7,6 +7,6 @@ resources:
   - "*.zip"
 
 format: 
-  html: default
+  hsbo-maba-html: default
   typst:
     mainfont: "Liberation Sans"

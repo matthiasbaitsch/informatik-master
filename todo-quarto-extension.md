@@ -129,8 +129,8 @@ Zweck: Vergleichsstand vor der Umstellung, außerdem Wunsch der Studierenden.
 
 Vor dem Umzug in die Extension, damit dort nur ein gutes Stylesheet landet.
 
-- [ ]  Vertikale Abstände umgebaut (Standard groß, Ausnahmen eng); restliche Folien siehe `todo.md`
-- [ ]  `style-slides.scss` verschachteln: ein `.reveal { … }`-Block pro Abschnitt (Typografie,
+- [X]  Vertikale Abstände umgebaut (Standard groß, Ausnahmen eng); restliche Folien siehe `todo.md`
+- [X]  `style-slides.scss` verschachteln: ein `.reveal { … }`-Block pro Abschnitt (Typografie,
   Listen, Tabellen, Bilder, Code), höchstens eine weitere Ebene. Hilfsklassen ohne `.reveal` (`tall-code`,
   `half-code`, `full-width-img`, `etable`, `drop-shadow`, `button`, `neuerbegriff`, `alert`, `fg`, `bg`,
   `upN`/`downN`) außerhalb lassen, sonst ändert sich ihre Spezifität. Danach PDF-Vergleich.
@@ -138,6 +138,9 @@ Vor dem Umzug in die Extension, damit dort nur ein gutes Stylesheet landet.
 ### 2.3 Extension-Repo anlegen
 
 - [ ]  Namen festlegen (nicht `bcd`, siehe offene Punkte oben)
+  - Entschieden: Repo `quarto-hsbo-maba`, Extension `hsbo-maba`, Formate `hsbo-maba-revealjs`,
+    `hsbo-maba-html` (später ggf. `hsbo-maba-pdf`, `hsbo-maba-typst`).
+    Einbinden mit `quarto add matthiasbaitsch/quarto-hsbo-maba`
 - [ ]  Struktur anlegen:
   ```
   _extensions/<name>/

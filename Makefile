@@ -6,10 +6,10 @@ prepare-render:
 	cd skripte && julia -t1 --project studienarbeit-zusammenstellen.jl || exit 1
 
 render-assignments: prepare-render
-	quarto render lernpfad/aufgaben -t html
+	quarto render lernpfad/aufgaben -t hsbo-maba-html
 
 render-slides: prepare-render
-	quarto render lernpfad/folien -t revealjs
+	quarto render lernpfad/folien -t hsbo-maba-revealjs
 
 render-slides-all: prepare-render
 	quarto render lernpfad/folien-alle -t html
@@ -42,6 +42,9 @@ render-additional-materials:
 render: render-study-assignments render-assignments render-slides render-slides-all render-additional-materials
 
 publish: render render-slides-pdf
+
+update-extension:
+	quarto update matthiasbaitsch/quarto-hsbo-maba --no-prompt
 
 copy-templates:
 	for f in bausteine/*/*/projekt*; do \

@@ -16,20 +16,8 @@ number-depth: 1
 number-sections: true
 format-links: false
 
-format: 
-  revealjs:
-    overview: true
-    slide-number: "c/t"
-    transition: fade
-    transition-speed: slow
-    code-line-numbers: false
-    html-math-method:
-      method: mathjax
-      url: "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"
-    theme:
-      - style-slides.scss
-      - style-titlepage.scss
-  html:
-    theme:
-      - style-assignments.scss
+# Aussehen und gemeinsame Optionen kommen aus der Extension hsbo-maba (_extensions/)
+format:
+  hsbo-maba-revealjs: default
+  hsbo-maba-html: default
 

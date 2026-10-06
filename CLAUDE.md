@@ -15,7 +15,8 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 
 ## Projektstruktur
 
-- `lernpfad/` ist automatisch generiert – nie manuell bearbeiten. Alle Änderungen gehen in `bausteine/`.
+- In `lernpfad/` werden nur die Unterordner `c/` automatisch generiert – nie manuell bearbeiten, alle inhaltlichen Änderungen gehen in `bausteine/`. Die Konfigurationsdateien direkt in `lernpfad/` (z.B. `lernpfad/aufgaben/_metadata.yml`) sind eingecheckt und dürfen bearbeitet werden.
+- Aussehen und gemeinsame Format-Optionen kommen aus der Quarto-Extension `hsbo-maba` (Repo `matthiasbaitsch/quarto-hsbo-maba`, lokal `~/sciebo/lehrveranstaltungen/quarto-hsbo-maba`), eingecheckt unter `_extensions/`. Stiländerungen nur im Extension-Repo machen, pushen und dann `make update-extension` – die Kopie in `_extensions/` nicht direkt bearbeiten. Formate: `hsbo-maba-revealjs`, `hsbo-maba-html`.
 - Skripte (Julia) liegen in `skripte/` und dürfen direkt bearbeitet werden.
 - Manche Dateien existieren bewusst mehrfach (z.B. in Startcode und Musterlösung). `skripte/duplikate.txt` listet die inhaltsgleichen Gruppen; der Pre-Commit-Hook `githooks/pre-commit` erzeugt die Liste mit `julia skripte/duplikate.jl` neu und schlägt an, wenn sie sich dabei ändert – also wenn eine Kopie einseitig geändert wurde oder Duplikate hinzugekommen/weggefallen sind.
 
@@ -48,7 +49,7 @@ Die Studierenden lernen **objektorientiertes Programmieren mit C#**. Zielgruppe 
 - Linter-Hinweise in `.qmd`-Dateien ignorieren – das macht der Nutzer selbst
 - GUI-Apps nicht ungefragt starten (auch nicht zum Verifizieren oder für Screenshots) – Kompilieren zum Prüfen ist ok, Ausprobieren macht der Nutzer selbst
 - Reihenfolge Beispiel vor Erklärung nicht als Problem werten – didaktisch bewusst so
-- CSS-Abstände in `style-slides.scss` immer über `margin-top` des nachfolgenden Elements steuern, nie über `margin-bottom` – Reveal.js nutzt Flexbox, dort kollabieren Margins nicht und addieren sich sonst unkontrolliert
+- CSS-Abstände im Folien-Stylesheet (`slides.scss` der Extension) immer über `margin-top` des nachfolgenden Elements steuern, nie über `margin-bottom` – Reveal.js nutzt Flexbox, dort kollabieren Margins nicht und addieren sich sonst unkontrolliert
 - In nummerierten Aufgabenlisten keine Fettschrift für Schrittbezeichnungen – also `1. Titel. Text`, nicht `1. **Titel.** Text`
 - Als Dezimaltrennzeichen wird durchgehend der Punkt verwendet (also `0.75`, nicht `0,75` – auch in Fließtext und Matheumgebungen)
 - Reveal.js-Fragments: Soll Inhalt A beim Öffnen der Folie sichtbar sein und auf einen Klick durch Inhalt B ersetzt werden, beide in ein `r-stack` packen, A mit `.fragment .fade-out fragment-index=1`, B mit `.fragment .fade-in fragment-index=1` – gleicher Index sorgt für simultanen Übergang
