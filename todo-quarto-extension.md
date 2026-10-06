@@ -137,11 +137,11 @@ Vor dem Umzug in die Extension, damit dort nur ein gutes Stylesheet landet.
 
 ### 2.3 Extension-Repo anlegen
 
-- [ ]  Namen festlegen (nicht `bcd`, siehe offene Punkte oben)
+- [X]  Namen festlegen (nicht `bcd`, siehe offene Punkte oben)
   - Entschieden: Repo `quarto-hsbo-maba`, Extension `hsbo-maba`, Formate `hsbo-maba-revealjs`,
     `hsbo-maba-html` (später ggf. `hsbo-maba-pdf`, `hsbo-maba-typst`).
     Einbinden mit `quarto add matthiasbaitsch/quarto-hsbo-maba`
-- [ ]  Struktur anlegen:
+- [X]  Struktur anlegen:
   ```
   _extensions/<name>/
     _extension.yml
@@ -150,60 +150,34 @@ Vor dem Umzug in die Extension, damit dort nur ein gutes Stylesheet landet.
     html.scss
     (Logo, Lua-Filter, Partials …)
   ```
-- [ ]  Custom Formats in `_extension.yml` definieren: `<name>-revealjs`, `<name>-html`
-- [ ]  Gemeinsame Optionen aus Schritt 1 dort eintragen
+- [X]  Custom Formats in `_extension.yml` definieren: `<name>-revealjs`, `<name>-html`
+- [X]  Gemeinsame Optionen aus Schritt 1 dort eintragen
   - MathJax 4 per URL beibehalten (bewusst umgestellt). Bekannte, harmlose Konsolenmeldung
     `Cannot read properties of undefined (reading 'Config')`: Das Reveal-Mathe-Plugin ruft nach dem Laden
     `MathJax.Hub.Config` (MathJax-2-API) auf, das es in MathJax 4 nicht gibt. Formeln setzt MathJax 4 trotzdem.
     Erscheint auch beim PDF-Export mit Decktape.
-- [ ]  Logo der Titelseite als Option (HS Bochum für Informatik, später ggf. anderes für Mathe)
-- [ ]  Beispiel-Dokument im Repo-Root (`template.qmd`) zum Testen aller Formate
-- [ ]  Optional: Versions-Tags verwenden (`quarto add …@v1.0`), damit Updates bewusst erfolgen
+- [X]  Logo der Titelseite als Option (HS Bochum für Informatik, später ggf. anderes für Mathe)
+- [X]  Beispiel-Dokument im Repo-Root (`template.qmd`) zum Testen aller Formate
+- [X]  Optional: Versions-Tags verwenden (`quarto add …@v1.0`), damit Updates bewusst erfolgen
 
 ### 2.4 Informatik auf die Extension umstellen
 
-- [ ]  Einbinden: `quarto add <user>/<repo>`
-- [ ]  `format: revealjs` → `format: <name>-revealjs` usw., gemeinsame Optionen aus `_quarto.yml` entfernen
-- [ ]  Lokale Abweichungen in `_quarto.yml` belassen (überschreiben die Extension)
-- [ ]  Vom Julia-Skript erzeugte Konfigurationen prüfen (`folien-alle` mit `theme: cosmo`, `_metadata.yml`)
-- [ ]  Alte Stildateien entfernen (`style-slides.scss`, `style-titlepage.scss`, ggf. `style-assignments.scss`)
-- [ ]  PDFs vorher/nachher vergleichen
-- [ ]  `_extensions/` einchecken (Quarto erwartet das so)
+- [X]  Einbinden: `quarto add <user>/<repo>`
+- [X]  `format: revealjs` → `format: <name>-revealjs` usw., gemeinsame Optionen aus `_quarto.yml` entfernen
+- [X]  Lokale Abweichungen in `_quarto.yml` belassen (überschreiben die Extension)
+- [X]  Vom Julia-Skript erzeugte Konfigurationen prüfen (`folien-alle` mit `theme: cosmo`, `_metadata.yml`)
+- [X]  Alte Stildateien entfernen (`style-slides.scss`, `style-titlepage.scss`, ggf. `style-assignments.scss`)
+- [X]  PDFs vorher/nachher vergleichen
+- [X]  `_extensions/` einchecken (Quarto erwartet das so)
 
 ### 2.5 CI
 
-- [ ]  Sicherstellen, dass `_extensions/` im Checkout vorhanden ist (eingecheckt, kein Download in CI nötig)
-- [ ]  Makefile und Workflow abgleichen (`render` im Makefile ohne `studienarbeit` und `weitere-unterlagen`)
+- [X]  Sicherstellen, dass `_extensions/` im Checkout vorhanden ist (eingecheckt, kein Download in CI nötig)
+- [X]  Makefile und Workflow abgleichen (`render` im Makefile ohne `studienarbeit` und `weitere-unterlagen`)
 
 ### 2.6 Dokumentation
 
-- [ ]  README im Extension-Repo: Formate, Optionen, Update-Ablauf (`quarto update <user>/<repo>`),
+- [X]  README im Extension-Repo: Formate, Optionen, Update-Ablauf (`quarto update <user>/<repo>`),
   bekannte MathJax-Meldung (siehe 2.3)
-- [ ]  CLAUDE.md Informatik um Hinweis auf die Extension ergänzen (z.B. Abstandsregel für `style-slides.scss`
+- [X]  CLAUDE.md Informatik um Hinweis auf die Extension ergänzen (z.B. Abstandsregel für `style-slides.scss`
   verweist dann auf die Extension)
-
-## 3. Mathematik B umstellen
-
-### 3.1 Folien als PDF
-
-- [ ]  Make-Target `pdf-slides` analog Informatik: `_output/folien/woche-*.html`, ggf. `_output/folien-r/c/*/*.html`
-- [ ]  Vergleichsstand erzeugen
-- [ ]  Ggf. veröffentlichen und in der CI erzeugen
-
-### 3.2 Mathe B auf die Extension umstellen
-
-- [ ]  Ordner: `folien`, `folien-r`, `folien-r-alle`, `skript`, `aufgaben`, `weitere-unterlagen`
-- [ ]  BCD-Submodule nicht anfassen, ihre Stile bleiben dort
-- [ ]  `folien-r`: `collect-content.R` kopiert `bcd-style-slides.scss` und `quarto-template.yml` in jeden
-  Teilordner und in die Zips. Entscheiden: `_extensions/` mitkopieren oder lokalen Stil behalten
-- [ ]  Logo der Titelseite festlegen
-- [ ]  PDFs vorher/nachher vergleichen
-
-### 3.3 CI
-
-- [ ]  Workflow prüfen (`make render`, Checkout mit Submodulen), `_extensions/` im Checkout vorhanden
-
-### 3.4 Dokumentation
-
-- [ ]  CLAUDE.md Mathe B um Hinweis auf die Extension ergänzen
-- [ ]  README der Extension um Mathe-Besonderheiten ergänzen
