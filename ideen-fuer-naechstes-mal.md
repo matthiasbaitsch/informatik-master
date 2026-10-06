@@ -4,3 +4,4 @@
     - Beam mit sysdraw, Branch beam-with-sysdraw
     - Querschnitte mit W,H in Basisklasse oder mit Kreisquerschnitt
 - Assoziationen etc. erklären
+- Update-Skript für csproj-Dateien (analog `duplikate.jl`): kennt die kanonische PropertyGroup und die Soll-Versionen der Pakete (Avalonia, BoDraw, …), stempelt beides in alle csproj über alle Bausteine. Motivation: jährlicher Avalonia-Versionssprung, verhindert Drift wie den 12.0.5/12.1.0-Mix (Juli 2026 in 10-gui bereinigt). Vorher klären, welche Bausteine überall Avalonia-/BoDraw-Referenzen haben.

@@ -1,3 +1,6 @@
+PDF_JOBS ?= 4
+DECKTAPE_ARGS ?=
+
 prepare-render:
 	cd skripte && julia -t1 --project lernpfad-zusammenstellen.jl || exit 1
 	cd skripte && julia -t1 --project studienarbeit-zusammenstellen.jl || exit 1
@@ -11,10 +14,19 @@ render-slides: prepare-render
 render-slides-all: prepare-render
 	quarto render lernpfad/folien-alle -t html
 
+render-slides-pdf:
+	find __output/lernpfad/folien/c -maxdepth 1 -name '*.html' -print0 | \
+		xargs -0 -P $(PDF_JOBS) -I {} sh -c 'decktape reveal $(DECKTAPE_ARGS) -s 1050x700 -p 200 "$$1" "$${1%.html}.pdf"' _ {}
+
 render-study-assignments: prepare-render
 	quarto render lernpfad/studienarbeit
 
-render: render-slides render-slides-all render-assignments 
+render-additional-materials:
+	quarto render weitere-unterlagen -t html
+
+render: render-study-assignments render-assignments render-slides render-slides-all render-additional-materials
+
+publish: render render-slides-pdf
 
 copy-templates:
 	for f in bausteine/*/*/projekt*; do \

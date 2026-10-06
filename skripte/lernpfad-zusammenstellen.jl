@@ -182,9 +182,12 @@ function make_slides(bb::BuildingBlock, path_input, path_output)
 	subtitle: Modul Informatik im Master Bauingenieurwesen
 	---
 	"""
+	h *= "\n[]{.down150}\n"
 	if isdir(project_folder)
-		h *= "\n[]{.down150}\n[⬇ Projekt zu den Folien herunterladen]($(zipname)){target=\"_blank\"}\n"
+		h *= "[⬇ Projekt zu den Folien herunterladen]($(zipname)){target=\"_blank\"}\n\n"
 	end
+	# PDF erzeugt make render-slides-pdf
+	h *= "[⬇ Folien als PDF]($(slug(bb)).pdf){download=\"$(slug(bb)).pdf\"}\n"
 	copy_qmd(h, bb, path_input, joinpath(path_output, slug(bb) * ".qmd"))
 	copy_images_folder(path_input, path_output)
 	try_zip_folien_projekt(

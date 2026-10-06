@@ -38,21 +38,16 @@ jobs:
         run: julia --project -e 'using Pkg; Pkg.instantiate()'
         working-directory: skripte
 
-      - name: "Prepare render 1"
-        run: julia --project lernpfad-zusammenstellen.jl
-        working-directory: skripte
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-      - name: "Prepare render 2"
-        run: julia --project studienarbeit-zusammenstellen.jl
-        working-directory: skripte
+      - name: Install decktape
+        run: npm install -g decktape
 
-      - name: "Render"
-        run: |
-          quarto render lernpfad/studienarbeit
-          quarto render lernpfad/aufgaben -t html
-          quarto render lernpfad/folien -t revealjs
-          quarto render lernpfad/folien-alle -t html
-          quarto render weitere-unterlagen -t html
+      - name: Render and export PDF
+        run: make publish PDF_JOBS=2 DECKTAPE_ARGS=--chrome-arg=--no-sandbox
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
