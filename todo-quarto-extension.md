@@ -93,7 +93,7 @@ Einstellungen und bleiben lokal.
 - Nur Mathe: LaTeX-Preamble, `latex-environment`, `bcd-style-notes.css`, `execute: echo`, Book-Optionen.
 - Nur Informatik: `style-assignments.scss`, Typst-Optionen, `crossref` für Aufgaben, Nummerierung.
 
-#### Offene Punkte vor dem Extension-Repo (2.2)
+#### Offene Punkte vor dem Extension-Repo (2.3)
 
 - Name: `bcd` steht in Mathe schon für „Bausteine Computergestützter Datenanalyse“ (Gemeinschaftsprojekt mit
   anderen Autorinnen und Autoren, eigene Repos und eigenes Branding). Für die persönliche Extension einen
@@ -104,7 +104,7 @@ Einstellungen und bleiben lokal.
   Teilordner und packt sie in die Zips für Studierende (eigenständig renderbar). Mit Extension müsste
   `_extensions/` mit in die Zips, oder `folien-r` behält den lokalen Stil.
 - Informatik-Makefile: `render` rendert weder `studienarbeit` noch `weitere-unterlagen`, die CI schon.
-  Bei der CI in 2.4 berücksichtigen.
+  Bei der CI in 2.5 berücksichtigen.
 
 ## 2. Informatik umstellen
 
@@ -122,10 +122,20 @@ Zweck: Vergleichsstand vor der Umstellung, außerdem Wunsch der Studierenden.
   Moodle bleibt unverändert
 - [X]  PDFs mit veröffentlichen (CI-Schritt oben, sonst läuft der Link ins Leere)
 
-- Bekannte, harmlose Meldungen beim Export: MathJax-`Config`-Fehler (siehe 2.2) und
+- Bekannte, harmlose Meldungen beim Export: MathJax-`Config`-Fehler (siehe 2.3) und
   `Skipping font compression: Read ttf table data error`
 
-### 2.2 Extension-Repo anlegen
+### 2.2 Stylesheet aufräumen
+
+Vor dem Umzug in die Extension, damit dort nur ein gutes Stylesheet landet.
+
+- [ ]  Vertikale Abstände umgebaut (Standard groß, Ausnahmen eng); restliche Folien siehe `todo.md`
+- [ ]  `style-slides.scss` verschachteln: ein `.reveal { … }`-Block pro Abschnitt (Typografie,
+  Listen, Tabellen, Bilder, Code), höchstens eine weitere Ebene. Hilfsklassen ohne `.reveal` (`tall-code`,
+  `half-code`, `full-width-img`, `etable`, `drop-shadow`, `button`, `neuerbegriff`, `alert`, `fg`, `bg`,
+  `upN`/`downN`) außerhalb lassen, sonst ändert sich ihre Spezifität. Danach PDF-Vergleich.
+
+### 2.3 Extension-Repo anlegen
 
 - [ ]  Namen festlegen (nicht `bcd`, siehe offene Punkte oben)
 - [ ]  Struktur anlegen:
@@ -143,15 +153,11 @@ Zweck: Vergleichsstand vor der Umstellung, außerdem Wunsch der Studierenden.
     `Cannot read properties of undefined (reading 'Config')`: Das Reveal-Mathe-Plugin ruft nach dem Laden
     `MathJax.Hub.Config` (MathJax-2-API) auf, das es in MathJax 4 nicht gibt. Formeln setzt MathJax 4 trotzdem.
     Erscheint auch beim PDF-Export mit Decktape.
-- [ ]  `slides.scss` beim Übernehmen verschachteln: ein `.reveal { … }`-Block pro Abschnitt (Typografie,
-  Listen, Tabellen, Bilder, Code), höchstens eine weitere Ebene. Hilfsklassen ohne `.reveal` (`tall-code`,
-  `half-code`, `full-width-img`, `etable`, `drop-shadow`, `button`, `neuerbegriff`, `alert`, `fg`, `bg`,
-  `upN`/`downN`) außerhalb lassen, sonst ändert sich ihre Spezifität. Danach PDF-Vergleich.
 - [ ]  Logo der Titelseite als Option (HS Bochum für Informatik, später ggf. anderes für Mathe)
 - [ ]  Beispiel-Dokument im Repo-Root (`template.qmd`) zum Testen aller Formate
 - [ ]  Optional: Versions-Tags verwenden (`quarto add …@v1.0`), damit Updates bewusst erfolgen
 
-### 2.3 Informatik auf die Extension umstellen
+### 2.4 Informatik auf die Extension umstellen
 
 - [ ]  Einbinden: `quarto add <user>/<repo>`
 - [ ]  `format: revealjs` → `format: <name>-revealjs` usw., gemeinsame Optionen aus `_quarto.yml` entfernen
@@ -161,15 +167,15 @@ Zweck: Vergleichsstand vor der Umstellung, außerdem Wunsch der Studierenden.
 - [ ]  PDFs vorher/nachher vergleichen
 - [ ]  `_extensions/` einchecken (Quarto erwartet das so)
 
-### 2.4 CI
+### 2.5 CI
 
 - [ ]  Sicherstellen, dass `_extensions/` im Checkout vorhanden ist (eingecheckt, kein Download in CI nötig)
 - [ ]  Makefile und Workflow abgleichen (`render` im Makefile ohne `studienarbeit` und `weitere-unterlagen`)
 
-### 2.5 Dokumentation
+### 2.6 Dokumentation
 
 - [ ]  README im Extension-Repo: Formate, Optionen, Update-Ablauf (`quarto update <user>/<repo>`),
-  bekannte MathJax-Meldung (siehe 2.2)
+  bekannte MathJax-Meldung (siehe 2.3)
 - [ ]  CLAUDE.md Informatik um Hinweis auf die Extension ergänzen (z.B. Abstandsregel für `style-slides.scss`
   verweist dann auf die Extension)
 

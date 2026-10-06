@@ -25,6 +25,9 @@ $selection-bg: #26351c !default;
 
 /*-- scss:rules --*/
 
+// Aufbau: Pro Abschnitt ein .reveal-Block. Hilfsklassen ohne .reveal stehen
+// gesammelt am Ende, damit ihre Spezifität niedrig bleibt.
+
 // Titelfolie
 
 #title-slide {
@@ -72,49 +75,333 @@ $selection-bg: #26351c !default;
 
 // Typografie
 
+.reveal {
+  font-weight: lighter;
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    color: $accent;
+    font-size: 1.1em;
+  }
+
+  .slides section.smaller h3 {
+    font-size: 1.3em;
+  }
+
+  dl dt {
+    color: $accent2;
+    font-weight: 400;
+  }
+
+  dl {
+    margin: 0;
+  }
+}
+
+// Code
+
+.reveal {
+  pre {
+    font-weight: lighter !important;
+    font-size: 0.825em !important;
+  }
+
+  code {
+    font-weight: lighter !important;
+    font-size: 0.825em !important;
+  }
+
+  div.sourceCode pre code {
+    margin-left: 0.5em !important;
+  }
+
+  pre.pseudocode {
+    font-family: inherit;
+  }
+
+  pre.pseudocode code {
+    font-size: 1.1em !important;
+    line-height: 1.6;
+    background-color: #f1d8c8;
+  }
+
+  pre.output {
+    border-left: 1px solid $accent;
+  }
+
+  pre.output code {
+    margin-left: 0.5em !important;
+  }
+
+  span.code-annotation-target {
+    background-color: #ef808044;
+  }
+
+  // Dateiname dezent oben rechts im Codeblock
+  .code-with-filename {
+    position: relative;
+
+    .code-with-filename-file {
+      position: absolute;
+      top: 0.3em;
+      right: 0.6em;
+      z-index: 1;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+
+      pre {
+        margin: 0;
+        font-size: 0.6em !important;
+        color: #a0a0a0;
+      }
+    }
+  }
+}
+
+// Kästen
+
+.reveal {
+  div.objective {
+    background-color: #f4c2a3;
+    border-radius: 4px;
+    padding: 5pt;
+  }
+
+  div.objective p {
+    margin: 0 !important;
+  }
+}
+
+// Vertikale Abstände
+//
+// Abstände nur über margin-top des folgenden Elements, unten nie.
+// Grundsatz: normaler Blockabstand, vor ### mehr, wenige Ausnahmen enger.
+// .level2 sind die normalen Folien (##), Titel- und Abschnittsfolien bleiben unberührt.
+
+.reveal {
+  h2,
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .level2 {
+
+    // Spaltenblock als Block, sonst wirkt margin-top nicht (Quarto setzt ihn inline)
+    .columns {
+      display: block;
+    }
+
+    // Unten nie Abstand
+    p,
+    ul,
+    ol,
+    dl,
+    pre,
+    div,
+    h3 {
+      margin-bottom: 0 !important;
+    }
+
+    // Die folgenden Gruppen sind nach Abstand sortiert. Bei Überschneidungen gewinnt
+    // die spezifischere Regel (z.B. ul+p vor *+p), nicht die Reihenfolge.
+
+    // 0.6em: Standardabstand, Code und Ausgabe, Spalten unter ##, ### nach Code
+    pre.raw,
+    pre.output,
+    div.sourceCode,
+    *+p,
+    *+ul,
+    *+ol,
+    *+dl,
+    *+pre,
+    *+div,
+    *+table,
+    h2+.columns,
+    .code-copy-outer-scaffold+h3,
+    .code-with-filename+h3,
+    pre+h3 {
+      margin-top: 0.6em !important;
+    }
+
+    // 0.8em: vor ###, ### unter ##, Definitionsliste nach Block
+    *+h3,
+    h2+h3,
+    div+dl {
+      margin-top: 0.8em !important;
+    }
+
+    // 0.2em: enger nach Listen
+    ul+p,
+    ol+p,
+    ul+.fragment,
+    ol+.fragment,
+    .code-copy-outer-scaffold+ul,
+    .code-copy-outer-scaffold+ol {
+      margin-top: 0.2em !important;
+    }
+
+    // 0: übereinanderliegende Fragments, Spalten nebeneinander, Dateiname über Code
+    .r-stack>*,
+    .columns>*,
+    .code-with-filename>* {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+// Listen
+
+.reveal {
+  ul,
+  ol {
+    display: block;
+  }
+
+  ul {
+    padding-left: 2px;
+
+    li::marker {
+      color: mix($accent, white, 70%);
+    }
+  }
+
+  ul ul {
+    list-style: none;
+
+    li:before {
+      content: $right-arrow;
+      color: mix($accent, white, 60%);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1.5em;
+      margin-right: 0.5em;
+    }
+  }
+
+  ol {
+    padding-left: 8px;
+
+    li::marker {
+      color: $accent;
+    }
+  }
+}
+
+// Tabellen
+
+.reveal {
+  table {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1em !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.8em;
+  }
+
+  table th,
+  table td {
+    border: none;
+    text-align: left;
+  }
+
+  table thead th,
+  .slides table tr:last-child td,
+  .slides table {
+    border-bottom: 2px solid #D3D3D3;
+  }
+
+  table thead th {
+    font-weight: normal;
+  }
+
+  table caption {
+    color: #666666;
+    font-variant: small-caps;
+  }
+}
+
+// Bilder
+
+.reveal {
+  section img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  div.border {
+    border: 1px solid lightblue;
+    border-radius: 4px;
+  }
+
+  .slide figure>figcaption {
+    margin-left: 8px;
+    font-size: 0.5em;
+  }
+}
+
+// UI-Komponenten
+
+.reveal {
+  .slide-menu-button {
+    position: fixed;
+    top: 6px;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    pointer-events: none;
+  }
+
+  .slide-menu-button>* {
+    pointer-events: auto;
+  }
+
+  .slide-chalkboard-buttons {
+    position: fixed;
+    top: 12px;
+    right: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    pointer-events: none;
+  }
+
+  .slide-chalkboard-buttons>* {
+    pointer-events: auto;
+  }
+}
+
+// Hilfsklassen (ohne .reveal)
+
+// Hervorhebungen
 .neuerbegriff {
   color: $accent2;
   font-weight: 400;
 }
 
-.reveal {
-  font-weight: lighter;
-}
-
-.reveal h2 {
-  font-size: 1.4em;
-}
-
-.reveal h3 {
-  color: $accent;
-  font-size: 1.1em;
-}
-
-.reveal .slides section.smaller h3 {
-  font-size: 1.3em;
-}
-
-.reveal dl dt {
+.alert {
   color: $accent2;
-  font-weight: 400;
 }
 
-.reveal dl {
-  margin: 0;
+.fg {
+  color: var(--col, $jet);
 }
 
-.reveal pre {
-  font-weight: lighter !important;
-  font-size: 0.825em !important;
-}
-
-.reveal code {
-  font-weight: lighter !important;
-  font-size: 0.825em !important;
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 // Höhe von Codeblöcken: tall-code etwa Folienhöhe, half-code etwa halbe
-
 .tall-code pre,
 .tall-code pre code {
   max-height: 650px !important;
@@ -124,212 +411,9 @@ $selection-bg: #26351c !default;
   max-height: 380px !important;
 }
 
+// Bilder und Tabellen als Bild
 .full-width-img img {
   max-width: 100%;
-}
-
-.reveal div.sourceCode pre code {
-  margin-left: 0.5em !important;
-}
-
-// Dateiname dezent oben rechts im Codeblock
-
-.reveal .code-with-filename {
-  position: relative;
-
-  .code-with-filename-file {
-    position: absolute;
-    top: 0.3em;
-    right: 0.6em;
-    z-index: 1;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-
-    pre {
-      margin: 0;
-      font-size: 0.6em !important;
-      color: #a0a0a0;
-    }
-  }
-}
-
-// Formatierung verschiedene Elemente
-
-.reveal pre.pseudocode {
-  font-family: inherit;
-}
-
-.reveal pre.pseudocode code {
-  font-size: 1.1em !important;
-  line-height: 1.6;
-  background-color: #f1d8c8;
-}
-
-.reveal pre.output {
-  border-left: 1px solid $accent;
-}
-
-.reveal pre.output code {
-  margin-left: 0.5em !important;
-}
-
-.reveal span.code-annotation-target {
-  background-color: #ef808044;
-}
-
-.reveal div.objective {
-  background-color: #f4c2a3;
-  border-radius: 4px;
-  padding: 5pt;
-}
-
-.reveal div.objective p {
-  margin: 0 !important;
-}
-
-// Vertikale Abstände
-//
-// Abstände nur über margin-top des folgenden Elements, unten nie.
-// Grundsatz: normaler Blockabstand, vor ### mehr, wenige Ausnahmen enger.
-// .level2 sind die normalen Folien (##), Titel- und Abschnittsfolien bleiben unberührt.
-
-.reveal h2,
-.reveal h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.reveal .level2 {
-
-  // Spaltenblock als Block, sonst wirkt margin-top nicht (Quarto setzt ihn inline)
-  .columns {
-    display: block;
-  }
-
-  // Unten nie Abstand
-  p,
-  ul,
-  ol,
-  dl,
-  pre,
-  div,
-  h3 {
-    margin-bottom: 0 !important;
-  }
-
-  // Die folgenden Gruppen sind nach Abstand sortiert. Bei Überschneidungen gewinnt
-  // die spezifischere Regel (z.B. ul+p vor *+p), nicht die Reihenfolge.
-
-  // 0.6em: Standardabstand, Code und Ausgabe, Spalten unter ##, ### nach Code
-  pre.raw,
-  pre.output,
-  div.sourceCode,
-  *+p,
-  *+ul,
-  *+ol,
-  *+dl,
-  *+pre,
-  *+div,
-  *+table,
-  h2+.columns,
-  .code-copy-outer-scaffold+h3,
-  .code-with-filename+h3,
-  pre+h3 {
-    margin-top: 0.6em !important;
-  }
-
-  // 0.8em: vor ###, ### unter ##, Definitionsliste nach Block
-  *+h3,
-  h2+h3,
-  div+dl {
-    margin-top: 0.8em !important;
-  }
-
-  // 0.2em: enger nach Listen
-  ul+p,
-  ol+p,
-  ul+.fragment,
-  ol+.fragment,
-  .code-copy-outer-scaffold+ul,
-  .code-copy-outer-scaffold+ol {
-    margin-top: 0.2em !important;
-  }
-
-  // 0: übereinanderliegende Fragments, Spalten nebeneinander, Dateiname über Code
-  .r-stack>*,
-  .columns>*,
-  .code-with-filename>* {
-    margin-top: 0 !important;
-  }
-}
-
-// Listen
-
-.reveal ul,
-.reveal ol {
-  display: block;
-}
-
-.reveal ul {
-  padding-left: 2px;
-
-  li::marker {
-    color: mix($accent, white, 70%);
-  }
-}
-
-.reveal ul ul {
-  list-style: none;
-
-  li:before {
-    content: $right-arrow;
-    color: mix($accent, white, 60%);
-    display: inline-block;
-    width: 1em;
-    margin-left: -1.5em;
-    margin-right: 0.5em;
-  }
-}
-
-.reveal ol {
-  padding-left: 8px;
-
-  li::marker {
-    color: $accent;
-  }
-}
-
-// Tabellen
-
-.reveal table {
-  width: 100%;
-  margin: auto;
-  margin-bottom: 1em !important;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 0.8em;
-}
-
-.reveal table th,
-.reveal table td {
-  border: none;
-  text-align: left;
-}
-
-.reveal table thead th,
-.reveal .slides table tr:last-child td,
-.reveal .slides table {
-  border-bottom: 2px solid #D3D3D3;
-}
-
-.reveal table thead th {
-  font-weight: normal;
-}
-
-.reveal table caption {
-  color: #666666;
-  font-variant: small-caps;
 }
 
 .etable {
@@ -348,58 +432,11 @@ $selection-bg: #26351c !default;
   object-fit: contain;
 }
 
-// Bilder
-
-.reveal section img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reveal div.border {
-  border: 1px solid lightblue;
-  border-radius: 4px;
-}
-
-.reveal .slide figure>figcaption {
-  margin-left: 8px;
-  font-size: 0.5em;
-}
-
 .drop-shadow {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-// UI-Komponenten
-
-.reveal .slide-menu-button {
-  position: fixed;
-  top: 6px;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  pointer-events: none;
-}
-
-.reveal .slide-menu-button>* {
-  pointer-events: auto;
-}
-
-.reveal .slide-chalkboard-buttons {
-  position: fixed;
-  top: 12px;
-  right: 24px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  pointer-events: none;
-}
-
-.reveal .slide-chalkboard-buttons>* {
-  pointer-events: auto;
-}
-
+// Button-Link
 .button {
   display: inline-block;
   padding: 6px 12px;
@@ -429,23 +466,7 @@ $selection-bg: #26351c !default;
   margin-right: 5px;
 }
 
-// Utilities
-
-.alert {
-  color: $accent2;
-}
-
-.fg {
-  color: var(--col, $jet);
-}
-
-.bg {
-  background-color: var(--col, #fff);
-  padding: 0.1em;
-  border-radius: 5px;
-  display: inline-block;
-}
-
+// Verschieben nach oben/unten, z.B. []{.down40}
 @each $n in 5, 10, 15, 20, 25, 30, 40, 50, 60, 80, 100, 120, 140, 150, 200, 250, 300 {
   .up#{$n} {
     display: block;
