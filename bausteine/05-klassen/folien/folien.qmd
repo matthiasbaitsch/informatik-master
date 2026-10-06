@@ -4,6 +4,7 @@
 
 ##
 
+::: {.tall-code}
 ```{.csharp filename="ComplexDemo.cs"}
 Complex z1 = new Complex(3, 4);
 Complex z2 = new Complex(4, 2);
@@ -47,9 +48,11 @@ Complex z10 = z9.Power(3);
 z9.Print("z9");
 z10.Print("z10");
 ```
+:::
 
 ##
 
+::: {.tall-code}
 ```{.csharp filename="Complex.cs"}
 using static System.Math;
 
@@ -131,6 +134,7 @@ public class Complex
     }
 }
 ```
+:::
 
 ## Aufbau
 
@@ -143,6 +147,8 @@ public class Complex
 ::: {.fragment}
 → Das kennen Sie bereits
 :::
+
+[]{.down40}
 
 ::: {.fragment}
 ### Definition der Klasse für komplexe Zahlen in `Complex.cs`
@@ -191,15 +197,14 @@ Eine komplexe Zahl $z = x + iy$ besteht aus Realteil $x$ und Imaginärteil $y$. 
 
 | Operation | Formel |
 |---|---|
-| Addition | $z + w = (x+u) + (y+v)\,i$ |
-| Subtraktion | $z - w = (x-u) + (y-v)\,i$ |
+| Addition und Subtraktion | $z \pm w = (x+u) \pm (y+v)\,i$ |
 | Multiplikation | $z \cdot w = (xu - yv) + (xv + yu)\,i$ |
 | Division | $\dfrac{z}{w} = \dfrac{xu + yv}{u^2+v^2} + \dfrac{yu - xv}{u^2+v^2}\,i$ |
 | Konjugierte | $\bar{z} = x - iy$ |
 | Betrag | $|z| = \sqrt{z \cdot \bar{z}} = \sqrt{x^2 + y^2}$ |
 | Argument (Winkel) | $\arg(z) = \begin{cases} \phantom{-}\arccos\dfrac{x}{r} & y \geq 0 \\[1ex] -\arccos\dfrac{x}{r} & y < 0 \end{cases} \quad$ mit $r = |z|$ |
 | Potenz | $z^n =  r^n \cos(n\varphi) + r^n \sin(n\varphi) \, i \quad$ mit $r = |z|$ und $n \in \mathbb{R}$ |
-: {tbl-colwidths="[25,75]"}
+: {tbl-colwidths="[30,70]"}
 
 ## Ergebnis der Analyse - Im Beispiel
 
@@ -384,7 +389,7 @@ public class Complex
 source(here::here("bausteine/00-templates/bausteine.R"))
 
 code_class <-
-'public class Complex
+    "public class Complex
 {
 
     public double Re;
@@ -396,10 +401,10 @@ code_class <-
         this.Im = im;
     }
 }
-'
+"
 
 code_demo <-
-'Complex z1 = new Complex(3, 4);
+    'Complex z1 = new Complex(3, 4);
 Complex z2 = new Complex(4, 2);
 
 Console.WriteLine(
@@ -419,8 +424,8 @@ output <- c(
 )
 
 lc <- function(i, ll) {
-  glue::glue(
-'
+    glue::glue(
+        "
 ### Klasse
 
 {ca_include_code(code_class)}
@@ -428,13 +433,13 @@ lc <- function(i, ll) {
 ### Demoprogramm
 
 {ca_include_code(code_demo, ll)}
-'
-  )
+"
+    )
 }
 
 rc <- function(i, ll) {
-  glue::glue(
-'
+    glue::glue(
+        "
 ### Objekte und Variablen
 
 ::: {{.border}}
@@ -446,16 +451,15 @@ rc <- function(i, ll) {
 ::: {{.border}}
 {ca_include_raw(output[i])}
 :::
-'
-  )
+"
+    )
 }
 
 ca_make_animation(
-  'Attribute und Konstruktor: Funktionsweise', 
-  lc, rc, 
-  c("true", "1", "1-2", "1-6", "1-9")
+    "Attribute und Konstruktor: Funktionsweise",
+    lc, rc,
+    c("true", "1", "1-2", "1-6", "1-9")
 )
-
 ```
 
 ## Print-Methode: Programmierung [🎥](https://youtu.be/XapELKCNcYI){target="_blank"}
@@ -485,7 +489,7 @@ public class Complex
 ```{r}
 #| output: asis
 code_class <-
-'public class Complex
+    'public class Complex
 {
 
     ...
@@ -500,15 +504,15 @@ code_class <-
 '
 
 code_demo <-
-'Complex z1 = new Complex(3, 4);
+    'Complex z1 = new Complex(3, 4);
 Complex z2 = new Complex(4, 2);
 
 
 z1.Print("z1");
 z2.Print("z2");
- 
-  
- 
+
+
+
 '
 
 output <- c(
@@ -518,8 +522,8 @@ output <- c(
 )
 
 lc <- function(i, ll) {
-  glue::glue(
-'
+    glue::glue(
+        "
 ### Klasse
 
 {ca_include_code(code_class)}
@@ -527,13 +531,13 @@ lc <- function(i, ll) {
 ### Demoprogramm
 
 {ca_include_code(code_demo, ll)}
-'
-  )
+"
+    )
 }
 
 rc <- function(i, ll) {
-  glue::glue(
-'
+    glue::glue(
+        "
 ### Objekte und Variablen
 
 ::: {{.border}}
@@ -545,16 +549,15 @@ rc <- function(i, ll) {
 ::: {{.border}}
 {ca_include_raw(output[i])}
 :::
-'
-  )
+"
+    )
 }
 
 ca_make_animation(
-  'Print-Methode: Funktionsweise', 
-  lc, rc, 
-  c("1-2", "1-5", "1-6")
+    "Print-Methode: Funktionsweise",
+    lc, rc,
+    c("1-2", "1-5", "1-6")
 )
-
 ```
 
 ## Add-Methode: Programmierung
@@ -587,10 +590,10 @@ public class Complex
 ```{r}
 #| output: asis
 code_class <-
-'public class Complex
+    "public class Complex
 {
     ...
-    
+
     public Complex Add(Complex w)
     {
         double re = this.Re + w.Re;
@@ -599,18 +602,18 @@ code_class <-
         return new Complex(re, im);
     }
 }
-'
+"
 
 code_demo <-
-'Complex z1 = new Complex(3, 4);
+    'Complex z1 = new Complex(3, 4);
 Complex z2 = new Complex(4, 2);
 Complex z3 = z1.Add(z2);
 
 z1.Print("z1");
 z2.Print("z2");
 z3.Print("z3");
- 
- 
+
+
 '
 
 output <- c(
@@ -621,8 +624,8 @@ output <- c(
 )
 
 lc <- function(i, ll) {
-  glue::glue(
-'
+    glue::glue(
+        "
 ### Klasse
 
 {ca_include_code(code_class)}
@@ -630,13 +633,13 @@ lc <- function(i, ll) {
 ### Demoprogramm
 
 {ca_include_code(code_demo, ll)}
-'
-  )
+"
+    )
 }
 
 rc <- function(i, ll) {
-  glue::glue(
-'
+    glue::glue(
+        "
 ### Objekte und Variablen
 
 ::: {{.border}}
@@ -648,16 +651,15 @@ rc <- function(i, ll) {
 ::: {{.border}}
 {ca_include_raw(output[i])}
 :::
-'
-  )
+"
+    )
 }
 
 ca_make_animation(
-  'Add-Methode: Funktionsweise', 
-  lc, rc, 
-  c("1-2", "1-3", "1-3", "true")
+    "Add-Methode: Funktionsweise",
+    lc, rc,
+    c("1-2", "1-3", "1-3", "true")
 )
-
 ```
 
 ## Abs-Methode: Programmierung
@@ -694,6 +696,7 @@ Weitere Methoden funktionieren im Prinzip genau so
 
 ## Grundlegender Aufbau einer Klasse {.smaller}
 
+::: {.tall-code}
 ```{.csharp}
 public class Klassenname
 {
@@ -724,6 +727,7 @@ public class Klassenname
     }
 }
 ```
+:::
 
 - Funktioniert immer nach diesem Prinzip
 - Wird später bei Bedarf noch ergänzt

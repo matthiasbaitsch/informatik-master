@@ -143,6 +143,10 @@ Zweck: Vergleichsstand vor der Umstellung, außerdem Wunsch der Studierenden.
     `Cannot read properties of undefined (reading 'Config')`: Das Reveal-Mathe-Plugin ruft nach dem Laden
     `MathJax.Hub.Config` (MathJax-2-API) auf, das es in MathJax 4 nicht gibt. Formeln setzt MathJax 4 trotzdem.
     Erscheint auch beim PDF-Export mit Decktape.
+- [ ]  `slides.scss` beim Übernehmen verschachteln: ein `.reveal { … }`-Block pro Abschnitt (Typografie,
+  Listen, Tabellen, Bilder, Code), höchstens eine weitere Ebene. Hilfsklassen ohne `.reveal` (`tall-code`,
+  `half-code`, `full-width-img`, `etable`, `drop-shadow`, `button`, `neuerbegriff`, `alert`, `fg`, `bg`,
+  `upN`/`downN`) außerhalb lassen, sonst ändert sich ihre Spezifität. Danach PDF-Vergleich.
 - [ ]  Logo der Titelseite als Option (HS Bochum für Informatik, später ggf. anderes für Mathe)
 - [ ]  Beispiel-Dokument im Repo-Root (`template.qmd`) zum Testen aller Formate
 - [ ]  Optional: Versions-Tags verwenden (`quarto add …@v1.0`), damit Updates bewusst erfolgen

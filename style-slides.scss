@@ -113,16 +113,15 @@ $selection-bg: #26351c !default;
   font-size: 0.825em !important;
 }
 
-.tall-code pre {
-  max-height: none !important;
+// Höhe von Codeblöcken: tall-code etwa Folienhöhe, half-code etwa halbe
+
+.tall-code pre,
+.tall-code pre code {
+  max-height: 650px !important;
 }
 
 .half-code pre {
   max-height: 380px !important;
-}
-
-.tall-code pre code {
-  max-height: none !important;
 }
 
 .full-width-img img {
@@ -131,10 +130,6 @@ $selection-bg: #26351c !default;
 
 .reveal div.sourceCode pre code {
   margin-left: 0.5em !important;
-}
-
-.tall-code pre code {
-  max-height: 650px;
 }
 
 // Dateiname dezent oben rechts im Codeblock
@@ -158,6 +153,8 @@ $selection-bg: #26351c !default;
     }
   }
 }
+
+// Formatierung verschiedene Elemente
 
 .reveal pre.pseudocode {
   font-family: inherit;
@@ -187,7 +184,15 @@ $selection-bg: #26351c !default;
   padding: 5pt;
 }
 
+.reveal div.objective p {
+  margin: 0 !important;
+}
+
 // Vertikale Abstände
+//
+// Abstände nur über margin-top des folgenden Elements, unten nie.
+// Grundsatz: normaler Blockabstand, vor ### mehr, wenige Ausnahmen enger.
+// .level2 sind die normalen Folien (##), Titel- und Abschnittsfolien bleiben unberührt.
 
 .reveal h2,
 .reveal h3 {
@@ -195,56 +200,68 @@ $selection-bg: #26351c !default;
   margin-bottom: 0;
 }
 
-.reveal div.code-with-filename div,
-.reveal div.column,
-.reveal div.fragment {
-  margin-top: 0 !important;
-}
+.reveal .level2 {
 
-.reveal pre.raw,
-.reveal pre.output,
-.reveal div.sourceCode {
-  margin-top: 0.6em !important;
-  margin-bottom: 0 !important;
-}
+  // Spaltenblock als Block, sonst wirkt margin-top nicht (Quarto setzt ihn inline)
+  .columns {
+    display: block;
+  }
 
-.reveal p+p,
-.reveal h1+p,
-.reveal h2+p,
-.reveal h2+div,
-.reveal h2+pre,
-.reveal h2+h3,
-.reveal h3+p,
-.reveal h3+div,
-.reveal h3+pre,
-.reveal pre+p,
-.reveal pre+div,
-.reveal div+div,
-.reveal ul+h3,
-.reveal .code-copy-outer-scaffold+p {
-  margin-top: 0.6em !important;
-}
+  // Unten nie Abstand
+  p,
+  ul,
+  ol,
+  dl,
+  pre,
+  div,
+  h3 {
+    margin-bottom: 0 !important;
+  }
 
-.reveal ul+h3 {
-  margin-top: 0.2em !important;
-}
+  // Die folgenden Gruppen sind nach Abstand sortiert. Bei Überschneidungen gewinnt
+  // die spezifischere Regel (z.B. ul+p vor *+p), nicht die Reihenfolge.
 
-.reveal div+dl {
-  margin-top: 0.8em !important;
-}
+  // 0.6em: Standardabstand, Code und Ausgabe, Spalten unter ##, ### nach Code
+  pre.raw,
+  pre.output,
+  div.sourceCode,
+  *+p,
+  *+ul,
+  *+ol,
+  *+dl,
+  *+pre,
+  *+div,
+  *+table,
+  h2+.columns,
+  .code-copy-outer-scaffold+h3,
+  .code-with-filename+h3,
+  pre+h3 {
+    margin-top: 0.6em !important;
+  }
 
-.reveal ul+p,
-.reveal ol+p,
-.reveal ul+.fragment,
-.reveal ol+.fragment,
-.reveal .code-copy-outer-scaffold+ul,
-.reveal .code-copy-outer-scaffold+ol {
-  margin-top: 0.2em;
-}
+  // 0.8em: vor ###, ### unter ##, Definitionsliste nach Block
+  *+h3,
+  h2+h3,
+  div+dl {
+    margin-top: 0.8em !important;
+  }
 
-.reveal ul,
-.reveal ol {
-  margin-bottom: 0 !important;
+  // 0.2em: enger nach Listen
+  ul+p,
+  ol+p,
+  ul+.fragment,
+  ol+.fragment,
+  .code-copy-outer-scaffold+ul,
+  .code-copy-outer-scaffold+ol {
+    margin-top: 0.2em !important;
+  }
+
+  // 0: übereinanderliegende Fragments, Spalten nebeneinander, Dateiname über Code
+  .r-stack>*,
+  .columns>*,
+  .code-with-filename>* {
+    margin-top: 0 !important;
+  }
 }
 
 // Listen

@@ -15,14 +15,17 @@
      a ← b
      b ← h
 ```
+
+[]{.up10}
 Danach
+
 ```{.pseudocode}
  a ist die gesuchte Zahl
 ```
 
 ### Beispiel für a = 48 und b = 18
 
-[]{.up10}
+[]{.up20}
 
 $$
 \footnotesize
@@ -44,8 +47,9 @@ $$
 :::
 :::
 
+[]{.up10}
+
 ::: {.fragment}
-[]{.down20}
 → Algorithmus von Euklid
 :::
 
@@ -65,7 +69,10 @@ $$
              strecke[n] ← strecke[o] + Entfernung(o, n)
              vorgänger[n] ← o
 ```
+
+[]{.up10}
 Danach
+
 ```{.pseudocode}
  strecke[o]: Kürzeste Strecke von S zu Ort o
  vorgänger[o]: Vorgänger von o auf der kürzesten Strecke
@@ -76,6 +83,8 @@ Danach
 ![](bilder/routenplaner.svg)
 :::
 :::
+
+[]{.up30}
 
 ::: {.fragment}
 → Algorithmus von Edsger W. Dijkstra (1959)
@@ -118,7 +127,7 @@ Kürzeste Strecke: S → B → A → Z mit d = 2 + 3 + 1 = **6 km**
 - Aufgabe: Eingabe → Ausgabe
 - Namensgeber: Abu Dschaʿfar Muhammad ibn Musa al-Chwārizmī, Mathematiker und Universalgelehrter, ca. 780 bis 840 meist in Bagdad
 :::
-::: {.column width=30%}
+::: {.column width=28%}
 ![](bilder/1983_CPA_5426_(1).png)
 :::
 :::
@@ -353,7 +362,10 @@ while(Fortsetzungsbedingung)
      b ← x / a
      a ← 0.5 ⋅ (a + b)
 ```
+
+[]{.up10}
 Danach
+
 ```{.pseudocode}
  a ist eine Näherung für Wurzel x
 ```
@@ -540,7 +552,7 @@ $$
 
 ## Vergleich `for`-Schleife und `while`-Schleife
 
-[]{.down40}
+[]{.down20}
 
 ### Streng genommen ist die `for`-Schleife unnötig
 
@@ -571,7 +583,7 @@ while (i < 10)
 
 → Beide Versionen verhalten sich identisch
 
-[]{.down40}
+[]{.down20}
 
 ::: {.fragment}
 ### Regel für Wahl der Schleifenart
@@ -704,14 +716,20 @@ Schaltjahre von 1800 bis 2026
 - Verfahren aus Anweisungen, das eine Aufgabe löst (Eingabe → Ausgabe)
 - Bausteine: einfache Anweisungen, Verzweigungen, Schleifen
 
+[]{.up10}
+
 ### Verzweigungen
 
 - `if` und `else`: Anweisungen abhängig von Bedingung ausführen
+
+[]{.up10}
 
 ### Schleifen
 
 - `while`: Anweisungen wiederholen, solange Bedingung wahr ist
 - `for`: Anweisungen eine feste Anzahl von Malen wiederholen
+
+[]{.up10}
 
 ### Logische Ausdrücke
 
