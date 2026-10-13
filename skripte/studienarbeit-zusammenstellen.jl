@@ -1,4 +1,5 @@
 using YAML
+using ZipArchives
 
 # -------------------------------------------------------------------------------------------------
 # Helpers
@@ -87,6 +88,20 @@ function process_yaml_for_year(file, pool_folder, output_folder_base, template_t
 	end
 end
 
+function zip_folder(folder, folder_in_zipfile, zipfile)
+	ZipWriter(zipfile) do w
+		for (root, _, files) in walkdir(folder)
+			occursin(r"/obj\b|/bin\b", root) && continue
+			for file in files
+				file == ".DS_Store" && continue
+				file_path = joinpath(root, file)
+				zip_newfile(w, joinpath(folder_in_zipfile, relpath(file_path, folder)); compress = true)
+				write(w, read(file_path))
+			end
+		end
+	end
+end
+
 # -------------------------------------------------------------------------------------------------
 # Main
 # -------------------------------------------------------------------------------------------------
@@ -95,6 +110,7 @@ template_file        = realpath(joinpath(@__DIR__, "../studienarbeit/aufgabenste
 studienarbeit_folder = realpath(joinpath(@__DIR__, "../studienarbeit/aufgabenstellung"))
 lernpfad_folder      = realpath(joinpath(@__DIR__, "../lernpfad"))
 pool_folder          = joinpath(studienarbeit_folder, "aufgabenpool")
+exam_project_folder  = realpath(joinpath(@__DIR__, "../studienarbeit/muendliche-pruefung/projekt"))
 output_folder        = joinpath(lernpfad_folder, "studienarbeit", "c")
 template_text        = read(template_file, String)
 
@@ -111,4 +127,5 @@ for f ∈ ["_metadata.yaml"]
 	cp(joinpath(studienarbeit_folder, f), joinpath(output_folder, f))
 end
 
-
+# Projekt für die mündliche Prüfung (wird von make render-study-assignments nach __output kopiert)
+zip_folder(exam_project_folder, "muendliche-pruefung", joinpath(output_folder, "muendliche-pruefung.zip"))

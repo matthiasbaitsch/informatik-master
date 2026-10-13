@@ -35,6 +35,8 @@ diff-slides-pdf:
 
 render-study-assignments: prepare-render
 	quarto render lernpfad/studienarbeit
+	mkdir -p __output/lernpfad/studienarbeit/c
+	cp lernpfad/studienarbeit/c/muendliche-pruefung.zip __output/lernpfad/studienarbeit/c/
 
 render-additional-materials:
 	quarto render weitere-unterlagen -t html
