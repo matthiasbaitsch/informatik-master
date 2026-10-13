@@ -33,6 +33,7 @@ bausteine/10-gui/folien/projekt/.editorconfig
 bausteine/11-projekte/folien/projekt-hausarbeit-beispiel/.editorconfig
 bausteine/11-projekte/folien/projekt-hausarbeit-vorlage/.editorconfig
 bausteine/12-werkzeuge/folien/projekt/.editorconfig
+studienarbeit/muendliche-pruefung/projekt/.editorconfig
 
 bausteine/00-templates/.vscode/csharp.code-snippets
 bausteine/02-installation/aufgaben/projekt/.vscode/csharp.code-snippets
@@ -69,6 +70,7 @@ bausteine/10-gui/folien/projekt/.vscode/csharp.code-snippets
 bausteine/11-projekte/folien/projekt-hausarbeit-beispiel/.vscode/csharp.code-snippets
 bausteine/11-projekte/folien/projekt-hausarbeit-vorlage/.vscode/csharp.code-snippets
 bausteine/12-werkzeuge/folien/projekt/.vscode/csharp.code-snippets
+studienarbeit/muendliche-pruefung/projekt/.vscode/csharp.code-snippets
 
 bausteine/00-templates/projekt.code-workspace
 bausteine/02-installation/aufgaben/projekt/installation.code-workspace
@@ -106,6 +108,7 @@ bausteine/10-gui/folien/projekt/gui.code-workspace
 bausteine/11-projekte/folien/projekt-hausarbeit-beispiel/hausarbeit.code-workspace
 bausteine/11-projekte/folien/projekt-hausarbeit-vorlage/hausarbeit.code-workspace
 bausteine/12-werkzeuge/folien/projekt/werkzeuge.code-workspace
+studienarbeit/muendliche-pruefung/projekt/muendliche-pruefung.code-workspace
 
 bausteine/02-installation/aufgaben/projekt/01-beispielprogramm/01-beispielprogramm.csproj
 bausteine/03-elementare-datentypen/aufgaben/projekt-musterloesung/01-variablen/variablen.csproj
@@ -126,6 +129,10 @@ bausteine/08-datenstrukturen/aufgaben/projekt-musterloesung/01-vector/vector.csp
 bausteine/08-datenstrukturen/aufgaben/projekt/01-vector/vector.csproj
 bausteine/08-datenstrukturen/folien/playground/graph/graph/graph.csproj
 bausteine/09-vererbung/folien/projekt/was-es-noch-zu-wissen-gibt/was-es-noch-zu-wissen-gibt.csproj
+studienarbeit/muendliche-pruefung/projekt/01-beispielprogramm/01-beispielprogramm.csproj
+
+bausteine/02-installation/aufgaben/projekt/installation.slnx
+studienarbeit/muendliche-pruefung/projekt/muendliche-pruefung.slnx
 
 bausteine/03-elementare-datentypen/aufgaben/projekt-musterloesung/02-rechnen/Rechnen.cs
 bausteine/03-elementare-datentypen/aufgaben/projekt/02-rechnen/Rechnen.cs

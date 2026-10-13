@@ -1,0 +1,125 @@
+---
+title: Protokolle mündliche Prüfung Informatik
+lang: de
+format:
+  typst:
+    papersize: a4
+    margin:
+      x: 2cm
+      y: 2cm
+    fontsize: 11pt
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+
+```{r}
+library(gt)
+library(readxl)
+library(tidyverse)
+```
+
+
+```{r}
+d_s <- read_excel("../../studierende-uebersicht.xlsx", sheet = "Studierende")
+d_g <- read_excel("../../studierende-uebersicht.xlsx", sheet = "Gruppen")
+d_t <- read_excel("../../studierende-uebersicht.xlsx", sheet = "Themen")
+
+d <- left_join(d_s, left_join(d_g, d_t, by = "thema"), by = "gruppe") |>
+    add_count(gruppe, name = "n_gruppe") |>
+    drop_na(nummer_mdl)
+```
+
+Liste Termine
+
+```{r}
+d |>
+    select(nummer_mdl, name, n_gruppe, gruppe, titel_kurz) |>
+    arrange(nummer_mdl) |>
+    gt()
+```
+
+```{=typst}
+#let linie(breite) = box(width: breite, stroke: (bottom: 0.5pt), height: 0.8em)
+
+#let protokoll(
+  nr, vorname, name, gruppe, thema, aufgabe, sloc, n_vorlesungen,
+  s1, s2, s3, kommentar, frage_1, frage_2,
+) = [
+  #pagebreak(weak: true)
+  #text(size: 16pt, weight: "bold")[#nr. #vorname #name]
+  #v(0.5em)
+  #let kopf(..zellen) = {
+    set par(justify: false)
+    table(
+      columns: (auto, 1fr),
+      stroke: none,
+      inset: (x: 0pt, y: 3pt),
+      column-gutter: 1em,
+      ..zellen,
+    )
+  }
+  #let kasten(hoehe, inhalt) = block(width: 100%, height: hoehe, stroke: 1pt, inset: 6pt, inhalt)
+  #kasten(auto, grid(
+    columns: (1fr, 1fr),
+    column-gutter: 2em,
+    kopf(
+      [*Gruppe*], [#gruppe],
+      [*Thema*], [#thema],
+      [*SLOC*], [#sloc],
+      [*Vorlesungen*], [#n_vorlesungen],
+    ),
+    kopf(
+      [*Sprechstunde 1*], [#s1],
+      [*Sprechstunde 2*], [#s2],
+      [*Sprechstunde 3*], [#s3],
+      [*Kommentar*], [#kommentar],
+    ),
+  ))
+  #kasten(1fr)[
+    #text(size: 12pt, weight: "bold")[Frage zum Programm]
+    #table(
+      columns: (auto, 1fr),
+      stroke: none,
+      inset: (x: 0pt, y: 3pt),
+      column-gutter: 1em,
+      [*1*], [#frage_1],
+      [*2*], [#frage_2],
+    )
+  ]
+  #kasten(3fr)[
+    #text(size: 12pt, weight: "bold")[Frage aus Katalog -- Thema: #if aufgabe == "" [#linie(6cm)] else [#aufgabe] #h(1em) Nr.: #linie(1.5cm)]
+  ]
+  #kasten(3cm)[*Bewertung*]
+]
+```
+
+```{r}
+#| output: asis
+typ_str <- function(x, na = "–") {
+    x <- ifelse(is.na(x), na, as.character(x))
+    x <- gsub("\\", "\\\\", x, fixed = TRUE)
+    x <- gsub("\"", "\\\"", x, fixed = TRUE)
+    x <- gsub("\n", "\\n", x, fixed = TRUE)
+    paste0("\"", x, "\"")
+}
+
+n_max <- max(d_s$n_vorlesungen, na.rm = TRUE)
+
+d |>
+    arrange(nummer_mdl) |>
+    mutate(n_vorlesungen = if_else(is.na(n_vorlesungen), NA, paste0(n_vorlesungen, " / ", n_max))) |>
+    pwalk(\(...) {
+        r <- list(...)
+        args <- c(
+            typ_str(r$nummer_mdl), typ_str(r$vorname), typ_str(r$name),
+            typ_str(r$gruppe), typ_str(r$titel_lang),
+            typ_str(r$aufgabe, na = ""), typ_str(r$sloc), typ_str(r$n_vorlesungen),
+            typ_str(r$s1), typ_str(r$s2), typ_str(r$s3), typ_str(r$kommentar),
+            typ_str(r$frage_1, na = ""), typ_str(r$frage_2, na = "")
+        )
+        cat("\n```{=typst}\n#protokoll(", paste(args, collapse = ", "), ")\n```\n")
+    })
+```
